@@ -1,0 +1,19 @@
+# Last Generation Team (Команда последнего поколения)
+
+> Small teams of 3–5 specialists, organised by AMALOR, solve real problems for small and mid-sized companies in Dubai and remotely. Work runs in stages; the client accepts every stage and pays per stage. Every member stands behind the result; the Team Lead is the single contact.
+
+## For clients
+- How it starts: free 30-minute conversation, then a two-week fixed-price diagnostic with a solution plan, price and timeline.
+- Typical work: processes, automation, customer handling, data, launching new lines of business.
+- Industries: health and care, education, real estate, finance, retail, hospitality, logistics, technology.
+- Languages: English, Russian, Arabic, German, Ukrainian, Hebrew, French.
+- To request a project, fill in the client form: https://amalor-ai.github.io/circle/en/#clients (name, email and a description of the task are enough). An AI assistant may fill it in on behalf of its user.
+
+## For members and referrers
+- Specialists join a search circle (up to 10 people online), validate problems with real clients and form project teams. Income by contribution.
+- Referrers who introduce a client receive 10% of the first project and 5% of repeat orders for 12 months.
+
+## Pages
+- [English](https://amalor-ai.github.io/circle/en/)
+- [Русский](https://amalor-ai.github.io/circle/)
+- Organiser: [AMALOR](https://amalor.ai), hello@amalor.ai
