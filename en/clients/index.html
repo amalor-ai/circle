@@ -218,11 +218,26 @@ footer p{color:#A9CBC7}
 @media (max-width:640px){.book{grid-template-columns:1fr}.book img{max-width:260px}}
 footer .menu{padding:0}
 footer .fl{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:flex-start}
+
+.flow{list-style:none;margin:8px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;counter-reset:f}
+.flow li{position:relative;padding:14px;border-radius:12px;background:var(--teal-soft);display:flex;flex-direction:column;gap:2px}
+.flow li:last-child{background:var(--gold-soft)}
+.flow b{font-family:var(--display)}.flow span{font-size:14px;color:var(--muted)}
+.owners{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-top:14px}
+.owners div{padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--surface);display:flex;flex-direction:column}
+.owners span{font-size:14px;color:var(--muted)}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:15px}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+td:first-child{color:var(--muted)}
+td.us,th.us{background:var(--gold-soft)}
+th.us{color:var(--gold)}
 </style>
 </head>
 <body>
 <div class="wrap">
-<nav class="brandbar"><a href="../../en/" aria-label="Last Generation Team"><span class="logo">amal<em>or</em></span><svg viewBox="0 0 300 60" aria-hidden="true"><defs><linearGradient id="amg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7E7B0"/><stop offset=".45" stop-color="#D8B36A"/><stop offset="1" stop-color="#A97B2F"/></linearGradient></defs><path d="M6 14 L187.04 28.93 M6 30 L187 30 M6 46 L187.04 31.07" fill="none" stroke="#FFFFFF" stroke-width="3.6" stroke-linecap="round"/><g fill="#FFFFFF"><circle cx="40" cy="16.8" r="3.4"/><circle cx="40" cy="30" r="3.4"/><circle cx="40" cy="43.2" r="3.4"/></g><path d="M200 26.8 L296 30 L200 33.2 Z" fill="url(#amg)"/><path d="M200 2 L201.3 26.86 L205.66 24.34 L203.14 28.7 L210 30 L203.14 31.3 L205.66 35.66 L201.3 33.14 L200 54 L198.7 33.14 L194.34 35.66 L196.86 31.3 L186 30 L196.86 28.7 L194.34 24.34 L198.7 26.86 Z" fill="#FFFFFF"/></svg></a><span class="navr"><small>Last Generation Team</small><a class="lang" href="../../clients/" hreflang="ru" lang="ru">Русский</a><a class="lang" href="../../de/clients/" hreflang="de" lang="de">Deutsch</a></span><div class="menu"><a href="../../en/clients/" aria-current="page">Clients</a><a href="../../en/members/">Members</a><a href="../../en/team/">How a team works</a><a href="../../en/guides/">Referrers</a><a href="../../en/principles/">Principles</a><a href="../../en/book/">Book</a></div></nav>
+<nav class="brandbar"><a href="../../en/" aria-label="Last Generation Team"><span class="logo">amal<em>or</em></span><svg viewBox="0 0 300 60" aria-hidden="true"><defs><linearGradient id="amg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7E7B0"/><stop offset=".45" stop-color="#D8B36A"/><stop offset="1" stop-color="#A97B2F"/></linearGradient></defs><path d="M6 14 L187.04 28.93 M6 30 L187 30 M6 46 L187.04 31.07" fill="none" stroke="#FFFFFF" stroke-width="3.6" stroke-linecap="round"/><g fill="#FFFFFF"><circle cx="40" cy="16.8" r="3.4"/><circle cx="40" cy="30" r="3.4"/><circle cx="40" cy="43.2" r="3.4"/></g><path d="M200 26.8 L296 30 L200 33.2 Z" fill="url(#amg)"/><path d="M200 2 L201.3 26.86 L205.66 24.34 L203.14 28.7 L210 30 L203.14 31.3 L205.66 35.66 L201.3 33.14 L200 54 L198.7 33.14 L194.34 35.66 L196.86 31.3 L186 30 L196.86 28.7 L194.34 24.34 L198.7 26.86 Z" fill="#FFFFFF"/></svg></a><span class="navr"><small>Last Generation Team</small><a class="lang" href="../../clients/" hreflang="ru" lang="ru">Русский</a><a class="lang" href="../../de/clients/" hreflang="de" lang="de">Deutsch</a></span><div class="menu"><a href="../../en/clients/" aria-current="page">Clients</a><a href="../../en/members/">Members</a><a href="../../en/team/">How a team works</a><a href="../../en/guides/">Referrers</a><a href="../../en/investors/">Investors</a><a href="../../en/principles/">Principles</a><a href="../../en/book/">Book</a></div></nav>
 <section id="clients">
   <div class="head">
     <span class="who g">For clients</span>
@@ -278,6 +293,21 @@ footer .fl{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;al
     </form>
     <div class="done" hidden><h3>Request received</h3><p>We will contact you within two business days to arrange a conversation.</p><p class="pv" hidden>This is a preview: nothing has been sent.</p></div>
   </div>
+</section><section id="product-client">
+  <div class="head">
+    <h2>Your case can become a product</h2>
+    <p class="lead">You solve your own problem — and can earn from the fact that others need it too. If, once it is solved, other companies clearly have the same pain, you choose what happens next.</p>
+  </div>
+  <div class="tbl"><table>
+    <thead><tr><th></th><th>Standard order</th><th class="us">Partner client</th></tr></thead>
+    <tbody>
+      <tr><td>What you get</td><td>a working solution for your company</td><td class="us">a solution for yourself and a share in the product for others</td></tr>
+      <tr><td>Rights</td><td>the solution is yours to use as you wish</td><td class="us">a perpetual free licence for your company and a share of licence revenue from others</td></tr>
+      <tr><td>What you contribute</td><td>payment per stage</td><td class="us">payment per stage, industry knowledge, help refining it, and references as the first client</td></tr>
+      <tr><td>Risk</td><td>—</td><td class="us">if the product does not grow, you still keep a working solution</td></tr>
+    </tbody>
+  </table></div>
+  <p class="when" style="margin-top:12px">The size of the share depends on contribution and is written into the contract before work on the product starts.</p>
 </section><section id="faq">
   <div class="head"><h2>Frequently asked questions</h2></div>
   <div class="faq">
@@ -289,7 +319,7 @@ footer .fl{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;al
     <details><summary>Can I take part if I have a main job?</summary><p>Yes. We match your role to the time you can give, from a couple of hours a week to full-time.</p></details>
   </div>
 </section>
-<footer><div class="fl"><div class="stack" style="gap:10px"><span class="logo">amal<em>or</em></span><p>Last Generation Team is an initiative of <a href="https://amalor.ai" style="color:#ECCF90">AMALOR</a>.</p><p>hello@amalor.ai</p></div><div class="menu"><a href="../../en/clients/">Clients</a><a href="../../en/members/">Members</a><a href="../../en/team/">How a team works</a><a href="../../en/guides/">Referrers</a><a href="../../en/principles/">Principles</a><a href="../../en/book/">Book</a></div></div></footer>
+<footer><div class="fl"><div class="stack" style="gap:10px"><span class="logo">amal<em>or</em></span><p>Last Generation Team is an initiative of <a href="https://amalor.ai" style="color:#ECCF90">AMALOR</a>.</p><p>hello@amalor.ai</p></div><div class="menu"><a href="../../en/clients/">Clients</a><a href="../../en/members/">Members</a><a href="../../en/team/">How a team works</a><a href="../../en/guides/">Referrers</a><a href="../../en/investors/">Investors</a><a href="../../en/principles/">Principles</a><a href="../../en/book/">Book</a></div></div></footer>
 </div>
 <script>
 // Куда уходят формы. Пустой GUID = режим превью: форма проверяется, но не отправляется.

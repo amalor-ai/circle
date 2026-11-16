@@ -20,6 +20,7 @@
 - [How a team works — Last Generation Team](https://amalor-ai.github.io/circle/en/team/)
 - [Referrers — Last Generation Team](https://amalor-ai.github.io/circle/en/guides/)
 - [Principles — Last Generation Team](https://amalor-ai.github.io/circle/en/principles/)
+- [Investors — Last Generation Team](https://amalor-ai.github.io/circle/en/investors/)
 - [Book — Last Generation Team](https://amalor-ai.github.io/circle/en/book/)
 - [Команда последнего поколения](https://amalor-ai.github.io/circle/)
 - [Заказчикам — Команда последнего поколения](https://amalor-ai.github.io/circle/clients/)
@@ -27,6 +28,7 @@
 - [Как работает команда — Команда последнего поколения](https://amalor-ai.github.io/circle/team/)
 - [Проводникам — Команда последнего поколения](https://amalor-ai.github.io/circle/guides/)
 - [Принципы — Команда последнего поколения](https://amalor-ai.github.io/circle/principles/)
+- [Инвесторам — Команда последнего поколения](https://amalor-ai.github.io/circle/investors/)
 - [Книга — Команда последнего поколения](https://amalor-ai.github.io/circle/book/)
 - [Team der letzten Generation](https://amalor-ai.github.io/circle/de/)
 - [Auftraggeber — Team der letzten Generation](https://amalor-ai.github.io/circle/de/clients/)
@@ -34,5 +36,6 @@
 - [So arbeitet ein Team — Team der letzten Generation](https://amalor-ai.github.io/circle/de/team/)
 - [Vermittler — Team der letzten Generation](https://amalor-ai.github.io/circle/de/guides/)
 - [Prinzipien — Team der letzten Generation](https://amalor-ai.github.io/circle/de/principles/)
+- [Investoren — Team der letzten Generation](https://amalor-ai.github.io/circle/de/investors/)
 - [Buch — Team der letzten Generation](https://amalor-ai.github.io/circle/de/book/)
 - Organiser: [AMALOR](https://amalor.ai), hello@amalor.ai

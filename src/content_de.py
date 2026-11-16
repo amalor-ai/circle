@@ -2,7 +2,7 @@
 from content_extra import NAV, TITLE, PAGE_TITLES, DESC, HOME_MORE, LADDER, TEAM, INVESTORS, BOOK
 
 NAV['de'] = [('clients/', 'Auftraggeber'), ('members/', 'Mitglieder'), ('team/', 'So arbeitet ein Team'),
-             ('guides/', 'Vermittler'), ('principles/', 'Prinzipien'), ('book/', 'Buch')]
+             ('guides/', 'Vermittler'), ('investors/', 'Investoren'), ('principles/', 'Prinzipien'), ('book/', 'Buch')]
 TITLE['de'] = 'Team der letzten Generation'
 PAGE_TITLES['de'] = {'index': 'Team der letzten Generation', 'clients': 'Auftraggeber — Team der letzten Generation',
                      'members': 'Mitglieder — Team der letzten Generation', 'team': 'So arbeitet ein Team — Team der letzten Generation',
@@ -150,4 +150,62 @@ BOOK['de'] = '''<section class="book">
     <p class="when">Das Buch ist in Vorbereitung, zuerst auf Russisch. Melde dich als Mitglied an, und wir sagen Bescheid, wenn es erscheint.</p>
     <div><a class="btn" href="{L}members/#join">Anmelden</a></div>
   </div>
+</section>'''
+
+from content_extra import PRODUCT_HOME, PRODUCT_CLIENT, PRODUCT_MEMBER, PIPELINE
+
+PRODUCT_HOME['de'] = '''<section id="product">
+  <div class="head">
+    <h2>Von der Aufgabe zum Produkt</h2>
+    <p class="lead">Manchmal ist die Aufgabe eines Unternehmens die Aufgabe einer ganzen Branche. Dann wird die Lösung zum Produkt – und das Produkt bekommt Miteigentümer: das Team, das es gebaut hat, und den Auftraggeber, der es mitgestaltet hat.</p>
+  </div>
+  <ol class="flow">
+    <li><b>Aufgabe</b><span>eines Auftraggebers</span></li>
+    <li><b>Lösung</b><span>in Etappen, mit Abnahme</span></li>
+    <li><b>Von vielen gebraucht</b><span>bei anderen Unternehmen geprüft</span></li>
+    <li><b>Produkt</b><span>Lizenzen für die Branche</span></li>
+  </ol>
+  <div class="owners">
+    <div><b>Team</b><span>Anteile nach Beitrag</span></div>
+    <div><b>Partner-Auftraggeber</b><span>ein Anteil und eine kostenlose Lizenz für sich</span></div>
+    <div><b>Organisator</b><span>ein Anteil für Aufbau und Start</span></div>
+    <div><b>Investoren</b><span>steigen ein, wenn das Produkt Nachfrage bewiesen hat</span></div>
+  </div>
+  <p class="more"><a href="{L}clients/#product-client">Für Auftraggeber →</a> · <a href="{L}investors/">Für Investoren →</a></p>
+</section>'''
+
+PRODUCT_CLIENT['de'] = '''<section id="product-client">
+  <div class="head">
+    <h2>Ihr Fall kann zum Produkt werden</h2>
+    <p class="lead">Sie lösen Ihre eigene Aufgabe – und können daran verdienen, dass andere sie auch brauchen. Zeigt sich nach der Lösung, dass andere Unternehmen dasselbe Problem haben, entscheiden Sie, wie es weitergeht.</p>
+  </div>
+  <div class="tbl"><table>
+    <thead><tr><th></th><th>Normaler Auftrag</th><th class="us">Partner-Auftraggeber</th></tr></thead>
+    <tbody>
+      <tr><td>Was Sie bekommen</td><td>eine fertige Lösung für Ihr Unternehmen</td><td class="us">eine Lösung für sich und einen Anteil am Produkt für andere</td></tr>
+      <tr><td>Rechte</td><td>die Lösung gehört Ihnen, Sie nutzen sie frei</td><td class="us">eine unbefristete kostenlose Lizenz für Ihr Unternehmen und ein Anteil an den Lizenzerlösen von anderen</td></tr>
+      <tr><td>Was Sie einbringen</td><td>Bezahlung der Etappen</td><td class="us">Bezahlung der Etappen, Branchenwissen, Mitarbeit an der Weiterentwicklung und Empfehlungen als erster Kunde</td></tr>
+      <tr><td>Risiko</td><td>—</td><td class="us">wächst das Produkt nicht, bleibt Ihnen trotzdem eine funktionierende Lösung</td></tr>
+    </tbody>
+  </table></div>
+  <p class="when" style="margin-top:12px">Die Höhe des Anteils richtet sich nach dem Beitrag und wird vertraglich festgelegt, bevor die Arbeit am Produkt beginnt.</p>
+</section>'''
+
+PRODUCT_MEMBER['de'] = '<p class="more"><a href="{L}#product">Wie ein Projekt zu einem Produkt mit Miteigentümern wird →</a></p>'
+
+PIPELINE['de'] = '''<section>
+  <div class="head">
+    <h2>Zuerst Nachfrage. Dann Menschen. Geld zuletzt</h2>
+    <p class="lead">Der erste Pilot liegt noch vor uns. Jetzt laden wir Mentoren ein, die die Teams von Anfang an sehen wollen.</p>
+  </div>
+  <ol class="steps">
+    <li><span class="num">1</span><div><h3>Nachfrage finden</h3><p class="when">Aufgaben von Auftraggebern und Mitgliedern, Ausschreibungen, Kundenbeschwerden, neue Regeln</p></div></li>
+    <li><span class="num">2</span><div><h3>Nachfrage prüfen</h3><p class="when">10–20 Gespräche und ein Auftraggeber, der für einen Pilot zahlt</p></div></li>
+    <li><span class="num">3</span><div><h3>Probearbeit</h3><p class="when">1–2 Wochen in gemischten Paaren an einer echten Aufgabe</p></div></li>
+    <li><span class="num">4</span><div><h3>Team bilden</h3><p class="when">3–5 Personen, Anteile nach Beitrag, Teamvereinbarung, Team Lead im Konsens</p></div></li>
+    <li><span class="num">5</span><div><h3>Lösung mit dem Auftraggeber</h3><p class="when">erste Nutzer und erstes Geld – vor jeder Finanzierungsrunde</p></div></li>
+    <li><span class="num">6</span><div><h3>Team-Pass</h3><p class="when">Geschichte der Zusammenarbeit, Rollen, Kundengespräche, Kennzahlen</p></div></li>
+    <li><span class="num">7</span><div><h3>Demo für Investoren</h3><p class="when">ein Team, das bewiesen hat, dass es funktioniert, mit einem Partner-Auftraggeber an der Seite</p></div></li>
+  </ol>
+  <p class="rule"><b>Kein Auftraggeber – kein Team.</b> Passt es menschlich nicht, stellen wir aus demselben Kreis neu zusammen.</p>
 </section>'''

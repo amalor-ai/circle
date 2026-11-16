@@ -6,7 +6,8 @@ Run:  python3 src/tr_en.py && python3 src/build.py
 """
 import html, json, pathlib, re, sys
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
-from content_extra import NAV, TITLE, PAGE_TITLES, DESC, HOME_MORE, LADDER, TEAM, INVESTORS, BOOK, EXTRA_CSS
+from content_extra import NAV, TITLE, PAGE_TITLES, DESC, HOME_MORE, LADDER, TEAM, INVESTORS, BOOK, PRODUCT_HOME, PRODUCT_CLIENT, PRODUCT_MEMBER, PIPELINE
+import content_extra
 import content_de  # noqa: F401  (adds the German entries)
 LANGS = ['ru', 'en', 'de']
 LANG_NAME = {'ru': 'Русский', 'en': 'English', 'de': 'Deutsch'}
@@ -15,7 +16,7 @@ SRC = pathlib.Path(__file__).parent
 OUT = SRC.parent
 BASE = 'https://amalor-ai.github.io/circle'   # switch to https://team.amalor.ai once DNS is live
 PAGES = ['index', 'clients', 'members', 'team', 'guides', 'principles', 'investors', 'book']
-HIDDEN = {'investors'}                         # reachable by link only, noindex, not in menus or sitemap
+HIDDEN = set()                         # reachable by link only, noindex, not in menus or sitemap
 
 
 def path_of(lang, page):
@@ -76,13 +77,13 @@ def footer(lang, L, logo_link):
 
 def body_for(lang, page, p):
     return {
-        'index': p['hero'] + HOME_MORE[lang] + p['prin'] + p['faq'],
-        'clients': p['clients'] + p['faq'],
-        'members': p['members'] + LADDER[lang],
+        'index': p['hero'] + HOME_MORE[lang] + PRODUCT_HOME[lang] + p['prin'] + p['faq'],
+        'clients': p['clients'] + PRODUCT_CLIENT[lang] + p['faq'],
+        'members': p['members'] + LADDER[lang] + PRODUCT_MEMBER[lang],
         'team': TEAM[lang],
         'guides': p['guides'] + p['money'],
         'principles': p['prin'] + p['sieve'] + p['money'],
-        'investors': INVESTORS[lang],
+        'investors': INVESTORS[lang].replace('<section>', PIPELINE[lang] + '<section>', 1),
         'book': BOOK[lang],
     }[page]
 
@@ -123,7 +124,7 @@ def render(lang, page, css, logo_link, p):
             + ('' if page in HIDDEN else f'<script type="application/ld+json">{jsonld(lang, page, desc, p["faq"])}</script>\n')
             + '<link rel="preconnect" href="https://fonts.googleapis.com">\n'
             '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;800&family=Readex+Pro:wght@300;400&display=swap">\n'
-            f'<style>{css.replace("body{background:var(--bg);", "body{margin:0;background:var(--bg);")}{EXTRA_CSS}</style>\n'
+            f'<style>{css.replace("body{background:var(--bg);", "body{margin:0;background:var(--bg);")}{content_extra.EXTRA_CSS}</style>\n'
             '</head>\n<body>\n<div class="wrap">\n'
             f'{header(lang, page, logo_link, R, L)}\n{body}\n{footer(lang, L, logo_link)}\n</div>\n{p["script"]}\n</body>\n</html>\n')
 

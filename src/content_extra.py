@@ -2,9 +2,9 @@
 
 NAV = {
     'ru': [('clients/', 'Заказчикам'), ('members/', 'Участникам'), ('team/', 'Как работает команда'),
-           ('guides/', 'Проводникам'), ('principles/', 'Принципы'), ('book/', 'Книга')],
+           ('guides/', 'Проводникам'), ('investors/', 'Инвесторам'), ('principles/', 'Принципы'), ('book/', 'Книга')],
     'en': [('clients/', 'Clients'), ('members/', 'Members'), ('team/', 'How a team works'),
-           ('guides/', 'Referrers'), ('principles/', 'Principles'), ('book/', 'Book')],
+           ('guides/', 'Referrers'), ('investors/', 'Investors'), ('principles/', 'Principles'), ('book/', 'Book')],
 }
 
 TITLE = {'ru': 'Команда последнего поколения', 'en': 'Last Generation Team'}
@@ -344,4 +344,134 @@ EXTRA_CSS = '''
 @media (max-width:640px){.book{grid-template-columns:1fr}.book img{max-width:260px}}
 footer .menu{padding:0}
 footer .fl{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:flex-start}
+'''
+
+# ---- product path: a client's task can become a product with co-owners ----
+PRODUCT_HOME = {
+'ru': '''<section id="product">
+  <div class="head">
+    <h2>От задачи — к продукту</h2>
+    <p class="lead">Иногда задача одной компании — это задача целой отрасли. Тогда решение становится продуктом, а у продукта появляются совладельцы: команда, которая его создала, и заказчик, который его вырастил.</p>
+  </div>
+  <ol class="flow">
+    <li><b>Задача</b><span>одного заказчика</span></li>
+    <li><b>Решение</b><span>по этапам, с приёмкой</span></li>
+    <li><b>Нужно многим</b><span>проверяем у других компаний</span></li>
+    <li><b>Продукт</b><span>лицензии для отрасли</span></li>
+  </ol>
+  <div class="owners">
+    <div><b>Команда</b><span>доли по вкладу</span></div>
+    <div><b>Заказчик-партнёр</b><span>доля и бесплатная лицензия для себя</span></div>
+    <div><b>Организатор</b><span>доля за сборку и запуск</span></div>
+    <div><b>Инвесторы</b><span>входят, когда продукт доказал спрос</span></div>
+  </div>
+  <p class="more"><a href="{L}clients/#product-client">Для заказчиков →</a> · <a href="{L}investors/">Для инвесторов →</a></p>
+</section>''',
+'en': '''<section id="product">
+  <div class="head">
+    <h2>From a task to a product</h2>
+    <p class="lead">Sometimes one company’s problem is a whole industry’s problem. Then the solution becomes a product — and the product gets co-owners: the team that built it and the client who helped it grow.</p>
+  </div>
+  <ol class="flow">
+    <li><b>Task</b><span>of one client</span></li>
+    <li><b>Solution</b><span>in stages, with acceptance</span></li>
+    <li><b>Needed by many</b><span>validated with other companies</span></li>
+    <li><b>Product</b><span>licences for the industry</span></li>
+  </ol>
+  <div class="owners">
+    <div><b>Team</b><span>shares by contribution</span></div>
+    <div><b>Partner client</b><span>a share and a free licence for its own use</span></div>
+    <div><b>Organiser</b><span>a share for assembling and launching</span></div>
+    <div><b>Investors</b><span>join once the product has proven demand</span></div>
+  </div>
+  <p class="more"><a href="{L}clients/#product-client">For clients →</a> · <a href="{L}investors/">For investors →</a></p>
+</section>'''}
+
+PRODUCT_CLIENT = {
+'ru': '''<section id="product-client">
+  <div class="head">
+    <h2>Ваш кейс может стать продуктом</h2>
+    <p class="lead">Вы решаете свою задачу — и можете зарабатывать на том, что она нужна другим. Если после решения видно, что та же боль есть у других компаний, вы выбираете, как дальше.</p>
+  </div>
+  <div class="tbl"><table>
+    <thead><tr><th></th><th>Обычный заказ</th><th class="us">Заказчик-партнёр</th></tr></thead>
+    <tbody>
+      <tr><td>Что получаете</td><td>готовое решение для своей компании</td><td class="us">решение для себя и долю в продукте для других</td></tr>
+      <tr><td>Права</td><td>решение ваше, используете как хотите</td><td class="us">бессрочная бесплатная лицензия для своей компании и доля от лицензий для других</td></tr>
+      <tr><td>Что вкладываете</td><td>оплату этапов</td><td class="us">оплату этапов, знание отрасли, участие в доработке и рекомендации как первый клиент</td></tr>
+      <tr><td>Риск</td><td>—</td><td class="us">если продукт не вырастет, у вас всё равно остаётся работающее решение</td></tr>
+    </tbody>
+  </table></div>
+  <p class="when" style="margin-top:12px">Размер доли зависит от вклада и записывается в договоре до начала работы над продуктом.</p>
+</section>''',
+'en': '''<section id="product-client">
+  <div class="head">
+    <h2>Your case can become a product</h2>
+    <p class="lead">You solve your own problem — and can earn from the fact that others need it too. If, once it is solved, other companies clearly have the same pain, you choose what happens next.</p>
+  </div>
+  <div class="tbl"><table>
+    <thead><tr><th></th><th>Standard order</th><th class="us">Partner client</th></tr></thead>
+    <tbody>
+      <tr><td>What you get</td><td>a working solution for your company</td><td class="us">a solution for yourself and a share in the product for others</td></tr>
+      <tr><td>Rights</td><td>the solution is yours to use as you wish</td><td class="us">a perpetual free licence for your company and a share of licence revenue from others</td></tr>
+      <tr><td>What you contribute</td><td>payment per stage</td><td class="us">payment per stage, industry knowledge, help refining it, and references as the first client</td></tr>
+      <tr><td>Risk</td><td>—</td><td class="us">if the product does not grow, you still keep a working solution</td></tr>
+    </tbody>
+  </table></div>
+  <p class="when" style="margin-top:12px">The size of the share depends on contribution and is written into the contract before work on the product starts.</p>
+</section>'''}
+
+PRODUCT_MEMBER = {
+'ru': '<p class="more"><a href="{L}#product">Как проект вырастает в продукт с совладельцами →</a></p>',
+'en': '<p class="more"><a href="{L}#product">How a project grows into a product with co-owners →</a></p>'}
+
+PIPELINE = {
+'ru': '''<section>
+  <div class="head">
+    <h2>Сначала спрос. Потом люди. Деньги — последними</h2>
+    <p class="lead">Первый пилот впереди. Сейчас мы зовём наставников, которые хотят увидеть команды с самого начала.</p>
+  </div>
+  <ol class="steps">
+    <li><span class="num">1</span><div><h3>Поиск спроса</h3><p class="when">задачи от заказчиков и участников, тендеры, жалобы клиентов, новые правила</p></div></li>
+    <li><span class="num">2</span><div><h3>Проверка спроса</h3><p class="when">10–20 разговоров и заказчик, готовый платить за пилот</p></div></li>
+    <li><span class="num">3</span><div><h3>Пробная работа</h3><p class="when">1–2 недели в смешанных парах на реальной задаче</p></div></li>
+    <li><span class="num">4</span><div><h3>Сборка команды</h3><p class="when">3–5 человек, доли по вкладу, договор команды, Team Lead по согласию</p></div></li>
+    <li><span class="num">5</span><div><h3>Решение с заказчиком</h3><p class="when">первые пользователи и первые деньги — до раунда</p></div></li>
+    <li><span class="num">6</span><div><h3>Паспорт команды</h3><p class="when">история совместной работы, роли, разговоры с клиентами, показатели</p></div></li>
+    <li><span class="num">7</span><div><h3>Демо инвесторам</h3><p class="when">команда, которая уже доказала, что работает, и заказчик-партнёр рядом</p></div></li>
+  </ol>
+  <p class="rule"><b>Нет заказчика — команду не собираем.</b> Не сработались — пересобираем из того же круга.</p>
+</section>''',
+'en': '''<section>
+  <div class="head">
+    <h2>Demand first. Then people. Money last</h2>
+    <p class="lead">The first pilot is ahead. Right now we invite mentors who want to see the teams from the very beginning.</p>
+  </div>
+  <ol class="steps">
+    <li><span class="num">1</span><div><h3>Finding demand</h3><p class="when">tasks from clients and members, tenders, customer complaints, new regulations</p></div></li>
+    <li><span class="num">2</span><div><h3>Validating demand</h3><p class="when">10–20 conversations and a client ready to pay for a pilot</p></div></li>
+    <li><span class="num">3</span><div><h3>Trial work</h3><p class="when">1–2 weeks in mixed pairs on a real task</p></div></li>
+    <li><span class="num">4</span><div><h3>Forming the team</h3><p class="when">3–5 people, shares by contribution, a team agreement, a Team Lead by consent</p></div></li>
+    <li><span class="num">5</span><div><h3>Solution with the client</h3><p class="when">first users and first revenue — before any round</p></div></li>
+    <li><span class="num">6</span><div><h3>Team passport</h3><p class="when">history of working together, roles, client conversations, indicators</p></div></li>
+    <li><span class="num">7</span><div><h3>Investor demo</h3><p class="when">a team that has already proven it works, with a partner client alongside</p></div></li>
+  </ol>
+  <p class="rule"><b>No client — no team.</b> If people do not click, we regroup from the same circle.</p>
+</section>'''}
+
+EXTRA_CSS += '''
+.flow{list-style:none;margin:8px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;counter-reset:f}
+.flow li{position:relative;padding:14px;border-radius:12px;background:var(--teal-soft);display:flex;flex-direction:column;gap:2px}
+.flow li:last-child{background:var(--gold-soft)}
+.flow b{font-family:var(--display)}.flow span{font-size:14px;color:var(--muted)}
+.owners{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-top:14px}
+.owners div{padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--surface);display:flex;flex-direction:column}
+.owners span{font-size:14px;color:var(--muted)}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:15px}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+td:first-child{color:var(--muted)}
+td.us,th.us{background:var(--gold-soft)}
+th.us{color:var(--gold)}
 '''
