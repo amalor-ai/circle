@@ -296,7 +296,7 @@ BOOK = {
   </div>
 </section>''',
 'en': '''<section class="book">
-  <img src="{R}assets/book-cover-ru.jpg" width="659" height="988" alt="Cover of the book “Last Generation Team. Like a bundle of reeds” (Russian edition)">
+  <img src="{R}assets/book-cover-en.jpg" width="659" height="988" alt="Cover of the book “Last Generation Team. Like a bundle of reeds”">
   <div class="stack">
     <p class="eyebrow">Book · coming soon</p>
     <h1>Last Generation Team</h1>

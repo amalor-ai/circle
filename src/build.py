@@ -120,7 +120,7 @@ def render(lang, page, css, logo_link, p):
             f'<link rel="canonical" href="{url(lang, page)}">\n{alts}'
             f'<meta property="og:title" content="{title}">\n<meta property="og:description" content="{desc}">\n'
             f'<meta property="og:url" content="{url(lang, page)}">\n<meta property="og:type" content="website">\n'
-            f'<meta property="og:image" content="{BASE}/assets/book-cover-ru.jpg">\n'
+            f'<meta property="og:image" content="{BASE}/assets/book-cover-{lang}.jpg">\n'
             + ('' if page in HIDDEN else f'<script type="application/ld+json">{jsonld(lang, page, desc, p["faq"])}</script>\n')
             + '<link rel="preconnect" href="https://fonts.googleapis.com">\n'
             '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;800&family=Readex+Pro:wght@300;400&display=swap">\n'
