@@ -38,6 +38,11 @@ p{margin:0}
 .eyebrow{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:600}
 .sub{font-size:clamp(20px,3vw,26px);font-weight:600;color:var(--gold);line-height:1.25}
 .lead{font-size:19px;color:var(--muted);max-width:62ch}
+.tagline{font-size:clamp(19px,2.6vw,22px);line-height:1.4;max-width:40ch}
+.prin{list-style:none;margin:8px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.prin li{padding:16px;border-radius:12px;border:1px solid var(--line);background:var(--surface);display:flex;flex-direction:column;gap:4px}
+.prin b{font-family:var(--display);font-size:17px}
+.prin span{font-size:15px;color:var(--muted)}
 .stack{display:flex;flex-direction:column;gap:16px}
 a{color:var(--brand)}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:10px;
@@ -147,6 +152,7 @@ footer{padding-block:36px 48px;border-top:1px solid var(--line);font-size:14px;c
     <p class="quote">«Связку тростника не сломать разом, а по одной тростинке её переломит и ребёнок»</p>
     <h1>Команда последнего поколения</h1>
     <p class="sub">Как связка тростника</p>
+    <p class="tagline">Как вместе получить больше, чем в одиночку, — и делать то, что нужно миру</p>
     <p class="lead">Небольшие команды специалистов берут задачи, которые нужны людям и за которые готовы платить. Организатор принадлежит самим участникам: прозрачная доля идёт на организацию, остальное — тем, кто сделал работу.</p>
     <div class="doors">
       <a class="door pay" href="#clients"><b>Есть задача</b><span>Соберём команду под ваш результат: цена, срок, один ответственный.</span><em>Для заказчиков →</em></a>
@@ -166,7 +172,7 @@ footer{padding-block:36px 48px;border-top:1px solid var(--line);font-size:14px;c
   <div class="cols">
     <ul class="ticks">
       <li><b>Цена и срок заранее.</b> Платите за результат, а не за часы.</li>
-      <li><b>Один ответственный.</b> Team Lead ведёт проект и отвечает перед вами.</li>
+      <li><b>Отвечает вся команда.</b> Team Lead — ваш единый контакт, но за результат ручается каждый.</li>
       <li><b>Оплата по этапам.</b> Этап не принят — команда доделывает за свой счёт.</li>
       <li><b>Несколько специальностей сразу.</b> Не нужно искать пятерых фрилансеров.</li>
     </ul>
@@ -227,21 +233,22 @@ footer{padding-block:36px 48px;border-top:1px solid var(--line);font-size:14px;c
   <div class="head">
     <span class="who">Участникам</span>
     <h2>Работа в команде, а не в одиночку</h2>
-    <p class="lead">Задачи со смыслом рядом с людьми, на которых можно опереться. Полная занятость или пара часов в неделю — роль в команде подбираем под твоё время. Без торга за заказы и самопродажи.</p>
+    <p class="lead">Задачи со смыслом рядом с людьми, на которых можно опереться. Полная занятость или пара часов в неделю — роль в команде подбираем под твоё время. Заказ приходит к команде, а не к тому, кто громче себя продаёт.</p>
   </div>
   <div class="cols">
     <ul class="ticks">
       <li><b>Заказы приходят проверенными.</b> Не нужно продавать себя.</li>
       <li><b>Доход по вкладу,</b> а не по должности.</li>
       <li><b>Репутация копится</b> от проекта к проекту.</li>
-      <li><b>Путь вверх:</b> участник, Team Lead, наставник, ядро.</li>
+      <li><b>Рядом свои люди.</b> Поддержат, когда тяжело, и порадуются, когда получилось.</li>
+      <li><b>Путь роста:</b> участник → Team Lead → наставник → ядро. Растёт не власть, а ответственность за других.</li>
       <li><b>Из проекта — в стартап.</b> Если решение нужно не одному заказчику, а многим, команда может вырастить из него свой продукт и стать его совладельцами, с долями по вкладу.</li>
     </ul>
     <ol class="steps">
       <li><span class="num">1</span><div><h3>Анкета</h3><p class="when">2 минуты</p></div></li>
       <li><span class="num">2</span><div><h3>Круг поиска</h3><p class="when">2 часа онлайн, до 12 человек</p></div></li>
       <li><span class="num">3</span><div><h3>Неделя проверки</h3><p class="when">в парах, около 5 разговоров с клиентами</p></div></li>
-      <li><span class="num">4</span><div><h3>Команда и проект</h3><p class="when">выбираете Team Lead и работаете</p></div></li>
+      <li><span class="num">4</span><div><h3>Команда и проект</h3><p class="when">выбираете Team Lead — того, кто держит ритм и служит команде, а не командует ею</p></div></li>
     </ol>
   </div>
 
@@ -305,6 +312,7 @@ footer{padding-block:36px 48px;border-top:1px solid var(--line);font-size:14px;c
       <li><b>5% от повторных заказов</b> в течение 12 месяцев.</li>
       <li><b>Выплата с каждого оплаченного этапа,</b> сразу после оплаты заказчиком.</li>
       <li><b>Заказчик закреплён за вами 6 месяцев</b> с момента регистрации.</li>
+      <li><b>Ваше имя остаётся в истории проекта:</b> все видят, кто привёл заказчика.</li>
     </ul>
     <div class="stack">
       <p class="when">Хотите и сами войти в команду этого проекта — можно. Тогда вы получаете и вознаграждение проводника, и долю за работу.</p>
@@ -356,6 +364,20 @@ footer{padding-block:36px 48px;border-top:1px solid var(--line);font-size:14px;c
       <div><i style="background:var(--gold-btn)"></i><b>10%</b><span>проводнику, если он есть</span></div>
     </div>
   </div>
+</section>
+
+<!-- ПРИНЦИПЫ -->
+<section>
+  <div class="head">
+    <h2>На чём держится команда</h2>
+  </div>
+  <ul class="prin">
+    <li><b>Вместе сильнее</b><span>Связку тростника не сломать. Команда может больше, чем люди по отдельности.</span></li>
+    <li><b>Отвечаем друг за друга</b><span>За результат отвечает вся команда, а не один человек.</span></li>
+    <li><b>Равные за одним столом</b><span>Решения принимаем вместе, и каждый голос весит одинаково.</span></li>
+    <li><b>Вклад виден всем</b><span>Признание — за то, что ты дал, а не за должность.</span></li>
+    <li><b>Польза людям — мерило задачи</b><span>Берём только то, что действительно нужно.</span></li>
+  </ul>
 </section>
 
 <!-- СИТО -->
