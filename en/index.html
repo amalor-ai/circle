@@ -233,34 +233,57 @@ thead th{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(
 td:first-child{color:var(--muted)}
 td.us,th.us{background:var(--gold-soft)}
 th.us{color:var(--gold)}
+
+/* home hero: continues the green header band, like the book cover */
+.hero-band{position:relative;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:24px 40px;align-items:center;
+  padding-block:24px 40px;color:#FFFFFF;background:radial-gradient(ellipse 40% 55% at 70% 48%,rgba(27,156,147,.42),rgba(27,156,147,0) 70%),#083C3A;box-shadow:0 0 0 100vmax #083C3A;clip-path:inset(0 -100vmax)}
+
+.hb-text{position:relative;display:flex;flex-direction:column;gap:14px;min-width:0}
+.hb-quote{font-style:italic;font-size:15px;color:#9DC3BF;max-width:46ch}
+.hero-band h1{color:#FFFFFF;font-size:clamp(38px,6.4vw,66px);line-height:1.02;letter-spacing:-.025em}
+.hb-sub{font-size:clamp(20px,2.6vw,26px);font-weight:600;color:#ECCF90}
+.hb-tag{font-size:clamp(17px,2vw,20px);color:#C9E4E2;max-width:40ch}
+.hb-lead{font-size:16px;color:#A9CBC7;max-width:52ch}
+.hb-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.btn.ghost{background:transparent;color:#FFFFFF;border:1px solid rgba(236,207,144,.55);box-shadow:none}
+.hb-art{position:relative;display:flex;justify-content:center}
+.hb-art .net{width:100%;max-width:420px;height:auto}
+.hb-money{grid-column:1/-1;margin-top:8px;padding-top:20px;border-top:1px solid rgba(201,228,226,.18);display:flex;flex-direction:column;gap:14px}
+.hb-ex{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#9DC3BF;margin:0}
+.hb-bar{display:flex;gap:3px;height:40px;border-radius:10px;overflow:hidden;font-size:13px;font-weight:700}
+.hb-bar div{display:flex;align-items:center;padding:0 12px;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background:rgba(201,228,226,.14);color:#C9E4E2}
+.hb-bar div:first-child{background:linear-gradient(135deg,#F7E7B0,#E2BF74,#C99A45,#EDCD82);color:#0B2F2D}
+.hb-facts{list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px 28px}
+.hb-facts li{display:flex;flex-direction:column;gap:2px}
+.hb-legend{font-size:14px;color:#A9CBC7;margin:-4px 0 6px}
+.hb-facts b{white-space:nowrap;font-family:var(--display);font-size:clamp(22px,2.4vw,32px);color:#ECCF90;line-height:1.1}
+.hb-facts span{font-size:14px;color:#A9CBC7}
+@media (max-width:760px){.hero-band{grid-template-columns:minmax(0,1fr)}.hero-band h1{font-size:34px}.hb-bar{font-size:11px}.hb-bar div{padding:0 8px}.hb-art{order:-1}.hb-art .net{max-width:220px}.hb-facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (prefers-reduced-motion:no-preference){.hb-art .net{animation:hbspin 120s linear infinite}@keyframes hbspin{to{transform:rotate(360deg)}}}
+.doors.below{margin-top:0}
+section.home-doors{padding-block:40px 20px;border-top:0}
 </style>
 </head>
 <body>
 <div class="wrap">
 <nav class="brandbar"><a href="../en/" aria-label="Last Generation Team"><span class="logo">amal<em>or</em></span><svg viewBox="0 0 300 60" aria-hidden="true"><defs><linearGradient id="amg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7E7B0"/><stop offset=".45" stop-color="#D8B36A"/><stop offset="1" stop-color="#A97B2F"/></linearGradient></defs><path d="M6 14 L187.04 28.93 M6 30 L187 30 M6 46 L187.04 31.07" fill="none" stroke="#FFFFFF" stroke-width="3.6" stroke-linecap="round"/><g fill="#FFFFFF"><circle cx="40" cy="16.8" r="3.4"/><circle cx="40" cy="30" r="3.4"/><circle cx="40" cy="43.2" r="3.4"/></g><path d="M200 26.8 L296 30 L200 33.2 Z" fill="url(#amg)"/><path d="M200 2 L201.3 26.86 L205.66 24.34 L203.14 28.7 L210 30 L203.14 31.3 L205.66 35.66 L201.3 33.14 L200 54 L198.7 33.14 L194.34 35.66 L196.86 31.3 L186 30 L196.86 28.7 L194.34 24.34 L198.7 26.86 Z" fill="#FFFFFF"/></svg></a><span class="navr"><small>Last Generation Team</small><a class="lang" href="../" hreflang="ru" lang="ru">Русский</a><a class="lang" href="../de/" hreflang="de" lang="de">Deutsch</a></span><div class="menu"><a href="../en/clients/">Clients</a><a href="../en/members/">Members</a><a href="../en/team/">How a team works</a><a href="../en/guides/">Referrers</a><a href="../en/investors/">Investors</a><a href="../en/principles/">Principles</a><a href="../en/book/">Book</a></div></nav>
-<header class="hero">
-  <div class="stack">
-    <p class="quote">“A bundle of reeds cannot be broken at once, yet a child can break the reeds one by one”</p>
+<header class="hero-band">
+  <div class="hb-text">
+    <p class="hb-quote">“A bundle of reeds cannot be broken at once, yet a child can break the reeds one by one”</p>
     <h1>Last Generation Team</h1>
-    <p class="sub">Like a bundle of reeds</p>
-    <p class="tagline">How to achieve more together than alone — and do what the world needs</p>
-    <p class="lead">Small teams of specialists take on work that people need and are willing to pay for. The organiser belongs to the members themselves: a transparent share covers the organisation, the rest goes to those who did the work.</p>
-    <div class="doors">
+    <p class="hb-sub">Like a bundle of reeds</p>
+    <p class="hb-tag">How to achieve more together than alone — and do what the world needs</p>
+    <p class="hb-lead">Small teams of specialists solve problems people need solved and will pay for. We work in stages, answer for each other, and grow the best solutions into products — together with our clients.</p>
+    <div class="hb-cta"><a class="btn" href="../en/clients/">I have a task</a><a class="btn ghost" href="../en/members/">Join a team</a></div>
+  </div>
+  <div class="hb-art"><svg class="net" viewBox="150 160 500 520" aria-hidden="true"><defs><linearGradient id="hg" x1="150" y1="160" x2="650" y2="680" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#F7E7B0"/><stop offset="0.32" stop-color="#E2BF74"/><stop offset="0.64" stop-color="#B98A34"/><stop offset="1" stop-color="#EDCD82"/></linearGradient></defs><g fill="none" stroke="url(#hg)" stroke-width="1.5" stroke-opacity="0.6" stroke-linejoin="round"><polygon points="400,190 535,234 619,349 619,491 535,606 400,650 265,606 181,491 181,349 265,234"/><polygon points="400,190 619,349 535,606 265,606 181,349"/><polygon points="535,234 619,491 400,650 181,491 265,234"/><polygon points="400,190 619,491 265,606 181,349 535,234 400,650 181,491 619,349 535,606 265,234"/><polygon points="400,190 535,606 181,349 619,349 265,606"/><polygon points="535,234 400,650 265,234 619,491 181,491"/><line x1="400" y1="190" x2="400" y2="650"/><line x1="535" y1="234" x2="265" y2="606"/><line x1="619" y1="349" x2="181" y2="491"/><line x1="619" y1="491" x2="181" y2="349"/><line x1="535" y1="606" x2="265" y2="234"/></g><g fill="url(#hg)"><circle cx="400" cy="190" r="15"/><circle cx="535" cy="234" r="15"/><circle cx="619" cy="349" r="15"/><circle cx="619" cy="491" r="15"/><circle cx="535" cy="606" r="15"/><circle cx="400" cy="650" r="15"/><circle cx="265" cy="606" r="15"/><circle cx="181" cy="491" r="15"/><circle cx="181" cy="349" r="15"/><circle cx="265" cy="234" r="15"/></g><circle cx="400" cy="420" r="5" fill="#F7E7B0"/></svg></div>
+  <div class="hb-money"><p class="hb-ex">Example: a $100,000 project</p><div class="hb-bar"><div style="flex:80">Team 80%</div><div style="flex:10">10%</div><div style="flex:10">10%</div></div><p class="hb-legend">80% to the team · 10% to the organiser · 10% to the guide (no guide: 20% to the organiser)</p><ul class="hb-facts"><li><b>$80,000</b><span>goes to the team that did the work</span></li><li><b>≈ $20,000</b><span>per person in a team of four</span></li><li><b>$10,000</b><span>to the guide — for one introduction</span></li><li><b>$0</b><span>the client pays for a stage they did not accept</span></li></ul></div>
+</header><section class="home-doors"><div class="doors">
       <a class="door pay" href="../en/clients/"><b>I have a task</b><span>A close-knit team takes it stage by stage to the result.</span><em>For clients →</em></a>
       <a class="door" href="../en/members/"><b>I want to join a team</b><span>Meaningful work with reliable people. As much time as you can give.</span><em>For members →</em></a>
       <a class="door" href="../en/guides/"><b>I know someone with a task</b><span>Introduce a client and receive 10% of the first project.</span><em>For referrers →</em></a>
-    </div>
-  </div>
-</header><section>
-  <div class="head"><h2>How it works</h2></div>
-  <ol class="steps">
-    <li><span class="num">1</span><div><h3>Task</h3><p class="when">A client brings a task, or a circle member finds one. We run it through our filter.</p></div></li>
-    <li><span class="num">2</span><div><h3>Team</h3><p class="when">We form a small team of people who have proven themselves in practice.</p></div></li>
-    <li><span class="num">3</span><div><h3>Staged delivery</h3><p class="when">The client sees and accepts every stage. The whole team is accountable.</p></div></li>
-    <li><span class="num">4</span><div><h3>Growth</h3><p class="when">Strong solutions can grow into a product, and the team can become its co-owners.</p></div></li>
-  </ol>
-  <p class="more"><a href="../en/team/">How a team works →</a> · <a href="../en/principles/">Principles →</a></p>
-</section><section id="product">
+    </div></section><section id="product">
   <div class="head">
     <h2>From a task to a product</h2>
     <p class="lead">Sometimes one company’s problem is a whole industry’s problem. Then the solution becomes a product — and the product gets co-owners: the team that built it and the client who helped it grow.</p>
@@ -278,6 +301,15 @@ th.us{color:var(--gold)}
     <div><b>Investors</b><span>join once the product has proven demand</span></div>
   </div>
   <p class="more"><a href="../en/clients/#product-client">For clients →</a> · <a href="../en/investors/">For investors →</a></p>
+</section><section>
+  <div class="head"><h2>How it works</h2></div>
+  <ol class="steps">
+    <li><span class="num">1</span><div><h3>Task</h3><p class="when">A client brings a task, or a circle member finds one. We run it through our filter.</p></div></li>
+    <li><span class="num">2</span><div><h3>Team</h3><p class="when">We form a small team of people who have proven themselves in practice.</p></div></li>
+    <li><span class="num">3</span><div><h3>Staged delivery</h3><p class="when">The client sees and accepts every stage. The whole team is accountable.</p></div></li>
+    <li><span class="num">4</span><div><h3>Growth</h3><p class="when">Strong solutions can grow into a product, and the team can become its co-owners.</p></div></li>
+  </ol>
+  <p class="more"><a href="../en/team/">How a team works →</a> · <a href="../en/principles/">Principles →</a></p>
 </section><section class="green">
   <div class="head">
     <h2>What holds the team together</h2>

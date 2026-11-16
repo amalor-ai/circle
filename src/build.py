@@ -8,6 +8,7 @@ import html, json, pathlib, re, sys
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 from content_extra import NAV, TITLE, PAGE_TITLES, DESC, HOME_MORE, LADDER, TEAM, INVESTORS, BOOK, PRODUCT_HOME, PRODUCT_CLIENT, PRODUCT_MEMBER, PIPELINE
 import content_extra
+from content_extra import hero_home
 import content_de  # noqa: F401  (adds the German entries)
 LANGS = ['ru', 'en', 'de']
 LANG_NAME = {'ru': 'Русский', 'en': 'English', 'de': 'Deutsch'}
@@ -77,7 +78,7 @@ def footer(lang, L, logo_link):
 
 def body_for(lang, page, p):
     return {
-        'index': p['hero'] + HOME_MORE[lang] + PRODUCT_HOME[lang] + p['prin'] + p['faq'],
+        'index': hero_home(lang) + '<section class="home-doors">' + re.search(r'(<div class="doors">.*?</div>)\s*</div>\s*</header>', p['hero'], re.S).group(1) + '</section>' + PRODUCT_HOME[lang] + HOME_MORE[lang] + p['prin'] + p['faq'],
         'clients': p['clients'] + PRODUCT_CLIENT[lang] + p['faq'],
         'members': p['members'] + LADDER[lang] + PRODUCT_MEMBER[lang],
         'team': TEAM[lang],

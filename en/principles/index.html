@@ -233,6 +233,36 @@ thead th{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(
 td:first-child{color:var(--muted)}
 td.us,th.us{background:var(--gold-soft)}
 th.us{color:var(--gold)}
+
+/* home hero: continues the green header band, like the book cover */
+.hero-band{position:relative;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:24px 40px;align-items:center;
+  padding-block:24px 40px;color:#FFFFFF;background:radial-gradient(ellipse 40% 55% at 70% 48%,rgba(27,156,147,.42),rgba(27,156,147,0) 70%),#083C3A;box-shadow:0 0 0 100vmax #083C3A;clip-path:inset(0 -100vmax)}
+
+.hb-text{position:relative;display:flex;flex-direction:column;gap:14px;min-width:0}
+.hb-quote{font-style:italic;font-size:15px;color:#9DC3BF;max-width:46ch}
+.hero-band h1{color:#FFFFFF;font-size:clamp(38px,6.4vw,66px);line-height:1.02;letter-spacing:-.025em}
+.hb-sub{font-size:clamp(20px,2.6vw,26px);font-weight:600;color:#ECCF90}
+.hb-tag{font-size:clamp(17px,2vw,20px);color:#C9E4E2;max-width:40ch}
+.hb-lead{font-size:16px;color:#A9CBC7;max-width:52ch}
+.hb-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.btn.ghost{background:transparent;color:#FFFFFF;border:1px solid rgba(236,207,144,.55);box-shadow:none}
+.hb-art{position:relative;display:flex;justify-content:center}
+.hb-art .net{width:100%;max-width:420px;height:auto}
+.hb-money{grid-column:1/-1;margin-top:8px;padding-top:20px;border-top:1px solid rgba(201,228,226,.18);display:flex;flex-direction:column;gap:14px}
+.hb-ex{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#9DC3BF;margin:0}
+.hb-bar{display:flex;gap:3px;height:40px;border-radius:10px;overflow:hidden;font-size:13px;font-weight:700}
+.hb-bar div{display:flex;align-items:center;padding:0 12px;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background:rgba(201,228,226,.14);color:#C9E4E2}
+.hb-bar div:first-child{background:linear-gradient(135deg,#F7E7B0,#E2BF74,#C99A45,#EDCD82);color:#0B2F2D}
+.hb-facts{list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px 28px}
+.hb-facts li{display:flex;flex-direction:column;gap:2px}
+.hb-legend{font-size:14px;color:#A9CBC7;margin:-4px 0 6px}
+.hb-facts b{white-space:nowrap;font-family:var(--display);font-size:clamp(22px,2.4vw,32px);color:#ECCF90;line-height:1.1}
+.hb-facts span{font-size:14px;color:#A9CBC7}
+@media (max-width:760px){.hero-band{grid-template-columns:minmax(0,1fr)}.hero-band h1{font-size:34px}.hb-bar{font-size:11px}.hb-bar div{padding:0 8px}.hb-art{order:-1}.hb-art .net{max-width:220px}.hb-facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (prefers-reduced-motion:no-preference){.hb-art .net{animation:hbspin 120s linear infinite}@keyframes hbspin{to{transform:rotate(360deg)}}}
+.doors.below{margin-top:0}
+section.home-doors{padding-block:40px 20px;border-top:0}
 </style>
 </head>
 <body>

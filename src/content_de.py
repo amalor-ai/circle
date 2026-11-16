@@ -209,3 +209,12 @@ PIPELINE['de'] = '''<section>
   </ol>
   <p class="rule"><b>Kein Auftraggeber – kein Team.</b> Passt es menschlich nicht, stellen wir aus demselben Kreis neu zusammen.</p>
 </section>'''
+
+from content_extra import HERO_HOME
+HERO_HOME['de'] = dict(quote='„Ein Bündel Schilfrohr zerbricht man nicht auf einmal – einzeln aber bricht jeden Halm sogar ein Kind.“',
+    title='Team der letzten Generation', sub='Wie ein Bündel Schilfrohr',
+    tag='Wie man gemeinsam mehr erreicht als allein – und tut, was die Welt braucht',
+    lead='Kleine Teams von Fachleuten lösen Aufgaben, die Menschen brauchen und für die sie zahlen. Wir arbeiten in Etappen, stehen füreinander ein und machen aus den besten Lösungen Produkte – gemeinsam mit unseren Auftraggebern.',
+    b1=('Ich habe eine Aufgabe', 'clients/'), b2=('Ins Team', 'members/'),
+    ex='Beispiel: ein Projekt über 100.000 $', bar=[('Team 80 %',80),('10 %',10),('10 %',10)], legend='80 % an das Team · 10 % an den Organisator · 10 % an den Vermittler (ohne Vermittler 20 % an den Organisator)',
+    facts=[('80.000 $', 'erhält das Team, das die Arbeit gemacht hat'), ('≈ 20.000 $', 'pro Person in einem Viererteam'), ('10.000 $', 'für den Vermittler – für eine Vorstellung'), ('0 $', 'zahlt der Auftraggeber für eine nicht abgenommene Etappe')])
