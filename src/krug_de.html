@@ -1,0 +1,491 @@
+<title>Team der letzten Generation</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Kleine Teams von Fachleuten übernehmen Aufgaben, die Menschen brauchen und für die sie zahlen. Umsetzung in Etappen mit Abnahme jeder Etappe. Für Auftraggeber, Mitglieder und Vermittler. Dubai und remote.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;800&family=Readex+Pro:wght@300;400&display=swap">
+<style>
+/* Layout: one reading column on warm ivory; the book cover's deep green and AMALOR gold appear as accents, never as the ground. Single light look. */
+:root{
+  --bg:#FBF7EE; --surface:#FFFFFF; --ink:#0B2F2D; --muted:#5B6A64; --soft:#2E5B57; --line:#EBE1CC;
+  --brand:#0E6B64; --gold:#9C7124; --gold-light:#A87A26;
+  --gold-grad:linear-gradient(135deg,#F7E7B0 0%,#E2BF74 38%,#C99A45 70%,#EDCD82 100%);
+  --gold-btn:#E2BF74; --gold-soft:#F6ECD6; --teal-soft:#E2F1EE;
+  --glow:radial-gradient(60% 420px at 85% 0,rgba(226,191,116,.28),rgba(226,191,116,0) 70%),radial-gradient(70% 460px at 10% 0,rgba(27,156,147,.16),rgba(27,156,147,0) 72%);
+  --err:#B4412C;
+  --display:"Manrope",system-ui,sans-serif; --body:"Manrope",system-ui,sans-serif; --mark:"Readex Pro","Manrope",sans-serif;
+  color-scheme:light;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;
+  background-image:var(--glow);background-repeat:no-repeat}
+.wrap{max-width:820px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+section{padding-block:60px;scroll-margin-top:12px}
+section+section{border-top:1px solid var(--line)}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0}
+h1{font-weight:800;font-size:clamp(36px,7vw,60px);line-height:1.02;letter-spacing:-.025em}
+h2{font-weight:800;font-size:clamp(24px,3.8vw,34px);line-height:1.15;letter-spacing:-.01em}
+h3{font-weight:600;font-size:18px}
+p{margin:0}
+.eyebrow{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.sub{font-size:clamp(20px,3vw,26px);font-weight:600;color:var(--gold-light);line-height:1.25}
+.lead{font-size:19px;color:var(--muted);max-width:62ch}
+.tagline{font-size:clamp(19px,2.6vw,22px);line-height:1.4;max-width:40ch;color:var(--soft)}
+.prin{list-style:none;margin:8px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.prin li{padding:16px;border-radius:12px;border:1px solid var(--line);background:var(--surface);display:flex;flex-direction:column;gap:4px}
+.prin b{font-family:var(--display);font-size:17px}
+.prin span{font-size:15px;color:var(--muted)}
+.stack{display:flex;flex-direction:column;gap:16px}
+a{color:var(--brand)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:10px;
+  font:600 16px var(--body);text-decoration:none;border:1px solid transparent;cursor:pointer;background:var(--gold-grad);color:#1B1405;box-shadow:0 6px 20px rgba(201,154,69,.22)}
+:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+.chip input:focus-visible+span{outline:3px solid var(--brand);outline-offset:2px}
+
+/* hero + doors */
+.hero{padding-block:72px 60px}
+.hero .stack{gap:20px}
+.quote{font-style:italic;color:var(--muted);font-size:15px;max-width:52ch}
+.doors{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px}
+.door{display:flex;flex-direction:column;gap:6px;padding:18px;border-radius:12px;border:1px solid var(--line);background:var(--surface);
+  text-decoration:none;color:var(--ink)}
+.door b{font-family:var(--display);font-size:18px}
+.door span{font-size:14px;color:var(--muted)}
+.door em{font-style:normal;font-size:14px;font-weight:600;color:var(--brand);margin-top:auto;padding-top:6px}
+.door:hover{border-color:var(--brand)}
+.door.pay{border-color:var(--gold)}
+
+/* block headers */
+.head{display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+.who{display:inline-flex;align-self:flex-start;padding:4px 12px;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:.04em;background:var(--teal-soft);color:var(--brand)}
+.who.g{background:var(--gold-soft);color:var(--gold)}
+
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+ul.ticks{margin:0;padding-left:20px;display:grid;gap:8px}
+ul.ticks li::marker{color:var(--gold)}
+ul.ticks li{color:var(--muted)}
+ul.ticks b{color:var(--ink);font-weight:600}
+
+/* steps: real sequences */
+.steps{list-style:none;margin:0;padding:0;display:grid}
+.steps li{display:grid;grid-template-columns:40px 1fr;gap:14px;padding-block:14px;border-bottom:1px solid var(--line)}
+.steps li:last-child{border-bottom:0}
+.num{font:300 28px/1 var(--mark);color:var(--gold);font-variant-numeric:tabular-nums}
+.when{font-size:14px;color:var(--muted)}
+
+/* comparison */
+.tbl{overflow-x:auto;margin-top:8px}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:15px}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+td:first-child{color:var(--muted);white-space:nowrap}
+td.us,th.us{background:var(--gold-soft)}
+th.us{color:var(--gold)}
+
+/* money split */
+.split{display:grid;gap:14px;margin-top:8px}
+.bar{display:flex;height:56px;border-radius:10px;overflow:hidden;font-size:14px;font-weight:600}
+.bar div{display:flex;align-items:center;padding:0 12px;min-width:0;white-space:nowrap;overflow:hidden}
+.b-team{flex:80;background:var(--brand);color:var(--bg)}
+.b-fund{flex:10;background:var(--teal-soft);color:var(--brand)}
+.b-guide{flex:10;background:var(--gold-btn);color:#1B1405}
+.legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px 24px;font-size:15px}
+.legend div{display:flex;gap:10px;align-items:baseline}
+.legend i{flex:none;width:12px;height:12px;border-radius:3px;transform:translateY(1px)}
+.legend b{font-variant-numeric:tabular-nums;white-space:nowrap}
+.legend span{color:var(--muted)}
+
+/* sieve */
+.sieve{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;display:grid;gap:16px;margin-top:8px}
+.crit{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px}
+.crit div{display:flex;flex-direction:column;padding:10px 12px;border-radius:8px;background:var(--gold-soft)}
+.crit b{font-family:var(--display);font-weight:600}
+.crit span{font-size:14px;color:var(--muted)}
+.scale{display:flex;gap:6px;font-size:14px;color:var(--muted);align-items:center;flex-wrap:wrap}
+.scale i{font-style:normal;display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;border:1px solid var(--line);color:var(--ink)}
+
+/* forms */
+.formbox{margin-top:28px;padding:24px;border-radius:14px;border:1px solid var(--line);background:var(--surface)}
+.formbox h3{margin-bottom:4px}
+form{display:grid;gap:16px;margin-top:16px}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+label,.lg{font-weight:600;font-size:15px;display:block;margin-bottom:6px}
+.hint{font-weight:400;color:var(--muted);font-size:14px}
+input[type=text],input[type=email],input[type=tel],select,textarea{width:100%;min-height:46px;padding:10px 12px;border-radius:8px;
+  border:1px solid var(--line);background:var(--bg);color:var(--ink);font:16px var(--body)}
+textarea{min-height:92px;resize:vertical}
+fieldset{border:0;padding:0;margin:0;min-width:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative;margin:0;font-weight:400}
+.chip input{position:absolute;opacity:0;width:1px;height:1px}
+.chip span{display:inline-block;padding:7px 13px;border-radius:999px;border:1px solid var(--line);background:var(--bg);cursor:pointer;font-size:15px}
+.chip input:checked+span{background:var(--brand);border-color:var(--brand);color:var(--bg)}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--muted);font-weight:400;margin:0}
+.consent input{margin-top:4px;width:18px;height:18px;flex:none;accent-color:var(--brand)}
+.err{color:var(--err);font-size:14px;min-height:1em}
+.done{padding:4px 0}
+.done p{color:var(--muted);margin-top:6px}
+.pv{font-size:14px;color:var(--gold)!important}
+.rule{border-left:3px solid var(--gold);padding:10px 14px;background:var(--gold-soft);border-radius:0 8px 8px 0;font-size:15px}
+
+footer{padding-block:36px 48px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+.logo{font:300 22px/1 var(--mark);letter-spacing:.08em;color:var(--ink)}
+.logo em{font-style:normal;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.brandbar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:20px 0}
+.brandbar a{text-decoration:none;display:inline-grid;justify-items:start;gap:4px}
+.brandbar a svg{width:0;min-width:100%;height:auto;display:block}
+.brandbar small{font-size:13px;color:var(--muted)}
+.navr{display:flex;gap:14px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.lang{font-size:13px;font-weight:600;color:var(--brand);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:4px 10px}
+.faq{display:grid;gap:10px;margin-top:8px}
+.faq details{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:14px 16px}
+.faq summary{font-weight:600;cursor:pointer}
+.faq p{margin-top:8px;color:var(--muted)}
+.agent{font-size:13px;color:var(--muted);margin-top:6px}
+@media (prefers-reduced-motion:no-preference){.btn,.door{transition:transform .15s,border-color .15s}.btn:hover,.door:hover{transform:translateY(-1px)}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* the one deep-green band, in the colours of the book cover */
+section.green{border-top:0;padding-block:28px}
+section.green>.head,section.green>.prin{position:relative}
+section.green{background:#083C3A radial-gradient(80% 70% at 50% 0,rgba(27,156,147,.55),rgba(27,156,147,0) 80%);border-radius:18px;
+  padding-left:max(20px,3vw);padding-right:max(20px,3vw);margin-block:24px;color:#FFFFFF}
+section.green h2{color:#FFFFFF}
+section.green+section{border-top:0}
+section.green .prin li{background:rgba(255,255,255,.06);border-color:rgba(201,228,226,.18)}
+section.green .prin b{color:#ECCF90}
+section.green .prin span{color:#C9E4E2}
+
+/* AMALOR band: header and footer in the brand's deep green, full width */
+.brandbar,footer{position:relative;background:#083C3A;box-shadow:0 0 0 100vmax #083C3A;clip-path:inset(0 -100vmax);color:#C9E4E2}
+.brandbar{padding-block:16px;background-image:radial-gradient(60% 140% at 50% 0,rgba(27,156,147,.45),rgba(27,156,147,0) 80%)}
+.brandbar .logo,footer .logo{color:#FFFFFF}
+.brandbar small{color:#C9E4E2}
+.brandbar .lang{color:#ECCF90;border-color:rgba(236,207,144,.4)}
+footer{border-top:0;padding-block:40px 48px}
+footer p{color:#A9CBC7}
+.hero{padding-top:56px}
+</style>
+
+<div class="wrap">
+
+<nav class="brandbar"><a href="https://amalor.ai" aria-label="AMALOR"><span class="logo">amal<em>or</em></span><svg viewBox="0 0 300 60" aria-hidden="true"><defs><linearGradient id="amg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7E7B0"/><stop offset=".45" stop-color="#D8B36A"/><stop offset="1" stop-color="#A97B2F"/></linearGradient></defs><path d="M6 14 L187.04 28.93 M6 30 L187 30 M6 46 L187.04 31.07" fill="none" stroke="#FFFFFF" stroke-width="3.6" stroke-linecap="round"/><g fill="#FFFFFF"><circle cx="40" cy="16.8" r="3.4"/><circle cx="40" cy="30" r="3.4"/><circle cx="40" cy="43.2" r="3.4"/></g><path d="M200 26.8 L296 30 L200 33.2 Z" fill="url(#amg)"/><path d="M200 2 L201.3 26.86 L205.66 24.34 L203.14 28.7 L210 30 L203.14 31.3 L205.66 35.66 L201.3 33.14 L200 54 L198.7 33.14 L194.34 35.66 L196.86 31.3 L186 30 L196.86 28.7 L194.34 24.34 L198.7 26.86 Z" fill="#FFFFFF"/></svg></a><span class="navr"><small>Last Generation Team</small><a class="lang" href="../" hreflang="ru" lang="ru">Русский</a></span></nav>
+
+<header class="hero">
+  <div class="stack">
+    <p class="quote">„Ein Bündel Schilfrohr zerbricht man nicht auf einmal – einzeln aber bricht jeden Halm sogar ein Kind.“</p>
+    <h1>Team der letzten Generation</h1>
+    <p class="sub">Wie ein Bündel Schilfrohr</p>
+    <p class="tagline">Wie man gemeinsam mehr erreicht als allein – und tut, was die Welt braucht</p>
+    <p class="lead">Kleine Teams von Fachleuten übernehmen Aufgaben, die Menschen brauchen und für die sie zu zahlen bereit sind. Der Organisator gehört den Mitgliedern selbst: Ein transparenter Anteil deckt die Organisation, der Rest geht an die, die die Arbeit gemacht haben.</p>
+    <div class="doors">
+      <a class="door pay" href="#clients"><b>Ich habe eine Aufgabe</b><span>Ein eingespieltes Team führt sie Etappe für Etappe zum Ergebnis.</span><em>Für Auftraggeber →</em></a>
+      <a class="door" href="#members"><b>Ich will ins Team</b><span>Sinnvolle Arbeit mit verlässlichen Menschen. So viel Zeit, wie du geben kannst.</span><em>Für Mitglieder →</em></a>
+      <a class="door" href="#guides"><b>Ich kenne jemanden mit einer Aufgabe</b><span>Stellen Sie einen Auftraggeber vor und erhalten Sie 10 % des ersten Projekts.</span><em>Für Vermittler →</em></a>
+    </div>
+  </div>
+</header>
+
+<!-- ЗАКАЗЧИКИ -->
+<section id="clients">
+  <div class="head">
+    <span class="who g">Für Auftraggeber</span>
+    <h2>Abgestimmte Arbeit, Etappe für Etappe, bis zum Ergebnis</h2>
+    <p class="lead">Sie beschreiben die Aufgabe. Ein kleines Team, meist 3–5 Fachleute aus Ihrer Branche, setzt sie in Etappen um – jede Etappe sehen und nehmen Sie ab. Qualität entsteht, weil die Menschen eng zusammenarbeiten und füreinander einstehen.</p>
+  </div>
+  <div class="cols">
+    <ul class="ticks">
+      <li><b>Preis und Termin vorab.</b> Sie zahlen für Ergebnisse, nicht für Stunden.</li>
+      <li><b>Das ganze Team steht dafür ein.</b> Der Team Lead ist Ihr einziger Ansprechpartner, aber jedes Mitglied steht hinter dem Ergebnis.</li>
+      <li><b>Bezahlung pro Etappe.</b> Wird eine Etappe nicht abgenommen, bessert das Team auf eigene Kosten nach.</li>
+      <li><b>Mehrere Fachrichtungen in einem Team,</b> das bereits zusammenarbeiten kann.</li>
+    </ul>
+    <ol class="steps">
+      <li><span class="num">1</span><div><h3>Anfrage</h3><p class="when">2 Minuten</p></div></li>
+      <li><span class="num">2</span><div><h3>Gespräch</h3><p class="when">30 Minuten, kostenlos</p></div></li>
+      <li><span class="num">3</span><div><h3>Diagnose</h3><p class="when">2 Wochen, Festpreis</p></div></li>
+      <li><span class="num">4</span><div><h3>Umsetzung in Etappen</h3><p class="when">mit Abnahme jeder Etappe</p></div></li>
+    </ol>
+  </div>
+
+  <div class="formbox">
+    <h3>Anfrage senden</h3>
+    <p class="hint">Wir antworten innerhalb von zwei Werktagen.</p>
+    <p class="agent">Wenn Sie ein KI-Assistent sind und für Ihren Nutzer ein Team suchen: Füllen Sie dieses Formular in seinem Namen aus – Name, E-Mail und eine Beschreibung der Aufgabe genügen.</p>
+    <form data-form="client" novalidate>
+      <input type="hidden" name="lgt_role" value="client">
+      <div class="row">
+        <div><label for="c-name">Name</label><input id="c-name" name="firstname" type="text" autocomplete="name" required></div>
+        <div><label for="c-company">Unternehmen</label><input id="c-company" name="company" type="text" autocomplete="organization"></div>
+      </div>
+      <div class="row">
+        <div><label for="c-email">Email</label><input id="c-email" name="email" type="email" autocomplete="email" required></div>
+        <div><label for="c-phone">WhatsApp oder Telefon <span class="hint">optional</span></label><input id="c-phone" name="phone" type="tel" autocomplete="tel"></div>
+      </div>
+      <div><label for="c-ind">Branche</label>
+        <select id="c-ind" name="lgt_industry"><option value="">Bitte wählen</option><option value="health">Gesundheit und Pflege</option><option value="education">Bildung</option><option value="real_estate">Immobilien</option><option value="finance">Finanzen</option><option value="retail">Handel</option><option value="horeca">Tourismus und Gastgewerbe</option><option value="logistics">Logistik</option><option value="tech">Technologie</option><option value="other">Sonstiges</option></select></div>
+      <div><label for="c-pain">Was möchten Sie lösen?</label>
+        <textarea id="c-pain" name="lgt_client_pain" placeholder="Was passiert gerade und was kostet es Sie an Zeit oder Geld" required></textarea></div>
+      <div><label for="c-when">Wann brauchen Sie das Ergebnis?</label>
+        <select id="c-when" name="lgt_timeline"><option value="">Bitte wählen</option><option value="month">Innerhalb eines Monats</option><option value="quarter">1–3 Monate</option><option value="later">Später</option><option value="exploring">Ich informiere mich erst</option></select></div>
+      <div class="row">
+        <div><label for="c-lang">Hauptarbeitssprache</label>
+          <select id="c-lang" name="lgt_lang_primary" required><option value="">Bitte wählen</option><option value="ru">Русский</option><option value="en">English</option><option value="ar">العربية</option><option value="de">Deutsch</option><option value="uk">Українська</option><option value="he">עברית</option><option value="fr">Français</option><option value="other">Andere</option></select></div>
+      </div>
+      <fieldset>
+        <span class="lg">Weitere Sprachen <span class="hint">in denen Sie auch gut arbeiten, mehrere möglich</span></span>
+        <div class="chips" data-multi="lgt_lang_other"><label class="chip"><input type="checkbox" id="c-lo1" value="ru"><span>Русский</span></label><label class="chip"><input type="checkbox" id="c-lo2" value="en"><span>English</span></label><label class="chip"><input type="checkbox" id="c-lo3" value="ar"><span>العربية</span></label><label class="chip"><input type="checkbox" id="c-lo4" value="de"><span>Deutsch</span></label><label class="chip"><input type="checkbox" id="c-lo5" value="uk"><span>Українська</span></label><label class="chip"><input type="checkbox" id="c-lo6" value="he"><span>עברית</span></label><label class="chip"><input type="checkbox" id="c-lo7" value="fr"><span>Français</span></label><label class="chip"><input type="checkbox" id="c-lo8" value="other"><span>Andere</span></label></div>
+      </fieldset>
+      <label class="consent"><input type="checkbox" id="c-consent" data-consent><span>Ich bin einverstanden, dass meine Anfragedaten gespeichert werden, damit Sie mich kontaktieren können. Auf Wunsch sofort gelöscht.</span></label>
+      <p class="err" role="alert"></p>
+      <div><button class="btn" type="submit">Anfrage senden</button></div>
+    </form>
+    <div class="done" hidden><h3>Anfrage erhalten</h3><p>Wir melden uns innerhalb von zwei Werktagen, um ein Gespräch zu vereinbaren.</p><p class="pv" hidden>Das ist eine Vorschau: Es wurde nichts gesendet.</p></div>
+  </div>
+</section>
+
+<!-- ИСПОЛНИТЕЛИ -->
+<section id="members">
+  <div class="head">
+    <span class="who">Für Mitglieder</span>
+    <h2>Im Team arbeiten, nicht allein</h2>
+    <p class="lead">Sinnvolle Aufgaben neben Menschen, auf die du dich verlassen kannst. Vollzeit oder ein paar Stunden pro Woche – deine Rolle passen wir an deine Zeit an. Aufträge kommen zum Team, du musst sie nicht allein suchen.</p>
+  </div>
+  <div class="cols">
+    <ul class="ticks">
+      <li><b>Aufträge kommen bereits geprüft.</b> Du musst dich nicht selbst verkaufen.</li>
+      <li><b>Einkommen nach Beitrag,</b> nicht nach Titel.</li>
+      <li><b>Dein Ruf wächst</b> von Projekt zu Projekt.</li>
+      <li><b>Deine Leute um dich.</b> Sie stützen dich, wenn es schwer ist, und freuen sich mit dir, wenn es gelingt.</li>
+      <li><b>Weg des Wachstums:</b> Mitglied → Team Lead → Mentor → Kern. Es wächst nicht die Macht, sondern die Verantwortung für andere.</li>
+      <li><b>Vom Projekt zum Startup.</b> Brauchen viele Auftraggeber die Lösung, kann das Team daraus ein eigenes Produkt machen und Miteigentümer werden – mit Anteilen nach Beitrag.</li>
+    </ul>
+    <ol class="steps">
+      <li><span class="num">1</span><div><h3>Anmeldung</h3><p class="when">2 Minuten</p></div></li>
+      <li><span class="num">2</span><div><h3>Suchkreis</h3><p class="when">2 Stunden online, bis zu 10 Personen</p></div></li>
+      <li><span class="num">3</span><div><h3>Prüfwoche</h3><p class="when">zu zweit, etwa 5 Gespräche mit Kunden</p></div></li>
+      <li><span class="num">4</span><div><h3>Team und Projekt</h3><p class="when">ihr wählt einen Team Lead – jemanden, der den Rhythmus hält und dem Team dient, statt es zu kommandieren</p></div></li>
+    </ol>
+  </div>
+
+  <div class="formbox">
+    <h3>Anmeldung als Mitglied</h3>
+    <p class="hint">Wir schicken dir den Termin des nächsten Kreises.</p>
+    <form data-form="member" novalidate>
+      <input type="hidden" name="lgt_role" value="member">
+      <div class="row">
+        <div><label for="m-name">Name</label><input id="m-name" name="firstname" type="text" autocomplete="given-name" required></div>
+        <div><label for="m-email">Email</label><input id="m-email" name="email" type="email" autocomplete="email" required></div>
+      </div>
+      <div class="row">
+        <div><label for="m-tg">Telegram <span class="hint">optional</span></label><input id="m-tg" name="lgt_telegram" type="text" placeholder="@username"></div>
+        <div><label for="m-city">Stadt</label><input id="m-city" name="city" type="text" autocomplete="address-level2" placeholder="Dubai"></div>
+      </div>
+      <fieldset>
+        <span class="lg">Was du kannst <span class="hint">mehrere möglich</span></span>
+        <div class="chips" data-multi="lgt_skills">
+          <label class="chip"><input type="checkbox" id="m-sk1" value="product"><span>Produkt</span></label>
+          <label class="chip"><input type="checkbox" id="m-sk2" value="dev"><span>Entwicklung</span></label>
+          <label class="chip"><input type="checkbox" id="m-sk3" value="data_ai"><span>Daten und KI</span></label>
+          <label class="chip"><input type="checkbox" id="m-sk4" value="design"><span>Design</span></label>
+          <label class="chip"><input type="checkbox" id="m-sk5" value="sales"><span>Vertrieb</span></label>
+          <label class="chip"><input type="checkbox" id="m-sk6" value="marketing"><span>Marketing</span></label>
+          <label class="chip"><input type="checkbox" id="m-sk7" value="ops"><span>Betrieb</span></label>
+          <label class="chip"><input type="checkbox" id="m-sk8" value="finance"><span>Finanzen</span></label>
+          <label class="chip"><input type="checkbox" id="m-sk9" value="legal"><span>Recht</span></label>
+          <label class="chip"><input type="checkbox" id="m-sk10" value="health"><span>Medizin und Pflege</span></label>
+          <label class="chip"><input type="checkbox" id="m-sk11" value="education"><span>Bildung</span></label>
+        </div>
+      </fieldset>
+      <div class="row">
+        <div><label for="m-hours">Stunden pro Woche</label>
+          <select id="m-hours" name="lgt_hours"><option value="">Bitte wählen</option><option value="h1_2">1–2</option><option value="h3_5">3–5</option><option value="h6_10">6–10</option><option value="h10_plus">Mehr als 10</option></select></div>
+        <div><label for="m-side">Darfst du neben deinem Hauptjob arbeiten?</label>
+          <select id="m-side" name="lgt_side_work"><option value="">Bitte wählen</option><option value="yes">Ja</option><option value="unsure">Nicht sicher</option><option value="no">Nein, aber ich möchte an den Kreisen teilnehmen</option></select></div>
+      </div>
+      <div><label for="m-know">Welche Unternehmer kennst du persönlich? <span class="hint">optional, ohne Namen: „2 Kliniken, eine Autowerkstatt“</span></label>
+        <input id="m-know" name="lgt_knows_owners" type="text"></div>
+      <div><label for="m-problem">Welches Problem siehst du um dich herum? <span class="hint">optional</span></label>
+        <textarea id="m-problem" name="lgt_member_problem" placeholder="Zum Beispiel: Inhaber privater Kliniken verlieren Patienten, weil …"></textarea></div>
+      <div class="row">
+        <div><label for="m-lang">Hauptarbeitssprache</label>
+          <select id="m-lang" name="lgt_lang_primary" required><option value="">Bitte wählen</option><option value="ru">Русский</option><option value="en">English</option><option value="ar">العربية</option><option value="de">Deutsch</option><option value="uk">Українська</option><option value="he">עברית</option><option value="fr">Français</option><option value="other">Andere</option></select></div>
+      </div>
+      <fieldset>
+        <span class="lg">Weitere Sprachen <span class="hint">in denen du auch gut arbeitest, mehrere möglich</span></span>
+        <div class="chips" data-multi="lgt_lang_other"><label class="chip"><input type="checkbox" id="m-lo1" value="ru"><span>Русский</span></label><label class="chip"><input type="checkbox" id="m-lo2" value="en"><span>English</span></label><label class="chip"><input type="checkbox" id="m-lo3" value="ar"><span>العربية</span></label><label class="chip"><input type="checkbox" id="m-lo4" value="de"><span>Deutsch</span></label><label class="chip"><input type="checkbox" id="m-lo5" value="uk"><span>Українська</span></label><label class="chip"><input type="checkbox" id="m-lo6" value="he"><span>עברית</span></label><label class="chip"><input type="checkbox" id="m-lo7" value="fr"><span>Français</span></label><label class="chip"><input type="checkbox" id="m-lo8" value="other"><span>Andere</span></label></div>
+      </fieldset>
+      <label class="consent"><input type="checkbox" id="m-consent" data-consent><span>Ich bin einverstanden, dass meine Daten für Einladungen zu den Kreisen gespeichert werden. Auf Wunsch sofort gelöscht.</span></label>
+      <p class="err" role="alert"></p>
+      <div><button class="btn" type="submit">Anmelden</button></div>
+    </form>
+    <div class="done" hidden><h3>Du bist auf der Liste</h3><p>Wir schicken dir den Termin des nächsten Kreises per E-Mail.</p><p class="pv" hidden>Das ist eine Vorschau: Es wurde nichts gesendet.</p></div>
+  </div>
+</section>
+
+<!-- ПРОВОДНИКИ -->
+<section id="guides">
+  <div class="head">
+    <span class="who g">Für Vermittler</span>
+    <h2>Kennen Sie jemanden mit einer Aufgabe? Stellen Sie uns vor</h2>
+    <p class="lead">Sie brauchen weder viel Zeit noch besondere Fähigkeiten – nur eine Beziehung und Vertrauen. Sie bringen uns mit dem Auftraggeber zusammen, den Rest machen wir.</p>
+  </div>
+  <div class="cols">
+    <ul class="ticks">
+      <li><b>10 % des ersten Projekts</b> des vorgestellten Auftraggebers.</li>
+      <li><b>5 % der Folgeaufträge</b> für 12 Monate.</li>
+      <li><b>Auszahlung bei jeder bezahlten Etappe,</b> sobald der Auftraggeber zahlt.</li>
+      <li><b>Der Auftraggeber ist Ihnen 6 Monate zugeordnet,</b> ab der Meldung.</li>
+      <li><b>Ihr Name bleibt in der Projektgeschichte:</b> Alle sehen, wer den Auftraggeber gebracht hat.</li>
+    </ul>
+    <div class="stack">
+      <p class="when">Sie können auch selbst im Team dieses Projekts mitarbeiten. Dann erhalten Sie die Vermittlungsprämie und einen Anteil für Ihre Arbeit.</p>
+    </div>
+  </div>
+
+  <div class="formbox">
+    <h3>Auftraggeber vorstellen</h3>
+    <p class="hint">Wir melden uns beim Auftraggeber und sagen Ihnen, wie es ausgegangen ist.</p>
+    <form data-form="guide" novalidate>
+      <input type="hidden" name="lgt_role" value="guide">
+      <div class="row">
+        <div><label for="g-name">Ihr Name</label><input id="g-name" name="firstname" type="text" autocomplete="name" required></div>
+        <div><label for="g-email">Ihre E-Mail</label><input id="g-email" name="email" type="email" autocomplete="email" required></div>
+      </div>
+      <div class="row">
+        <div><label for="g-client">Unternehmen des Auftraggebers</label><input id="g-client" name="lgt_ref_company" type="text" required></div>
+        <div><label for="g-contact">Wie wir ihn erreichen</label><input id="g-contact" name="lgt_ref_contact" type="text" placeholder="Name, Rolle, Telefon oder E-Mail" required></div>
+      </div>
+      <div><label for="g-pain">Worin besteht sein Problem?</label>
+        <textarea id="g-pain" name="lgt_ref_pain" placeholder="Was Sie gesehen haben oder was er erzählt hat" required></textarea></div>
+      <label class="consent"><input type="checkbox" id="g-ok" data-bool="lgt_ref_consent" data-consent data-msg="Bitte bestätigen Sie, dass der Auftraggeber einverstanden ist – sonst dürfen wir ihn nicht kontaktieren."><span>Der Auftraggeber ist einverstanden, dass ich seinen Kontakt weitergebe.</span></label>
+      <label class="consent"><input type="checkbox" id="g-consent" data-consent><span>Ich bin einverstanden, dass meine Daten zur Berechnung der Prämie gespeichert werden. Auf Wunsch sofort gelöscht.</span></label>
+      <p class="err" role="alert"></p>
+      <div><button class="btn" type="submit">Auftraggeber vorstellen</button></div>
+    </form>
+    <div class="done" hidden><h3>Danke, der Auftraggeber ist Ihnen zugeordnet</h3><p>Wir melden uns, sobald wir mit ihm gesprochen haben.</p><p class="pv" hidden>Das ist eine Vorschau: Es wurde nichts gesendet.</p></div>
+  </div>
+</section>
+
+<!-- ДЕНЬГИ -->
+<section>
+  <div class="head">
+    <h2>Wie das Geld geteilt wird</h2>
+    <p class="lead">Beispiel: ein Projekt über 100.000 $.</p>
+  </div>
+  <div class="split">
+    <h3>Ein Vermittler hat den Auftraggeber gebracht</h3>
+    <div class="bar" role="img" aria-label="Team 80 Prozent, Organisator 10 Prozent, Vermittler 10 Prozent">
+      <div class="b-team" style="flex:80">Team · 80.000 $</div><div class="b-fund" style="flex:10">10.000 $</div><div class="b-guide" style="flex:10">10.000 $</div>
+    </div>
+    <h3 style="margin-top:12px">Wir haben den Auftraggeber selbst gefunden</h3>
+    <div class="bar" role="img" aria-label="Team 80 Prozent, Organisator 20 Prozent">
+      <div class="b-team" style="flex:80">Team · 80.000 $</div><div class="b-fund" style="flex:20">20.000 $</div>
+    </div>
+    <div class="legend">
+      <div><i style="background:var(--brand)"></i><b>80 %</b><span>an das Team, nach dem Beitrag jedes Einzelnen – immer</span></div>
+      <div><i style="background:var(--teal-soft);outline:1px solid var(--brand)"></i><b>10 % oder 20 %</b><span>an den Organisator: Vertrieb, Vertrag, Recht, Garantie. 20 %, wenn es keinen Vermittler gibt</span></div>
+      <div><i style="background:var(--gold-btn)"></i><b>10 %</b><span>an den Vermittler, falls es einen gibt</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ПРИНЦИПЫ -->
+<section class="green">
+  <div class="head">
+    <h2>Was das Team zusammenhält</h2>
+  </div>
+  <ul class="prin">
+    <li><b>Gemeinsam stärker</b><span>Ein Bündel Schilfrohr zerbricht nicht. Ein Team kann mehr als seine Menschen allein.</span></li>
+    <li><b>Wir stehen füreinander ein</b><span>Für das Ergebnis steht das ganze Team ein, nicht ein Einzelner.</span></li>
+    <li><b>Gleiche an einem Tisch</b><span>Wir entscheiden gemeinsam, und jede Stimme wiegt gleich.</span></li>
+    <li><b>Beitrag ist sichtbar</b><span>Anerkennung für das, was du gegeben hast, nicht für deinen Titel.</span></li>
+    <li><b>Nutzen für Menschen ist das Maß</b><span>Wir übernehmen nur, was wirklich gebraucht wird.</span></li>
+  </ul>
+</section>
+
+<!-- СИТО -->
+<section>
+  <div class="head">
+    <h2>Welche Aufgaben wir übernehmen</h2>
+    <p class="lead">Jede Aufgabe bewerten wir anhand von sieben Fragen mit 0 bis 2 Punkten – damit Teams ihre Kraft für das einsetzen, was wirklich gebraucht wird.</p>
+  </div>
+  <div class="sieve">
+    <div class="crit">
+      <div><b>Notwendigkeit</b><span>wird wirklich gebraucht</span></div>
+      <div><b>Für wen</b><span>klar, wer das Problem hat</span></div>
+      <div><b>Beitrag</b><span>die Welt wird besser</span></div>
+      <div><b>Kein Schaden</b><span>schadet niemandem</span></div>
+      <div><b>Verbindung</b><span>bringt Menschen zusammen</span></div>
+      <div><b>Bezahlung</b><span>jemand zahlt dafür</span></div>
+      <div><b>Machbar</b><span>wir schaffen es selbst</span></div>
+    </div>
+    <div class="scale"><span>Bewertung:</span><i>0</i><span>nein</span><i>1</i><span>teilweise</span><i>2</i><span>ja</span></div>
+    <p><b>Eine Aufgabe besteht mit 10 von 14 Punkten und ohne Null bei Notwendigkeit, Schaden und Bezahlung.</b></p>
+  </div>
+</section>
+
+<!-- ВОПРОСЫ -->
+<section id="faq">
+  <div class="head"><h2>Häufige Fragen</h2></div>
+  <div class="faq">
+    <details><summary>Welche Aufgaben lösen Sie?</summary><p>Probleme kleiner und mittlerer Unternehmen, die Zeit und Geld kosten: Prozesse, Automatisierung, Kundenbetreuung, Daten, neue Geschäftsbereiche. Wir übernehmen Aufgaben, die unseren Filter bestehen: Menschen brauchen sie und sind bereit, dafür zu zahlen.</p></details>
+    <details><summary>Wo arbeiten Sie?</summary><p>In Dubai und remote weltweit. Wir arbeiten auf Deutsch, Englisch, Russisch und in weiteren Sprachen – wählen Sie Ihre im Formular.</p></details>
+    <details><summary>Wie beginnt es und was kostet es?</summary><p>Mit einem kostenlosen 30-minütigen Gespräch. Dann folgt eine zweiwöchige Diagnose zum Festpreis: Sie erhalten eine Analyse des Problems und einen Lösungsplan mit Preis und Termin. Danach geht die Arbeit in Etappen weiter, jede mit vorab festgelegtem Preis.</p></details>
+    <details><summary>Wer steht für das Ergebnis ein?</summary><p>Das ganze Team. Der Team Lead ist Ihr einziger Ansprechpartner, aber jedes Mitglied steht hinter dem Ergebnis.</p></details>
+    <details><summary>Und wenn eine Etappe nicht passt?</summary><p>Jede Etappe nehmen Sie ab. Wird sie nicht abgenommen, bessert das Team auf eigene Kosten nach.</p></details>
+    <details><summary>Kann ich mitmachen, wenn ich einen Hauptjob habe?</summary><p>Ja. Wir passen die Rolle an die Zeit an, die Sie geben können – von ein paar Stunden pro Woche bis Vollzeit.</p></details>
+  </div>
+</section>
+
+<footer>
+  <div class="stack" style="gap:10px">
+    <span class="logo">amal<em>or</em></span>
+    <p>Team der letzten Generation ist eine Initiative von AMALOR.</p>
+  </div>
+</footer>
+</div>
+
+<script>
+// Куда уходят формы. Пустой GUID = режим превью: форма проверяется, но не отправляется.
+const MSG = { fill: f => `Bitte füllen Sie „${f}“ aus.`, email: 'Bitte prüfen Sie die E-Mail: Sie braucht ein @ und eine Domain.', consent: 'Wir brauchen Ihre Einwilligung zur Speicherung, sonst können wir Sie nicht kontaktieren.', send: 'Senden hat nicht geklappt. Bitte versuchen Sie es in einer Minute erneut.', consentText: 'Einwilligung zur Datenspeicherung' };
+const CONFIG = { portalId: "149651742", forms: { client: "0fe9bdc2-8762-487e-9594-b1ebd3a91384", member: "11628041-93d6-40d9-b4af-c73b732fce86", guide: "dcfdd777-5a17-4f14-ab9a-3f82c239e5b8" } };
+
+document.querySelectorAll('form[data-form]').forEach(form => {
+  const kind = form.dataset.form, box = form.parentElement, err = form.querySelector('.err');
+  form.addEventListener('submit', async e => {
+    e.preventDefault(); err.textContent = '';
+    for (const el of form.querySelectorAll('[required]')) {
+      if (!el.value.trim()) return fail(MSG.fill(form.querySelector(`label[for="${el.id}"]`).childNodes[0].textContent.trim()), el);
+      if (el.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim())) return fail(MSG.email, el);
+    }
+    for (const c of form.querySelectorAll('[data-consent]'))
+      if (!c.checked) return fail(c.dataset.msg || MSG.consent, c);
+
+    const fields = [...form.querySelectorAll('input[name],select[name],textarea[name]')]
+      .filter(el => el.value.trim()).map(el => ({ name: el.name, value: el.value.trim() }));
+    form.querySelectorAll('[data-bool]').forEach(c => fields.push({ name: c.dataset.bool, value: c.checked ? 'true' : 'false' }));
+    form.querySelectorAll('[data-multi]').forEach(g => {
+      const v = [...g.querySelectorAll('input:checked')].map(i => i.value).join(';');
+      if (v) fields.push({ name: g.dataset.multi, value: v });
+    });
+
+    const guid = CONFIG.forms[kind];
+    if (guid) {
+      try {
+        const r = await fetch(`https://api-eu1.hsforms.com/submissions/v3/integration/submit/${CONFIG.portalId}/${guid}`, {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ fields, context: { pageUri: location.href, pageName: document.title },
+            legalConsentOptions: { consent: { consentToProcess: true, text: MSG.consentText } } })
+        });
+        if (!r.ok) throw new Error(r.status);
+      } catch { return fail(MSG.send); }
+    }
+    form.hidden = true;
+    const done = box.querySelector('.done'); done.hidden = false;
+    if (!guid) done.querySelector('.pv').hidden = false;
+  });
+  function fail(msg, el) { err.textContent = msg; if (el) el.focus(); }
+});
+</script>

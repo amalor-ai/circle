@@ -7,6 +7,9 @@ Run:  python3 src/tr_en.py && python3 src/build.py
 import html, json, pathlib, re, sys
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 from content_extra import NAV, TITLE, PAGE_TITLES, DESC, HOME_MORE, LADDER, TEAM, INVESTORS, BOOK, EXTRA_CSS
+import content_de  # noqa: F401  (adds the German entries)
+LANGS = ['ru', 'en', 'de']
+LANG_NAME = {'ru': 'Русский', 'en': 'English', 'de': 'Deutsch'}
 
 SRC = pathlib.Path(__file__).parent
 OUT = SRC.parent
@@ -17,7 +20,7 @@ HIDDEN = {'investors'}                         # reachable by link only, noindex
 
 def path_of(lang, page):
     p = '' if page == 'index' else page + '/'
-    return ('en/' if lang == 'en' else '') + p
+    return ('' if lang == 'ru' else lang + '/') + p
 
 
 def url(lang, page):
@@ -25,7 +28,7 @@ def url(lang, page):
 
 
 def load(lang):
-    s = (SRC / ('krug.html' if lang == 'ru' else 'krug_en.html')).read_text(encoding='utf-8')
+    s = (SRC / {'ru': 'krug.html', 'en': 'krug_en.html', 'de': 'krug_de.html'}[lang]).read_text(encoding='utf-8')
     css = re.search(r'<style>(.*?)</style>', s, re.S).group(1)
     nav = re.search(r'(<nav class="brandbar">.*?</nav>)', s, re.S).group(1)
     logo_link = re.search(r'(<a href="https://amalor.ai" aria-label="AMALOR">.*?</a>)', nav, re.S).group(1)
@@ -53,19 +56,20 @@ def load(lang):
 
 
 def header(lang, page, logo_link, R, L):
-    other = 'en' if lang == 'ru' else 'ru'
-    other_href = R + ('en/' if other == 'en' else '') + ('' if page == 'index' else page + '/')
+    tail = '' if page == 'index' else page + '/'
+    switch = ''.join(f'<a class="lang" href="{R}{"" if o == "ru" else o + "/"}{tail}" hreflang="{o}" lang="{o}">{LANG_NAME[o]}</a>'
+                     for o in LANGS if o != lang)
     logo = logo_link.replace('href="https://amalor.ai"', f'href="{L}"').replace('aria-label="AMALOR"', f'aria-label="{TITLE[lang]}"')
     menu = ''.join(f'<a href="{L}{h}"' + (' aria-current="page"' if h == page + '/' else '') + f'>{t}</a>' for h, t in NAV[lang])
-    return (f'<nav class="brandbar">{logo}<span class="navr"><small>{TITLE[lang]}</small>'
-            f'<a class="lang" href="{other_href}" hreflang="{other}" lang="{other}">{"English" if other == "en" else "Русский"}</a></span>'
+    return (f'<nav class="brandbar">{logo}<span class="navr"><small>{TITLE[lang]}</small>{switch}</span>'
             f'<div class="menu">{menu}</div></nav>')
 
 
 def footer(lang, L, logo_link):
     menu = ''.join(f'<a href="{L}{h}">{t}</a>' for h, t in NAV[lang])
-    line = 'Команда последнего поколения — инициатива <a href="https://amalor.ai" style="color:#ECCF90">AMALOR</a>.' if lang == 'ru' else \
-           'Last Generation Team is an initiative of <a href="https://amalor.ai" style="color:#ECCF90">AMALOR</a>.'
+    a = '<a href="https://amalor.ai" style="color:#ECCF90">AMALOR</a>'
+    line = {'ru': f'Команда последнего поколения — инициатива {a}.', 'en': f'Last Generation Team is an initiative of {a}.',
+            'de': f'Team der letzten Generation ist eine Initiative von {a}.'}[lang]
     return (f'<footer><div class="fl"><div class="stack" style="gap:10px"><span class="logo">amal<em>or</em></span>'
             f'<p>{line}</p><p>hello@amalor.ai</p></div><div class="menu">{menu}</div></div></footer>')
 
@@ -102,14 +106,13 @@ def jsonld(lang, page, desc, faq_html):
 def render(lang, page, css, logo_link, p):
     depth = path_of(lang, page).count('/')
     R = '../' * depth or './'
-    L = R + ('en/' if lang == 'en' else '')
+    L = R + ('' if lang == 'ru' else lang + '/')
     title = PAGE_TITLES[lang][page]
     desc = p['desc'] if page == 'index' else DESC[lang][page]
     body = body_for(lang, page, p).replace('{R}', R).replace('{L}', L)
     robots = '<meta name="robots" content="noindex, nofollow">\n' if page in HIDDEN else ''
-    alts = '' if page in HIDDEN else (f'<link rel="alternate" hreflang="ru" href="{url("ru", page)}">\n'
-                                       f'<link rel="alternate" hreflang="en" href="{url("en", page)}">\n'
-                                       f'<link rel="alternate" hreflang="x-default" href="{url("en", page)}">\n')
+    alts = '' if page in HIDDEN else (''.join(f'<link rel="alternate" hreflang="{l}" href="{url(l, page)}">\n' for l in LANGS)
+                                       + f'<link rel="alternate" hreflang="x-default" href="{url("en", page)}">\n')
     return (f'<!doctype html>\n<html lang="{lang}">\n<head>\n<meta charset="utf-8">\n'
             '<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">\n'
             f'<title>{title}</title>\n<meta name="description" content="{desc}">\n{robots}'
@@ -126,7 +129,7 @@ def render(lang, page, css, logo_link, p):
 
 
 def main():
-    for lang in ('ru', 'en'):
+    for lang in LANGS:
         css, logo_link, p = load(lang)
         for page in PAGES:
             out = OUT / path_of(lang, page) / 'index.html'
@@ -135,8 +138,8 @@ def main():
     pub = [pg for pg in PAGES if pg not in HIDDEN]
     (OUT / 'sitemap.xml').write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
-        + ''.join(f'  <url><loc>{url(l, pg)}</loc><xhtml:link rel="alternate" hreflang="ru" href="{url("ru", pg)}"/>'
-                  f'<xhtml:link rel="alternate" hreflang="en" href="{url("en", pg)}"/></url>\n' for pg in pub for l in ('en', 'ru'))
+        + ''.join(f'  <url><loc>{url(l, pg)}</loc>' + ''.join(f'<xhtml:link rel="alternate" hreflang="{a}" href="{url(a, pg)}"/>' for a in LANGS)
+                  + '</url>\n' for pg in pub for l in LANGS)
         + '</urlset>\n', encoding='utf-8')
     (OUT / 'robots.txt').write_text(
         'User-agent: *\nAllow: /\n\n# AI assistants and search: welcome\n'
@@ -161,8 +164,9 @@ def main():
 ## Pages
 ''' + ''.join(f'- [{PAGE_TITLES["en"][pg]}]({url("en", pg)})\n' for pg in pub)
       + ''.join(f'- [{PAGE_TITLES["ru"][pg]}]({url("ru", pg)})\n' for pg in pub)
+      + ''.join(f'- [{PAGE_TITLES["de"][pg]}]({url("de", pg)})\n' for pg in pub)
       + '- Organiser: [AMALOR](https://amalor.ai), hello@amalor.ai\n', encoding='utf-8')
-    print('built', len(PAGES) * 2, 'pages into', OUT)
+    print('built', len(PAGES) * len(LANGS), 'pages into', OUT)
 
 
 if __name__ == '__main__':
