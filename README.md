@@ -4,4 +4,4 @@
 
 - `index.html` — вся страница (стили и скрипт внутри).
 - Формы отправляются в HubSpot (Forms API v3, портал 149651742). ID форм задаются в `CONFIG` внизу `index.html`; пустой ID = режим превью.
-- Публикация: любой push в `main` → GitHub Actions → Pages.
+- Публикация: GitHub Pages «Deploy from a branch», ветка `main`, папка `/` (root). Любой push в `main` публикуется сам.
