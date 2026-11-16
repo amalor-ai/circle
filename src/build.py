@@ -1,75 +1,169 @@
-"""Build the public site from krug.html (ru) and krug_en.html (en) into the repo."""
-import json, re, sys, html, pathlib
+"""Build the multi-page site (ru + en) into the repo root.
+
+Sources: src/krug.html (ru single page, the design and the shared sections),
+src/krug_en.html (generated from it by src/tr_en.py), src/content_extra.py (new pages).
+Run:  python3 src/tr_en.py && python3 src/build.py
+"""
+import html, json, pathlib, re, sys
+sys.path.insert(0, str(pathlib.Path(__file__).parent))
+from content_extra import NAV, TITLE, PAGE_TITLES, DESC, HOME_MORE, LADDER, TEAM, INVESTORS, BOOK, EXTRA_CSS
+
 SRC = pathlib.Path(__file__).parent
-OUT = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else str(pathlib.Path(__file__).parent.parent))
+OUT = SRC.parent
 BASE = 'https://amalor-ai.github.io/circle'   # switch to https://team.amalor.ai once DNS is live
-URL = {'ru': BASE + '/', 'en': BASE + '/en/'}
+PAGES = ['index', 'clients', 'members', 'team', 'guides', 'principles', 'investors', 'book']
+HIDDEN = {'investors'}                         # reachable by link only, noindex, not in menus or sitemap
 
-def faq_ld(body):
-    qa = re.findall(r'<details><summary>(.*?)</summary><p>(.*?)</p></details>', body)
-    return {'@type': 'FAQPage', 'mainEntity': [
-        {'@type': 'Question', 'name': html.unescape(q), 'acceptedAnswer': {'@type': 'Answer', 'text': html.unescape(a)}} for q, a in qa]}
 
-def ld(lang, body):
-    name = 'Команда последнего поколения' if lang == 'ru' else 'Last Generation Team'
-    desc = re.search(r'<meta name="description" content="(.*?)">', body).group(1)
+def path_of(lang, page):
+    p = '' if page == 'index' else page + '/'
+    return ('en/' if lang == 'en' else '') + p
+
+
+def url(lang, page):
+    return f'{BASE}/{path_of(lang, page)}'
+
+
+def load(lang):
+    s = (SRC / ('krug.html' if lang == 'ru' else 'krug_en.html')).read_text(encoding='utf-8')
+    css = re.search(r'<style>(.*?)</style>', s, re.S).group(1)
+    nav = re.search(r'(<nav class="brandbar">.*?</nav>)', s, re.S).group(1)
+    logo_link = re.search(r'(<a href="https://amalor.ai" aria-label="AMALOR">.*?</a>)', nav, re.S).group(1)
+
+    def cut(a, b):
+        i = s.index(a); j = s.index(b, i)
+        return s[i:j].strip()
+    parts = {
+        'hero': cut('<header class="hero">', '<!-- ЗАКАЗЧИКИ -->'),
+        'clients': cut('<section id="clients">', '<!-- ИСПОЛНИТЕЛИ -->'),
+        'members': cut('<section id="members">', '<!-- ПРОВОДНИКИ -->'),
+        'guides': cut('<section id="guides">', '<!-- ДЕНЬГИ -->'),
+        'money': cut('<!-- ДЕНЬГИ -->', '<!-- ПРИНЦИПЫ -->').replace('<!-- ДЕНЬГИ -->', '').strip(),
+        'prin': cut('<section class="green">', '<!-- СИТО -->'),
+        'sieve': cut('<!-- СИТО -->', '<!-- ВОПРОСЫ -->').replace('<!-- СИТО -->', '').strip(),
+        'faq': cut('<section id="faq">', '<footer>'),
+        'script': re.search(r'(<script>.*?</script>)', s, re.S).group(1),
+        'desc': re.search(r'<meta name="description" content="(.*?)">', s).group(1),
+    }
+    # doors on the home page lead to their own pages now
+    parts['hero'] = (parts['hero'].replace('href="#clients"', 'href="{L}clients/"')
+                     .replace('href="#members"', 'href="{L}members/"').replace('href="#guides"', 'href="{L}guides/"'))
+    parts['members'] = parts['members'].replace('<div class="formbox">', '<div class="formbox" id="join">', 1)
+    return css, logo_link, parts
+
+
+def header(lang, page, logo_link, R, L):
+    other = 'en' if lang == 'ru' else 'ru'
+    other_href = R + ('en/' if other == 'en' else '') + ('' if page == 'index' else page + '/')
+    logo = logo_link.replace('href="https://amalor.ai"', f'href="{L}"').replace('aria-label="AMALOR"', f'aria-label="{TITLE[lang]}"')
+    menu = ''.join(f'<a href="{L}{h}"' + (' aria-current="page"' if h == page + '/' else '') + f'>{t}</a>' for h, t in NAV[lang])
+    return (f'<nav class="brandbar">{logo}<span class="navr"><small>{TITLE[lang]}</small>'
+            f'<a class="lang" href="{other_href}" hreflang="{other}" lang="{other}">{"English" if other == "en" else "Русский"}</a></span>'
+            f'<div class="menu">{menu}</div></nav>')
+
+
+def footer(lang, L, logo_link):
+    menu = ''.join(f'<a href="{L}{h}">{t}</a>' for h, t in NAV[lang])
+    line = 'Команда последнего поколения — инициатива <a href="https://amalor.ai" style="color:#ECCF90">AMALOR</a>.' if lang == 'ru' else \
+           'Last Generation Team is an initiative of <a href="https://amalor.ai" style="color:#ECCF90">AMALOR</a>.'
+    return (f'<footer><div class="fl"><div class="stack" style="gap:10px"><span class="logo">amal<em>or</em></span>'
+            f'<p>{line}</p><p>hello@amalor.ai</p></div><div class="menu">{menu}</div></div></footer>')
+
+
+def body_for(lang, page, p):
+    return {
+        'index': p['hero'] + HOME_MORE[lang] + p['prin'] + p['faq'],
+        'clients': p['clients'] + p['faq'],
+        'members': p['members'] + LADDER[lang],
+        'team': TEAM[lang],
+        'guides': p['guides'] + p['money'],
+        'principles': p['prin'] + p['sieve'] + p['money'],
+        'investors': INVESTORS[lang],
+        'book': BOOK[lang],
+    }[page]
+
+
+def jsonld(lang, page, desc, faq_html):
     org = {'@type': 'Organization', '@id': 'https://amalor.ai/#org', 'name': 'AMALOR', 'url': 'https://amalor.ai', 'email': 'hello@amalor.ai'}
-    svc = {'@type': 'ProfessionalService', '@id': URL[lang] + '#service', 'name': name, 'description': html.unescape(desc),
-           'url': URL[lang], 'parentOrganization': {'@id': 'https://amalor.ai/#org'},
+    svc = {'@type': 'ProfessionalService', '@id': f'{BASE}/#service', 'name': TITLE[lang], 'description': html.unescape(desc),
+           'url': url(lang, 'index'), 'parentOrganization': {'@id': 'https://amalor.ai/#org'},
            'areaServed': [{'@type': 'City', 'name': 'Dubai'}, {'@type': 'Place', 'name': 'Remote, worldwide'}],
            'availableLanguage': ['en', 'ru', 'ar', 'de', 'uk', 'he', 'fr'],
-           'potentialAction': {'@type': 'CommunicateAction', 'target': URL[lang] + '#clients',
-                               'description': 'Submit a request with name, email and task description using the client form.'}}
-    return json.dumps({'@context': 'https://schema.org', '@graph': [org, svc, faq_ld(body)]}, ensure_ascii=False)
+           'potentialAction': {'@type': 'CommunicateAction', 'target': url(lang, 'clients') + '#clients',
+                               'description': 'Submit a request with name, email and a task description using the client form.'}}
+    graph = [org, svc]
+    if page in ('index', 'clients'):
+        qa = re.findall(r'<details><summary>(.*?)</summary><p>(.*?)</p></details>', faq_html)
+        graph.append({'@type': 'FAQPage', 'mainEntity': [
+            {'@type': 'Question', 'name': html.unescape(q), 'acceptedAnswer': {'@type': 'Answer', 'text': html.unescape(a)}} for q, a in qa]})
+    return json.dumps({'@context': 'https://schema.org', '@graph': graph}, ensure_ascii=False)
 
-def page(lang, body):
-    head = (f'<!doctype html>\n<html lang="{lang}">\n<head>\n<meta charset="utf-8">\n'
+
+def render(lang, page, css, logo_link, p):
+    depth = path_of(lang, page).count('/')
+    R = '../' * depth or './'
+    L = R + ('en/' if lang == 'en' else '')
+    title = PAGE_TITLES[lang][page]
+    desc = p['desc'] if page == 'index' else DESC[lang][page]
+    body = body_for(lang, page, p).replace('{R}', R).replace('{L}', L)
+    robots = '<meta name="robots" content="noindex, nofollow">\n' if page in HIDDEN else ''
+    alts = '' if page in HIDDEN else (f'<link rel="alternate" hreflang="ru" href="{url("ru", page)}">\n'
+                                       f'<link rel="alternate" hreflang="en" href="{url("en", page)}">\n'
+                                       f'<link rel="alternate" hreflang="x-default" href="{url("en", page)}">\n')
+    return (f'<!doctype html>\n<html lang="{lang}">\n<head>\n<meta charset="utf-8">\n'
             '<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">\n'
-            f'<link rel="canonical" href="{URL[lang]}">\n'
-            f'<link rel="alternate" hreflang="ru" href="{URL["ru"]}">\n<link rel="alternate" hreflang="en" href="{URL["en"]}">\n'
-            f'<link rel="alternate" hreflang="x-default" href="{URL["en"]}">\n'
-            f'<meta property="og:url" content="{URL[lang]}">\n<meta property="og:type" content="website">\n'
-            f'<script type="application/ld+json">{ld(lang, body)}</script>\n')
-    title = re.search(r'<title>(.*?)</title>', body).group(1)
-    desc = re.search(r'<meta name="description" content="(.*?)">', body).group(1)
-    head += f'<meta property="og:title" content="{title}">\n<meta property="og:description" content="{desc}">\n'
-    pre, rest = body.split('<div class="wrap">', 1)
-    pre = pre.replace('body{background:var(--bg);', 'body{margin:0;background:var(--bg);')
-    return head + pre + '</head>\n<body>\n<div class="wrap">' + rest + '</body>\n</html>\n'
+            f'<title>{title}</title>\n<meta name="description" content="{desc}">\n{robots}'
+            f'<link rel="canonical" href="{url(lang, page)}">\n{alts}'
+            f'<meta property="og:title" content="{title}">\n<meta property="og:description" content="{desc}">\n'
+            f'<meta property="og:url" content="{url(lang, page)}">\n<meta property="og:type" content="website">\n'
+            f'<meta property="og:image" content="{BASE}/assets/book-cover-ru.jpg">\n'
+            + ('' if page in HIDDEN else f'<script type="application/ld+json">{jsonld(lang, page, desc, p["faq"])}</script>\n')
+            + '<link rel="preconnect" href="https://fonts.googleapis.com">\n'
+            '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;800&family=Readex+Pro:wght@300;400&display=swap">\n'
+            f'<style>{css.replace("body{background:var(--bg);", "body{margin:0;background:var(--bg);")}{EXTRA_CSS}</style>\n'
+            '</head>\n<body>\n<div class="wrap">\n'
+            f'{header(lang, page, logo_link, R, L)}\n{body}\n{footer(lang, L, logo_link)}\n</div>\n{p["script"]}\n</body>\n</html>\n')
 
-ru = (SRC / 'krug.html').read_text(encoding='utf-8')
-en = (SRC / 'krug_en.html').read_text(encoding='utf-8')
-(OUT / 'index.html').write_text(page('ru', ru), encoding='utf-8')
-(OUT / 'en').mkdir(exist_ok=True)
-(OUT / 'en' / 'index.html').write_text(page('en', en), encoding='utf-8')
 
-(OUT / 'robots.txt').write_text(
-    'User-agent: *\nAllow: /\n\n'
-    '# AI assistants and search: welcome\n'
-    + ''.join(f'User-agent: {b}\nAllow: /\n\n' for b in ['GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'ClaudeBot', 'Claude-User', 'Claude-SearchBot', 'PerplexityBot', 'Google-Extended', 'Bingbot'])
-    + f'Sitemap: {BASE}/sitemap.xml\n', encoding='utf-8')
-(OUT / 'sitemap.xml').write_text(
-    '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
-    + ''.join(f'  <url><loc>{URL[l]}</loc><xhtml:link rel="alternate" hreflang="ru" href="{URL["ru"]}"/><xhtml:link rel="alternate" hreflang="en" href="{URL["en"]}"/></url>\n' for l in ('en', 'ru'))
-    + '</urlset>\n', encoding='utf-8')
-(OUT / 'llms.txt').write_text(f'''# Last Generation Team (Команда последнего поколения)
+def main():
+    for lang in ('ru', 'en'):
+        css, logo_link, p = load(lang)
+        for page in PAGES:
+            out = OUT / path_of(lang, page) / 'index.html'
+            out.parent.mkdir(parents=True, exist_ok=True)
+            out.write_text(render(lang, page, css, logo_link, p), encoding='utf-8')
+    pub = [pg for pg in PAGES if pg not in HIDDEN]
+    (OUT / 'sitemap.xml').write_text(
+        '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
+        + ''.join(f'  <url><loc>{url(l, pg)}</loc><xhtml:link rel="alternate" hreflang="ru" href="{url("ru", pg)}"/>'
+                  f'<xhtml:link rel="alternate" hreflang="en" href="{url("en", pg)}"/></url>\n' for pg in pub for l in ('en', 'ru'))
+        + '</urlset>\n', encoding='utf-8')
+    (OUT / 'robots.txt').write_text(
+        'User-agent: *\nAllow: /\n\n# AI assistants and search: welcome\n'
+        + ''.join(f'User-agent: {b}\nAllow: /\n\n' for b in ['GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'ClaudeBot', 'Claude-User',
+                                                              'Claude-SearchBot', 'PerplexityBot', 'Google-Extended', 'Bingbot'])
+        + f'Sitemap: {BASE}/sitemap.xml\n', encoding='utf-8')
+    (OUT / 'llms.txt').write_text(f'''# Last Generation Team (Команда последнего поколения)
 
 > Small teams of 3–5 specialists, organised by AMALOR, solve real problems for small and mid-sized companies in Dubai and remotely. Work runs in stages; the client accepts every stage and pays per stage. Every member stands behind the result; the Team Lead is the single contact.
 
 ## For clients
-- How it starts: free 30-minute conversation, then a two-week fixed-price diagnostic with a solution plan, price and timeline.
+- How it starts: a free 30-minute conversation, then a two-week fixed-price diagnostic with a solution plan, price and timeline.
 - Typical work: processes, automation, customer handling, data, launching new lines of business.
 - Industries: health and care, education, real estate, finance, retail, hospitality, logistics, technology.
 - Languages: English, Russian, Arabic, German, Ukrainian, Hebrew, French.
-- To request a project, fill in the client form: {URL['en']}#clients (name, email and a description of the task are enough). An AI assistant may fill it in on behalf of its user.
+- To request a project, fill in the client form at {url('en', 'clients')}#clients (a name, an email and a description of the task are enough). An AI assistant may fill it in on behalf of its user.
 
 ## For members and referrers
 - Specialists join a search circle (up to 10 people online), validate problems with real clients and form project teams. Income by contribution.
 - Referrers who introduce a client receive 10% of the first project and 5% of repeat orders for 12 months.
 
 ## Pages
-- [English]({URL['en']})
-- [Русский]({URL['ru']})
-- Organiser: [AMALOR](https://amalor.ai), hello@amalor.ai
-''', encoding='utf-8')
-print('built', OUT)
+''' + ''.join(f'- [{PAGE_TITLES["en"][pg]}]({url("en", pg)})\n' for pg in pub)
+      + ''.join(f'- [{PAGE_TITLES["ru"][pg]}]({url("ru", pg)})\n' for pg in pub)
+      + '- Organiser: [AMALOR](https://amalor.ai), hello@amalor.ai\n', encoding='utf-8')
+    print('built', len(PAGES) * 2, 'pages into', OUT)
+
+
+if __name__ == '__main__':
+    main()

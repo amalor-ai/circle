@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>How a team works — Last Generation Team</title>
+<meta name="description" content="The weekly rhythm, the six-week cycle, the team agreement and how the process improves itself.">
+<link rel="canonical" href="https://amalor-ai.github.io/circle/en/team/">
+<link rel="alternate" hreflang="ru" href="https://amalor-ai.github.io/circle/team/">
+<link rel="alternate" hreflang="en" href="https://amalor-ai.github.io/circle/en/team/">
+<link rel="alternate" hreflang="x-default" href="https://amalor-ai.github.io/circle/en/team/">
+<meta property="og:title" content="How a team works — Last Generation Team">
+<meta property="og:description" content="The weekly rhythm, the six-week cycle, the team agreement and how the process improves itself.">
+<meta property="og:url" content="https://amalor-ai.github.io/circle/en/team/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://amalor-ai.github.io/circle/assets/book-cover-ru.jpg">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://amalor.ai/#org", "name": "AMALOR", "url": "https://amalor.ai", "email": "hello@amalor.ai"}, {"@type": "ProfessionalService", "@id": "https://amalor-ai.github.io/circle/#service", "name": "Last Generation Team", "description": "The weekly rhythm, the six-week cycle, the team agreement and how the process improves itself.", "url": "https://amalor-ai.github.io/circle/en/", "parentOrganization": {"@id": "https://amalor.ai/#org"}, "areaServed": [{"@type": "City", "name": "Dubai"}, {"@type": "Place", "name": "Remote, worldwide"}], "availableLanguage": ["en", "ru", "ar", "de", "uk", "he", "fr"], "potentialAction": {"@type": "CommunicateAction", "target": "https://amalor-ai.github.io/circle/en/clients/#clients", "description": "Submit a request with name, email and a task description using the client form."}}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;800&family=Readex+Pro:wght@300;400&display=swap">
+<style>
+/* Layout: one reading column on warm ivory; the book cover's deep green and AMALOR gold appear as accents, never as the ground. Single light look. */
+:root{
+  --bg:#FBF7EE; --surface:#FFFFFF; --ink:#0B2F2D; --muted:#5B6A64; --soft:#2E5B57; --line:#EBE1CC;
+  --brand:#0E6B64; --gold:#9C7124; --gold-light:#A87A26;
+  --gold-grad:linear-gradient(135deg,#F7E7B0 0%,#E2BF74 38%,#C99A45 70%,#EDCD82 100%);
+  --gold-btn:#E2BF74; --gold-soft:#F6ECD6; --teal-soft:#E2F1EE;
+  --glow:radial-gradient(60% 420px at 85% 0,rgba(226,191,116,.28),rgba(226,191,116,0) 70%),radial-gradient(70% 460px at 10% 0,rgba(27,156,147,.16),rgba(27,156,147,0) 72%);
+  --err:#B4412C;
+  --display:"Manrope",system-ui,sans-serif; --body:"Manrope",system-ui,sans-serif; --mark:"Readex Pro","Manrope",sans-serif;
+  color-scheme:light;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;
+  background-image:var(--glow);background-repeat:no-repeat}
+.wrap{max-width:820px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+section{padding-block:60px;scroll-margin-top:12px}
+section+section{border-top:1px solid var(--line)}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0}
+h1{font-weight:800;font-size:clamp(36px,7vw,60px);line-height:1.02;letter-spacing:-.025em}
+h2{font-weight:800;font-size:clamp(24px,3.8vw,34px);line-height:1.15;letter-spacing:-.01em}
+h3{font-weight:600;font-size:18px}
+p{margin:0}
+.eyebrow{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.sub{font-size:clamp(20px,3vw,26px);font-weight:600;color:var(--gold-light);line-height:1.25}
+.lead{font-size:19px;color:var(--muted);max-width:62ch}
+.tagline{font-size:clamp(19px,2.6vw,22px);line-height:1.4;max-width:40ch;color:var(--soft)}
+.prin{list-style:none;margin:8px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.prin li{padding:16px;border-radius:12px;border:1px solid var(--line);background:var(--surface);display:flex;flex-direction:column;gap:4px}
+.prin b{font-family:var(--display);font-size:17px}
+.prin span{font-size:15px;color:var(--muted)}
+.stack{display:flex;flex-direction:column;gap:16px}
+a{color:var(--brand)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:10px;
+  font:600 16px var(--body);text-decoration:none;border:1px solid transparent;cursor:pointer;background:var(--gold-grad);color:#1B1405;box-shadow:0 6px 20px rgba(201,154,69,.22)}
+:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+.chip input:focus-visible+span{outline:3px solid var(--brand);outline-offset:2px}
+
+/* hero + doors */
+.hero{padding-block:72px 60px}
+.hero .stack{gap:20px}
+.quote{font-style:italic;color:var(--muted);font-size:15px;max-width:52ch}
+.doors{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px}
+.door{display:flex;flex-direction:column;gap:6px;padding:18px;border-radius:12px;border:1px solid var(--line);background:var(--surface);
+  text-decoration:none;color:var(--ink)}
+.door b{font-family:var(--display);font-size:18px}
+.door span{font-size:14px;color:var(--muted)}
+.door em{font-style:normal;font-size:14px;font-weight:600;color:var(--brand);margin-top:auto;padding-top:6px}
+.door:hover{border-color:var(--brand)}
+.door.pay{border-color:var(--gold)}
+
+/* block headers */
+.head{display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+.who{display:inline-flex;align-self:flex-start;padding:4px 12px;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:.04em;background:var(--teal-soft);color:var(--brand)}
+.who.g{background:var(--gold-soft);color:var(--gold)}
+
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+ul.ticks{margin:0;padding-left:20px;display:grid;gap:8px}
+ul.ticks li::marker{color:var(--gold)}
+ul.ticks li{color:var(--muted)}
+ul.ticks b{color:var(--ink);font-weight:600}
+
+/* steps: real sequences */
+.steps{list-style:none;margin:0;padding:0;display:grid}
+.steps li{display:grid;grid-template-columns:40px 1fr;gap:14px;padding-block:14px;border-bottom:1px solid var(--line)}
+.steps li:last-child{border-bottom:0}
+.num{font:300 28px/1 var(--mark);color:var(--gold);font-variant-numeric:tabular-nums}
+.when{font-size:14px;color:var(--muted)}
+
+/* comparison */
+.tbl{overflow-x:auto;margin-top:8px}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:15px}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+td:first-child{color:var(--muted);white-space:nowrap}
+td.us,th.us{background:var(--gold-soft)}
+th.us{color:var(--gold)}
+
+/* money split */
+.split{display:grid;gap:14px;margin-top:8px}
+.bar{display:flex;height:56px;border-radius:10px;overflow:hidden;font-size:14px;font-weight:600}
+.bar div{display:flex;align-items:center;padding:0 12px;min-width:0;white-space:nowrap;overflow:hidden}
+.b-team{flex:80;background:var(--brand);color:var(--bg)}
+.b-fund{flex:10;background:var(--teal-soft);color:var(--brand)}
+.b-guide{flex:10;background:var(--gold-btn);color:#1B1405}
+.legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px 24px;font-size:15px}
+.legend div{display:flex;gap:10px;align-items:baseline}
+.legend i{flex:none;width:12px;height:12px;border-radius:3px;transform:translateY(1px)}
+.legend b{font-variant-numeric:tabular-nums;white-space:nowrap}
+.legend span{color:var(--muted)}
+
+/* sieve */
+.sieve{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;display:grid;gap:16px;margin-top:8px}
+.crit{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px}
+.crit div{display:flex;flex-direction:column;padding:10px 12px;border-radius:8px;background:var(--gold-soft)}
+.crit b{font-family:var(--display);font-weight:600}
+.crit span{font-size:14px;color:var(--muted)}
+.scale{display:flex;gap:6px;font-size:14px;color:var(--muted);align-items:center;flex-wrap:wrap}
+.scale i{font-style:normal;display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;border:1px solid var(--line);color:var(--ink)}
+
+/* forms */
+.formbox{margin-top:28px;padding:24px;border-radius:14px;border:1px solid var(--line);background:var(--surface)}
+.formbox h3{margin-bottom:4px}
+form{display:grid;gap:16px;margin-top:16px}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+label,.lg{font-weight:600;font-size:15px;display:block;margin-bottom:6px}
+.hint{font-weight:400;color:var(--muted);font-size:14px}
+input[type=text],input[type=email],input[type=tel],select,textarea{width:100%;min-height:46px;padding:10px 12px;border-radius:8px;
+  border:1px solid var(--line);background:var(--bg);color:var(--ink);font:16px var(--body)}
+textarea{min-height:92px;resize:vertical}
+fieldset{border:0;padding:0;margin:0;min-width:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative;margin:0;font-weight:400}
+.chip input{position:absolute;opacity:0;width:1px;height:1px}
+.chip span{display:inline-block;padding:7px 13px;border-radius:999px;border:1px solid var(--line);background:var(--bg);cursor:pointer;font-size:15px}
+.chip input:checked+span{background:var(--brand);border-color:var(--brand);color:var(--bg)}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--muted);font-weight:400;margin:0}
+.consent input{margin-top:4px;width:18px;height:18px;flex:none;accent-color:var(--brand)}
+.err{color:var(--err);font-size:14px;min-height:1em}
+.done{padding:4px 0}
+.done p{color:var(--muted);margin-top:6px}
+.pv{font-size:14px;color:var(--gold)!important}
+.rule{border-left:3px solid var(--gold);padding:10px 14px;background:var(--gold-soft);border-radius:0 8px 8px 0;font-size:15px}
+
+footer{padding-block:36px 48px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+.logo{font:300 22px/1 var(--mark);letter-spacing:.08em;color:var(--ink)}
+.logo em{font-style:normal;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.brandbar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:20px 0}
+.brandbar a{text-decoration:none;display:inline-grid;justify-items:start;gap:4px}
+.brandbar a svg{width:0;min-width:100%;height:auto;display:block}
+.brandbar small{font-size:13px;color:var(--muted)}
+.navr{display:flex;gap:14px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.lang{font-size:13px;font-weight:600;color:var(--brand);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:4px 10px}
+.faq{display:grid;gap:10px;margin-top:8px}
+.faq details{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:14px 16px}
+.faq summary{font-weight:600;cursor:pointer}
+.faq p{margin-top:8px;color:var(--muted)}
+.agent{font-size:13px;color:var(--muted);margin-top:6px}
+@media (prefers-reduced-motion:no-preference){.btn,.door{transition:transform .15s,border-color .15s}.btn:hover,.door:hover{transform:translateY(-1px)}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* the one deep-green band, in the colours of the book cover */
+section.green{border-top:0;padding-block:28px}
+section.green>.head,section.green>.prin{position:relative}
+section.green{background:#083C3A radial-gradient(80% 70% at 50% 0,rgba(27,156,147,.55),rgba(27,156,147,0) 80%);border-radius:18px;
+  padding-left:max(20px,3vw);padding-right:max(20px,3vw);margin-block:24px;color:#FFFFFF}
+section.green h2{color:#FFFFFF}
+section.green+section{border-top:0}
+section.green .prin li{background:rgba(255,255,255,.06);border-color:rgba(201,228,226,.18)}
+section.green .prin b{color:#ECCF90}
+section.green .prin span{color:#C9E4E2}
+
+/* AMALOR band: header and footer in the brand's deep green, full width */
+.brandbar,footer{position:relative;background:#083C3A;box-shadow:0 0 0 100vmax #083C3A;clip-path:inset(0 -100vmax);color:#C9E4E2}
+.brandbar{padding-block:16px;background-image:radial-gradient(60% 140% at 50% 0,rgba(27,156,147,.45),rgba(27,156,147,0) 80%)}
+.brandbar .logo,footer .logo{color:#FFFFFF}
+.brandbar small{color:#C9E4E2}
+.brandbar .lang{color:#ECCF90;border-color:rgba(236,207,144,.4)}
+footer{border-top:0;padding-block:40px 48px}
+footer p{color:#A9CBC7}
+.hero{padding-top:56px}
+
+/* multi-page additions */
+.menu{display:flex;flex-wrap:wrap;gap:4px 16px;padding-block:0 14px}
+.menu a{color:#C9E4E2;text-decoration:none;font-size:14px;font-weight:500;padding:4px 0;border-bottom:2px solid transparent}
+.menu a:hover,.menu a[aria-current]{color:#FFFFFF;border-bottom-color:#E2BF74}
+.brandbar{flex-wrap:wrap}
+.brandbar .menu{flex-basis:100%}
+.hero.small{padding-block:48px 24px}
+.hero.small h1{font-size:clamp(30px,5vw,46px)}
+.more{margin-top:20px;font-weight:600}
+.ladder{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:12px}
+.ladder li{display:grid;grid-template-columns:40px 1fr;gap:14px;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.ladder li:nth-child(2){margin-left:24px}.ladder li:nth-child(3){margin-left:48px}.ladder li:nth-child(4){margin-left:72px}
+@media (max-width:560px){.ladder li{margin-left:0!important}}
+.ladder p:not(.when){margin-top:6px;color:var(--muted);font-size:15px}
+.rule{margin-top:16px;border-left:3px solid var(--gold);padding:10px 14px;background:var(--gold-soft);border-radius:0 8px 8px 0;font-size:15px}
+.week{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.week>div{padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.week h3{margin:4px 0 6px}.week p:not(.when){color:var(--muted);font-size:15px}
+.cycle{display:flex;flex-wrap:wrap;gap:6px}
+.cycle span{flex:1 1 80px;text-align:center;padding:10px 6px;border-radius:8px;background:var(--teal-soft);color:var(--brand);font-size:14px;font-weight:600}
+.cycle .retro{flex-basis:130px;background:var(--gold-soft);color:var(--gold)}
+.cycle .pause{flex-basis:130px;background:transparent;border:1px dashed var(--line);color:var(--muted)}
+.contract{margin:8px 0 0;padding-left:22px;display:grid;gap:10px}
+.contract li::marker{color:var(--gold);font-weight:700}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-top:20px}
+.metrics div{display:flex;flex-direction:column;padding:12px;border-radius:10px;background:var(--gold-soft)}
+.metrics span{font-size:14px;color:var(--muted)}
+.prin.plain li{background:var(--surface)}
+.passport{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+.passport div{display:flex;flex-direction:column}
+.passport span{font-size:13px;color:var(--muted)}
+.book{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:36px;align-items:center;border-top:0}
+.book img{width:100%;height:auto;border-radius:6px;box-shadow:0 18px 40px rgba(8,60,58,.25)}
+@media (max-width:640px){.book{grid-template-columns:1fr}.book img{max-width:260px}}
+footer .menu{padding:0}
+footer .fl{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:flex-start}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav class="brandbar"><a href="../../en/" aria-label="Last Generation Team"><span class="logo">amal<em>or</em></span><svg viewBox="0 0 300 60" aria-hidden="true"><defs><linearGradient id="amg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7E7B0"/><stop offset=".45" stop-color="#D8B36A"/><stop offset="1" stop-color="#A97B2F"/></linearGradient></defs><path d="M6 14 L187.04 28.93 M6 30 L187 30 M6 46 L187.04 31.07" fill="none" stroke="#FFFFFF" stroke-width="3.6" stroke-linecap="round"/><g fill="#FFFFFF"><circle cx="40" cy="16.8" r="3.4"/><circle cx="40" cy="30" r="3.4"/><circle cx="40" cy="43.2" r="3.4"/></g><path d="M200 26.8 L296 30 L200 33.2 Z" fill="url(#amg)"/><path d="M200 2 L201.3 26.86 L205.66 24.34 L203.14 28.7 L210 30 L203.14 31.3 L205.66 35.66 L201.3 33.14 L200 54 L198.7 33.14 L194.34 35.66 L196.86 31.3 L186 30 L196.86 28.7 L194.34 24.34 L198.7 26.86 Z" fill="#FFFFFF"/></svg></a><span class="navr"><small>Last Generation Team</small><a class="lang" href="../../team/" hreflang="ru" lang="ru">Русский</a></span><div class="menu"><a href="../../en/clients/">Clients</a><a href="../../en/members/">Members</a><a href="../../en/team/" aria-current="page">How a team works</a><a href="../../en/guides/">Referrers</a><a href="../../en/principles/">Principles</a><a href="../../en/book/">Book</a></div></nav>
+<header class="hero small">
+  <div class="stack">
+    <p class="eyebrow">How a team works</p>
+    <h1>A rhythm that keeps people together</h1>
+    <p class="lead">About three hours of meetings a week — compatible with a main job. Every meeting starts with a goal and ends with a decision.</p>
+  </div>
+</header>
+<section>
+  <div class="head"><h2>The week</h2></div>
+  <div class="week">
+    <div><p class="when">Mon · 30 minutes</p><h3>Circle</h3><p>The goal in one sentence. Everyone speaks in turn for about a minute, no debate. Each person names their main task and where they need help.</p></div>
+    <div><p class="when">Tue–Thu · no meetings</p><h3>Work and client visits</h3><p>A short update in chat: what I did, where I am stuck. Whoever is stuck gets help — and everyone sees it.</p></div>
+    <div><p class="when">Fri · 45 minutes</p><h3>Demo and recognition round</h3><p>What we learned from clients and what we built. Everyone names something valuable another person did.</p></div>
+  </div>
+</section>
+<section>
+  <div class="head">
+    <h2>The cycle — 6 weeks of work and a pause</h2>
+    <p class="lead">At the end of each cycle the team decides: continue, change course or part ways.</p>
+  </div>
+  <div class="cycle" aria-label="Six weeks of work, then a big retrospective and a pause">
+    <span>Wk 1</span><span>Wk 2</span><span>Wk 3</span><span>Wk 4</span><span>Wk 5</span><span>Wk 6</span><span class="retro">Retro · 90 min</span><span class="pause">Pause 1–2 wks</span>
+  </div>
+  <div class="cols" style="margin-top:20px">
+    <div><h3>The big retrospective</h3>
+      <ul class="ticks"><li>What I learned from each person</li><li>My mistake and what I will do about it</li><li>Where I took, where I gave</li><li>One change to the process</li></ul></div>
+    <div><h3>Once a quarter — the big circle</h3>
+      <ul class="ticks"><li>Roles and the Team Lead are confirmed by consent — by what was done, not by sympathy</li><li>Recognition for helping others is the main reason for honour</li><li>A contribution to the common fund that launches new teams</li></ul></div>
+  </div>
+</section>
+<section>
+  <div class="head">
+    <h2>The team agreement</h2>
+    <p class="lead">Signed on day one and re-read at every big retrospective.</p>
+  </div>
+  <ol class="contract">
+    <li>We own the result together: if one is stuck, it is everyone’s task.</li>
+    <li>About teammates we speak of what is valuable. About our own mistakes each speaks for themselves.</li>
+    <li>At meetings we are fully present: no phones, no parallel work.</li>
+    <li>We decide by consent: a decision passes if there are no reasoned objections.</li>
+    <li>In a disagreement we first restate the other’s position until they agree.</li>
+    <li>Helping others is visible and valued above personal achievements.</li>
+    <li>Saying “this is hard for me” is normal and safe. Two people will pick up the tasks.</li>
+    <li>Roles, including the Team Lead, are confirmed by the team every quarter.</li>
+  </ol>
+</section>
+<section>
+  <div class="head"><h2>The process improves itself</h2></div>
+  <ol class="steps">
+    <li><span class="num">1</span><div><h3>Team retro</h3><p class="when">must produce one change</p></div></li>
+    <li><span class="num">2</span><div><h3>Checked by the cycle</h3><p class="when">did the team’s health indicators improve?</p></div></li>
+    <li><span class="num">3</span><div><h3>Circle of teams</h3><p class="when">monthly: what worked for others</p></div></li>
+    <li><span class="num">4</span><div><h3>Shared playbook</h3><p class="when">a new version for all teams</p></div></li>
+  </ol>
+  <div class="metrics">
+    <div><b>Learning speed</b><span>hypotheses tested with clients per week</span></div>
+    <div><b>Reliability</b><span>share of promises kept</span></div>
+    <div><b>Safety</b><span>a short survey once per cycle</span></div>
+    <div><b>Equal voice</b><span>how evenly people speak in meetings</span></div>
+  </div>
+</section>
+<footer><div class="fl"><div class="stack" style="gap:10px"><span class="logo">amal<em>or</em></span><p>Last Generation Team is an initiative of <a href="https://amalor.ai" style="color:#ECCF90">AMALOR</a>.</p><p>hello@amalor.ai</p></div><div class="menu"><a href="../../en/clients/">Clients</a><a href="../../en/members/">Members</a><a href="../../en/team/">How a team works</a><a href="../../en/guides/">Referrers</a><a href="../../en/principles/">Principles</a><a href="../../en/book/">Book</a></div></div></footer>
+</div>
+<script>
+// Куда уходят формы. Пустой GUID = режим превью: форма проверяется, но не отправляется.
+const MSG = { fill: f => `Please fill in “${f}”.`, email: 'Please check the email: it needs an @ and a domain.', consent: 'We need your consent to store the data, otherwise we cannot contact you.', send: 'Could not send. Please try again in a minute.', consentText: 'Consent to data storage' };
+const CONFIG = { portalId: "149651742", forms: { client: "0fe9bdc2-8762-487e-9594-b1ebd3a91384", member: "11628041-93d6-40d9-b4af-c73b732fce86", guide: "dcfdd777-5a17-4f14-ab9a-3f82c239e5b8" } };
+
+document.querySelectorAll('form[data-form]').forEach(form => {
+  const kind = form.dataset.form, box = form.parentElement, err = form.querySelector('.err');
+  form.addEventListener('submit', async e => {
+    e.preventDefault(); err.textContent = '';
+    for (const el of form.querySelectorAll('[required]')) {
+      if (!el.value.trim()) return fail(MSG.fill(form.querySelector(`label[for="${el.id}"]`).childNodes[0].textContent.trim()), el);
+      if (el.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim())) return fail(MSG.email, el);
+    }
+    for (const c of form.querySelectorAll('[data-consent]'))
+      if (!c.checked) return fail(c.dataset.msg || MSG.consent, c);
+
+    const fields = [...form.querySelectorAll('input[name],select[name],textarea[name]')]
+      .filter(el => el.value.trim()).map(el => ({ name: el.name, value: el.value.trim() }));
+    form.querySelectorAll('[data-bool]').forEach(c => fields.push({ name: c.dataset.bool, value: c.checked ? 'true' : 'false' }));
+    form.querySelectorAll('[data-multi]').forEach(g => {
+      const v = [...g.querySelectorAll('input:checked')].map(i => i.value).join(';');
+      if (v) fields.push({ name: g.dataset.multi, value: v });
+    });
+
+    const guid = CONFIG.forms[kind];
+    if (guid) {
+      try {
+        const r = await fetch(`https://api-eu1.hsforms.com/submissions/v3/integration/submit/${CONFIG.portalId}/${guid}`, {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ fields, context: { pageUri: location.href, pageName: document.title },
+            legalConsentOptions: { consent: { consentToProcess: true, text: MSG.consentText } } })
+        });
+        if (!r.ok) throw new Error(r.status);
+      } catch { return fail(MSG.send); }
+    }
+    form.hidden = true;
+    const done = box.querySelector('.done'); done.hidden = false;
+    if (!guid) done.querySelector('.pv').hidden = false;
+  });
+  function fail(msg, el) { err.textContent = msg; if (el) el.focus(); }
+});
+</script>
+</body>
+</html>

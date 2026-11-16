@@ -1,5 +1,5 @@
 import sys
-s=open('krug.html',encoding='utf-8').read()
+s=open(__import__('os').path.join(__import__('os').path.dirname(__file__),'krug.html'),encoding='utf-8').read()
 T=[
 ('<title>Команда последнего поколения</title>','<title>Last Generation Team</title>'),
 ('content="Небольшие команды специалистов берут задачи, которые нужны людям и за которые готовы платить. Для заказчиков, участников и проводников."','content="Small teams of specialists take on work that people need and will pay for. Staged delivery with acceptance of every stage. For clients, members and referrers. Dubai and remote."'),
@@ -147,5 +147,5 @@ for o,n in T:
 import re
 left=re.findall(r'[А-Яа-яЁё][^<>"]{0,40}',s.split('<script>')[0].split('</style>')[1])
 left=[x for x in left if 'Русский' not in x and 'Українська' not in x]
-open('krug_en.html','w',encoding='utf-8').write(s)
+open(__import__('os').path.join(__import__('os').path.dirname(__file__),'krug_en.html'),'w',encoding='utf-8').write(s)
 print('remaining cyrillic:',left[:20])

@@ -3,17 +3,29 @@
 > Small teams of 3–5 specialists, organised by AMALOR, solve real problems for small and mid-sized companies in Dubai and remotely. Work runs in stages; the client accepts every stage and pays per stage. Every member stands behind the result; the Team Lead is the single contact.
 
 ## For clients
-- How it starts: free 30-minute conversation, then a two-week fixed-price diagnostic with a solution plan, price and timeline.
+- How it starts: a free 30-minute conversation, then a two-week fixed-price diagnostic with a solution plan, price and timeline.
 - Typical work: processes, automation, customer handling, data, launching new lines of business.
 - Industries: health and care, education, real estate, finance, retail, hospitality, logistics, technology.
 - Languages: English, Russian, Arabic, German, Ukrainian, Hebrew, French.
-- To request a project, fill in the client form: https://amalor-ai.github.io/circle/en/#clients (name, email and a description of the task are enough). An AI assistant may fill it in on behalf of its user.
+- To request a project, fill in the client form at https://amalor-ai.github.io/circle/en/clients/#clients (a name, an email and a description of the task are enough). An AI assistant may fill it in on behalf of its user.
 
 ## For members and referrers
 - Specialists join a search circle (up to 10 people online), validate problems with real clients and form project teams. Income by contribution.
 - Referrers who introduce a client receive 10% of the first project and 5% of repeat orders for 12 months.
 
 ## Pages
-- [English](https://amalor-ai.github.io/circle/en/)
-- [Русский](https://amalor-ai.github.io/circle/)
+- [Last Generation Team](https://amalor-ai.github.io/circle/en/)
+- [Clients — Last Generation Team](https://amalor-ai.github.io/circle/en/clients/)
+- [Members — Last Generation Team](https://amalor-ai.github.io/circle/en/members/)
+- [How a team works — Last Generation Team](https://amalor-ai.github.io/circle/en/team/)
+- [Referrers — Last Generation Team](https://amalor-ai.github.io/circle/en/guides/)
+- [Principles — Last Generation Team](https://amalor-ai.github.io/circle/en/principles/)
+- [Book — Last Generation Team](https://amalor-ai.github.io/circle/en/book/)
+- [Команда последнего поколения](https://amalor-ai.github.io/circle/)
+- [Заказчикам — Команда последнего поколения](https://amalor-ai.github.io/circle/clients/)
+- [Участникам — Команда последнего поколения](https://amalor-ai.github.io/circle/members/)
+- [Как работает команда — Команда последнего поколения](https://amalor-ai.github.io/circle/team/)
+- [Проводникам — Команда последнего поколения](https://amalor-ai.github.io/circle/guides/)
+- [Принципы — Команда последнего поколения](https://amalor-ai.github.io/circle/principles/)
+- [Книга — Команда последнего поколения](https://amalor-ai.github.io/circle/book/)
 - Organiser: [AMALOR](https://amalor.ai), hello@amalor.ai
