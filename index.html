@@ -9,24 +9,22 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;800&family=Readex+Pro:wght@300;400&display=swap">
 <style>
-/* Layout: one reading column on a deep-green ground; three doors up top, the money split bar is the one bold moment. */
+/* Layout: one reading column on warm ivory; the book cover's deep green and AMALOR gold appear as accents, never as the ground. Single light look. */
 :root{
-  --bg:#F3F7F6; --surface:#FFFFFF; --ink:#0C2725; --muted:#4D6967; --line:#D3E2E0;
-  --brand:#0B5A55; --gold:#9A6E1F; --gold-btn:#D9B25E; --gold-soft:#F6EBD2; --teal-soft:#DDEFEC; --glow:rgba(27,156,147,.14);
+  --bg:#FBF7EE; --surface:#FFFFFF; --ink:#0B2F2D; --muted:#5B6A64; --soft:#2E5B57; --line:#EBE1CC;
+  --brand:#0E6B64; --gold:#9C7124; --gold-light:#A87A26;
+  --gold-grad:linear-gradient(135deg,#F7E7B0 0%,#E2BF74 38%,#C99A45 70%,#EDCD82 100%);
+  --gold-btn:#E2BF74; --gold-soft:#F6ECD6; --teal-soft:#E2F1EE;
+  --glow:radial-gradient(60% 420px at 85% 0,rgba(226,191,116,.28),rgba(226,191,116,0) 70%),radial-gradient(70% 460px at 10% 0,rgba(27,156,147,.16),rgba(27,156,147,0) 72%);
+  --err:#B4412C;
   --display:"Manrope",system-ui,sans-serif; --body:"Manrope",system-ui,sans-serif; --mark:"Readex Pro","Manrope",sans-serif;
   color-scheme:light;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#072F2D; --surface:#0B3D3A; --ink:#F2F7F6; --muted:#A9C9C5; --line:#1D5450;
-  --brand:#6ED3C9; --gold:#E2BF74; --gold-btn:#E2BF74; --gold-soft:rgba(226,191,116,.12); --teal-soft:rgba(110,211,201,.12); --glow:rgba(27,156,147,.45); color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#072F2D; --surface:#0B3D3A; --ink:#F2F7F6; --muted:#A9C9C5; --line:#1D5450;
-  --brand:#6ED3C9; --gold:#E2BF74; --gold-btn:#E2BF74; --gold-soft:rgba(226,191,116,.12); --teal-soft:rgba(110,211,201,.12); --glow:rgba(27,156,147,.45); color-scheme:dark}
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;
-  background-image:radial-gradient(70% 460px at 50% 0,var(--glow),transparent 75%);background-repeat:no-repeat}
+  background-image:var(--glow);background-repeat:no-repeat}
 .wrap{max-width:820px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 section{padding-block:60px;scroll-margin-top:12px}
 section+section{border-top:1px solid var(--line)}
@@ -36,9 +34,9 @@ h2{font-weight:800;font-size:clamp(24px,3.8vw,34px);line-height:1.15;letter-spac
 h3{font-weight:600;font-size:18px}
 p{margin:0}
 .eyebrow{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:600}
-.sub{font-size:clamp(20px,3vw,26px);font-weight:600;color:var(--gold);line-height:1.25}
+.sub{font-size:clamp(20px,3vw,26px);font-weight:600;color:var(--gold-light);line-height:1.25}
 .lead{font-size:19px;color:var(--muted);max-width:62ch}
-.tagline{font-size:clamp(19px,2.6vw,22px);line-height:1.4;max-width:40ch}
+.tagline{font-size:clamp(19px,2.6vw,22px);line-height:1.4;max-width:40ch;color:var(--soft)}
 .prin{list-style:none;margin:8px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
 .prin li{padding:16px;border-radius:12px;border:1px solid var(--line);background:var(--surface);display:flex;flex-direction:column;gap:4px}
 .prin b{font-family:var(--display);font-size:17px}
@@ -46,7 +44,7 @@ p{margin:0}
 .stack{display:flex;flex-direction:column;gap:16px}
 a{color:var(--brand)}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:10px;
-  font:600 16px var(--body);text-decoration:none;border:1px solid transparent;cursor:pointer;background:var(--gold-btn);color:#1B1405}
+  font:600 16px var(--body);text-decoration:none;border:1px solid transparent;cursor:pointer;background:var(--gold-grad);color:#1B1405;box-shadow:0 6px 20px rgba(201,154,69,.22)}
 :focus-visible{outline:3px solid var(--brand);outline-offset:2px}
 .chip input:focus-visible+span{outline:3px solid var(--brand);outline-offset:2px}
 
@@ -130,7 +128,7 @@ fieldset{border:0;padding:0;margin:0;min-width:0}
 .chip input:checked+span{background:var(--brand);border-color:var(--brand);color:var(--bg)}
 .consent{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--muted);font-weight:400;margin:0}
 .consent input{margin-top:4px;width:18px;height:18px;flex:none;accent-color:var(--brand)}
-.err{color:#C2412D;font-size:14px;min-height:1em}
+.err{color:var(--err);font-size:14px;min-height:1em}
 .done{padding:4px 0}
 .done p{color:var(--muted);margin-top:6px}
 .pv{font-size:14px;color:var(--gold)!important}
@@ -138,14 +136,31 @@ fieldset{border:0;padding:0;margin:0;min-width:0}
 
 footer{padding-block:36px 48px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
 .logo{font:300 22px/1 var(--mark);letter-spacing:.08em;color:var(--ink)}
-.logo em{font-style:normal;color:var(--gold)}
+.logo em{font-style:normal;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.brandbar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:20px 0}
+.brandbar a{text-decoration:none;display:inline-grid;justify-items:start;gap:4px}
+.brandbar a svg{width:0;min-width:100%;height:auto;display:block}
+.brandbar small{font-size:13px;color:var(--muted)}
 @media (prefers-reduced-motion:no-preference){.btn,.door{transition:transform .15s,border-color .15s}.btn:hover,.door:hover{transform:translateY(-1px)}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* the one deep-green band, in the colours of the book cover */
+section.green{border-top:0;padding-block:28px}
+section.green>.head,section.green>.prin{position:relative}
+section.green{background:#083C3A radial-gradient(80% 70% at 50% 0,rgba(27,156,147,.55),rgba(27,156,147,0) 80%);border-radius:18px;
+  padding-left:max(20px,3vw);padding-right:max(20px,3vw);margin-block:24px;color:#FFFFFF}
+section.green h2{color:#FFFFFF}
+section.green+section{border-top:0}
+section.green .prin li{background:rgba(255,255,255,.06);border-color:rgba(201,228,226,.18)}
+section.green .prin b{color:#ECCF90}
+section.green .prin span{color:#C9E4E2}
 </style>
 
 </head>
 <body>
 <div class="wrap">
+
+<nav class="brandbar"><a href="https://amalor.ai" aria-label="AMALOR"><span class="logo">amal<em>or</em></span><svg viewBox="0 0 300 60" aria-hidden="true"><defs><linearGradient id="amg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7E7B0"/><stop offset=".45" stop-color="#D8B36A"/><stop offset="1" stop-color="#A97B2F"/></linearGradient></defs><path d="M6 14 L187.04 28.93 M6 30 L187 30 M6 46 L187.04 31.07" fill="none" stroke="#0B2F2D" stroke-width="3.6" stroke-linecap="round"/><g fill="#0B2F2D"><circle cx="40" cy="16.8" r="3.4"/><circle cx="40" cy="30" r="3.4"/><circle cx="40" cy="43.2" r="3.4"/></g><path d="M200 26.8 L296 30 L200 33.2 Z" fill="url(#amg)"/><path d="M200 2 L201.3 26.86 L205.66 24.34 L203.14 28.7 L210 30 L203.14 31.3 L205.66 35.66 L201.3 33.14 L200 54 L198.7 33.14 L194.34 35.66 L196.86 31.3 L186 30 L196.86 28.7 L194.34 24.34 L198.7 26.86 Z" fill="#0B2F2D"/></svg></a><small>Команда последнего поколения</small></nav>
 
 <header class="hero">
   <div class="stack">
@@ -155,9 +170,9 @@ footer{padding-block:36px 48px;border-top:1px solid var(--line);font-size:14px;c
     <p class="tagline">Как вместе получить больше, чем в одиночку, — и делать то, что нужно миру</p>
     <p class="lead">Небольшие команды специалистов берут задачи, которые нужны людям и за которые готовы платить. Организатор принадлежит самим участникам: прозрачная доля идёт на организацию, остальное — тем, кто сделал работу.</p>
     <div class="doors">
-      <a class="door pay" href="#clients"><b>Есть задача</b><span>Соберём команду под ваш результат: цена, срок, один ответственный.</span><em>Для заказчиков →</em></a>
+      <a class="door pay" href="#clients"><b>Есть задача</b><span>Сплочённая команда ведёт её по этапам до результата.</span><em>Для заказчиков →</em></a>
       <a class="door" href="#members"><b>Хочу в команду</b><span>Задачи со смыслом, вместе с надёжными людьми. Столько времени, сколько можешь дать.</span><em>Для участников →</em></a>
-      <a class="door" href="#guides"><b>Знаю, кому нужна команда</b><span>Приведите заказчика и получите 10% от первого проекта.</span><em>Для проводников →</em></a>
+      <a class="door" href="#guides"><b>Знаю, у кого есть задача</b><span>Приведите заказчика и получите 10% от первого проекта.</span><em>Для проводников →</em></a>
     </div>
   </div>
 </header>
@@ -166,8 +181,8 @@ footer{padding-block:36px 48px;border-top:1px solid var(--line);font-size:14px;c
 <section id="clients">
   <div class="head">
     <span class="who g">Заказчикам</span>
-    <h2>Готовая команда под ваш результат</h2>
-    <p class="lead">Вы описываете проблему. Мы собираем небольшую команду, обычно 3–5 специалистов, которые разбираются в вашей отрасли, и отвечаем за результат вместе.</p>
+    <h2>Слаженная работа по этапам — до результата</h2>
+    <p class="lead">Вы описываете задачу. Небольшая команда, обычно 3–5 специалистов из вашей отрасли, ведёт её по этапам, и каждый этап вы видите и принимаете. Качество рождается из того, что люди работают сплочённо и отвечают друг за друга.</p>
   </div>
   <div class="cols">
     <ul class="ticks">
@@ -302,7 +317,7 @@ footer{padding-block:36px 48px;border-top:1px solid var(--line);font-size:14px;c
 <section id="guides">
   <div class="head">
     <span class="who g">Проводникам</span>
-    <h2>Знаете, кому нужна команда? Приведите</h2>
+    <h2>Знаете, у кого есть задача? Познакомьте нас</h2>
     <p class="lead">Не нужно ни много времени, ни особых навыков: только знакомство и доверие. Вы сводите нас с заказчиком — мы делаем остальное.</p>
   </div>
   <div class="cols">
@@ -366,7 +381,7 @@ footer{padding-block:36px 48px;border-top:1px solid var(--line);font-size:14px;c
 </section>
 
 <!-- ПРИНЦИПЫ -->
-<section>
+<section class="green">
   <div class="head">
     <h2>На чём держится команда</h2>
   </div>
