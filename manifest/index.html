@@ -101,6 +101,11 @@ footer.end{text-align:center;font-size:13px;color:var(--soft);padding:26px}
  .intro .cols,.beliefs ol,.inv{grid-template-columns:1fr}.big4,.path,.owners{grid-template-columns:1fr 1fr}.src ul{columns:1}
  .intro .big{font-size:22px}.rings .it text{font-size:17px}.bar .team{font-size:15px;padding-left:12px}
  table,thead,tbody,tr,th,td{display:block}thead{display:none}tbody th{width:auto;border:0;padding-bottom:0}td{border:0;padding-top:2px}tr{border-bottom:1px solid var(--line);padding:6px 0}}
+/* blue thread */
+.bar{box-shadow:0 0 0 1.5px #6FB7E6}.topbar .dl{box-shadow:0 0 0 1.5px #6FB7E6}
+.big4 div{border:1px solid rgba(111,183,230,.55);border-radius:14px;padding:14px}
+.beliefs .n{box-shadow:0 0 0 1.5px #6FB7E6}.path div:last-child{box-shadow:0 0 0 1.5px #6FB7E6}
+.intro .center{box-shadow:inset 0 0 0 1.5px #6FB7E6}
 @page{size:A4;margin:0}
 @media print{.topbar{display:none}.cover,.page{height:297mm;overflow:hidden}.page{break-before:page}.sheet{max-width:none;padding:22mm 20mm}
  footer.end{display:none}.beliefs ol{gap:10px;margin-top:18px}.beliefs li{padding:14px 16px 14px 60px}.beliefs .n{left:16px;top:14px;width:32px;height:32px}
@@ -118,7 +123,7 @@ footer.end{text-align:center;font-size:13px;color:var(--soft);padding:26px}
  <linearGradient id="tab" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7E7B0"/><stop offset="1" stop-color="#C99A45"/></linearGradient>
 </defs>
 <rect x="80" y="60" width="440" height="270" fill="url(#tl)"/>
-<path d="M300 0 L300 250" stroke="url(#beam)" stroke-width="2.2"/><circle cx="300" cy="248" r="22" fill="#FFF4D2" opacity=".18"/>
+<path d="M300 0 L300 250" stroke="url(#beam)" stroke-width="2.2"/><path d="M300 0 L300 250" stroke="#6FB7E6" stroke-width=".9" opacity=".8"/><circle cx="300" cy="248" r="22" fill="#FFF4D2" opacity=".18"/>
 <ellipse cx="300" cy="312" rx="230" ry="16" fill="#000" opacity=".2"/>
 <g fill="none" stroke="url(#tg)" stroke-linecap="round" stroke-linejoin="round">
  <path d="M168 132 L168 300 M432 132 L432 300" stroke-width="1.6" opacity=".45"/>
@@ -253,13 +258,13 @@ footer.end{text-align:center;font-size:13px;color:var(--soft);padding:26px}
 var c=document.getElementById('sphere');if(!c||!c.getContext)return;var x=c.getContext('2d');
 var still=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 function fib(n,R){var p=[],g=Math.PI*(3-Math.sqrt(5));for(var i=0;i<n;i++){var y=1-(i+.5)/n*2,r=Math.sqrt(1-y*y),t=g*i;p.push([Math.cos(t)*r*R,y*R,Math.sin(t)*r*R]);}return p;}
-var S=[{n:10,R:.30,col:[247,231,176],size:5.2,line:.75},{n:26,R:.62,col:[236,207,144],size:3.2,line:.38},{n:64,R:.95,col:[157,195,191],size:2.2,line:.22}];
+var S=[{n:10,R:.30,col:[247,231,176],size:5.2,line:.75},{n:26,R:.62,col:[236,207,144],size:3.2,line:.38},{n:64,R:.95,col:[157,195,191],size:2.2,line:.22},{col:[111,183,230],line:.7}];
 var P=[],E=[];S.forEach(function(s,k){fib(s.n,s.R).forEach(function(q){P.push({p:q,k:k});});});
 function d2(a,b){var dx=a.p[0]-b.p[0],dy=a.p[1]-b.p[1],dz=a.p[2]-b.p[2];return dx*dx+dy*dy+dz*dz;}
 function near(i,k,m){return P.map(function(q,j){return [j,q]}).filter(function(e){return e[1].k===k&&e[0]!==i}).sort(function(a,b){return d2(P[i],a[1])-d2(P[i],b[1])}).slice(0,m).map(function(e){return e[0]});}
 var seen={};function add(i,j,k){var key=i<j?i+'-'+j:j+'-'+i;if(seen[key])return;seen[key]=1;E.push([i,j,k]);}
 P.forEach(function(q,i){if(q.k===0){P.forEach(function(r,j){if(r.k===0&&j>i)add(i,j,0);});}
- else{near(i,q.k,3).forEach(function(j){add(i,j,q.k);});near(i,q.k-1,1).forEach(function(j){add(i,j,q.k);});}});
+ else{near(i,q.k,3).forEach(function(j){add(i,j,q.k);});near(i,q.k-1,1).forEach(function(j){add(i,j,3);});}});
 var a=0.6,tilt=-.38,W=0,H=0,dpr=1;
 function size(){var r=c.getBoundingClientRect();dpr=Math.min(window.devicePixelRatio||1,2);W=r.width;H=r.width;c.width=W*dpr;c.height=H*dpr;c.style.height=H+'px';x.setTransform(dpr,0,0,dpr,0,0);}
 function proj(q){var ca=Math.cos(a),sa=Math.sin(a),ct=Math.cos(tilt),st=Math.sin(tilt);var X=q[0]*ca+q[2]*sa,Z=-q[0]*sa+q[2]*ca,Y=q[1]*ct-Z*st;Z=q[1]*st+Z*ct;var f=3/(3+Z),s=W*.46;return [W/2+X*s*f,H/2+Y*s*f,Z,f];}

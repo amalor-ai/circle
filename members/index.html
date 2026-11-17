@@ -301,6 +301,16 @@ section.home-doors{padding-block:40px 20px;border-top:0}
 .sphere-key .k1::before{background:#ECCF90;opacity:.8}
 .sphere-key .k2::before{background:#9DC3BF;opacity:.8}
 @media (max-width:760px){.hb-art .sphere{max-width:340px}}
+
+/* the blue thread: a thin sky-blue line around gold buttons, key numbers and charts */
+:root{--thread:#6FB7E6}
+.btn:not(.ghost){box-shadow:0 0 0 1.5px var(--thread),0 6px 20px rgba(201,154,69,.22)}
+.bar,.hb-bar{box-shadow:0 0 0 1.5px var(--thread)}
+.hb-facts li{border:1px solid rgba(111,183,230,.6);border-radius:14px;padding:14px 16px;min-width:0}
+.hero-band .hb-facts b{font-size:clamp(20px,2.1vw,30px)}
+.hb-path li:last-of-type{box-shadow:0 0 0 1.5px var(--thread)}
+.hb-art figcaption b{border-bottom:1px solid rgba(111,183,230,.6);padding-bottom:4px}
+.sphere-key .k3::before{background:#6FB7E6}
 </style>
 </head>
 <body>

@@ -71,7 +71,7 @@ TENT = '''<svg class="tent" viewBox="0 0 600 340" role="img" aria-label="Над 
  <linearGradient id="tab" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7E7B0"/><stop offset="1" stop-color="#C99A45"/></linearGradient>
 </defs>
 <rect x="80" y="60" width="440" height="270" fill="url(#tl)"/>
-<path d="M300 0 L300 250" stroke="url(#beam)" stroke-width="2.2"/><circle cx="300" cy="248" r="22" fill="#FFF4D2" opacity=".18"/>
+<path d="M300 0 L300 250" stroke="url(#beam)" stroke-width="2.2"/><path d="M300 0 L300 250" stroke="#6FB7E6" stroke-width=".9" opacity=".8"/><circle cx="300" cy="248" r="22" fill="#FFF4D2" opacity=".18"/>
 <ellipse cx="300" cy="312" rx="230" ry="16" fill="#000" opacity=".2"/>
 <g fill="none" stroke="url(#tg)" stroke-linecap="round" stroke-linejoin="round">
  <path d="M168 132 L168 300 M432 132 L432 300" stroke-width="1.6" opacity=".45"/>
@@ -210,6 +210,11 @@ footer.end{{text-align:center;font-size:13px;color:var(--soft);padding:26px}}
  .intro .cols,.beliefs ol,.inv{{grid-template-columns:1fr}}.big4,.path,.owners{{grid-template-columns:1fr 1fr}}.src ul{{columns:1}}
  .intro .big{{font-size:22px}}.rings .it text{{font-size:17px}}.bar .team{{font-size:15px;padding-left:12px}}
  table,thead,tbody,tr,th,td{{display:block}}thead{{display:none}}tbody th{{width:auto;border:0;padding-bottom:0}}td{{border:0;padding-top:2px}}tr{{border-bottom:1px solid var(--line);padding:6px 0}}}}
+/* blue thread */
+.bar{{box-shadow:0 0 0 1.5px #6FB7E6}}.topbar .dl{{box-shadow:0 0 0 1.5px #6FB7E6}}
+.big4 div{{border:1px solid rgba(111,183,230,.55);border-radius:14px;padding:14px}}
+.beliefs .n{{box-shadow:0 0 0 1.5px #6FB7E6}}.path div:last-child{{box-shadow:0 0 0 1.5px #6FB7E6}}
+.intro .center{{box-shadow:inset 0 0 0 1.5px #6FB7E6}}
 @page{{size:A4;margin:0}}
 @media print{{.topbar{{display:none}}.cover,.page{{height:297mm;overflow:hidden}}.page{{break-before:page}}.sheet{{max-width:none;padding:22mm 20mm}}
  footer.end{{display:none}}.beliefs ol{{gap:10px;margin-top:18px}}.beliefs li{{padding:14px 16px 14px 60px}}.beliefs .n{{left:16px;top:14px;width:32px;height:32px}}

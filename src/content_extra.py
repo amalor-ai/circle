@@ -551,12 +551,12 @@ CIRCLES_TXT = {
             motto='«Все отвечают друг за друга»', motto_src='— мысль Бааль Сулама, «Поручительство»',
             path=['Проблема, важная людям', 'Пилот', 'Проект', 'Стартап'],
             path_note='В стартапе у каждого участника круга есть доля по вкладу. Больше всего — у тех, кто сделал основную работу.',
-            man='Прочитать манифест'),
+            man='Прочитать манифест', links='связи между кругами'),
  'en': dict(core='Bond', team='the team · does the work', purpose='who the work is for', support='circle of support',
             motto='“Everyone is responsible for one another”', motto_src='— after Baal HaSulam, “The Arvut”',
             path=['A problem people care about', 'Pilot', 'Project', 'Startup'],
             path_note='In the startup every member of the circle holds a share according to their contribution. The largest shares go to those who did the core work.',
-            man='Read the manifesto (in Russian)'),
+            man='Read the manifesto (in Russian)', links='links between the circles'),
 }
 
 def circles_svg(lang):
@@ -648,13 +648,13 @@ SPHERE_JS = r'''<script>
 var c=document.getElementById('sphere');if(!c||!c.getContext)return;var x=c.getContext('2d');
 var still=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 function fib(n,R){var p=[],g=Math.PI*(3-Math.sqrt(5));for(var i=0;i<n;i++){var y=1-(i+.5)/n*2,r=Math.sqrt(1-y*y),t=g*i;p.push([Math.cos(t)*r*R,y*R,Math.sin(t)*r*R]);}return p;}
-var S=[{n:10,R:.30,col:[247,231,176],size:5.2,line:.75},{n:26,R:.62,col:[236,207,144],size:3.2,line:.38},{n:64,R:.95,col:[157,195,191],size:2.2,line:.22}];
+var S=[{n:10,R:.30,col:[247,231,176],size:5.2,line:.75},{n:26,R:.62,col:[236,207,144],size:3.2,line:.38},{n:64,R:.95,col:[157,195,191],size:2.2,line:.22},{col:[111,183,230],line:.7}];
 var P=[],E=[];S.forEach(function(s,k){fib(s.n,s.R).forEach(function(q){P.push({p:q,k:k});});});
 function d2(a,b){var dx=a.p[0]-b.p[0],dy=a.p[1]-b.p[1],dz=a.p[2]-b.p[2];return dx*dx+dy*dy+dz*dz;}
 function near(i,k,m){return P.map(function(q,j){return [j,q]}).filter(function(e){return e[1].k===k&&e[0]!==i}).sort(function(a,b){return d2(P[i],a[1])-d2(P[i],b[1])}).slice(0,m).map(function(e){return e[0]});}
 var seen={};function add(i,j,k){var key=i<j?i+'-'+j:j+'-'+i;if(seen[key])return;seen[key]=1;E.push([i,j,k]);}
 P.forEach(function(q,i){if(q.k===0){P.forEach(function(r,j){if(r.k===0&&j>i)add(i,j,0);});}
- else{near(i,q.k,3).forEach(function(j){add(i,j,q.k);});near(i,q.k-1,1).forEach(function(j){add(i,j,q.k);});}});
+ else{near(i,q.k,3).forEach(function(j){add(i,j,q.k);});near(i,q.k-1,1).forEach(function(j){add(i,j,3);});}});
 var a=0.6,tilt=-.38,W=0,H=0,dpr=1;
 function size(){var r=c.getBoundingClientRect();dpr=Math.min(window.devicePixelRatio||1,2);W=r.width;H=r.width;c.width=W*dpr;c.height=H*dpr;c.style.height=H+'px';x.setTransform(dpr,0,0,dpr,0,0);}
 function proj(q){var ca=Math.cos(a),sa=Math.sin(a),ct=Math.cos(tilt),st=Math.sin(tilt);var X=q[0]*ca+q[2]*sa,Z=-q[0]*sa+q[2]*ca,Y=q[1]*ct-Z*st;Z=q[1]*st+Z*ct;var f=3/(3+Z),s=W*.46;return [W/2+X*s*f,H/2+Y*s*f,Z,f];}
@@ -672,7 +672,7 @@ size();frame();window.addEventListener('resize',function(){size();frame();});if(
 def circles_svg(lang):
     t = CIRCLES_TXT[lang]
     return (f'<canvas id="sphere" class="sphere" role="img" aria-label="{t["team"]}, {t["purpose"]}, {t["support"]}"></canvas>'
-            f'<ul class="sphere-key"><li class="k0">{t["team"]}</li><li class="k1">{t["purpose"]}</li><li class="k2">{t["support"]}</li></ul>'
+            f'<ul class="sphere-key"><li class="k0">{t["team"]}</li><li class="k1">{t["purpose"]}</li><li class="k2">{t["support"]}</li><li class="k3">{t.get("links","")}</li></ul>'
             + SPHERE_JS)
 
 EXTRA_CSS += '''
@@ -684,4 +684,16 @@ EXTRA_CSS += '''
 .sphere-key .k1::before{background:#ECCF90;opacity:.8}
 .sphere-key .k2::before{background:#9DC3BF;opacity:.8}
 @media (max-width:760px){.hb-art .sphere{max-width:340px}}
+'''
+
+EXTRA_CSS += '''
+/* the blue thread: a thin sky-blue line around gold buttons, key numbers and charts */
+:root{--thread:#6FB7E6}
+.btn:not(.ghost){box-shadow:0 0 0 1.5px var(--thread),0 6px 20px rgba(201,154,69,.22)}
+.bar,.hb-bar{box-shadow:0 0 0 1.5px var(--thread)}
+.hb-facts li{border:1px solid rgba(111,183,230,.6);border-radius:14px;padding:14px 16px;min-width:0}
+.hero-band .hb-facts b{font-size:clamp(20px,2.1vw,30px)}
+.hb-path li:last-of-type{box-shadow:0 0 0 1.5px var(--thread)}
+.hb-art figcaption b{border-bottom:1px solid rgba(111,183,230,.6);padding-bottom:4px}
+.sphere-key .k3::before{background:#6FB7E6}
 '''

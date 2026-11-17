@@ -301,6 +301,16 @@ section.home-doors{padding-block:40px 20px;border-top:0}
 .sphere-key .k1::before{background:#ECCF90;opacity:.8}
 .sphere-key .k2::before{background:#9DC3BF;opacity:.8}
 @media (max-width:760px){.hb-art .sphere{max-width:340px}}
+
+/* the blue thread: a thin sky-blue line around gold buttons, key numbers and charts */
+:root{--thread:#6FB7E6}
+.btn:not(.ghost){box-shadow:0 0 0 1.5px var(--thread),0 6px 20px rgba(201,154,69,.22)}
+.bar,.hb-bar{box-shadow:0 0 0 1.5px var(--thread)}
+.hb-facts li{border:1px solid rgba(111,183,230,.6);border-radius:14px;padding:14px 16px;min-width:0}
+.hero-band .hb-facts b{font-size:clamp(20px,2.1vw,30px)}
+.hb-path li:last-of-type{box-shadow:0 0 0 1.5px var(--thread)}
+.hb-art figcaption b{border-bottom:1px solid rgba(111,183,230,.6);padding-bottom:4px}
+.sphere-key .k3::before{background:#6FB7E6}
 </style>
 </head>
 <body>
@@ -316,18 +326,18 @@ section.home-doors{padding-block:40px 20px;border-top:0}
     <div class="hb-cta"><a class="btn" href="../de/clients/">Ich habe eine Aufgabe</a><a class="btn ghost" href="../de/members/">Ins Team</a></div>
     <a class="hb-man" href="../manifest/"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h14m0 0l-6-6m6 6l-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Manifest lesen (auf Russisch)</a>
   </div>
-  <figure class="hb-art"><canvas id="sphere" class="sphere" role="img" aria-label="das Team · macht die Arbeit, für wen wir arbeiten, Kreis der Unterstützung"></canvas><ul class="sphere-key"><li class="k0">das Team · macht die Arbeit</li><li class="k1">für wen wir arbeiten</li><li class="k2">Kreis der Unterstützung</li></ul><script>
+  <figure class="hb-art"><canvas id="sphere" class="sphere" role="img" aria-label="das Team · macht die Arbeit, für wen wir arbeiten, Kreis der Unterstützung"></canvas><ul class="sphere-key"><li class="k0">das Team · macht die Arbeit</li><li class="k1">für wen wir arbeiten</li><li class="k2">Kreis der Unterstützung</li><li class="k3">Verbindungen zwischen den Kreisen</li></ul><script>
 (function(){
 var c=document.getElementById('sphere');if(!c||!c.getContext)return;var x=c.getContext('2d');
 var still=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 function fib(n,R){var p=[],g=Math.PI*(3-Math.sqrt(5));for(var i=0;i<n;i++){var y=1-(i+.5)/n*2,r=Math.sqrt(1-y*y),t=g*i;p.push([Math.cos(t)*r*R,y*R,Math.sin(t)*r*R]);}return p;}
-var S=[{n:10,R:.30,col:[247,231,176],size:5.2,line:.75},{n:26,R:.62,col:[236,207,144],size:3.2,line:.38},{n:64,R:.95,col:[157,195,191],size:2.2,line:.22}];
+var S=[{n:10,R:.30,col:[247,231,176],size:5.2,line:.75},{n:26,R:.62,col:[236,207,144],size:3.2,line:.38},{n:64,R:.95,col:[157,195,191],size:2.2,line:.22},{col:[111,183,230],line:.7}];
 var P=[],E=[];S.forEach(function(s,k){fib(s.n,s.R).forEach(function(q){P.push({p:q,k:k});});});
 function d2(a,b){var dx=a.p[0]-b.p[0],dy=a.p[1]-b.p[1],dz=a.p[2]-b.p[2];return dx*dx+dy*dy+dz*dz;}
 function near(i,k,m){return P.map(function(q,j){return [j,q]}).filter(function(e){return e[1].k===k&&e[0]!==i}).sort(function(a,b){return d2(P[i],a[1])-d2(P[i],b[1])}).slice(0,m).map(function(e){return e[0]});}
 var seen={};function add(i,j,k){var key=i<j?i+'-'+j:j+'-'+i;if(seen[key])return;seen[key]=1;E.push([i,j,k]);}
 P.forEach(function(q,i){if(q.k===0){P.forEach(function(r,j){if(r.k===0&&j>i)add(i,j,0);});}
- else{near(i,q.k,3).forEach(function(j){add(i,j,q.k);});near(i,q.k-1,1).forEach(function(j){add(i,j,q.k);});}});
+ else{near(i,q.k,3).forEach(function(j){add(i,j,q.k);});near(i,q.k-1,1).forEach(function(j){add(i,j,3);});}});
 var a=0.6,tilt=-.38,W=0,H=0,dpr=1;
 function size(){var r=c.getBoundingClientRect();dpr=Math.min(window.devicePixelRatio||1,2);W=r.width;H=r.width;c.width=W*dpr;c.height=H*dpr;c.style.height=H+'px';x.setTransform(dpr,0,0,dpr,0,0);}
 function proj(q){var ca=Math.cos(a),sa=Math.sin(a),ct=Math.cos(tilt),st=Math.sin(tilt);var X=q[0]*ca+q[2]*sa,Z=-q[0]*sa+q[2]*ca,Y=q[1]*ct-Z*st;Z=q[1]*st+Z*ct;var f=3/(3+Z),s=W*.46;return [W/2+X*s*f,H/2+Y*s*f,Z,f];}
