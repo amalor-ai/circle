@@ -263,6 +263,35 @@ th.us{color:var(--gold)}
 @media (prefers-reduced-motion:no-preference){.hb-art .net{animation:hbspin 120s linear infinite}@keyframes hbspin{to{transform:rotate(360deg)}}}
 .doors.below{margin-top:0}
 section.home-doors{padding-block:40px 20px;border-top:0}
+
+.hb-art{margin:0;flex-direction:column;align-items:center;gap:10px}
+.hb-art .circles{width:100%;max-width:560px;height:auto;overflow:visible}
+.circles .ring-label{font-size:16px;letter-spacing:.16em;text-transform:uppercase;fill:#9DC3BF;font-weight:600}
+.circles .ring-label.team{fill:#ECCF90;font-size:15px;letter-spacing:.12em}
+.circles .core-word{font-family:var(--display);font-size:24px;font-weight:700;fill:#F7E7B0}
+.hb-art figcaption{display:flex;flex-direction:column;align-items:center;text-align:center;gap:2px}
+.hb-art figcaption b{font-size:17px;color:#ECCF90;font-weight:600}
+.hb-art figcaption span{font-size:13px;color:#9DC3BF}
+.hb-man{display:inline-flex;align-items:center;gap:8px;color:#ECCF90;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(236,207,144,.4);align-self:flex-start;padding-bottom:2px}
+.hb-man:hover{border-bottom-color:#ECCF90}
+.hb-path{grid-column:1/-1;display:flex;flex-direction:column;gap:10px;padding-top:20px;border-top:1px solid rgba(201,228,226,.18)}
+.hb-path ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.hb-path li{display:flex;align-items:center;gap:10px;padding:10px 16px;border-radius:999px;border:1px solid rgba(236,207,144,.35);background:rgba(201,228,226,.06);color:#FFFFFF;font-weight:600}
+.hb-path li:last-of-type{background:linear-gradient(135deg,#F7E7B0,#E2BF74,#C99A45,#EDCD82);color:#0B2F2D;border-color:transparent}
+.hb-path li i{font-style:normal;font-size:12px;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:rgba(236,207,144,.18);color:#ECCF90}
+.hb-path li:last-of-type i{background:rgba(11,47,45,.15);color:#0B2F2D}
+.hb-path .arr{color:#ECCF90;opacity:.7}
+.hb-path p{margin:0;font-size:15px;color:#C9E4E2;max-width:70ch}
+.hb-money{border-top:0;padding-top:4px}
+@media (max-width:760px){.hb-art .circles{max-width:360px}.hb-path li{padding:8px 12px;font-size:14px}}
+@media (prefers-reduced-motion:no-preference){
+ .circles .orb{transform-box:view-box;transform-origin:300px 300px}
+ .circles .orb-out{animation:orbspin 160s linear infinite}
+ .circles .orb-mid{animation:orbspin 90s linear infinite reverse}
+ .circles .core-glow{transform-box:view-box;transform-origin:300px 300px;animation:corepulse 5s ease-in-out infinite}
+ @keyframes orbspin{to{transform:rotate(360deg)}}
+ @keyframes corepulse{0%,100%{opacity:.75;transform:scale(.94)}50%{opacity:1;transform:scale(1.04)}}
+}
 </style>
 </head>
 <body>
@@ -276,8 +305,30 @@ section.home-doors{padding-block:40px 20px;border-top:0}
     <p class="hb-tag">Как вместе получить больше, чем в одиночку, — и делать то, что нужно миру</p>
     <p class="hb-lead">Небольшие команды специалистов решают задачи, которые нужны людям и за которые готовы платить. Работаем по этапам, отвечаем друг за друга, а лучшие решения выращиваем в продукты — вместе с заказчиками.</p>
     <div class="hb-cta"><a class="btn" href="./clients/">Есть задача</a><a class="btn ghost" href="./members/">Хочу в команду</a></div>
+    <a class="hb-man" href="./assets/manifest-ru.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Прочитать манифест (PDF)</a>
   </div>
-  <div class="hb-art"><svg class="net" viewBox="150 160 500 520" aria-hidden="true"><defs><linearGradient id="hg" x1="150" y1="160" x2="650" y2="680" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#F7E7B0"/><stop offset="0.32" stop-color="#E2BF74"/><stop offset="0.64" stop-color="#B98A34"/><stop offset="1" stop-color="#EDCD82"/></linearGradient></defs><g fill="none" stroke="url(#hg)" stroke-width="1.5" stroke-opacity="0.6" stroke-linejoin="round"><polygon points="400,190 535,234 619,349 619,491 535,606 400,650 265,606 181,491 181,349 265,234"/><polygon points="400,190 619,349 535,606 265,606 181,349"/><polygon points="535,234 619,491 400,650 181,491 265,234"/><polygon points="400,190 619,491 265,606 181,349 535,234 400,650 181,491 619,349 535,606 265,234"/><polygon points="400,190 535,606 181,349 619,349 265,606"/><polygon points="535,234 400,650 265,234 619,491 181,491"/><line x1="400" y1="190" x2="400" y2="650"/><line x1="535" y1="234" x2="265" y2="606"/><line x1="619" y1="349" x2="181" y2="491"/><line x1="619" y1="491" x2="181" y2="349"/><line x1="535" y1="606" x2="265" y2="234"/></g><g fill="url(#hg)"><circle cx="400" cy="190" r="15"/><circle cx="535" cy="234" r="15"/><circle cx="619" cy="349" r="15"/><circle cx="619" cy="491" r="15"/><circle cx="535" cy="606" r="15"/><circle cx="400" cy="650" r="15"/><circle cx="265" cy="606" r="15"/><circle cx="181" cy="491" r="15"/><circle cx="181" cy="349" r="15"/><circle cx="265" cy="234" r="15"/></g><circle cx="400" cy="420" r="5" fill="#F7E7B0"/></svg></div>
+  <figure class="hb-art"><svg class="circles" viewBox="0 0 600 600" role="img" aria-label="Связь: команда · делает работу, ради кого работа, круг поддержки">
+<defs>
+ <linearGradient id="cgold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7E7B0"/><stop offset=".35" stop-color="#E2BF74"/><stop offset=".7" stop-color="#C99A45"/><stop offset="1" stop-color="#EDCD82"/></linearGradient>
+ <radialGradient id="cglow"><stop offset="0" stop-color="#FFF4D2" stop-opacity=".95"/><stop offset=".45" stop-color="#ECCF90" stop-opacity=".55"/><stop offset="1" stop-color="#ECCF90" stop-opacity="0"/></radialGradient>
+ <path id="arc-out" d="M 68 300 A 232 232 0 0 1 532 300"/>
+ <path id="arc-mid" d="M 146 300 A 154 154 0 0 1 454 300"/>
+ <path id="arc-team" d="M 146 300 A 154 154 0 0 0 454 300"/>
+</defs>
+<circle cx="300" cy="300" r="270" fill="rgba(201,228,226,.04)" stroke="#ECCF90" stroke-opacity=".28" stroke-dasharray="2 6"/>
+<circle cx="300" cy="300" r="190" fill="rgba(201,228,226,.05)" stroke="#ECCF90" stroke-opacity=".4"/>
+<g class="orb orb-out" fill="#C9E4E2" fill-opacity=".55"><circle cx="570.0" cy="300.0" r="4.5"/><circle cx="533.8" cy="435.0" r="4.5"/><circle cx="435.0" cy="533.8" r="4.5"/><circle cx="300.0" cy="570.0" r="4.5"/><circle cx="165.0" cy="533.8" r="4.5"/><circle cx="66.2" cy="435.0" r="4.5"/><circle cx="30.0" cy="300.0" r="4.5"/><circle cx="66.2" cy="165.0" r="4.5"/><circle cx="165.0" cy="66.2" r="4.5"/><circle cx="300.0" cy="30.0" r="4.5"/><circle cx="435.0" cy="66.2" r="4.5"/><circle cx="533.8" cy="165.0" r="4.5"/></g>
+<g class="orb orb-mid" fill="#ECCF90" fill-opacity=".8"><circle cx="466.7" cy="391.1" r="7"/><circle cx="137.7" cy="398.9" r="7"/><circle cx="295.5" cy="110.1" r="7"/></g>
+<text class="ring-label"><textPath href="#arc-out" startOffset="50%" text-anchor="middle">круг поддержки</textPath></text>
+<text class="ring-label"><textPath href="#arc-mid" startOffset="50%" text-anchor="middle">ради кого работа</textPath></text>
+<circle class="core-glow" cx="300" cy="300" r="150" fill="url(#cglow)"/>
+<g fill="none" stroke="url(#cgold)" stroke-width="1.6" stroke-linejoin="round"><polygon points="300.0,188.0 406.5,265.4 365.8,390.6 234.2,390.6 193.5,265.4"/><polygon points="300.0,188.0 365.8,390.6 193.5,265.4 406.5,265.4 234.2,390.6" stroke-opacity=".55"/><g stroke-opacity=".7"><line x1="300" y1="300" x2="300.0" y2="188.0"/><line x1="300" y1="300" x2="406.5" y2="265.4"/><line x1="300" y1="300" x2="365.8" y2="390.6"/><line x1="300" y1="300" x2="234.2" y2="390.6"/><line x1="300" y1="300" x2="193.5" y2="265.4"/></g></g>
+<g fill="url(#cgold)"><circle cx="300.0" cy="188.0" r="13"/><circle cx="406.5" cy="265.4" r="13"/><circle cx="365.8" cy="390.6" r="13"/><circle cx="234.2" cy="390.6" r="13"/><circle cx="193.5" cy="265.4" r="13"/></g>
+<circle cx="300" cy="300" r="52" fill="#0B3F3C" stroke="url(#cgold)" stroke-width="2"/>
+<text class="core-word" x="300" y="308" text-anchor="middle">Связь</text>
+<text class="ring-label team"><textPath href="#arc-team" startOffset="50%" text-anchor="middle">команда · делает работу</textPath></text>
+</svg><figcaption><b>«Все отвечают друг за друга»</b><span>— мысль Бааль Сулама, «Поручительство»</span></figcaption></figure>
+  <div class="hb-path"><ol><li><i>1</i>Проблема, важная людям</li><span class="arr" aria-hidden="true">→</span><li><i>2</i>Пилот</li><span class="arr" aria-hidden="true">→</span><li><i>3</i>Проект</li><span class="arr" aria-hidden="true">→</span><li><i>4</i>Стартап</li></ol><p>В стартапе у каждого участника круга есть доля по вкладу. Больше всего — у тех, кто сделал основную работу.</p></div>
   <div class="hb-money"><p class="hb-ex">Пример: проект на $100 000</p><div class="hb-bar"><div style="flex:80">Команде 80%</div><div style="flex:10">10%</div><div style="flex:10">10%</div></div><p class="hb-legend">80% — команде · 10% — организатору · 10% — проводнику (без проводника организатору 20%)</p><ul class="hb-facts"><li><b>$80 000</b><span>получает команда, которая сделала работу</span></li><li><b>≈ $20 000</b><span>на каждого в команде из четырёх</span></li><li><b>$10 000</b><span>проводнику — за одно знакомство</span></li><li><b>$0</b><span>заказчик платит за этап, который не принял</span></li></ul></div>
 </header><section class="home-doors"><div class="doors">
       <a class="door pay" href="./clients/"><b>Есть задача</b><span>Сплочённая команда ведёт её по этапам до результата.</span><em>Для заказчиков →</em></a>

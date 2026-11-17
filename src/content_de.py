@@ -218,3 +218,10 @@ HERO_HOME['de'] = dict(quote='„Ein Bündel Schilfrohr zerbricht man nicht auf 
     b1=('Ich habe eine Aufgabe', 'clients/'), b2=('Ins Team', 'members/'),
     ex='Beispiel: ein Projekt über 100.000 $', bar=[('Team 80 %',80),('10 %',10),('10 %',10)], legend='80 % an das Team · 10 % an den Organisator · 10 % an den Vermittler (ohne Vermittler 20 % an den Organisator)',
     facts=[('80.000 $', 'erhält das Team, das die Arbeit gemacht hat'), ('≈ 20.000 $', 'pro Person in einem Viererteam'), ('10.000 $', 'für den Vermittler – für eine Vorstellung'), ('0 $', 'zahlt der Auftraggeber für eine nicht abgenommene Etappe')])
+
+from content_extra import CIRCLES_TXT
+CIRCLES_TXT['de'] = dict(core='Bund', team='das Team · macht die Arbeit', purpose='für wen wir arbeiten', support='Kreis der Unterstützung',
+    motto='„Alle stehen füreinander ein“', motto_src='– nach Baal HaSulam, „Die Bürgschaft“',
+    path=['Ein Problem, das Menschen wichtig ist', 'Pilot', 'Projekt', 'Startup'],
+    path_note='Im Startup hält jedes Mitglied des Kreises einen Anteil nach seinem Beitrag. Den größten Anteil erhalten die, die die Hauptarbeit geleistet haben.',
+    man='Manifest lesen (PDF, Russisch)')

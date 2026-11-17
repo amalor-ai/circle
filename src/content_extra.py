@@ -544,3 +544,100 @@ EXTRA_CSS += '''
 .doors.below{margin-top:0}
 section.home-doors{padding-block:40px 20px;border-top:0}
 '''
+
+# ---- hero v3: the circles (team in the centre) + path problem → startup + manifesto link ----
+CIRCLES_TXT = {
+ 'ru': dict(core='Связь', team='команда · делает работу', purpose='ради кого работа', support='круг поддержки',
+            motto='«Все отвечают друг за друга»', motto_src='— мысль Бааль Сулама, «Поручительство»',
+            path=['Проблема, важная людям', 'Пилот', 'Проект', 'Стартап'],
+            path_note='В стартапе у каждого участника круга есть доля по вкладу. Больше всего — у тех, кто сделал основную работу.',
+            man='Прочитать манифест (PDF)'),
+ 'en': dict(core='Bond', team='the team · does the work', purpose='who the work is for', support='circle of support',
+            motto='“Everyone is responsible for one another”', motto_src='— after Baal HaSulam, “The Arvut”',
+            path=['A problem people care about', 'Pilot', 'Project', 'Startup'],
+            path_note='In the startup every member of the circle holds a share according to their contribution. The largest shares go to those who did the core work.',
+            man='Read the manifesto (PDF, Russian)'),
+}
+
+def circles_svg(lang):
+    t = CIRCLES_TXT[lang]
+    import math
+    def ring_dots(r, n, size, phase=0):
+        return ''.join(f'<circle cx="{300 + r*math.cos(2*math.pi*i/n + phase):.1f}" cy="{300 + r*math.sin(2*math.pi*i/n + phase):.1f}" r="{size}"/>' for i in range(n))
+    team = [(300 + 112*math.cos(-math.pi/2 + 2*math.pi*i/5), 300 + 112*math.sin(-math.pi/2 + 2*math.pi*i/5)) for i in range(5)]
+    pent = ' '.join(f'{x:.1f},{y:.1f}' for x, y in team)
+    star = ' '.join(f'{team[(2*i) % 5][0]:.1f},{team[(2*i) % 5][1]:.1f}' for i in range(5))
+    spokes = ''.join(f'<line x1="300" y1="300" x2="{x:.1f}" y2="{y:.1f}"/>' for x, y in team)
+    nodes = ''.join(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="13"/>' for x, y in team)
+    return f'''<svg class="circles" viewBox="0 0 600 600" role="img" aria-label="{t['core']}: {t['team']}, {t['purpose']}, {t['support']}">
+<defs>
+ <linearGradient id="cgold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7E7B0"/><stop offset=".35" stop-color="#E2BF74"/><stop offset=".7" stop-color="#C99A45"/><stop offset="1" stop-color="#EDCD82"/></linearGradient>
+ <radialGradient id="cglow"><stop offset="0" stop-color="#FFF4D2" stop-opacity=".95"/><stop offset=".45" stop-color="#ECCF90" stop-opacity=".55"/><stop offset="1" stop-color="#ECCF90" stop-opacity="0"/></radialGradient>
+ <path id="arc-out" d="M 68 300 A 232 232 0 0 1 532 300"/>
+ <path id="arc-mid" d="M 146 300 A 154 154 0 0 1 454 300"/>
+ <path id="arc-team" d="M 146 300 A 154 154 0 0 0 454 300"/>
+</defs>
+<circle cx="300" cy="300" r="270" fill="rgba(201,228,226,.04)" stroke="#ECCF90" stroke-opacity=".28" stroke-dasharray="2 6"/>
+<circle cx="300" cy="300" r="190" fill="rgba(201,228,226,.05)" stroke="#ECCF90" stroke-opacity=".4"/>
+<g class="orb orb-out" fill="#C9E4E2" fill-opacity=".55">{ring_dots(270, 12, 4.5)}</g>
+<g class="orb orb-mid" fill="#ECCF90" fill-opacity=".8">{ring_dots(190, 3, 7, 0.5)}</g>
+<text class="ring-label"><textPath href="#arc-out" startOffset="50%" text-anchor="middle">{t['support']}</textPath></text>
+<text class="ring-label"><textPath href="#arc-mid" startOffset="50%" text-anchor="middle">{t['purpose']}</textPath></text>
+<circle class="core-glow" cx="300" cy="300" r="150" fill="url(#cglow)"/>
+<g fill="none" stroke="url(#cgold)" stroke-width="1.6" stroke-linejoin="round"><polygon points="{pent}"/><polygon points="{star}" stroke-opacity=".55"/><g stroke-opacity=".7">{spokes}</g></g>
+<g fill="url(#cgold)">{nodes}</g>
+<circle cx="300" cy="300" r="52" fill="#0B3F3C" stroke="url(#cgold)" stroke-width="2"/>
+<text class="core-word" x="300" y="308" text-anchor="middle">{t['core']}</text>
+<text class="ring-label team"><textPath href="#arc-team" startOffset="50%" text-anchor="middle">{t['team']}</textPath></text>
+</svg>'''
+
+def hero_home(lang):
+    h = HERO_HOME[lang]; t = CIRCLES_TXT[lang]
+    facts = ''.join(f'<li><b>{a}</b><span>{b}</span></li>' for a, b in h['facts'])
+    bar = ''.join(f'<div style="flex:{w}">{x}</div>' for x, w in h['bar'])
+    steps = '<span class="arr" aria-hidden="true">→</span>'.join(f'<li><i>{i+1}</i>{s}</li>' for i, s in enumerate(t['path']))
+    return f'''<header class="hero-band">
+  <div class="hb-text">
+    <p class="hb-quote">{h['quote']}</p>
+    <h1>{h['title']}</h1>
+    <p class="hb-sub">{h['sub']}</p>
+    <p class="hb-tag">{h['tag']}</p>
+    <p class="hb-lead">{h['lead']}</p>
+    <div class="hb-cta"><a class="btn" href="{{L}}{h['b1'][1]}">{h['b1'][0]}</a><a class="btn ghost" href="{{L}}{h['b2'][1]}">{h['b2'][0]}</a></div>
+    <a class="hb-man" href="{{R}}assets/manifest-ru.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>{t['man']}</a>
+  </div>
+  <figure class="hb-art">{circles_svg(lang)}<figcaption><b>{t['motto']}</b><span>{t['motto_src']}</span></figcaption></figure>
+  <div class="hb-path"><ol>{steps}</ol><p>{t['path_note']}</p></div>
+  <div class="hb-money"><p class="hb-ex">{h['ex']}</p><div class="hb-bar">{bar}</div><p class="hb-legend">{h['legend']}</p><ul class="hb-facts">{facts}</ul></div>
+</header>'''
+
+EXTRA_CSS += '''
+.hb-art{margin:0;flex-direction:column;align-items:center;gap:10px}
+.hb-art .circles{width:100%;max-width:560px;height:auto;overflow:visible}
+.circles .ring-label{font-size:16px;letter-spacing:.16em;text-transform:uppercase;fill:#9DC3BF;font-weight:600}
+.circles .ring-label.team{fill:#ECCF90;font-size:15px;letter-spacing:.12em}
+.circles .core-word{font-family:var(--display);font-size:24px;font-weight:700;fill:#F7E7B0}
+.hb-art figcaption{display:flex;flex-direction:column;align-items:center;text-align:center;gap:2px}
+.hb-art figcaption b{font-size:17px;color:#ECCF90;font-weight:600}
+.hb-art figcaption span{font-size:13px;color:#9DC3BF}
+.hb-man{display:inline-flex;align-items:center;gap:8px;color:#ECCF90;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(236,207,144,.4);align-self:flex-start;padding-bottom:2px}
+.hb-man:hover{border-bottom-color:#ECCF90}
+.hb-path{grid-column:1/-1;display:flex;flex-direction:column;gap:10px;padding-top:20px;border-top:1px solid rgba(201,228,226,.18)}
+.hb-path ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.hb-path li{display:flex;align-items:center;gap:10px;padding:10px 16px;border-radius:999px;border:1px solid rgba(236,207,144,.35);background:rgba(201,228,226,.06);color:#FFFFFF;font-weight:600}
+.hb-path li:last-of-type{background:linear-gradient(135deg,#F7E7B0,#E2BF74,#C99A45,#EDCD82);color:#0B2F2D;border-color:transparent}
+.hb-path li i{font-style:normal;font-size:12px;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:rgba(236,207,144,.18);color:#ECCF90}
+.hb-path li:last-of-type i{background:rgba(11,47,45,.15);color:#0B2F2D}
+.hb-path .arr{color:#ECCF90;opacity:.7}
+.hb-path p{margin:0;font-size:15px;color:#C9E4E2;max-width:70ch}
+.hb-money{border-top:0;padding-top:4px}
+@media (max-width:760px){.hb-art .circles{max-width:360px}.hb-path li{padding:8px 12px;font-size:14px}}
+@media (prefers-reduced-motion:no-preference){
+ .circles .orb{transform-box:view-box;transform-origin:300px 300px}
+ .circles .orb-out{animation:orbspin 160s linear infinite}
+ .circles .orb-mid{animation:orbspin 90s linear infinite reverse}
+ .circles .core-glow{transform-box:view-box;transform-origin:300px 300px;animation:corepulse 5s ease-in-out infinite}
+ @keyframes orbspin{to{transform:rotate(360deg)}}
+ @keyframes corepulse{0%,100%{opacity:.75;transform:scale(.94)}50%{opacity:1;transform:scale(1.04)}}
+}
+'''
