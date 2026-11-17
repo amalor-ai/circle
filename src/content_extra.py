@@ -22,14 +22,14 @@ PAGE_TITLES = {
 
 DESC = {
     'ru': {'clients': 'Слаженная работа по этапам до результата: небольшая команда специалистов, диагностика по фиксированной цене, оплата по этапам. Дубай и удалённо.',
-           'members': 'Работа в команде, а не в одиночку: задачи со смыслом, доход по вкладу, путь от участника до наставника.',
+           'members': 'Работа в команде, а не в одиночку: задачи со смыслом, равная доля дохода, путь от участника до наставника.',
            'team': 'Ритм недели и шестинедельного цикла, договор команды и то, как процесс улучшает сам себя.',
            'guides': 'Познакомьте нас с заказчиком и получите 10% от первого проекта.',
            'principles': 'На чём держится команда, какие задачи мы берём и как делятся деньги.',
            'investors': 'Путь инвестора: сначала участие, деньги — после доказательств.',
            'book': 'Книга «Команда последнего поколения. Как связка тростника» — скоро.'},
     'en': {'clients': 'Coordinated work, stage by stage, to the result: a small team of specialists, a fixed-price diagnostic, payment per stage. Dubai and remote.',
-           'members': 'Work in a team, not alone: meaningful projects, income by contribution, a path from member to mentor.',
+           'members': 'Work in a team, not alone: meaningful projects, an equal share of income, a path from member to mentor.',
            'team': 'The weekly rhythm, the six-week cycle, the team agreement and how the process improves itself.',
            'guides': 'Introduce us to a client and receive 10% of the first project.',
            'principles': 'What holds the team together, which tasks we take on and how the money is shared.',
@@ -71,7 +71,7 @@ LADDER = {
     <li><span class="num">3</span><div><h3>Ядро</h3><p class="when">мотив: признание за вклад в общее</p></div></li>
     <li><span class="num">4</span><div><h3>Наставник</h3><p class="when">мотив: отдача и рост других</p></div></li>
   </ol>
-  <p class="rule"><b>Основа на каждом уровне:</b> справедливая оплата и доля по вкладу.</p>
+  <p class="rule"><b>Основа на каждом уровне:</b> справедливая оплата: доход команды делится поровну.</p>
 </section>''',
 'en': '''<section>
   <div class="head">
@@ -84,7 +84,7 @@ LADDER = {
     <li><span class="num">3</span><div><h3>Core</h3><p class="when">motive: recognition for contributing to the whole</p></div></li>
     <li><span class="num">4</span><div><h3>Mentor</h3><p class="when">motive: giving back and helping others grow</p></div></li>
   </ol>
-  <p class="rule"><b>The base at every level:</b> fair pay and a share by contribution.</p>
+  <p class="rule"><b>The base at every level:</b> fair pay: team income is shared equally.</p>
 </section>'''}
 
 TEAM = {
@@ -360,7 +360,7 @@ PRODUCT_HOME = {
     <li><b>Продукт</b><span>лицензии для отрасли</span></li>
   </ol>
   <div class="owners">
-    <div><b>Команда</b><span>доли по вкладу</span></div>
+    <div><b>Команда</b><span>доля за создание, внутри поровну</span></div>
     <div><b>Заказчик-партнёр</b><span>доля и бесплатная лицензия для себя</span></div>
     <div><b>Организатор</b><span>доля за сборку и запуск</span></div>
     <div><b>Инвесторы</b><span>входят, когда продукт доказал спрос</span></div>
@@ -379,7 +379,7 @@ PRODUCT_HOME = {
     <li><b>Product</b><span>licences for the industry</span></li>
   </ol>
   <div class="owners">
-    <div><b>Team</b><span>shares by contribution</span></div>
+    <div><b>Team</b><span>a share for building it, split equally inside</span></div>
     <div><b>Partner client</b><span>a share and a free licence for its own use</span></div>
     <div><b>Organiser</b><span>a share for assembling and launching</span></div>
     <div><b>Investors</b><span>join once the product has proven demand</span></div>
@@ -435,7 +435,7 @@ PIPELINE = {
     <li><span class="num">1</span><div><h3>Поиск спроса</h3><p class="when">задачи от заказчиков и участников, тендеры, жалобы клиентов, новые правила</p></div></li>
     <li><span class="num">2</span><div><h3>Проверка спроса</h3><p class="when">10–20 разговоров и заказчик, готовый платить за пилот</p></div></li>
     <li><span class="num">3</span><div><h3>Пробная работа</h3><p class="when">1–2 недели в смешанных парах на реальной задаче</p></div></li>
-    <li><span class="num">4</span><div><h3>Сборка команды</h3><p class="when">3–5 человек, доли по вкладу, договор команды, Team Lead по согласию</p></div></li>
+    <li><span class="num">4</span><div><h3>Сборка команды</h3><p class="when">3–5 человек, доход поровну, договор команды, Team Lead по согласию</p></div></li>
     <li><span class="num">5</span><div><h3>Решение с заказчиком</h3><p class="when">первые пользователи и первые деньги — до раунда</p></div></li>
     <li><span class="num">6</span><div><h3>Паспорт команды</h3><p class="when">история совместной работы, роли, разговоры с клиентами, показатели</p></div></li>
     <li><span class="num">7</span><div><h3>Демо инвесторам</h3><p class="when">команда, которая уже доказала, что работает, и заказчик-партнёр рядом</p></div></li>
@@ -451,7 +451,7 @@ PIPELINE = {
     <li><span class="num">1</span><div><h3>Finding demand</h3><p class="when">tasks from clients and members, tenders, customer complaints, new regulations</p></div></li>
     <li><span class="num">2</span><div><h3>Validating demand</h3><p class="when">10–20 conversations and a client ready to pay for a pilot</p></div></li>
     <li><span class="num">3</span><div><h3>Trial work</h3><p class="when">1–2 weeks in mixed pairs on a real task</p></div></li>
-    <li><span class="num">4</span><div><h3>Forming the team</h3><p class="when">3–5 people, shares by contribution, a team agreement, a Team Lead by consent</p></div></li>
+    <li><span class="num">4</span><div><h3>Forming the team</h3><p class="when">3–5 people, income shared equally, a team agreement, a Team Lead by consent</p></div></li>
     <li><span class="num">5</span><div><h3>Solution with the client</h3><p class="when">first users and first revenue — before any round</p></div></li>
     <li><span class="num">6</span><div><h3>Team passport</h3><p class="when">history of working together, roles, client conversations, indicators</p></div></li>
     <li><span class="num">7</span><div><h3>Investor demo</h3><p class="when">a team that has already proven it works, with a partner client alongside</p></div></li>
@@ -486,14 +486,14 @@ HERO_HOME = {
            lead='Небольшие команды специалистов решают задачи, которые нужны людям и за которые готовы платить. Работаем по этапам, отвечаем друг за друга, а лучшие решения выращиваем в продукты — вместе с заказчиками.',
            b1=('Есть задача', 'clients/'), b2=('Хочу в команду', 'members/'),
            ex='Пример: проект на $100 000', bar=[('Команде 80%',80),('10%',10),('10%',10)], legend='80% — команде · 10% — организатору · 10% — проводнику (без проводника организатору 20%)',
-           facts=[('$80 000', 'получает команда, которая сделала работу'), ('≈ $20 000', 'на каждого в команде из четырёх'), ('$10 000', 'проводнику — за одно знакомство'), ('$0', 'заказчик платит за этап, который не принял')]),
+           facts=[('$80 000', 'получает команда, которая сделала работу'), ('$20 000', 'каждому в команде из четырёх — поровну'), ('$10 000', 'проводнику — за одно знакомство'), ('$0', 'заказчик платит за этап, который не принял')]),
 'en': dict(quote='“A bundle of reeds cannot be broken at once, yet a child can break the reeds one by one”',
            title='Last Generation Team', sub='Like a bundle of reeds',
            tag='How to achieve more together than alone — and do what the world needs',
            lead='Small teams of specialists solve problems people need solved and will pay for. We work in stages, answer for each other, and grow the best solutions into products — together with our clients.',
            b1=('I have a task', 'clients/'), b2=('Join a team', 'members/'),
            ex='Example: a $100,000 project', bar=[('Team 80%',80),('10%',10),('10%',10)], legend='80% to the team · 10% to the organiser · 10% to the guide (no guide: 20% to the organiser)',
-           facts=[('$80,000', 'goes to the team that did the work'), ('≈ $20,000', 'per person in a team of four'), ('$10,000', 'to the guide — for one introduction'), ('$0', 'the client pays for a stage they did not accept')]),
+           facts=[('$80,000', 'goes to the team that did the work'), ('$20,000', 'to each member of a team of four — equally'), ('$10,000', 'to the guide — for one introduction'), ('$0', 'the client pays for a stage they did not accept')]),
 }
 
 def hero_home(lang):

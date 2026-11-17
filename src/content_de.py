@@ -10,7 +10,7 @@ PAGE_TITLES['de'] = {'index': 'Team der letzten Generation', 'clients': 'Auftrag
                      'investors': 'Investoren — Team der letzten Generation', 'book': 'Buch — Team der letzten Generation'}
 DESC['de'] = {
     'clients': 'Abgestimmte Arbeit in Etappen bis zum Ergebnis: ein kleines Team von Fachleuten, Diagnose zum Festpreis, Bezahlung pro Etappe. Dubai und remote.',
-    'members': 'Im Team arbeiten, nicht allein: sinnvolle Aufgaben, Einkommen nach Beitrag, ein Weg vom Mitglied zum Mentor.',
+    'members': 'Im Team arbeiten, nicht allein: sinnvolle Aufgaben, gleicher Anteil am Einkommen, ein Weg vom Mitglied zum Mentor.',
     'team': 'Der Wochenrhythmus, der sechswöchige Zyklus, die Teamvereinbarung und wie sich der Prozess selbst verbessert.',
     'guides': 'Stellen Sie uns einen Auftraggeber vor und erhalten Sie 10 % des ersten Projekts.',
     'principles': 'Was das Team zusammenhält, welche Aufgaben wir übernehmen und wie das Geld geteilt wird.',
@@ -39,7 +39,7 @@ LADDER['de'] = '''<section>
     <li><span class="num">3</span><div><h3>Kern</h3><p class="when">Motiv: Anerkennung für den Beitrag zum Ganzen</p></div></li>
     <li><span class="num">4</span><div><h3>Mentor</h3><p class="when">Motiv: zurückgeben und andere wachsen lassen</p></div></li>
   </ol>
-  <p class="rule"><b>Die Basis auf jeder Stufe:</b> faire Bezahlung und ein Anteil nach Beitrag.</p>
+  <p class="rule"><b>Die Basis auf jeder Stufe:</b> faire Bezahlung: Das Einkommen des Teams wird zu gleichen Teilen geteilt.</p>
 </section>'''
 
 TEAM['de'] = '''<header class="hero small">
@@ -166,7 +166,7 @@ PRODUCT_HOME['de'] = '''<section id="product">
     <li><b>Produkt</b><span>Lizenzen für die Branche</span></li>
   </ol>
   <div class="owners">
-    <div><b>Team</b><span>Anteile nach Beitrag</span></div>
+    <div><b>Team</b><span>Anteil für die Entwicklung, intern zu gleichen Teilen</span></div>
     <div><b>Partner-Auftraggeber</b><span>ein Anteil und eine kostenlose Lizenz für sich</span></div>
     <div><b>Organisator</b><span>ein Anteil für Aufbau und Start</span></div>
     <div><b>Investoren</b><span>steigen ein, wenn das Produkt Nachfrage bewiesen hat</span></div>
@@ -202,7 +202,7 @@ PIPELINE['de'] = '''<section>
     <li><span class="num">1</span><div><h3>Nachfrage finden</h3><p class="when">Aufgaben von Auftraggebern und Mitgliedern, Ausschreibungen, Kundenbeschwerden, neue Regeln</p></div></li>
     <li><span class="num">2</span><div><h3>Nachfrage prüfen</h3><p class="when">10–20 Gespräche und ein Auftraggeber, der für einen Pilot zahlt</p></div></li>
     <li><span class="num">3</span><div><h3>Probearbeit</h3><p class="when">1–2 Wochen in gemischten Paaren an einer echten Aufgabe</p></div></li>
-    <li><span class="num">4</span><div><h3>Team bilden</h3><p class="when">3–5 Personen, Anteile nach Beitrag, Teamvereinbarung, Team Lead im Konsens</p></div></li>
+    <li><span class="num">4</span><div><h3>Team bilden</h3><p class="when">3–5 Personen, Einkommen zu gleichen Teilen, Teamvereinbarung, Team Lead im Konsens</p></div></li>
     <li><span class="num">5</span><div><h3>Lösung mit dem Auftraggeber</h3><p class="when">erste Nutzer und erstes Geld – vor jeder Finanzierungsrunde</p></div></li>
     <li><span class="num">6</span><div><h3>Team-Pass</h3><p class="when">Geschichte der Zusammenarbeit, Rollen, Kundengespräche, Kennzahlen</p></div></li>
     <li><span class="num">7</span><div><h3>Demo für Investoren</h3><p class="when">ein Team, das bewiesen hat, dass es funktioniert, mit einem Partner-Auftraggeber an der Seite</p></div></li>
@@ -217,7 +217,7 @@ HERO_HOME['de'] = dict(quote='„Ein Bündel Schilfrohr zerbricht man nicht auf 
     lead='Kleine Teams von Fachleuten lösen Aufgaben, die Menschen brauchen und für die sie zahlen. Wir arbeiten in Etappen, stehen füreinander ein und machen aus den besten Lösungen Produkte – gemeinsam mit unseren Auftraggebern.',
     b1=('Ich habe eine Aufgabe', 'clients/'), b2=('Ins Team', 'members/'),
     ex='Beispiel: ein Projekt über 100.000 $', bar=[('Team 80 %',80),('10 %',10),('10 %',10)], legend='80 % an das Team · 10 % an den Organisator · 10 % an den Vermittler (ohne Vermittler 20 % an den Organisator)',
-    facts=[('80.000 $', 'erhält das Team, das die Arbeit gemacht hat'), ('≈ 20.000 $', 'pro Person in einem Viererteam'), ('10.000 $', 'für den Vermittler – für eine Vorstellung'), ('0 $', 'zahlt der Auftraggeber für eine nicht abgenommene Etappe')])
+    facts=[('80.000 $', 'erhält das Team, das die Arbeit gemacht hat'), ('20.000 $', 'für jedes Mitglied eines Viererteams – zu gleichen Teilen'), ('10.000 $', 'für den Vermittler – für eine Vorstellung'), ('0 $', 'zahlt der Auftraggeber für eine nicht abgenommene Etappe')])
 
 from content_extra import CIRCLES_TXT
 CIRCLES_TXT['de'] = dict(core='Bund', team='das Team · macht die Arbeit', purpose='für wen wir arbeiten', support='Kreis der Unterstützung',
