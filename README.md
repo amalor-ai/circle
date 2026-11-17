@@ -11,3 +11,6 @@
 - Исходники: `src/krug.html` (дизайн и общие блоки, русский), `src/tr_en.py` → `src/krug_en.html` (английский), `src/tr_de.py` → `src/krug_de.html` (немецкий, из английского), `src/content_extra.py` + `src/content_de.py` (новые страницы).
 - Сборка: `python3 src/tr_en.py && python3 src/tr_de.py && python3 src/build.py` — пишет все `index.html`, `robots.txt`, `sitemap.xml`, `llms.txt`.
 - Адрес сайта — `BASE` в `src/build.py`; сменить на `https://team.amalor.ai` после настройки DNS.
+
+## Манифест
+`python3 src/manifest.py` — собирает страницу manifest/ и PDF assets/manifest-ru.pdf (нужен Playwright). Шрифт Manrope лежит в assets/fonts.

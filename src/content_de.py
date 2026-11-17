@@ -224,4 +224,4 @@ CIRCLES_TXT['de'] = dict(core='Bund', team='das Team · macht die Arbeit', purpo
     motto='„Alle stehen füreinander ein“', motto_src='– nach Baal HaSulam, „Die Bürgschaft“',
     path=['Ein Problem, das Menschen wichtig ist', 'Pilot', 'Projekt', 'Startup'],
     path_note='Im Startup hält jedes Mitglied des Kreises einen Anteil nach seinem Beitrag. Den größten Anteil erhalten die, die die Hauptarbeit geleistet haben.',
-    man='Manifest lesen (PDF, Russisch)')
+    man='Manifest lesen (auf Russisch)')

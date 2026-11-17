@@ -551,12 +551,12 @@ CIRCLES_TXT = {
             motto='«Все отвечают друг за друга»', motto_src='— мысль Бааль Сулама, «Поручительство»',
             path=['Проблема, важная людям', 'Пилот', 'Проект', 'Стартап'],
             path_note='В стартапе у каждого участника круга есть доля по вкладу. Больше всего — у тех, кто сделал основную работу.',
-            man='Прочитать манифест (PDF)'),
+            man='Прочитать манифест'),
  'en': dict(core='Bond', team='the team · does the work', purpose='who the work is for', support='circle of support',
             motto='“Everyone is responsible for one another”', motto_src='— after Baal HaSulam, “The Arvut”',
             path=['A problem people care about', 'Pilot', 'Project', 'Startup'],
             path_note='In the startup every member of the circle holds a share according to their contribution. The largest shares go to those who did the core work.',
-            man='Read the manifesto (PDF, Russian)'),
+            man='Read the manifesto (in Russian)'),
 }
 
 def circles_svg(lang):
@@ -604,7 +604,7 @@ def hero_home(lang):
     <p class="hb-tag">{h['tag']}</p>
     <p class="hb-lead">{h['lead']}</p>
     <div class="hb-cta"><a class="btn" href="{{L}}{h['b1'][1]}">{h['b1'][0]}</a><a class="btn ghost" href="{{L}}{h['b2'][1]}">{h['b2'][0]}</a></div>
-    <a class="hb-man" href="{{R}}assets/manifest-ru.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>{t['man']}</a>
+    <a class="hb-man" href="{{R}}manifest/"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h14m0 0l-6-6m6 6l-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>{t['man']}</a>
   </div>
   <figure class="hb-art">{circles_svg(lang)}<figcaption><b>{t['motto']}</b><span>{t['motto_src']}</span></figcaption></figure>
   <div class="hb-path"><ol>{steps}</ol><p>{t['path_note']}</p></div>
