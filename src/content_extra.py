@@ -641,3 +641,47 @@ EXTRA_CSS += '''
  @keyframes corepulse{0%,100%{opacity:.75;transform:scale(.94)}50%{opacity:1;transform:scale(1.04)}}
 }
 '''
+
+# ---- hero v4: a network sphere instead of flat circles ----
+SPHERE_JS = r'''<script>
+(function(){
+var c=document.getElementById('sphere');if(!c||!c.getContext)return;var x=c.getContext('2d');
+var still=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function fib(n,R){var p=[],g=Math.PI*(3-Math.sqrt(5));for(var i=0;i<n;i++){var y=1-(i+.5)/n*2,r=Math.sqrt(1-y*y),t=g*i;p.push([Math.cos(t)*r*R,y*R,Math.sin(t)*r*R]);}return p;}
+var S=[{n:10,R:.30,col:[247,231,176],size:5.2,line:.75},{n:26,R:.62,col:[236,207,144],size:3.2,line:.38},{n:64,R:.95,col:[157,195,191],size:2.2,line:.22}];
+var P=[],E=[];S.forEach(function(s,k){fib(s.n,s.R).forEach(function(q){P.push({p:q,k:k});});});
+function d2(a,b){var dx=a.p[0]-b.p[0],dy=a.p[1]-b.p[1],dz=a.p[2]-b.p[2];return dx*dx+dy*dy+dz*dz;}
+function near(i,k,m){return P.map(function(q,j){return [j,q]}).filter(function(e){return e[1].k===k&&e[0]!==i}).sort(function(a,b){return d2(P[i],a[1])-d2(P[i],b[1])}).slice(0,m).map(function(e){return e[0]});}
+var seen={};function add(i,j,k){var key=i<j?i+'-'+j:j+'-'+i;if(seen[key])return;seen[key]=1;E.push([i,j,k]);}
+P.forEach(function(q,i){if(q.k===0){P.forEach(function(r,j){if(r.k===0&&j>i)add(i,j,0);});}
+ else{near(i,q.k,3).forEach(function(j){add(i,j,q.k);});near(i,q.k-1,1).forEach(function(j){add(i,j,q.k);});}});
+var a=0.6,tilt=-.38,W=0,H=0,dpr=1;
+function size(){var r=c.getBoundingClientRect();dpr=Math.min(window.devicePixelRatio||1,2);W=r.width;H=r.width;c.width=W*dpr;c.height=H*dpr;c.style.height=H+'px';x.setTransform(dpr,0,0,dpr,0,0);}
+function proj(q){var ca=Math.cos(a),sa=Math.sin(a),ct=Math.cos(tilt),st=Math.sin(tilt);var X=q[0]*ca+q[2]*sa,Z=-q[0]*sa+q[2]*ca,Y=q[1]*ct-Z*st;Z=q[1]*st+Z*ct;var f=3/(3+Z),s=W*.46;return [W/2+X*s*f,H/2+Y*s*f,Z,f];}
+function frame(){x.clearRect(0,0,W,H);
+ var g=x.createRadialGradient(W/2,H/2,0,W/2,H/2,W*.32);g.addColorStop(0,'rgba(255,244,210,.55)');g.addColorStop(.5,'rgba(236,207,144,.16)');g.addColorStop(1,'rgba(236,207,144,0)');x.fillStyle=g;x.fillRect(0,0,W,H);
+ var Q=P.map(function(q){return proj(q.p)});
+ E.forEach(function(e){var A=Q[e[0]],B=Q[e[1]],s=S[e[2]],dep=(2-(A[2]+B[2])/2)/2;x.strokeStyle='rgba('+s.col.join(',')+','+(s.line*(.35+.65*dep)).toFixed(3)+')';x.lineWidth=e[2]===0?1.3:.8;x.beginPath();x.moveTo(A[0],A[1]);x.lineTo(B[0],B[1]);x.stroke();});
+ P.map(function(q,i){return [i,Q[i][2]]}).sort(function(m,n){return n[1]-m[1]}).forEach(function(o){var i=o[0],s=S[P[i].k],q=Q[i],dep=(1-q[2])/2;x.fillStyle='rgba('+s.col.join(',')+','+(.35+.65*dep).toFixed(3)+')';x.beginPath();x.arc(q[0],q[1],s.size*q[3]*(W/520),0,6.2832);x.fill();});
+ x.fillStyle='rgba(255,248,225,.95)';x.beginPath();x.arc(W/2,H/2,4*(W/520),0,6.2832);x.fill();}
+function loop(){a+=.0016;frame();if(!document.hidden)requestAnimationFrame(loop);else setTimeout(loop,500);}
+size();frame();window.addEventListener('resize',function(){size();frame();});if(!still)requestAnimationFrame(loop);
+})();
+</script>'''
+
+def circles_svg(lang):
+    t = CIRCLES_TXT[lang]
+    return (f'<canvas id="sphere" class="sphere" role="img" aria-label="{t["team"]}, {t["purpose"]}, {t["support"]}"></canvas>'
+            f'<ul class="sphere-key"><li class="k0">{t["team"]}</li><li class="k1">{t["purpose"]}</li><li class="k2">{t["support"]}</li></ul>'
+            + SPHERE_JS)
+
+EXTRA_CSS += '''
+.hb-art .sphere{display:block;width:100%;max-width:540px;aspect-ratio:1/1}
+.sphere-key{list-style:none;margin:-6px 0 6px;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;font-size:13px;color:#C9E4E2}
+.sphere-key li{display:flex;align-items:center;gap:7px}
+.sphere-key li::before{content:"";width:9px;height:9px;border-radius:50%}
+.sphere-key .k0::before{background:#F7E7B0;box-shadow:0 0 8px #F7E7B0}
+.sphere-key .k1::before{background:#ECCF90;opacity:.8}
+.sphere-key .k2::before{background:#9DC3BF;opacity:.8}
+@media (max-width:760px){.hb-art .sphere{max-width:340px}}
+'''

@@ -292,6 +292,15 @@ section.home-doors{padding-block:40px 20px;border-top:0}
  @keyframes orbspin{to{transform:rotate(360deg)}}
  @keyframes corepulse{0%,100%{opacity:.75;transform:scale(.94)}50%{opacity:1;transform:scale(1.04)}}
 }
+
+.hb-art .sphere{display:block;width:100%;max-width:540px;aspect-ratio:1/1}
+.sphere-key{list-style:none;margin:-6px 0 6px;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;font-size:13px;color:#C9E4E2}
+.sphere-key li{display:flex;align-items:center;gap:7px}
+.sphere-key li::before{content:"";width:9px;height:9px;border-radius:50%}
+.sphere-key .k0::before{background:#F7E7B0;box-shadow:0 0 8px #F7E7B0}
+.sphere-key .k1::before{background:#ECCF90;opacity:.8}
+.sphere-key .k2::before{background:#9DC3BF;opacity:.8}
+@media (max-width:760px){.hb-art .sphere{max-width:340px}}
 </style>
 </head>
 <body>

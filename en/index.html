@@ -292,6 +292,15 @@ section.home-doors{padding-block:40px 20px;border-top:0}
  @keyframes orbspin{to{transform:rotate(360deg)}}
  @keyframes corepulse{0%,100%{opacity:.75;transform:scale(.94)}50%{opacity:1;transform:scale(1.04)}}
 }
+
+.hb-art .sphere{display:block;width:100%;max-width:540px;aspect-ratio:1/1}
+.sphere-key{list-style:none;margin:-6px 0 6px;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;font-size:13px;color:#C9E4E2}
+.sphere-key li{display:flex;align-items:center;gap:7px}
+.sphere-key li::before{content:"";width:9px;height:9px;border-radius:50%}
+.sphere-key .k0::before{background:#F7E7B0;box-shadow:0 0 8px #F7E7B0}
+.sphere-key .k1::before{background:#ECCF90;opacity:.8}
+.sphere-key .k2::before{background:#9DC3BF;opacity:.8}
+@media (max-width:760px){.hb-art .sphere{max-width:340px}}
 </style>
 </head>
 <body>
@@ -307,27 +316,31 @@ section.home-doors{padding-block:40px 20px;border-top:0}
     <div class="hb-cta"><a class="btn" href="../en/clients/">I have a task</a><a class="btn ghost" href="../en/members/">Join a team</a></div>
     <a class="hb-man" href="../assets/manifest-ru.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Read the manifesto (PDF, Russian)</a>
   </div>
-  <figure class="hb-art"><svg class="circles" viewBox="0 0 600 600" role="img" aria-label="Bond: the team · does the work, who the work is for, circle of support">
-<defs>
- <linearGradient id="cgold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7E7B0"/><stop offset=".35" stop-color="#E2BF74"/><stop offset=".7" stop-color="#C99A45"/><stop offset="1" stop-color="#EDCD82"/></linearGradient>
- <radialGradient id="cglow"><stop offset="0" stop-color="#FFF4D2" stop-opacity=".95"/><stop offset=".45" stop-color="#ECCF90" stop-opacity=".55"/><stop offset="1" stop-color="#ECCF90" stop-opacity="0"/></radialGradient>
- <path id="arc-out" d="M 68 300 A 232 232 0 0 1 532 300"/>
- <path id="arc-mid" d="M 146 300 A 154 154 0 0 1 454 300"/>
- <path id="arc-team" d="M 146 300 A 154 154 0 0 0 454 300"/>
-</defs>
-<circle cx="300" cy="300" r="270" fill="rgba(201,228,226,.04)" stroke="#ECCF90" stroke-opacity=".28" stroke-dasharray="2 6"/>
-<circle cx="300" cy="300" r="190" fill="rgba(201,228,226,.05)" stroke="#ECCF90" stroke-opacity=".4"/>
-<g class="orb orb-out" fill="#C9E4E2" fill-opacity=".55"><circle cx="570.0" cy="300.0" r="4.5"/><circle cx="533.8" cy="435.0" r="4.5"/><circle cx="435.0" cy="533.8" r="4.5"/><circle cx="300.0" cy="570.0" r="4.5"/><circle cx="165.0" cy="533.8" r="4.5"/><circle cx="66.2" cy="435.0" r="4.5"/><circle cx="30.0" cy="300.0" r="4.5"/><circle cx="66.2" cy="165.0" r="4.5"/><circle cx="165.0" cy="66.2" r="4.5"/><circle cx="300.0" cy="30.0" r="4.5"/><circle cx="435.0" cy="66.2" r="4.5"/><circle cx="533.8" cy="165.0" r="4.5"/></g>
-<g class="orb orb-mid" fill="#ECCF90" fill-opacity=".8"><circle cx="466.7" cy="391.1" r="7"/><circle cx="137.7" cy="398.9" r="7"/><circle cx="295.5" cy="110.1" r="7"/></g>
-<text class="ring-label"><textPath href="#arc-out" startOffset="50%" text-anchor="middle">circle of support</textPath></text>
-<text class="ring-label"><textPath href="#arc-mid" startOffset="50%" text-anchor="middle">who the work is for</textPath></text>
-<circle class="core-glow" cx="300" cy="300" r="150" fill="url(#cglow)"/>
-<g fill="none" stroke="url(#cgold)" stroke-width="1.6" stroke-linejoin="round"><polygon points="300.0,188.0 406.5,265.4 365.8,390.6 234.2,390.6 193.5,265.4"/><polygon points="300.0,188.0 365.8,390.6 193.5,265.4 406.5,265.4 234.2,390.6" stroke-opacity=".55"/><g stroke-opacity=".7"><line x1="300" y1="300" x2="300.0" y2="188.0"/><line x1="300" y1="300" x2="406.5" y2="265.4"/><line x1="300" y1="300" x2="365.8" y2="390.6"/><line x1="300" y1="300" x2="234.2" y2="390.6"/><line x1="300" y1="300" x2="193.5" y2="265.4"/></g></g>
-<g fill="url(#cgold)"><circle cx="300.0" cy="188.0" r="13"/><circle cx="406.5" cy="265.4" r="13"/><circle cx="365.8" cy="390.6" r="13"/><circle cx="234.2" cy="390.6" r="13"/><circle cx="193.5" cy="265.4" r="13"/></g>
-<circle cx="300" cy="300" r="52" fill="#0B3F3C" stroke="url(#cgold)" stroke-width="2"/>
-<text class="core-word" x="300" y="308" text-anchor="middle">Bond</text>
-<text class="ring-label team"><textPath href="#arc-team" startOffset="50%" text-anchor="middle">the team · does the work</textPath></text>
-</svg><figcaption><b>“Everyone is responsible for one another”</b><span>— after Baal HaSulam, “The Arvut”</span></figcaption></figure>
+  <figure class="hb-art"><canvas id="sphere" class="sphere" role="img" aria-label="the team · does the work, who the work is for, circle of support"></canvas><ul class="sphere-key"><li class="k0">the team · does the work</li><li class="k1">who the work is for</li><li class="k2">circle of support</li></ul><script>
+(function(){
+var c=document.getElementById('sphere');if(!c||!c.getContext)return;var x=c.getContext('2d');
+var still=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function fib(n,R){var p=[],g=Math.PI*(3-Math.sqrt(5));for(var i=0;i<n;i++){var y=1-(i+.5)/n*2,r=Math.sqrt(1-y*y),t=g*i;p.push([Math.cos(t)*r*R,y*R,Math.sin(t)*r*R]);}return p;}
+var S=[{n:10,R:.30,col:[247,231,176],size:5.2,line:.75},{n:26,R:.62,col:[236,207,144],size:3.2,line:.38},{n:64,R:.95,col:[157,195,191],size:2.2,line:.22}];
+var P=[],E=[];S.forEach(function(s,k){fib(s.n,s.R).forEach(function(q){P.push({p:q,k:k});});});
+function d2(a,b){var dx=a.p[0]-b.p[0],dy=a.p[1]-b.p[1],dz=a.p[2]-b.p[2];return dx*dx+dy*dy+dz*dz;}
+function near(i,k,m){return P.map(function(q,j){return [j,q]}).filter(function(e){return e[1].k===k&&e[0]!==i}).sort(function(a,b){return d2(P[i],a[1])-d2(P[i],b[1])}).slice(0,m).map(function(e){return e[0]});}
+var seen={};function add(i,j,k){var key=i<j?i+'-'+j:j+'-'+i;if(seen[key])return;seen[key]=1;E.push([i,j,k]);}
+P.forEach(function(q,i){if(q.k===0){P.forEach(function(r,j){if(r.k===0&&j>i)add(i,j,0);});}
+ else{near(i,q.k,3).forEach(function(j){add(i,j,q.k);});near(i,q.k-1,1).forEach(function(j){add(i,j,q.k);});}});
+var a=0.6,tilt=-.38,W=0,H=0,dpr=1;
+function size(){var r=c.getBoundingClientRect();dpr=Math.min(window.devicePixelRatio||1,2);W=r.width;H=r.width;c.width=W*dpr;c.height=H*dpr;c.style.height=H+'px';x.setTransform(dpr,0,0,dpr,0,0);}
+function proj(q){var ca=Math.cos(a),sa=Math.sin(a),ct=Math.cos(tilt),st=Math.sin(tilt);var X=q[0]*ca+q[2]*sa,Z=-q[0]*sa+q[2]*ca,Y=q[1]*ct-Z*st;Z=q[1]*st+Z*ct;var f=3/(3+Z),s=W*.46;return [W/2+X*s*f,H/2+Y*s*f,Z,f];}
+function frame(){x.clearRect(0,0,W,H);
+ var g=x.createRadialGradient(W/2,H/2,0,W/2,H/2,W*.32);g.addColorStop(0,'rgba(255,244,210,.55)');g.addColorStop(.5,'rgba(236,207,144,.16)');g.addColorStop(1,'rgba(236,207,144,0)');x.fillStyle=g;x.fillRect(0,0,W,H);
+ var Q=P.map(function(q){return proj(q.p)});
+ E.forEach(function(e){var A=Q[e[0]],B=Q[e[1]],s=S[e[2]],dep=(2-(A[2]+B[2])/2)/2;x.strokeStyle='rgba('+s.col.join(',')+','+(s.line*(.35+.65*dep)).toFixed(3)+')';x.lineWidth=e[2]===0?1.3:.8;x.beginPath();x.moveTo(A[0],A[1]);x.lineTo(B[0],B[1]);x.stroke();});
+ P.map(function(q,i){return [i,Q[i][2]]}).sort(function(m,n){return n[1]-m[1]}).forEach(function(o){var i=o[0],s=S[P[i].k],q=Q[i],dep=(1-q[2])/2;x.fillStyle='rgba('+s.col.join(',')+','+(.35+.65*dep).toFixed(3)+')';x.beginPath();x.arc(q[0],q[1],s.size*q[3]*(W/520),0,6.2832);x.fill();});
+ x.fillStyle='rgba(255,248,225,.95)';x.beginPath();x.arc(W/2,H/2,4*(W/520),0,6.2832);x.fill();}
+function loop(){a+=.0016;frame();if(!document.hidden)requestAnimationFrame(loop);else setTimeout(loop,500);}
+size();frame();window.addEventListener('resize',function(){size();frame();});if(!still)requestAnimationFrame(loop);
+})();
+</script><figcaption><b>“Everyone is responsible for one another”</b><span>— after Baal HaSulam, “The Arvut”</span></figcaption></figure>
   <div class="hb-path"><ol><li><i>1</i>A problem people care about</li><span class="arr" aria-hidden="true">→</span><li><i>2</i>Pilot</li><span class="arr" aria-hidden="true">→</span><li><i>3</i>Project</li><span class="arr" aria-hidden="true">→</span><li><i>4</i>Startup</li></ol><p>In the startup every member of the circle holds a share according to their contribution. The largest shares go to those who did the core work.</p></div>
   <div class="hb-money"><p class="hb-ex">Example: a $100,000 project</p><div class="hb-bar"><div style="flex:80">Team 80%</div><div style="flex:10">10%</div><div style="flex:10">10%</div></div><p class="hb-legend">80% to the team · 10% to the organiser · 10% to the guide (no guide: 20% to the organiser)</p><ul class="hb-facts"><li><b>$80,000</b><span>goes to the team that did the work</span></li><li><b>≈ $20,000</b><span>per person in a team of four</span></li><li><b>$10,000</b><span>to the guide — for one introduction</span></li><li><b>$0</b><span>the client pays for a stage they did not accept</span></li></ul></div>
 </header><section class="home-doors"><div class="doors">
