@@ -63,36 +63,38 @@ CIRCLES = '''<svg viewBox="0 0 760 600" class="rings" role="img" aria-label="К�
 <text x="380" y="530">Сообщества и университеты</text></g>
 </svg>'''
 
-TENT = '''<svg class="tent" viewBox="0 0 600 470" role="img" aria-label="Открытый со всех сторон шатёр, в нём сидит небольшая команда">
+TENT = '''<svg class="tent" viewBox="0 0 600 340" role="img" aria-label="Над открытым шатром висит сеть связей; под ним команда за круглым столом">
 <defs>
  <linearGradient id="tg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7E7B0"/><stop offset=".4" stop-color="#E2BF74"/><stop offset=".75" stop-color="#C99A45"/><stop offset="1" stop-color="#EDCD82"/></linearGradient>
- <radialGradient id="tl" cx="50%" cy="72%" r="45%"><stop offset="0" stop-color="#FFE9B0" stop-opacity=".75"/><stop offset=".5" stop-color="#ECCF90" stop-opacity=".22"/><stop offset="1" stop-color="#ECCF90" stop-opacity="0"/></radialGradient>
- <radialGradient id="fl" cx="50%" cy="60%" r="50%"><stop offset="0" stop-color="#FFF6DA"/><stop offset="1" stop-color="#E2BF74"/></radialGradient>
+ <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF4D2" stop-opacity=".5"/><stop offset=".35" stop-color="#FFF4D2" stop-opacity=".7"/><stop offset="1" stop-color="#FFF4D2" stop-opacity=".9"/></linearGradient>
+ <radialGradient id="tl" cx="50%" cy="78%" r="42%"><stop offset="0" stop-color="#FFE9B0" stop-opacity=".6"/><stop offset=".55" stop-color="#ECCF90" stop-opacity=".14"/><stop offset="1" stop-color="#ECCF90" stop-opacity="0"/></radialGradient>
+ <linearGradient id="tab" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7E7B0"/><stop offset="1" stop-color="#C99A45"/></linearGradient>
 </defs>
-<g fill="#F7E7B0"><circle cx="70" cy="60" r="1.8" opacity=".7"/><circle cx="140" cy="28" r="1.2" opacity=".5"/><circle cx="460" cy="40" r="1.6" opacity=".6"/><circle cx="535" cy="92" r="1.2" opacity=".5"/><circle cx="380" cy="22" r="1" opacity=".5"/><circle cx="40" cy="150" r="1" opacity=".4"/><circle cx="565" cy="170" r="1.4" opacity=".5"/><circle cx="230" cy="40" r="1" opacity=".45"/></g>
-<ellipse cx="300" cy="402" rx="250" ry="26" fill="#000" opacity=".18"/>
-<rect x="60" y="120" width="480" height="300" fill="url(#tl)"/>
-<g stroke="url(#tg)" stroke-linecap="round" fill="none">
- <path d="M190 180 L190 382 M410 180 L410 382" stroke-width="2.5" opacity=".45"/>
- <path d="M150 170 Q300 130 450 170" stroke-width="2" opacity=".5"/>
- <path d="M84 218 L300 92 L516 218" stroke-width="3.2" stroke-linejoin="round"/>
- <path d="M84 218 Q111 238 138 218 Q165 238 192 218 Q219 238 246 218 Q273 238 300 218 Q327 238 354 218 Q381 238 408 218 Q435 238 462 218 Q489 238 516 218" stroke-width="2.4"/>
- <path d="M300 92 L246 218 M300 92 L354 218 M300 92 L192 218 M300 92 L408 218 M300 92 L138 218 M300 92 L462 218" stroke-width="1.2" opacity=".55"/>
- <path d="M104 226 L104 396 M496 226 L496 396" stroke-width="3"/>
- <path d="M84 218 L36 404 M516 218 L564 404" stroke-width="1.2" opacity=".55" stroke-dasharray="4 5"/>
- <path d="M300 92 L300 70" stroke-width="2.4"/>
+<rect x="80" y="60" width="440" height="270" fill="url(#tl)"/>
+<path d="M300 0 L300 250" stroke="url(#beam)" stroke-width="2.2"/><circle cx="300" cy="248" r="22" fill="#FFF4D2" opacity=".18"/>
+<ellipse cx="300" cy="312" rx="230" ry="16" fill="#000" opacity=".2"/>
+<g fill="none" stroke="url(#tg)" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M168 132 L168 300 M432 132 L432 300" stroke-width="1.6" opacity=".45"/>
+ <path d="M70 160 C150 150 230 120 300 64 C370 120 450 150 530 160" stroke-width="3"/>
+ <path d="M70 160 C88 172 104 172 118 164 C134 174 150 174 164 166 C180 176 196 176 210 168 C226 177 242 177 256 170 C270 178 286 178 300 171 C314 178 330 178 344 170 C358 177 374 177 390 168 C404 176 420 176 436 166 C450 174 466 174 482 164 C496 172 512 172 530 160" stroke-width="1.8" opacity=".9"/>
+ <path d="M300 64 C268 108 236 134 210 150 M300 64 C332 108 364 134 390 150 M300 64 C285 110 270 140 256 160 M300 64 C315 110 330 140 344 160" stroke-width="1" opacity=".5"/>
+ <path d="M86 166 L86 304 M514 166 L514 304" stroke-width="2.6"/>
+ <path d="M70 160 L34 306 M530 160 L566 306" stroke-width="1" opacity=".5" stroke-dasharray="3 5"/>
 </g>
-<circle cx="300" cy="66" r="5" fill="url(#tg)"/>
-<path d="M300 314 C291 328 289 337 300 346 C311 337 309 328 300 314 Z" fill="url(#fl)"/>
-<ellipse cx="300" cy="348" rx="16" ry="4" fill="#C99A45" opacity=".7"/>
+<circle cx="300" cy="62" r="4" fill="url(#tg)"/>
 <g fill="url(#tg)">
- <circle cx="208" cy="318" r="12"/><path d="M188 372 Q186 336 208 332 Q230 336 228 372 Z"/>
- <circle cx="252" cy="302" r="11" opacity=".9"/><path d="M234 352 Q232 318 252 315 Q272 318 270 352 Z" opacity=".9"/>
- <circle cx="348" cy="302" r="11" opacity=".9"/><path d="M330 352 Q328 318 348 315 Q368 318 366 352 Z" opacity=".9"/>
- <circle cx="392" cy="318" r="12"/><path d="M372 372 Q370 336 392 332 Q414 336 412 372 Z"/>
+ <path transform="translate(244 262)" opacity=".85" d="M-18 0 C-21 -28 -15 -50 -5 -60 C0 -67 10 -68 13 -60 C15 -54 11 -50 12 -43 C19 -32 22 -14 20 0 Z"/>
+ <path transform="translate(356 262)" opacity=".85" d="M18 0 C21 -28 15 -50 5 -60 C0 -67 -10 -68 -13 -60 C-15 -54 -11 -50 -12 -43 C-19 -32 -22 -14 -20 0 Z"/>
+ <path transform="translate(300 252)" opacity=".75" d="M-17 0 C-20 -30 -13 -54 0 -63 C13 -54 20 -30 17 0 Z"/>
 </g>
-<g fill="#0B3F3C" stroke="url(#tg)" stroke-width="1.6"><circle cx="300" cy="368" r="13"/><path d="M276 424 Q273 386 300 382 Q327 386 324 424 Z"/></g>
-<path d="M150 396 L450 396" stroke="url(#tg)" stroke-width="1.4" opacity=".6"/>
+<ellipse cx="300" cy="266" rx="92" ry="20" fill="url(#tab)" opacity=".95"/>
+<ellipse cx="300" cy="264" rx="84" ry="15" fill="#FFF4D2" opacity=".35"/>
+<path d="M208 268 C210 282 250 290 300 290 C350 290 390 282 392 268" fill="none" stroke="#B98A34" stroke-width="5" opacity=".85"/>
+<g fill="url(#tg)">
+ <path transform="translate(206 296)" d="M-18 0 C-21 -28 -15 -50 -5 -60 C0 -67 10 -68 13 -60 C15 -54 11 -50 12 -43 C19 -32 22 -14 20 0 Z"/>
+ <path transform="translate(394 296)" d="M18 0 C21 -28 15 -50 5 -60 C0 -67 -10 -68 -13 -60 C-15 -54 -11 -50 -12 -43 C-19 -32 -22 -14 -20 0 Z"/>
+</g>
+<path d="M120 306 L480 306" stroke="url(#tg)" stroke-width="1.2" opacity=".55"/>
 </svg>'''
 
 def esc(s):
@@ -130,7 +132,7 @@ h2{{font-size:40px;font-weight:800;letter-spacing:-.02em;margin-bottom:18px}}
 /* cover */
 .cover{{background:radial-gradient(ellipse 60% 50% at 50% 42%,rgba(27,156,147,.45),rgba(27,156,147,0) 70%),var(--deep);color:#fff;min-height:100vh;display:flex;flex-direction:column;justify-content:space-between;padding:56px 64px}}
 .cover .brand{{font-size:15px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold2);font-weight:600}}
-.cover .tent{{display:block;width:min(560px,96%);height:auto;margin:10px auto 0}}
+.cover .sphere{{display:block;width:min(340px,70%);aspect-ratio:1/1;margin:0 auto -70px;position:relative;z-index:1}}.cover .tent{{display:block;width:min(560px,96%);height:auto;margin:0 auto}}
 .cover h1{{font-size:64px;font-weight:800;letter-spacing:-.03em;line-height:1}}
 .cover .kind{{font-size:22px;color:var(--gold2);font-weight:600;margin-top:12px;letter-spacing:.04em}}
 .cover .q{{font-style:italic;color:#9DC3BF;font-size:16px;margin-top:22px;max-width:46ch}}
@@ -217,7 +219,7 @@ footer.end{{text-align:center;font-size:13px;color:var(--soft);padding:26px}}
 {web_bar}
 <section class="cover">
   <div class="brand">amalor</div>
-  {TENT}
+  <canvas id="sphere" class="sphere" aria-hidden="true"></canvas>{TENT}
   <div><h1>Команда последнего<br>поколения</h1><div class="kind">Манифест</div>
   <p class="q">«Связку тростника не сломать разом. По одной тростинке её переломит и ребёнок»</p></div>
 </section>
