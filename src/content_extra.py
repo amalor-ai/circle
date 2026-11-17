@@ -551,12 +551,12 @@ CIRCLES_TXT = {
             motto='«Все отвечают друг за друга»', motto_src='— мысль Бааль Сулама, «Поручительство»',
             path=['Проблема, важная людям', 'Пилот', 'Проект', 'Стартап'],
             path_note='В стартапе у каждого участника круга есть доля по вкладу. Больше всего — у тех, кто сделал основную работу.',
-            man='Прочитать манифест', links='связи между кругами'),
+            man='Манифест', links='связи между кругами'),
  'en': dict(core='Bond', team='the team · does the work', purpose='who the work is for', support='circle of support',
             motto='“Everyone is responsible for one another”', motto_src='— after Baal HaSulam, “The Arvut”',
             path=['A problem people care about', 'Pilot', 'Project', 'Startup'],
             path_note='In the startup every member of the circle holds a share according to their contribution. The largest shares go to those who did the core work.',
-            man='Read the manifesto (in Russian)', links='links between the circles'),
+            man='Manifesto (RU)', links='links between the circles'),
 }
 
 def circles_svg(lang):
@@ -603,8 +603,7 @@ def hero_home(lang):
     <p class="hb-sub">{h['sub']}</p>
     <p class="hb-tag">{h['tag']}</p>
     <p class="hb-lead">{h['lead']}</p>
-    <div class="hb-cta"><a class="btn" href="{{L}}{h['b1'][1]}">{h['b1'][0]}</a><a class="btn ghost" href="{{L}}{h['b2'][1]}">{h['b2'][0]}</a></div>
-    <a class="hb-man" href="{{R}}manifest/"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h14m0 0l-6-6m6 6l-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>{t['man']}</a>
+    <div class="hb-cta"><a class="btn" href="{{L}}{h['b1'][1]}">{h['b1'][0]}</a><a class="btn ghost" href="{{L}}{h['b2'][1]}">{h['b2'][0]}</a><a class="btn manifest" href="{{R}}manifest/"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M5 4h10a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z M8 20a3 3 0 0 1-3-3 M9 9h6 M9 13h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>{t['man']}</a></div>
   </div>
   <figure class="hb-art">{circles_svg(lang)}<figcaption><b>{t['motto']}</b><span>{t['motto_src']}</span></figcaption></figure>
   <div class="hb-path"><ol>{steps}</ol><p>{t['path_note']}</p></div>
@@ -696,4 +695,9 @@ EXTRA_CSS += '''
 .hb-path li:last-of-type{box-shadow:0 0 0 1.5px var(--thread)}
 .hb-art figcaption b{border-bottom:1px solid rgba(111,183,230,.6);padding-bottom:4px}
 .sphere-key .k3::before{background:#6FB7E6}
+'''
+
+EXTRA_CSS += '''
+.btn.manifest{gap:10px;background:rgba(111,183,230,.1);color:#DDF0FB;border:1.5px solid var(--thread);box-shadow:none}
+.btn.manifest:hover{background:rgba(111,183,230,.22)}
 '''
