@@ -67,7 +67,7 @@ LADDER = {
   </div>
   <ol class="ladder">
     <li><span class="num">1</span><div><h3>Участник</h3><p class="when">мотив: деньги и опыт</p></div></li>
-    <li><span class="num">2</span><div><h3>Член команды</h3><p class="when">мотив: доля и признание заказчика</p></div></li>
+    <li><span class="num">2</span><div><h3>Член команды</h3><p class="when">мотив: доля в проекте и благодарность заказчика</p></div></li>
     <li><span class="num">3</span><div><h3>Ядро</h3><p class="when">мотив: признание за вклад в общее</p></div></li>
     <li><span class="num">4</span><div><h3>Наставник</h3><p class="when">мотив: отдача и рост других</p></div></li>
   </ol>
@@ -80,7 +80,7 @@ LADDER = {
   </div>
   <ol class="ladder">
     <li><span class="num">1</span><div><h3>Member</h3><p class="when">motive: income and experience</p></div></li>
-    <li><span class="num">2</span><div><h3>Team member</h3><p class="when">motive: a share and client recognition</p></div></li>
+    <li><span class="num">2</span><div><h3>Team member</h3><p class="when">motive: a share in the project and the client’s gratitude</p></div></li>
     <li><span class="num">3</span><div><h3>Core</h3><p class="when">motive: recognition for contributing to the whole</p></div></li>
     <li><span class="num">4</span><div><h3>Mentor</h3><p class="when">motive: giving back and helping others grow</p></div></li>
   </ol>

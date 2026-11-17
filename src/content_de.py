@@ -35,7 +35,7 @@ LADDER['de'] = '''<section>
   </div>
   <ol class="ladder">
     <li><span class="num">1</span><div><h3>Mitglied</h3><p class="when">Motiv: Geld und Erfahrung</p></div></li>
-    <li><span class="num">2</span><div><h3>Teammitglied</h3><p class="when">Motiv: Anteil und Anerkennung des Auftraggebers</p></div></li>
+    <li><span class="num">2</span><div><h3>Teammitglied</h3><p class="when">Motiv: Anteil am Projekt und Dank des Auftraggebers</p></div></li>
     <li><span class="num">3</span><div><h3>Kern</h3><p class="when">Motiv: Anerkennung für den Beitrag zum Ganzen</p></div></li>
     <li><span class="num">4</span><div><h3>Mentor</h3><p class="when">Motiv: zurückgeben und andere wachsen lassen</p></div></li>
   </ol>
