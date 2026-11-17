@@ -314,6 +314,11 @@ section.home-doors{padding-block:40px 20px;border-top:0}
 
 .btn.manifest{gap:10px;background:rgba(111,183,230,.1);color:#DDF0FB;border:1.5px solid var(--thread);box-shadow:none}
 .btn.manifest:hover{background:rgba(111,183,230,.22)}
+
+.cards3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.cards3 .card{background:#FFFDF8;border:1px solid #E4DAC4;border-radius:16px;padding:20px}
+.cards3 h3{margin:0 0 8px;font-size:18px}.cards3 p{margin:0;color:#4A6563;font-size:15px}
+@media (max-width:760px){.cards3{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -326,6 +331,10 @@ section.home-doors{padding-block:40px 20px;border-top:0}
     <p class="lead">Около трёх часов встреч в неделю — совместимо с основной работой. Каждая встреча начинается с цели и заканчивается решением.</p>
   </div>
 </header>
+<section>
+  <div class="head"><h2>Размер команды</h2></div>
+  <div class="cards3"><div class="card"><h3>Ядро — 3–5 человек</h3><p>Они несут ответственность за результат, делят доход поровну и решают, кого принимать. Столько людей хорошо слышат друг друга и видят вклад каждого.</p></div><div class="card"><h3>Специалисты под задачу</h3><p>Когда нужен юрист, дизайнер или другой эксперт на 1–2 недели, его подключают из круга. Он получает оплату за свою часть и в ядро не входит.</p></div><div class="card"><h3>Делимся, а не разрастаемся</h3><p>Если проекту нужно больше пяти человек, команда делится на две и держит связь через тимлидов — вместо одного большого отдела.</p></div></div>
+</section>
 <section>
   <div class="head"><h2>Неделя</h2></div>
   <div class="week">

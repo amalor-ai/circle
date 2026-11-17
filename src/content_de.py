@@ -202,7 +202,7 @@ PIPELINE['de'] = '''<section>
     <li><span class="num">1</span><div><h3>Nachfrage finden</h3><p class="when">Aufgaben von Auftraggebern und Mitgliedern, Ausschreibungen, Kundenbeschwerden, neue Regeln</p></div></li>
     <li><span class="num">2</span><div><h3>Nachfrage prüfen</h3><p class="when">10–20 Gespräche und ein Auftraggeber, der für einen Pilot zahlt</p></div></li>
     <li><span class="num">3</span><div><h3>Probearbeit</h3><p class="when">1–2 Wochen in gemischten Paaren an einer echten Aufgabe</p></div></li>
-    <li><span class="num">4</span><div><h3>Team bilden</h3><p class="when">3–5 Personen, Einkommen zu gleichen Teilen, Teamvereinbarung, Team Lead im Konsens</p></div></li>
+    <li><span class="num">4</span><div><h3>Team bilden</h3><p class="when">Kern aus 3–5 Personen, Fachleute aus dem Kreis nach Bedarf, Einkommen zu gleichen Teilen, Teamvereinbarung, Team Lead im Konsens</p></div></li>
     <li><span class="num">5</span><div><h3>Lösung mit dem Auftraggeber</h3><p class="when">erste Nutzer und erstes Geld – vor jeder Finanzierungsrunde</p></div></li>
     <li><span class="num">6</span><div><h3>Team-Pass</h3><p class="when">Geschichte der Zusammenarbeit, Rollen, Kundengespräche, Kennzahlen</p></div></li>
     <li><span class="num">7</span><div><h3>Demo für Investoren</h3><p class="when">ein Team, das bewiesen hat, dass es funktioniert, mit einem Partner-Auftraggeber an der Seite</p></div></li>
@@ -225,3 +225,6 @@ CIRCLES_TXT['de'] = dict(core='Bund', team='das Team · macht die Arbeit', purpo
     path=['Ein Problem, das Menschen wichtig ist', 'Pilot', 'Projekt', 'Startup'],
     path_note='Im Startup hält jedes Mitglied des Kreises einen Anteil nach seinem Beitrag. Den größten Anteil erhalten die, die die Hauptarbeit geleistet haben.',
     man='Manifest (RU)', links='Verbindungen zwischen den Kreisen')
+
+from content_extra import _size_block, TEAM
+TEAM['de'] = TEAM['de'].replace('</header>\n', '</header>\n' + _size_block(('Teamgröße','Ein Kern aus 3–5 Menschen','Sie tragen die Verantwortung für das Ergebnis, teilen das Einkommen zu gleichen Teilen und entscheiden, wer dazukommt. In dieser Größe hören alle einander und sehen den Beitrag jedes Einzelnen.','Fachleute für die Aufgabe','Wird für 1–2 Wochen eine Juristin, ein Designer oder eine andere Expertin gebraucht, kommt sie aus dem Kreis dazu. Sie wird für ihren Teil bezahlt und gehört nicht zum Kern.','Teilen statt wuchern','Braucht ein Projekt mehr als fünf Menschen, teilt sich das Team in zwei, die über ihre Leads verbunden bleiben – statt einer großen Abteilung.')), 1)

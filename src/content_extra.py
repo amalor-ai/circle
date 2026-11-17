@@ -435,7 +435,7 @@ PIPELINE = {
     <li><span class="num">1</span><div><h3>Поиск спроса</h3><p class="when">задачи от заказчиков и участников, тендеры, жалобы клиентов, новые правила</p></div></li>
     <li><span class="num">2</span><div><h3>Проверка спроса</h3><p class="when">10–20 разговоров и заказчик, готовый платить за пилот</p></div></li>
     <li><span class="num">3</span><div><h3>Пробная работа</h3><p class="when">1–2 недели в смешанных парах на реальной задаче</p></div></li>
-    <li><span class="num">4</span><div><h3>Сборка команды</h3><p class="when">3–5 человек, доход поровну, договор команды, Team Lead по согласию</p></div></li>
+    <li><span class="num">4</span><div><h3>Сборка команды</h3><p class="when">ядро 3–5 человек, специалисты из круга под задачу, доход поровну, договор команды, Team Lead по согласию</p></div></li>
     <li><span class="num">5</span><div><h3>Решение с заказчиком</h3><p class="when">первые пользователи и первые деньги — до раунда</p></div></li>
     <li><span class="num">6</span><div><h3>Паспорт команды</h3><p class="when">история совместной работы, роли, разговоры с клиентами, показатели</p></div></li>
     <li><span class="num">7</span><div><h3>Демо инвесторам</h3><p class="when">команда, которая уже доказала, что работает, и заказчик-партнёр рядом</p></div></li>
@@ -451,7 +451,7 @@ PIPELINE = {
     <li><span class="num">1</span><div><h3>Finding demand</h3><p class="when">tasks from clients and members, tenders, customer complaints, new regulations</p></div></li>
     <li><span class="num">2</span><div><h3>Validating demand</h3><p class="when">10–20 conversations and a client ready to pay for a pilot</p></div></li>
     <li><span class="num">3</span><div><h3>Trial work</h3><p class="when">1–2 weeks in mixed pairs on a real task</p></div></li>
-    <li><span class="num">4</span><div><h3>Forming the team</h3><p class="when">3–5 people, income shared equally, a team agreement, a Team Lead by consent</p></div></li>
+    <li><span class="num">4</span><div><h3>Forming the team</h3><p class="when">a core of 3–5 people, specialists from the circle as needed, income shared equally, a team agreement, a Team Lead by consent</p></div></li>
     <li><span class="num">5</span><div><h3>Solution with the client</h3><p class="when">first users and first revenue — before any round</p></div></li>
     <li><span class="num">6</span><div><h3>Team passport</h3><p class="when">history of working together, roles, client conversations, indicators</p></div></li>
     <li><span class="num">7</span><div><h3>Investor demo</h3><p class="when">a team that has already proven it works, with a partner client alongside</p></div></li>
@@ -701,3 +701,17 @@ EXTRA_CSS += '''
 .btn.manifest{gap:10px;background:rgba(111,183,230,.1);color:#DDF0FB;border:1.5px solid var(--thread);box-shadow:none}
 .btn.manifest:hover{background:rgba(111,183,230,.22)}
 '''
+
+# ---- team size: fixed core, flexible periphery ----
+_SIZE = {'ru': ('Размер команды', 'Ядро — 3–5 человек', 'Они несут ответственность за результат, делят доход поровну и решают, кого принимать. Столько людей хорошо слышат друг друга и видят вклад каждого.', 'Специалисты под задачу', 'Когда нужен юрист, дизайнер или другой эксперт на 1–2 недели, его подключают из круга. Он получает оплату за свою часть и в ядро не входит.', 'Делимся, а не разрастаемся', 'Если проекту нужно больше пяти человек, команда делится на две и держит связь через тимлидов — вместо одного большого отдела.'), 'en': ('Team size', 'A core of 3–5 people', 'They are responsible for the result, share income equally and decide who joins. A group this size hears each other well and sees everyone’s contribution.', 'Specialists for the task', 'When a lawyer, designer or other expert is needed for 1–2 weeks, they join from the circle. They are paid for their part and do not join the core.', 'We split rather than sprawl', 'If a project needs more than five people, the team splits into two that stay connected through their leads — instead of one big department.')}
+def _size_block(t):
+    h,a1,b1,a2,b2,a3,b3=t
+    return ('<section>\n  <div class="head"><h2>'+h+'</h2></div>\n  <div class="cards3"><div class="card"><h3>'+a1+'</h3><p>'+b1+'</p></div><div class="card"><h3>'+a2+'</h3><p>'+b2+'</p></div><div class="card"><h3>'+a3+'</h3><p>'+b3+'</p></div></div>\n</section>\n')
+for _l, _t in _SIZE.items():
+    TEAM[_l] = TEAM[_l].replace('</header>\n', '</header>\n' + _size_block(_t), 1)
+EXTRA_CSS += """
+.cards3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.cards3 .card{background:#FFFDF8;border:1px solid #E4DAC4;border-radius:16px;padding:20px}
+.cards3 h3{margin:0 0 8px;font-size:18px}.cards3 p{margin:0;color:#4A6563;font-size:15px}
+@media (max-width:760px){.cards3{grid-template-columns:1fr}}
+"""

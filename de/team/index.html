@@ -314,6 +314,11 @@ section.home-doors{padding-block:40px 20px;border-top:0}
 
 .btn.manifest{gap:10px;background:rgba(111,183,230,.1);color:#DDF0FB;border:1.5px solid var(--thread);box-shadow:none}
 .btn.manifest:hover{background:rgba(111,183,230,.22)}
+
+.cards3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.cards3 .card{background:#FFFDF8;border:1px solid #E4DAC4;border-radius:16px;padding:20px}
+.cards3 h3{margin:0 0 8px;font-size:18px}.cards3 p{margin:0;color:#4A6563;font-size:15px}
+@media (max-width:760px){.cards3{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -326,6 +331,10 @@ section.home-doors{padding-block:40px 20px;border-top:0}
     <p class="lead">Etwa drei Stunden Meetings pro Woche – vereinbar mit einem Hauptjob. Jedes Meeting beginnt mit einem Ziel und endet mit einer Entscheidung.</p>
   </div>
 </header>
+<section>
+  <div class="head"><h2>Teamgröße</h2></div>
+  <div class="cards3"><div class="card"><h3>Ein Kern aus 3–5 Menschen</h3><p>Sie tragen die Verantwortung für das Ergebnis, teilen das Einkommen zu gleichen Teilen und entscheiden, wer dazukommt. In dieser Größe hören alle einander und sehen den Beitrag jedes Einzelnen.</p></div><div class="card"><h3>Fachleute für die Aufgabe</h3><p>Wird für 1–2 Wochen eine Juristin, ein Designer oder eine andere Expertin gebraucht, kommt sie aus dem Kreis dazu. Sie wird für ihren Teil bezahlt und gehört nicht zum Kern.</p></div><div class="card"><h3>Teilen statt wuchern</h3><p>Braucht ein Projekt mehr als fünf Menschen, teilt sich das Team in zwei, die über ihre Leads verbunden bleiben – statt einer großen Abteilung.</p></div></div>
+</section>
 <section>
   <div class="head"><h2>Die Woche</h2></div>
   <div class="week">
