@@ -228,3 +228,84 @@ CIRCLES_TXT['de'] = dict(core='Bund', team='das Team · macht die Arbeit', purpo
 
 from content_extra import _size_block, TEAM
 TEAM['de'] = TEAM['de'].replace('</header>\n', '</header>\n' + _size_block(('Teamgröße','Ein Kern aus 3–5 Menschen','Sie tragen die Verantwortung für das Ergebnis, teilen das Einkommen zu gleichen Teilen und entscheiden, wer dazukommt. In dieser Größe hören alle einander und sehen den Beitrag jedes Einzelnen.','Fachleute für die Aufgabe','Wird für 1–2 Wochen eine Juristin, ein Designer oder eine andere Expertin gebraucht, kommt sie aus dem Kreis dazu. Sie wird für ihren Teil bezahlt und gehört nicht zum Kern.','Teilen statt wuchern','Braucht ein Projekt mehr als fünf Menschen, teilt sich das Team in zwei, die über ihre Leads verbunden bleiben – statt einer großen Abteilung.')), 1)
+
+# --- German client offer (2026-11): what the client gets, two ways to own the result, safety, after the project ---
+CLIENT_HOME = {'de': '''<section id="vorteile">
+  <div class="head">
+    <h2>Was Sie als Auftraggeber bekommen</h2>
+    <p class="lead">Ihre eigene Software, Automatisierung oder einen neuen Prozess – von einem eingespielten Team, bezahlt nur nach abgenommenem Ergebnis. Und wenn Ihr Problem die ganze Branche hat, verdienen Sie an der Lösung mit.</p>
+  </div>
+  <ul class="prin plain four">
+    <li><b>Bezahlung nur für Ergebnisse</b><span>Jede Etappe hat einen festen Preis. Sie zahlen erst, wenn Sie sie abgenommen haben.</span></li>
+    <li><b>Kleiner Einstieg</b><span>Kostenloses Gespräch, dann zwei Wochen Diagnose zum Festpreis. Danach entscheiden Sie.</span></li>
+    <li><b>Kein Lock-in</b><span>Nach Bezahlung gehören Ihnen Code, Dokumentation und Rechte. Ihre Daten verlassen nie Ihre Systeme.</span></li>
+    <li><b>An der Lösung mitverdienen</b><span>Als Partner-Auftraggeber werden Sie Miteigentümer und verdienen an jeder Lizenz für andere Firmen.</span></li>
+  </ul>
+  <p class="more"><a href="{L}clients/">Alle Vorteile und der Ablauf →</a></p>
+</section>'''}
+
+CLIENT_OFFER = {'de': '''<section id="vorteile">
+  <div class="head">
+    <h2>Ihre Vorteile</h2>
+    <p class="lead">Sie bekommen die Lösung, die Ihre Branchensoftware nicht bietet – ohne eigene Entwicklungsabteilung und ohne das Risiko eines klassischen Softwareprojekts.</p>
+  </div>
+  <ul class="prin plain four">
+    <li><b>Bezahlung nur für abgenommene Ergebnisse</b><span>Keine Stundenabrechnung. Jede Etappe hat einen vorab festgelegten Preis und klare Abnahmekriterien. Passt sie nicht, bessert das Team auf eigene Kosten nach.</span></li>
+    <li><b>Kleiner, kalkulierbarer Einstieg</b><span>Ein kostenloses Gespräch, dann zwei Wochen Diagnose zum Festpreis mit Lösungsplan, Preis und Termin. Erst dann entscheiden Sie über die Umsetzung.</span></li>
+    <li><b>Ein eingespieltes Team statt Einzelkämpfer</b><span>3–5 Fachleute und KI-Werkzeuge in einem festen Wochenrhythmus. Jeden Freitag gibt es sichtbare Ergebnisse, auf Wunsch als kurze Demo für Sie.</span></li>
+    <li><b>Ein Vertrag, ein Ansprechpartner</b><span>Vertrag, Rechnungen und Abstimmung laufen über uns. Für fachliche Fragen sprechen Sie direkt mit dem Team.</span></li>
+    <li><b>Ihre Daten bleiben bei Ihnen</b><span>Der Livebetrieb und echte Daten laufen in Ihren Systemen. Entwickelt und getestet wird mit Testdaten.</span></li>
+    <li><b>Kein Lock-in</b><span>Nach Bezahlung erhalten Sie Quellcode, Dokumentation und Rechte. Sie können jederzeit den Anbieter wechseln.</span></li>
+    <li><b>Kontinuität</b><span>Fällt jemand aus, ersetzt ihn unser Netzwerk. Nach dem Projekt betreut dasselbe Team Ihre Lösung im Wartungsvertrag weiter.</span></li>
+    <li><b>Mitverdienen als Option</b><span>Hat Ihre ganze Branche dasselbe Problem, kann aus Ihrer Lösung ein Produkt werden – mit Ihnen als Miteigentümer.</span></li>
+  </ul>
+</section>
+<section id="passt">
+  <div class="head">
+    <h2>Passt das zu Ihnen?</h2>
+    <p class="lead">Am meisten gewinnen Unternehmen, auf die mindestens zwei dieser Punkte zutreffen:</p>
+  </div>
+  <ul class="ticks">
+    <li>Sie arbeiten mit einer Branchensoftware, die nicht zu Ihren Abläufen passt, zu teuer oder zu starr ist.</li>
+    <li>Wichtige Arbeit läuft noch über Excel, E-Mail oder Papier und kostet jede Woche Stunden.</li>
+    <li>Sie haben schon überlegt, eine eigene Software entwickeln zu lassen, aber das Risiko schreckt ab.</li>
+    <li>Andere Firmen Ihrer Branche kämpfen mit demselben Problem.</li>
+  </ul>
+</section>'''}
+
+PRODUCT_CLIENT['de'] = '''<section id="product-client">
+  <div class="head">
+    <h2>Zwei Wege – Sie entscheiden</h2>
+    <p class="lead">Beide Varianten stehen in jedem Angebot. Sie entscheiden nach der Diagnose, bevor die Umsetzung beginnt.</p>
+  </div>
+  <div class="tbl"><table>
+    <thead><tr><th></th><th>Eigene Lösung</th><th class="us">Partner-Auftraggeber</th></tr></thead>
+    <tbody>
+      <tr><td>Wem gehört die Software</td><td>Ihnen: ausschließliche Rechte nach der letzten Zahlung</td><td class="us">dem gemeinsamen Produkt-Startup; Sie erhalten eine unbefristete kostenlose Lizenz für Ihr Unternehmen</td></tr>
+      <tr><td>Preis</td><td>voller Projektpreis</td><td class="us">reduzierter Projektpreis</td></tr>
+      <tr><td>Was Sie zusätzlich bekommen</td><td>—</td><td class="us">einen Anteil am Startup und eine Beteiligung an jeder Lizenz, die an andere Firmen verkauft wird</td></tr>
+      <tr><td>Schutz</td><td>Code und Dokumentation gehören Ihnen</td><td class="us">Quellcode-Hinterlegung für den Fall, dass das Startup scheitert; auf Wunsch zeitweise Exklusivität gegenüber direkten Wettbewerbern</td></tr>
+      <tr><td>Wenn kein Produkt entsteht</td><td>—</td><td class="us">Sie erhalten die vollen Rechte gegen eine vorab vereinbarte Restzahlung</td></tr>
+      <tr><td>Nach dem Projekt</td><td>Wartungsvertrag mit demselben Team</td><td class="us">Wartung und Weiterentwicklung durch das Startup</td></tr>
+    </tbody>
+  </table></div>
+  <p class="when" style="margin-top:12px">Allgemeine Bausteine wie Vorlagen und Werkzeuge, die nicht für Ihr Unternehmen spezifisch sind, bleiben bei uns. Sie dürfen sie unbefristet mitnutzen.</p>
+</section>
+<section id="danach">
+  <div class="head">
+    <h2>Nach dem Projekt</h2>
+    <p class="lead">Software braucht Pflege. Deshalb endet die Zusammenarbeit nicht mit der Übergabe.</p>
+  </div>
+  <div class="cards3">
+    <div class="card"><h3>Wartung zum Monatspreis</h3><p>Updates, Fehlerbehebung und kleine Anpassungen mit vereinbarten Reaktionszeiten.</p></div>
+    <div class="card"><h3>Dasselbe Team</h3><p>Die Menschen, die Ihre Lösung gebaut haben, kennen sie am besten und bleiben Ihre Ansprechpartner.</p></div>
+    <div class="card"><h3>Weiterentwicklung in Etappen</h3><p>Neue Wünsche werden wie im Projekt umgesetzt: kleine Etappe, fester Preis, Abnahme.</p></div>
+  </div>
+</section>'''
+
+FAQ_EXTRA = {'de': '''
+    <details><summary>Wem gehört die Software?</summary><p>Das entscheiden Sie. Als eigene Lösung gehört sie nach der letzten Zahlung Ihnen, mit Quellcode und Dokumentation. Als Partner-Auftraggeber gehört sie einem gemeinsamen Produkt-Startup, Sie erhalten eine kostenlose Lizenz, einen Anteil und eine Beteiligung an den Lizenzerlösen.</p></details>
+    <details><summary>Was passiert mit unseren Daten?</summary><p>Der Livebetrieb und echte Daten bleiben in Ihren Systemen. Das Team arbeitet dort mit Gastzugängen. Entwickelt und getestet wird mit Testdaten.</p></details>
+    <details><summary>Was ist, wenn jemand aus dem Team ausfällt?</summary><p>Dann ersetzen wir die Person aus unserem Netzwerk geprüfter Fachleute. Der Vertrag und die Verantwortung für das Ergebnis bleiben bei uns.</p></details>
+    <details><summary>Wer betreut die Lösung nach dem Projekt?</summary><p>Auf Wunsch dasselbe Team, in einem Wartungsvertrag mit Monatspreis und vereinbarten Reaktionszeiten. Sie können aber jederzeit zu einem anderen Anbieter wechseln.</p></details>
+    <details><summary>Darf die Lösung an unsere Wettbewerber verkauft werden?</summary><p>Nur wenn Sie Partner-Auftraggeber werden, und dann verdienen Sie an jedem Verkauf mit. Auf Wunsch vereinbaren wir eine zeitweise Exklusivität gegenüber direkten Wettbewerbern. Als eigene Lösung wird nichts weiterverkauft.</p></details>'''}

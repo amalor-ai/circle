@@ -335,6 +335,7 @@ EXTRA_CSS = '''
 .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-top:20px}
 .metrics div{display:flex;flex-direction:column;padding:12px;border-radius:10px;background:var(--gold-soft)}
 .metrics span{font-size:14px;color:var(--muted)}
+.prin.four{grid-template-columns:repeat(4,minmax(0,1fr))}@media (max-width:860px){.prin.four{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (max-width:560px){.prin.four{grid-template-columns:1fr}}
 .prin.plain li{background:var(--surface)}
 .passport{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
 .passport div{display:flex;flex-direction:column}

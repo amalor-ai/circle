@@ -10,6 +10,7 @@ from content_extra import NAV, TITLE, PAGE_TITLES, DESC, HOME_MORE, LADDER, TEAM
 import content_extra
 from content_extra import hero_home
 import content_de  # noqa: F401  (adds the German entries)
+from content_de import CLIENT_HOME, CLIENT_OFFER, FAQ_EXTRA
 LANGS = ['ru', 'en', 'de']
 LANG_NAME = {'ru': 'Русский', 'en': 'English', 'de': 'Deutsch'}
 
@@ -54,7 +55,21 @@ def load(lang):
     parts['hero'] = (parts['hero'].replace('href="#clients"', 'href="{L}clients/"')
                      .replace('href="#members"', 'href="{L}members/"').replace('href="#guides"', 'href="{L}guides/"'))
     parts['members'] = parts['members'].replace('<div class="formbox">', '<div class="formbox" id="join">', 1)
+    if lang in FAQ_EXTRA:   # extra client questions, before the member question
+        k = parts['faq'].index('<details>', parts['faq'].index('<details>') + 1)  # keep the first two in place
+        parts['faq'] = parts['faq'][:k] + FAQ_EXTRA[lang].strip() + '\n    ' + parts['faq'][k:]
     return css, logo_link, parts
+
+
+def clients_body(lang, p):
+    if lang not in CLIENT_OFFER:
+        return p['clients'] + PRODUCT_CLIENT[lang] + p['faq']
+    c = p['clients']
+    i = c.index('<div class="formbox">'); j = c.rindex('</section>')
+    form = c[i:j].strip()
+    return (c[:i].rstrip() + '\n</section>\n' + CLIENT_OFFER[lang] + PRODUCT_CLIENT[lang]
+            + '<section id="anfrage">\n  ' + form + '\n</section>\n' + p['faq'])
+
 
 
 def header(lang, page, logo_link, R, L):
@@ -78,8 +93,8 @@ def footer(lang, L, logo_link):
 
 def body_for(lang, page, p):
     return {
-        'index': hero_home(lang) + '<section class="home-doors">' + re.search(r'(<div class="doors">.*?</div>)\s*</div>\s*</header>', p['hero'], re.S).group(1) + '</section>' + PRODUCT_HOME[lang] + HOME_MORE[lang] + p['prin'] + p['faq'],
-        'clients': p['clients'] + PRODUCT_CLIENT[lang] + p['faq'],
+        'index': hero_home(lang) + CLIENT_HOME.get(lang, '') + '<section class="home-doors">' + re.search(r'(<div class="doors">.*?</div>)\s*</div>\s*</header>', p['hero'], re.S).group(1) + '</section>' + PRODUCT_HOME[lang] + HOME_MORE[lang] + p['prin'] + p['faq'],
+        'clients': clients_body(lang, p),
         'members': p['members'] + LADDER[lang] + PRODUCT_MEMBER[lang],
         'team': TEAM[lang],
         'guides': p['guides'] + p['money'],
