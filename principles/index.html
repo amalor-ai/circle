@@ -209,6 +209,7 @@ footer p{color:#A9CBC7}
 .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-top:20px}
 .metrics div{display:flex;flex-direction:column;padding:12px;border-radius:10px;background:var(--gold-soft)}
 .metrics span{font-size:14px;color:var(--muted)}
+.bar .b-guide{min-width:66px;flex-shrink:0;justify-content:center;padding-left:6px;padding-right:6px}
 .cards3.two{grid-template-columns:repeat(2,minmax(0,1fr))}@media (max-width:700px){.cards3.two{grid-template-columns:1fr}}.cards3 .card.us{border-color:#D9B66A;background:#FBF3E2}.cards3 .card .ticks{margin:8px 0 0}
 .prin.four{grid-template-columns:repeat(4,minmax(0,1fr))}@media (max-width:860px){.prin.four{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (max-width:560px){.prin.four{grid-template-columns:1fr}}
 .prin.plain li{background:var(--surface)}
@@ -361,18 +362,18 @@ section.home-doors{padding-block:40px 20px;border-top:0}
     <p class="lead">Пример: проект на $100 000.</p>
   </div>
   <div class="split">
-    <h3>Заказчика привёл проводник</h3>
-    <div class="bar" role="img" aria-label="Команда 80 процентов, организатор 10 процентов, проводник 10 процентов">
-      <div class="b-team" style="flex:80">Команда · $80 000</div><div class="b-fund" style="flex:10">$10 000</div><div class="b-guide" style="flex:10">$10 000</div>
+    <h3>Первый проект с заказчиком, которого привёл проводник</h3>
+    <div class="bar" role="img" aria-label="Проводник 5 процентов из бюджета проекта, из остатка команда 80 и организация 20 процентов">
+      <div class="b-team" style="flex:76">Команда · $76 000</div><div class="b-fund" style="flex:19">$19 000</div><div class="b-guide" style="flex:5">$5 000</div>
     </div>
-    <h3 style="margin-top:12px">Заказчика нашли мы сами</h3>
-    <div class="bar" role="img" aria-label="Команда 80 процентов, организатор 20 процентов">
+    <h3 style="margin-top:12px">Все остальные проекты</h3>
+    <div class="bar" role="img" aria-label="Команда 80 процентов, организация 20 процентов">
       <div class="b-team" style="flex:80">Команда · $80 000</div><div class="b-fund" style="flex:20">$20 000</div>
     </div>
     <div class="legend">
       <div><i style="background:var(--brand)"></i><b>80%</b><span>команде, поровну между участниками — всегда</span></div>
-      <div><i style="background:var(--teal-soft);outline:1px solid var(--brand)"></i><b>10% или 20%</b><span>организатору: продажи, договор, юрист, гарантия. 20% — если проводника нет</span></div>
-      <div><i style="background:var(--gold-btn)"></i><b>10%</b><span>проводнику, если он есть</span></div>
+      <div><i style="background:var(--teal-soft);outline:1px solid var(--brand)"></i><b>20%</b><span>организации: продажи, договоры, связь с заказчиком, юрист, гарантия, плейбуки команд</span></div>
+      <div><i style="background:var(--gold-btn)"></i><b>5%</b><span>проводнику за первый проект — из бюджета проекта до деления 80/20</span></div>
     </div>
   </div>
 </section>

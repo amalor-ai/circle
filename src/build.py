@@ -176,7 +176,7 @@ def main():
 
 ## For members and referrers
 - Specialists join a search circle (up to 10 people online), validate problems with real clients and form project teams. Income by contribution.
-- Referrers who introduce a client receive 10% of the first project and 5% of repeat orders for 12 months.
+- Revenue split: 80% to the team, 20% to the organisation. Referrers who introduce a client receive 5% of the first project (capped by contract), paid openly from the project budget before the 80/20 split.
 
 ## Pages
 ''' + ''.join(f'- [{PAGE_TITLES["en"][pg]}]({url("en", pg)})\n' for pg in pub)

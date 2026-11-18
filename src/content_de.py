@@ -12,7 +12,7 @@ DESC['de'] = {
     'clients': 'Abgestimmte Arbeit in Etappen bis zum Ergebnis: ein kleines Team von Fachleuten, Diagnose zum Festpreis, Bezahlung pro Etappe. Dubai und remote.',
     'members': 'Im Team arbeiten, nicht allein: sinnvolle Aufgaben, gleicher Anteil am Einkommen, ein Weg vom Mitglied zum Mentor.',
     'team': 'Der Wochenrhythmus, der sechswöchige Zyklus, die Teamvereinbarung und wie sich der Prozess selbst verbessert.',
-    'guides': 'Stellen Sie uns einen Auftraggeber vor und erhalten Sie 10 % des ersten Projekts.',
+    'guides': 'Stellen Sie uns einen Auftraggeber vor und erhalten Sie 5 % des ersten Projekts.',
     'principles': 'Was das Team zusammenhält, welche Aufgaben wir übernehmen und wie das Geld geteilt wird.',
     'investors': 'Der Weg für Investoren: zuerst Beteiligung, Geld erst nach Beweisen.',
     'book': 'Das Buch „Team der letzten Generation. Wie ein Bündel Schilfrohr“ – bald.'}
@@ -216,8 +216,8 @@ HERO_HOME['de'] = dict(quote='„Ein Bündel Schilfrohr zerbricht man nicht auf 
     tag='Wie man gemeinsam mehr erreicht als allein – und tut, was die Welt braucht',
     lead='Kleine Teams von Fachleuten lösen Aufgaben, die Menschen brauchen und für die sie zahlen. Wir arbeiten in Etappen, stehen füreinander ein und machen aus den besten Lösungen Produkte – gemeinsam mit unseren Auftraggebern.',
     b1=('Ich habe eine Aufgabe', 'clients/'), b2=('Ins Team', 'members/'),
-    ex='Beispiel: ein Projekt über 100.000 $', bar=[('Team 80 %',80),('10 %',10),('10 %',10)], legend='80 % an das Team · 10 % an den Organisator · 10 % an den Vermittler (ohne Vermittler 20 % an den Organisator)',
-    facts=[('80.000 $', 'erhält das Team, das die Arbeit gemacht hat'), ('20.000 $', 'für jedes Mitglied eines Viererteams – zu gleichen Teilen'), ('10.000 $', 'für den Vermittler – für eine Vorstellung'), ('0 $', 'zahlt der Auftraggeber für eine nicht abgenommene Etappe')])
+    ex='Beispiel: ein Projekt über 100.000 $', bar=[('Team 80 %',80),('Organisation 20 %',20)], legend='80 % an das Team · 20 % an die Organisation, als fünftes Mitglied · Vermittler erhalten 5 % des ersten Projekts, aus dem Budget vor der Teilung',
+    facts=[('80.000 $', 'erhält das Team, das die Arbeit gemacht hat'), ('20.000 $', 'für jedes Mitglied eines Viererteams – zu gleichen Teilen'), ('20.000 $', 'an die Organisation – so viel wie jedes Mitglied: Verträge, Vertrieb, Garantie'), ('0 $', 'zahlt der Auftraggeber für eine nicht abgenommene Etappe')])
 
 from content_extra import CIRCLES_TXT
 CIRCLES_TXT['de'] = dict(core='Bund', team='das Team · macht die Arbeit', purpose='für wen wir arbeiten', support='Kreis der Unterstützung',

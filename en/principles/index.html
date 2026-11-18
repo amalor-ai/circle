@@ -209,6 +209,7 @@ footer p{color:#A9CBC7}
 .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-top:20px}
 .metrics div{display:flex;flex-direction:column;padding:12px;border-radius:10px;background:var(--gold-soft)}
 .metrics span{font-size:14px;color:var(--muted)}
+.bar .b-guide{min-width:66px;flex-shrink:0;justify-content:center;padding-left:6px;padding-right:6px}
 .cards3.two{grid-template-columns:repeat(2,minmax(0,1fr))}@media (max-width:700px){.cards3.two{grid-template-columns:1fr}}.cards3 .card.us{border-color:#D9B66A;background:#FBF3E2}.cards3 .card .ticks{margin:8px 0 0}
 .prin.four{grid-template-columns:repeat(4,minmax(0,1fr))}@media (max-width:860px){.prin.four{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (max-width:560px){.prin.four{grid-template-columns:1fr}}
 .prin.plain li{background:var(--surface)}
@@ -361,18 +362,18 @@ section.home-doors{padding-block:40px 20px;border-top:0}
     <p class="lead">Example: a $100,000 project.</p>
   </div>
   <div class="split">
-    <h3>A referrer brought the client</h3>
-    <div class="bar" role="img" aria-label="Team 80 percent, organiser 10 percent, referrer 10 percent">
-      <div class="b-team" style="flex:80">Team · $80,000</div><div class="b-fund" style="flex:10">$10,000</div><div class="b-guide" style="flex:10">$10,000</div>
+    <h3>First project with a client a referrer brought</h3>
+    <div class="bar" role="img" aria-label="Referrer 5 percent from the project budget, then team 80 and organisation 20 percent of the rest">
+      <div class="b-team" style="flex:76">Team · $76,000</div><div class="b-fund" style="flex:19">$19,000</div><div class="b-guide" style="flex:5">$5,000</div>
     </div>
-    <h3 style="margin-top:12px">We found the client ourselves</h3>
-    <div class="bar" role="img" aria-label="Team 80 percent, organiser 20 percent">
+    <h3 style="margin-top:12px">All other projects</h3>
+    <div class="bar" role="img" aria-label="Team 80 percent, organisation 20 percent">
       <div class="b-team" style="flex:80">Team · $80,000</div><div class="b-fund" style="flex:20">$20,000</div>
     </div>
     <div class="legend">
       <div><i style="background:var(--brand)"></i><b>80%</b><span>to the team, shared equally among its members — always</span></div>
-      <div><i style="background:var(--teal-soft);outline:1px solid var(--brand)"></i><b>10% or 20%</b><span>to the organiser: sales, contract, legal, guarantee. 20% when there is no referrer</span></div>
-      <div><i style="background:var(--gold-btn)"></i><b>10%</b><span>to the referrer, if there is one</span></div>
+      <div><i style="background:var(--teal-soft);outline:1px solid var(--brand)"></i><b>20%</b><span>to the organisation: sales, contracts, client communication, legal, guarantee, team playbooks</span></div>
+      <div><i style="background:var(--gold-btn)"></i><b>5%</b><span>to the referrer for the first project — from the project budget before the 80/20 split</span></div>
     </div>
   </div>
 </section>
