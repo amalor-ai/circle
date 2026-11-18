@@ -232,8 +232,8 @@ TEAM['de'] = TEAM['de'].replace('</header>\n', '</header>\n' + _size_block(('Tea
 # --- German client offer (2026-11): what the client gets, two ways to own the result, safety, after the project ---
 CLIENT_HOME = {'de': '''<section id="vorteile">
   <div class="head">
-    <h2>Was Sie als Auftraggeber bekommen</h2>
-    <p class="lead">Ihre eigene Software, Automatisierung oder einen neuen Prozess – von einem eingespielten Team, bezahlt nur nach abgenommenem Ergebnis. Und wenn Ihr Problem die ganze Branche hat, verdienen Sie an der Lösung mit.</p>
+    <h2>Wer mitbesitzt, liefert das beste Ergebnis</h2>
+    <p class="lead">Bei einem klassischen Softwaredienstleister bezahlen Sie den ganzen Apparat, und die Entwickler arbeiten für ihren Arbeitgeber, nicht für Ihr Ergebnis. Bei uns gehen 80 % Ihres Budgets an die Menschen, die Ihre Lösung bauen, und als Partner-Auftraggeber werden Sie und das Team gemeinsam Miteigentümer.</p>
   </div>
   <ul class="prin plain four">
     <li><b>Bezahlung nur für Ergebnisse</b><span>Jede Etappe hat einen festen Preis. Sie zahlen erst, wenn Sie sie abgenommen haben.</span></li>
@@ -241,10 +241,31 @@ CLIENT_HOME = {'de': '''<section id="vorteile">
     <li><b>Kein Lock-in</b><span>Nach Bezahlung gehören Ihnen Code, Dokumentation und Rechte. Ihre Daten verlassen nie Ihre Systeme.</span></li>
     <li><b>An der Lösung mitverdienen</b><span>Als Partner-Auftraggeber werden Sie Miteigentümer und verdienen an jeder Lizenz für andere Firmen.</span></li>
   </ul>
-  <p class="more"><a href="{L}clients/">Alle Vorteile und der Ablauf →</a></p>
+  <p class="more"><a href="{L}clients/#warum">Warum das besser funktioniert →</a> · <a href="{L}clients/#vorteile">Alle Vorteile →</a></p>
 </section>'''}
 
-CLIENT_OFFER = {'de': '''<section id="vorteile">
+CLIENT_OFFER = {'de': '''<section id="warum">
+  <div class="head">
+    <h2>Warum Softwareprojekte so teuer sind – und so oft enttäuschen</h2>
+    <p class="lead">Wer Software bei einem Entwicklungsunternehmen bestellt, bezahlt nicht nur die Entwickler, sondern den ganzen Apparat: Vertrieb, Projektmanagement, Verwaltung, Büros und Marge. Und die Menschen, die Ihre Software tatsächlich bauen, sind Angestellte ihres Arbeitgebers, nicht Ihre. Ihr Gehalt ist dasselbe, ob Ihre Lösung ein Erfolg wird oder nicht.</p>
+  </div>
+  <div class="cards3 two">
+    <div class="card"><h3>Klassisch beauftragt</h3><ul class="ticks">
+      <li>Ihr Budget finanziert den Apparat des Dienstleisters.</li>
+      <li>Die Entwickler arbeiten für ihren Arbeitgeber, nicht für Ihr Ergebnis.</li>
+      <li>Oft wird nach Stunden abgerechnet: Mehr Aufwand bringt dem Dienstleister mehr Umsatz.</li>
+      <li>Nach dem Projekt zieht das Team zum nächsten Kunden weiter.</li>
+    </ul></div>
+    <div class="card us"><h3>Mit uns</h3><ul class="ticks">
+      <li>80 % Ihres Budgets gehen an die Menschen, die Ihre Lösung bauen.</li>
+      <li>Bezahlt wird nur, was Sie abgenommen haben.</li>
+      <li>Als Partner-Auftraggeber werden Sie und das Team gemeinsam Miteigentümer der Lösung.</li>
+      <li>Das Team bleibt, weil es seine eigene Lösung weiterentwickelt.</li>
+    </ul></div>
+  </div>
+  <p class="rule"><b>Die stärkste Motivation ist Eigentum.</b> Wer an der Lösung beteiligt ist, will, dass sie wirklich funktioniert – nicht nur, dass das Projekt abgerechnet wird. So ist jeder Beteiligte vom ersten Tag an daran interessiert, das beste Ergebnis zu liefern.</p>
+</section>
+<section id="vorteile">
   <div class="head">
     <h2>Ihre Vorteile</h2>
     <p class="lead">Sie bekommen die Lösung, die Ihre Branchensoftware nicht bietet – ohne eigene Entwicklungsabteilung und ohne das Risiko eines klassischen Softwareprojekts.</p>
