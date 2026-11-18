@@ -488,14 +488,14 @@ HERO_HOME = {
            tag='Как вместе получить больше, чем в одиночку, — и делать то, что нужно миру',
            lead='Небольшие команды специалистов решают задачи, которые нужны людям и за которые готовы платить. Работаем по этапам, отвечаем друг за друга, а лучшие решения выращиваем в продукты — вместе с заказчиками.',
            b1=('Есть задача', 'clients/'), b2=('Хочу в команду', 'members/'),
-           ex='Пример: проект на $100 000', bar=[('Команде 80%',80),('Организации 20%',20)], legend='80% — команде · 20% — организации, как пятому участнику · проводнику 5% первого проекта — из бюджета проекта до деления',
+           ex='Пример: проект на $100 000', bar=[('Команде 80%',80),('Организации 20%',20)], legend='80% — команде · 20% — организации · проводнику — 5% первого проекта',
            facts=[('$80 000', 'получает команда, которая сделала работу'), ('$20 000', 'каждому в команде из четырёх — поровну'), ('$20 000', 'организации — столько же, сколько каждому: договоры, продажи, гарантия'), ('$0', 'заказчик платит за этап, который не принял')]),
 'en': dict(quote='“A bundle of reeds cannot be broken at once, yet a child can break the reeds one by one”',
            title='Last Generation Team', sub='Like a bundle of reeds',
            tag='How to achieve more together than alone — and do what the world needs',
            lead='Small teams of specialists solve problems people need solved and will pay for. We work in stages, answer for each other, and grow the best solutions into products — together with our clients.',
            b1=('I have a task', 'clients/'), b2=('Join a team', 'members/'),
-           ex='Example: a $100,000 project', bar=[('Team 80%',80),('Organisation 20%',20)], legend='80% to the team · 20% to the organisation, as the fifth member · a guide gets 5% of the first project, from the budget before the split',
+           ex='Example: a $100,000 project', bar=[('Team 80%',80),('Organisation 20%',20)], legend='80% to the team · 20% to the organisation · referrer: 5% of the first project',
            facts=[('$80,000', 'goes to the team that did the work'), ('$20,000', 'to each member of a team of four — equally'), ('$20,000', 'to the organisation — the same as each member: contracts, sales, guarantee'), ('$0', 'the client pays for a stage they did not accept')]),
 }
 
