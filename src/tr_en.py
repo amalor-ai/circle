@@ -102,7 +102,7 @@ T=[
 ('aria-label="Команда 80 процентов, организация 20 процентов"','aria-label="Team 80 percent, organisation 20 percent"'),
 ('<div class="b-team" style="flex:80">Команда · $80 000</div><div class="b-fund" style="flex:20">$20 000</div>','<div class="b-team" style="flex:80">Team · $80,000</div><div class="b-fund" style="flex:20">$20,000</div>'),
 ('<b>80%</b><span>команде, поровну между участниками — всегда</span>','<b>80%</b><span>to the team, shared equally among its members — always</span>'),
-('<b>20%</b><span>организации: продажи, договоры, связь с заказчиком, юрист, гарантия, плейбуки команд</span>','<b>20%</b><span>to the organisation: sales, contracts, client communication, legal, guarantee, team playbooks</span>'),
+('<b>20%</b><span>гарантия AMALOR: один договор, подбор и замена людей, метод, контроль качества, инструменты</span>','<b>20%</b><span>the AMALOR guarantee: one contract, selecting and replacing people, method, quality control, tools</span>'),
 ('<b>5%</b><span>проводнику за первый проект</span>','<b>5%</b><span>to the referrer for the first project</span>'),
 ('<h2>На чём держится команда</h2>','<h2>What holds the team together</h2>'),
 ('<b>Вместе сильнее</b><span>Связку тростника не сломать. Команда может больше, чем люди по отдельности.</span>','<b>Stronger together</b><span>A bundle of reeds cannot be broken. A team can do more than its people alone.</span>'),
