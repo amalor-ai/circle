@@ -15,13 +15,13 @@
 <meta property="og:url" content="https://team.amalor.ai/de/members/">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://team.amalor.ai/assets/book-cover-de.jpg">
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://amalor.ai/#org", "name": "AMALOR", "url": "https://amalor.ai", "email": "hello@amalor.ai"}, {"@type": "ProfessionalService", "@id": "https://team.amalor.ai/#service", "name": "Team der letzten Generation", "description": "Im Team arbeiten, nicht allein: sinnvolle Aufgaben, gleicher Anteil am Einkommen, ein Weg vom Mitglied zum Mentor.", "url": "https://team.amalor.ai/de/", "parentOrganization": {"@id": "https://amalor.ai/#org"}, "areaServed": [{"@type": "City", "name": "Dubai"}, {"@type": "Place", "name": "Remote, worldwide"}], "availableLanguage": ["en", "ru", "ar", "de", "uk", "he", "fr"], "potentialAction": {"@type": "CommunicateAction", "target": "https://team.amalor.ai/de/clients/#clients", "description": "Submit a request with name, email and a task description using the client form."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://amalor.ai/#org", "name": "AMALOR", "url": "https://amalor.ai", "email": "hello@amalor.ai"}, {"@type": "ProfessionalService", "@id": "https://team.amalor.ai/#service", "name": "Team der letzten Generation", "description": "Im Team arbeiten, nicht allein: sinnvolle Aufgaben, gleicher Anteil am Einkommen, ein Weg vom Mitglied zum Mentor.", "url": "https://team.amalor.ai/de/", "parentOrganization": {"@id": "https://amalor.ai/#org"}, "availableLanguage": ["en", "ru", "ar", "de", "uk", "he", "fr"], "potentialAction": {"@type": "CommunicateAction", "target": "https://team.amalor.ai/de/clients/#anfrage", "description": "Submit a request with name, email and a task description using the client form."}}]}</script>
 <meta name="theme-color" content="#083C3A">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/assets/fonts.css">
-<link rel="stylesheet" href="/assets/chrome.css?v=2">
+<link rel="stylesheet" href="/assets/chrome.css?v=3">
 <style>
 /* Layout: one reading column on warm ivory; the book cover's deep green and AMALOR gold appear as accents, never as the ground. Single light look. */
 :root{
@@ -327,7 +327,7 @@ section.home-doors{padding-block:40px 20px;border-top:0}
 .cards3 h3{margin:0 0 8px;font-size:18px}.cards3 p{margin:0;color:#4A6563;font-size:15px}
 @media (max-width:760px){.cards3{grid-template-columns:1fr}}
 </style>
-<link rel="stylesheet" href="/assets/team.css?v=2">
+<link rel="stylesheet" href="/assets/team.css?v=3">
 </head>
 <body>
 <div class="progress" id="progress" aria-hidden="true"></div>
@@ -384,7 +384,7 @@ section.home-doors{padding-block:40px 20px;border-top:0}
     </ul>
     <ol class="steps">
       <li><span class="num">1</span><div><h3>Anmeldung</h3><p class="when">2 Minuten</p></div></li>
-      <li><span class="num">2</span><div><h3>Suchkreis</h3><p class="when">2 Stunden online, bis zu 10 Personen</p></div></li>
+      <li><span class="num">2</span><div><h3>Suchrunde</h3><p class="when">2 Stunden online, bis zu 10 Personen</p></div></li>
       <li><span class="num">3</span><div><h3>Prüfwoche</h3><p class="when">zu zweit, etwa 5 Gespräche mit Kunden</p></div></li>
       <li><span class="num">4</span><div><h3>Team und Projekt</h3><p class="when">ihr wählt einen Team Lead – jemanden, der den Rhythmus hält und dem Team dient, statt es zu kommandieren</p></div></li>
     </ol>
@@ -392,7 +392,7 @@ section.home-doors{padding-block:40px 20px;border-top:0}
 
   <div class="formbox" id="join">
     <h3>Anmeldung als Mitglied</h3>
-    <p class="hint">Wir schicken dir den Termin des nächsten Kreises.</p>
+    <p class="hint">Wir schicken dir den Termin der nächsten Runde.</p>
     <form data-form="member" novalidate>
       <input type="hidden" name="lgt_role" value="member">
       <div class="row">
@@ -401,7 +401,7 @@ section.home-doors{padding-block:40px 20px;border-top:0}
       </div>
       <div class="row">
         <div><label for="m-tg">Telegram <span class="hint">optional</span></label><input id="m-tg" name="lgt_telegram" type="text" placeholder="@username"></div>
-        <div><label for="m-city">Stadt</label><input id="m-city" name="city" type="text" autocomplete="address-level2" placeholder="Dubai"></div>
+        <div><label for="m-city">Stadt</label><input id="m-city" name="city" type="text" autocomplete="address-level2" placeholder="Leipzig"></div>
       </div>
       <fieldset>
         <span class="lg">Was du kannst <span class="hint">mehrere möglich</span></span>
@@ -423,7 +423,7 @@ section.home-doors{padding-block:40px 20px;border-top:0}
         <div><label for="m-hours">Stunden pro Woche</label>
           <select id="m-hours" name="lgt_hours"><option value="">Bitte wählen</option><option value="h1_2">1–2</option><option value="h3_5">3–5</option><option value="h6_10">6–10</option><option value="h10_plus">Mehr als 10</option></select></div>
         <div><label for="m-side">Darfst du neben deinem Hauptjob arbeiten?</label>
-          <select id="m-side" name="lgt_side_work"><option value="">Bitte wählen</option><option value="yes">Ja</option><option value="unsure">Nicht sicher</option><option value="no">Nein, aber ich möchte an den Kreisen teilnehmen</option></select></div>
+          <select id="m-side" name="lgt_side_work"><option value="">Bitte wählen</option><option value="yes">Ja</option><option value="unsure">Nicht sicher</option><option value="no">Nein, aber ich möchte an den Runden teilnehmen</option></select></div>
       </div>
       <div><label for="m-know">Welche Unternehmer kennst du persönlich? <span class="hint">optional, ohne Namen: „2 Kliniken, eine Autowerkstatt“</span></label>
         <input id="m-know" name="lgt_knows_owners" type="text"></div>
@@ -437,11 +437,11 @@ section.home-doors{padding-block:40px 20px;border-top:0}
         <span class="lg">Weitere Sprachen <span class="hint">in denen du auch gut arbeitest, mehrere möglich</span></span>
         <div class="chips" data-multi="lgt_lang_other"><label class="chip"><input type="checkbox" id="m-lo1" value="ru"><span>Русский</span></label><label class="chip"><input type="checkbox" id="m-lo2" value="en"><span>English</span></label><label class="chip"><input type="checkbox" id="m-lo3" value="ar"><span>العربية</span></label><label class="chip"><input type="checkbox" id="m-lo4" value="de"><span>Deutsch</span></label><label class="chip"><input type="checkbox" id="m-lo5" value="uk"><span>Українська</span></label><label class="chip"><input type="checkbox" id="m-lo6" value="he"><span>עברית</span></label><label class="chip"><input type="checkbox" id="m-lo7" value="fr"><span>Français</span></label><label class="chip"><input type="checkbox" id="m-lo8" value="other"><span>Andere</span></label></div>
       </fieldset>
-      <label class="consent"><input type="checkbox" id="m-consent" data-consent><span>Ich bin einverstanden, dass meine Daten für Einladungen zu den Kreisen gespeichert werden. Auf Wunsch sofort gelöscht.</span></label>
+      <label class="consent"><input type="checkbox" id="m-consent" data-consent><span>Ich bin einverstanden, dass meine Daten für Einladungen zu den Runden gespeichert werden. Auf Wunsch sofort gelöscht.</span></label>
       <p class="err" role="alert"></p>
       <div><button class="btn" type="submit">Anmelden</button></div>
     </form>
-    <div class="done" hidden><h3>Du bist auf der Liste</h3><p>Wir schicken dir den Termin des nächsten Kreises per E-Mail.</p><p class="pv" hidden>Das ist eine Vorschau: Es wurde nichts gesendet.</p></div>
+    <div class="done" hidden><h3>Du bist auf der Liste</h3><p>Wir schicken dir den Termin der nächsten Runde per E-Mail.</p><p class="pv" hidden>Das ist eine Vorschau: Es wurde nichts gesendet.</p></div>
   </div>
 </section><section>
   <div class="head">
@@ -507,6 +507,6 @@ document.querySelectorAll('form[data-form]').forEach(form => {
   function fail(msg, el) { err.textContent = msg; if (el) el.focus(); }
 });
 </script>
-<script src="/assets/chrome.js?v=2" defer></script>
+<script src="/assets/chrome.js?v=3" defer></script>
 </body>
 </html>

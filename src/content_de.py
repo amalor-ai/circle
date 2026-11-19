@@ -241,7 +241,7 @@ CLIENT_HOME = {'de': '''<section id="vorteile">
     <li><b>Kein Lock-in</b><span>Nach Bezahlung gehören Ihnen Code, Dokumentation und Rechte. Ihre Daten verlassen nie Ihre Systeme.</span></li>
     <li><b>An der Lösung mitverdienen</b><span>Als Partner-Auftraggeber werden Sie Miteigentümer und verdienen an jeder Lizenz für andere Firmen.</span></li>
   </ul>
-  <p class="more"><a href="{L}clients/#warum">Warum das besser funktioniert →</a> · <a href="{L}clients/#vorteile">Alle Vorteile →</a></p>
+  <p class="more"><a href="{L}clients/#warum">Warum das besser funktioniert →</a> · <a href="{L}clients/#vision">Die Vision →</a></p>
 </section>'''}
 
 CLIENT_OFFER = {'de': '''<section id="warum">

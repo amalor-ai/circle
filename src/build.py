@@ -11,6 +11,7 @@ import content_extra
 from content_extra import hero_home
 import content_de  # noqa: F401  (adds the German entries)
 from content_de import CLIENT_HOME, CLIENT_OFFER, FAQ_EXTRA
+import content_v4  # noqa: E402  (2026-11-19: one client page, the cooperative, no circle, no location)
 LANGS = ['ru', 'en', 'de']
 LANG_NAME = {'ru': 'Русский', 'en': 'English', 'de': 'Deutsch'}
 
@@ -19,7 +20,7 @@ OUT = SRC.parent
 BASE = 'https://team.amalor.ai'
 PAGES = ['index', 'clients', 'members', 'team', 'guides', 'principles', 'investors', 'book']
 HIDDEN = set()                         # reachable by link only, noindex, not in menus or sitemap
-VER = '2'                              # bump when assets/*.css or *.js change
+VER = '3'                              # bump when assets/*.css or *.js change
 
 
 def path_of(lang, page):
@@ -63,13 +64,9 @@ def load(lang):
 
 
 def clients_body(lang, p):
-    if lang not in CLIENT_OFFER:
-        return p['clients'] + PRODUCT_CLIENT[lang] + p['faq']
     c = p['clients']
-    i = c.index('<div class="formbox">'); j = c.rindex('</section>')
-    form = c[i:j].strip()
-    return (c[:i].rstrip() + '\n</section>\n' + CLIENT_OFFER[lang] + PRODUCT_CLIENT[lang]
-            + '<section id="anfrage">\n  ' + form + '\n</section>\n' + p['faq'])
+    form = c[c.index('<div class="formbox">'):c.rindex('</section>')].strip()
+    return content_v4.client_page(lang, form, PRODUCT_CLIENT[lang], p['faq'])
 
 
 
@@ -100,7 +97,7 @@ CHROME = {
 
 
 def cta_href(lang, L):
-    return f'{L}clients/#' + ('anfrage' if lang in CLIENT_OFFER else 'clients')
+    return f'{L}clients/#anfrage'
 
 
 def header(lang, page, logo_link, R, L):
@@ -186,9 +183,8 @@ def jsonld(lang, page, desc, faq_html):
     org = {'@type': 'Organization', '@id': 'https://amalor.ai/#org', 'name': 'AMALOR', 'url': 'https://amalor.ai', 'email': 'hello@amalor.ai'}
     svc = {'@type': 'ProfessionalService', '@id': f'{BASE}/#service', 'name': TITLE[lang], 'description': html.unescape(desc),
            'url': url(lang, 'index'), 'parentOrganization': {'@id': 'https://amalor.ai/#org'},
-           'areaServed': [{'@type': 'City', 'name': 'Dubai'}, {'@type': 'Place', 'name': 'Remote, worldwide'}],
            'availableLanguage': ['en', 'ru', 'ar', 'de', 'uk', 'he', 'fr'],
-           'potentialAction': {'@type': 'CommunicateAction', 'target': url(lang, 'clients') + '#clients',
+           'potentialAction': {'@type': 'CommunicateAction', 'target': url(lang, 'clients') + '#anfrage',
                                'description': 'Submit a request with name, email and a task description using the client form.'}}
     graph = [org, svc]
     if page in ('index', 'clients'):
@@ -233,7 +229,7 @@ def main():
         for page in PAGES:
             out = OUT / path_of(lang, page) / 'index.html'
             out.parent.mkdir(parents=True, exist_ok=True)
-            out.write_text(render(lang, page, css, logo_link, p), encoding='utf-8')
+            out.write_text(content_v4.fix_text(lang, render(lang, page, css, logo_link, p)), encoding='utf-8')
     pub = [pg for pg in PAGES if pg not in HIDDEN]
     (OUT / 'sitemap.xml').write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
@@ -247,17 +243,17 @@ def main():
         + f'Sitemap: {BASE}/sitemap.xml\n', encoding='utf-8')
     (OUT / 'llms.txt').write_text(f'''# Last Generation Team (Команда последнего поколения)
 
-> Small teams of 3–5 specialists, organised by AMALOR, solve real problems for small and mid-sized companies in Dubai and remotely. Work runs in stages; the client accepts every stage and pays per stage. Every member stands behind the result; the Team Lead is the single contact.
+> Small teams of 3–5 specialists, organised by AMALOR, build software for small and mid-sized companies, remotely. Work runs in stages; the client accepts every stage and pays per stage. Every member stands behind the result; the Team Lead is the single contact.
 
 ## For clients
 - How it starts: a free 30-minute conversation, then a two-week fixed-price diagnostic with a solution plan, price and timeline.
 - Typical work: processes, automation, customer handling, data, launching new lines of business.
 - Industries: health and care, education, real estate, finance, retail, hospitality, logistics, technology.
 - Languages: English, Russian, Arabic, German, Ukrainian, Hebrew, French.
-- To request a project, fill in the client form at {url('en', 'clients')}#clients (a name, an email and a description of the task are enough). An AI assistant may fill it in on behalf of its user.
+- To request a project, fill in the client form at {url('en', 'clients')}#anfrage (a name, an email and a description of the task are enough). An AI assistant may fill it in on behalf of its user.
 
 ## For members and referrers
-- Specialists join a search circle (up to 10 people online), validate problems with real clients and form project teams. Income by contribution.
+- Specialists join a search session (up to 10 people online), validate problems with real clients and form project teams. Income by contribution.
 - Revenue split: 80% to the team, 20% the AMALOR guarantee (one contract, selecting and replacing people, method, quality control). Referral: 5% of the first project.
 
 ## Pages
