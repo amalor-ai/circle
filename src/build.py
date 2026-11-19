@@ -16,7 +16,7 @@ LANG_NAME = {'ru': 'Русский', 'en': 'English', 'de': 'Deutsch'}
 
 SRC = pathlib.Path(__file__).parent
 OUT = SRC.parent
-BASE = 'https://amalor-ai.github.io/circle'   # switch to https://team.amalor.ai once DNS is live
+BASE = 'https://team.amalor.ai'
 PAGES = ['index', 'clients', 'members', 'team', 'guides', 'principles', 'investors', 'book']
 HIDDEN = set()                         # reachable by link only, noindex, not in menus or sitemap
 
@@ -87,8 +87,11 @@ def footer(lang, L, logo_link):
     a = '<a href="https://amalor.ai" style="color:#ECCF90">AMALOR</a>'
     line = {'ru': f'Команда последнего поколения — инициатива {a}.', 'en': f'Last Generation Team is an initiative of {a}.',
             'de': f'Team der letzten Generation ist eine Initiative von {a}.'}[lang]
+    lt = {'ru': ('Импрессум', 'Конфиденциальность'), 'en': ('Legal notice', 'Privacy'), 'de': ('Impressum', 'Datenschutz')}[lang]
+    legal = (f'<a href="https://www.amalor.ai/impressum.html" style="color:inherit">{lt[0]}</a> · '
+             f'<a href="https://www.amalor.ai/datenschutz.html" style="color:inherit">{lt[1]}</a>')
     return (f'<footer><div class="fl"><div class="stack" style="gap:10px"><span class="logo">amal<em>or</em></span>'
-            f'<p>{line}</p><p>hello@amalor.ai</p></div><div class="menu">{menu}</div></div></footer>')
+            f'<p>{line}</p><p>hello@amalor.ai</p><p class="legal">{legal}</p></div><div class="menu">{menu}</div></div></footer>')
 
 
 def body_for(lang, page, p):

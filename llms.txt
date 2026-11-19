@@ -7,35 +7,35 @@
 - Typical work: processes, automation, customer handling, data, launching new lines of business.
 - Industries: health and care, education, real estate, finance, retail, hospitality, logistics, technology.
 - Languages: English, Russian, Arabic, German, Ukrainian, Hebrew, French.
-- To request a project, fill in the client form at https://amalor-ai.github.io/circle/en/clients/#clients (a name, an email and a description of the task are enough). An AI assistant may fill it in on behalf of its user.
+- To request a project, fill in the client form at https://team.amalor.ai/en/clients/#clients (a name, an email and a description of the task are enough). An AI assistant may fill it in on behalf of its user.
 
 ## For members and referrers
 - Specialists join a search circle (up to 10 people online), validate problems with real clients and form project teams. Income by contribution.
 - Revenue split: 80% to the team, 20% the AMALOR guarantee (one contract, selecting and replacing people, method, quality control). Referral: 5% of the first project.
 
 ## Pages
-- [Last Generation Team](https://amalor-ai.github.io/circle/en/)
-- [Clients — Last Generation Team](https://amalor-ai.github.io/circle/en/clients/)
-- [Members — Last Generation Team](https://amalor-ai.github.io/circle/en/members/)
-- [How a team works — Last Generation Team](https://amalor-ai.github.io/circle/en/team/)
-- [Referrers — Last Generation Team](https://amalor-ai.github.io/circle/en/guides/)
-- [Principles — Last Generation Team](https://amalor-ai.github.io/circle/en/principles/)
-- [Investors — Last Generation Team](https://amalor-ai.github.io/circle/en/investors/)
-- [Book — Last Generation Team](https://amalor-ai.github.io/circle/en/book/)
-- [Команда последнего поколения](https://amalor-ai.github.io/circle/)
-- [Заказчикам — Команда последнего поколения](https://amalor-ai.github.io/circle/clients/)
-- [Участникам — Команда последнего поколения](https://amalor-ai.github.io/circle/members/)
-- [Как работает команда — Команда последнего поколения](https://amalor-ai.github.io/circle/team/)
-- [Проводникам — Команда последнего поколения](https://amalor-ai.github.io/circle/guides/)
-- [Принципы — Команда последнего поколения](https://amalor-ai.github.io/circle/principles/)
-- [Инвесторам — Команда последнего поколения](https://amalor-ai.github.io/circle/investors/)
-- [Книга — Команда последнего поколения](https://amalor-ai.github.io/circle/book/)
-- [Team der letzten Generation](https://amalor-ai.github.io/circle/de/)
-- [Auftraggeber — Team der letzten Generation](https://amalor-ai.github.io/circle/de/clients/)
-- [Mitglieder — Team der letzten Generation](https://amalor-ai.github.io/circle/de/members/)
-- [So arbeitet ein Team — Team der letzten Generation](https://amalor-ai.github.io/circle/de/team/)
-- [Vermittler — Team der letzten Generation](https://amalor-ai.github.io/circle/de/guides/)
-- [Prinzipien — Team der letzten Generation](https://amalor-ai.github.io/circle/de/principles/)
-- [Investoren — Team der letzten Generation](https://amalor-ai.github.io/circle/de/investors/)
-- [Buch — Team der letzten Generation](https://amalor-ai.github.io/circle/de/book/)
+- [Last Generation Team](https://team.amalor.ai/en/)
+- [Clients — Last Generation Team](https://team.amalor.ai/en/clients/)
+- [Members — Last Generation Team](https://team.amalor.ai/en/members/)
+- [How a team works — Last Generation Team](https://team.amalor.ai/en/team/)
+- [Referrers — Last Generation Team](https://team.amalor.ai/en/guides/)
+- [Principles — Last Generation Team](https://team.amalor.ai/en/principles/)
+- [Investors — Last Generation Team](https://team.amalor.ai/en/investors/)
+- [Book — Last Generation Team](https://team.amalor.ai/en/book/)
+- [Команда последнего поколения](https://team.amalor.ai/)
+- [Заказчикам — Команда последнего поколения](https://team.amalor.ai/clients/)
+- [Участникам — Команда последнего поколения](https://team.amalor.ai/members/)
+- [Как работает команда — Команда последнего поколения](https://team.amalor.ai/team/)
+- [Проводникам — Команда последнего поколения](https://team.amalor.ai/guides/)
+- [Принципы — Команда последнего поколения](https://team.amalor.ai/principles/)
+- [Инвесторам — Команда последнего поколения](https://team.amalor.ai/investors/)
+- [Книга — Команда последнего поколения](https://team.amalor.ai/book/)
+- [Team der letzten Generation](https://team.amalor.ai/de/)
+- [Auftraggeber — Team der letzten Generation](https://team.amalor.ai/de/clients/)
+- [Mitglieder — Team der letzten Generation](https://team.amalor.ai/de/members/)
+- [So arbeitet ein Team — Team der letzten Generation](https://team.amalor.ai/de/team/)
+- [Vermittler — Team der letzten Generation](https://team.amalor.ai/de/guides/)
+- [Prinzipien — Team der letzten Generation](https://team.amalor.ai/de/principles/)
+- [Investoren — Team der letzten Generation](https://team.amalor.ai/de/investors/)
+- [Buch — Team der letzten Generation](https://team.amalor.ai/de/book/)
 - Organiser: [AMALOR](https://amalor.ai), hello@amalor.ai

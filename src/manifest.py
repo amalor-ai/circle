@@ -303,7 +303,7 @@ footer.end{{text-align:center;font-size:13px;color:var(--soft);padding:26px}}
     <div><h4>Если вы знаете, у кого есть задача</h4><p>познакомьте нас. Одно знакомство может дать работу целой команде, а вам — 5% первого проекта.</p></div>
     <div><h4>Если вы инвестор, фонд, компания или государство</h4><p>станьте кругом поддержки. Вы вкладываете не в идею, а в людей, которые уже доказали, что умеют работать вместе и что их работа нужна.</p></div>
   </div>
-  <div class="closing"><p>По одной тростинке мы ломаемся.<br>Вместе — нет.</p><span>hello@amalor.ai · amalor-ai.github.io/circle</span></div>
+  <div class="closing"><p>По одной тростинке мы ломаемся.<br>Вместе — нет.</p><span>hello@amalor.ai · team.amalor.ai</span></div>
 </section>
 
 <section class="sheet src page">

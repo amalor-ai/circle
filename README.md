@@ -1,10 +1,12 @@
 # Команда последнего поколения
 
-Сайт набора: заказчики, исполнители, проводники. Статическая страница на GitHub Pages.
+Сайт набора: заказчики, исполнители, проводники. Статический сайт на Azure Static Web Apps: https://team.amalor.ai
 
 - `index.html` — вся страница (стили и скрипт внутри).
 - Формы отправляются в HubSpot (Forms API v3, портал 149651742). ID форм задаются в `CONFIG` внизу `index.html`; пустой ID = режим превью.
-- Публикация: GitHub Pages «Deploy from a branch», ветка `main`, папка `/` (root). Любой push в `main` публикуется сам.
+- Публикация: любой push в `main` → GitHub Action `.github/workflows/deploy.yml` → Azure Static Web App `swa-amalor-team` (ресурсная группа `rg-amalor-web`, тенант amalor.ai). Публикуются только собранные страницы, без `src/` и `infra/`.
+- Инфраструктура как код: `infra/main.bicep`; первичная настройка — `infra/setup-azure.ps1` (создаёт приложение, кладёт токен в GitHub secret, затем привязывает домен). DNS-запись `team` — в репозитории amalor-website, `infra/dns.bicep`.
+- Старый адрес amalor-ai.github.io/circle после переезда отдаёт переадресацию на team.amalor.ai.
 
 ## Сборка
 - Страницы: главная, Заказчикам, Участникам, Как работает команда, Проводникам, Принципы, Книга, Инвесторам (в меню). Всё на русском, английском (`/en/`) и немецком (`/de/`).
