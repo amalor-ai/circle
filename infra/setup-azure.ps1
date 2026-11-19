@@ -10,7 +10,7 @@ $ErrorActionPreference = 'Stop'
 $tenant = 'aed4db3d-f0be-4b3e-ab35-80a9fa86b0bb'
 $rg     = 'rg-amalor-web'
 $app    = 'swa-amalor-team'
-$repo   = 'amalor-ai/circle'
+$repo   = 'amalor-ai/team'
 
 $cur = az account show --query tenantId -o tsv 2>$null
 if ($cur -ne $tenant) { az login --tenant $tenant | Out-Null }
@@ -24,7 +24,7 @@ if (-not $BindDomain) {
   # 2. Deployment token -> GitHub secret (never printed)
   az staticwebapp secrets list -n $app -g $rg --query properties.apiKey -o tsv | gh secret set AZURE_STATIC_WEB_APPS_API_TOKEN -R $repo
   gh workflow run deploy.yml -R $repo
-  Write-Host 'Deploy started. Check: gh run list -R amalor-ai/circle'
+  Write-Host 'Deploy started. Check: gh run list -R amalor-ai/team'
 
   # 3. DNS: CNAME team -> Static Web App (DNS as code lives in amalor-website/infra/dns.bicep, enableTeam = true)
   Write-Host 'Now in the amalor-website repo:'
