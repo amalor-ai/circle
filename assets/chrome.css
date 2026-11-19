@@ -1,0 +1,148 @@
+/* AMALOR site chrome (all pages, 2026-10 design): header with products and the sections bar, phone dock and menu, footer, back to top.
+   Built into every page by scripts/build.mjs from src/partials/. Own tokens (--c-*) and classes, so page styles do not interfere. */
+:root{
+  --c-deep:#062F2D; --c-night:#083C3A; --c-teal-900:#0A4F4B; --c-teal:#0E625D;
+  --c-mint:#C9E4E2; --c-mint-2:#9DC3BF; --c-gold:#D8B36A; --c-gold-l:#ECCF90; --c-text:#15231F;
+  --c-gut:clamp(16px,4vw,32px); --c-ease:cubic-bezier(.2,.7,.2,1); --c-spring:cubic-bezier(.34,1.56,.64,1);
+  --c-display:"Readex Pro","Manrope",system-ui,sans-serif; --c-sans:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --c-gold-grad:linear-gradient(135deg,#F7E7B0 0%,#E2BF74 32%,#B98A34 64%,#EDCD82 100%);
+}
+.cwrap{max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+.c-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.hdr .gold-text,.sitefoot .gold-text,.mmenu .gold-text{background:var(--c-gold-grad);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent}
+/* buttons inside the header and menu (own class, so page styles do not change them) */
+.cbtn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border-radius:999px;font:700 15px/1 var(--c-sans);text-decoration:none;cursor:pointer;border:0;transition:transform .3s var(--c-ease),box-shadow .3s,background .2s}
+.cbtn-gold{background:var(--c-gold-grad);color:#1B1405;box-shadow:inset 0 1px 0 rgba(255,255,255,.65),0 8px 24px rgba(216,179,106,.28)}
+.cbtn-gold:hover{transform:translateY(-2px)}
+.cbtn-ghost{color:#fff;box-shadow:inset 0 0 0 1px rgba(201,228,226,.55);background:transparent}
+.cbtn-sm{min-height:42px;padding:0 18px;font-size:14px}
+.hdr,.mmenu,.dock,.sitefoot,.totop{font-family:var(--c-sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+.hdr *,.mmenu *,.dock *,.sitefoot *{box-sizing:border-box}
+/* ===== progress ===== */
+.progress{position:fixed;top:0;left:0;height:2px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:var(--c-gold-grad);z-index:60;pointer-events:none}
+
+/* ===== header ===== */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .35s var(--c-ease),box-shadow .35s var(--c-ease),backdrop-filter .35s}
+.hdr.scrolled{background:rgba(8,60,58,.94);backdrop-filter:blur(14px) saturate(1.3);-webkit-backdrop-filter:blur(14px) saturate(1.3);box-shadow:0 1px 0 rgba(255,255,255,.07),0 14px 30px rgba(0,0,0,.22)}
+.hdr-in{display:flex;align-items:center;justify-content:space-between;gap:20px;height:76px}
+.logo{display:inline-flex;flex-direction:column;align-items:stretch;text-decoration:none;color:#fff;flex-shrink:0}
+.logo .wm{font-family:var(--c-display);font-weight:300;letter-spacing:.08em;line-height:1;white-space:nowrap;font-size:28px}
+.logo svg{width:0;min-width:100%;height:auto;aspect-ratio:5/1;margin-top:4px}
+.logo .needle{transform-origin:200px 30px;animation:needle 1.6s var(--c-spring) .3s both}
+@keyframes needle{0%{transform:rotate(-140deg) scale(.4);opacity:0}100%{transform:none;opacity:1}}
+.logo:hover .needle{animation:spin 1.2s var(--c-ease)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.snav{display:flex;align-items:center;gap:4px}
+.snav a.nl{position:relative;font-size:14px;font-weight:600;color:var(--c-mint);text-decoration:none;padding:10px 12px;border-radius:999px;transition:color .2s}
+.snav a.nl::after{content:"";position:absolute;left:12px;right:12px;bottom:5px;height:1.5px;background:var(--c-gold);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--c-ease)}
+.snav a.nl:hover,.snav a.nl.active{color:#fff}
+.snav a.nl:hover::after,.snav a.nl.active::after{transform:scaleX(1)}
+.langsw{display:inline-flex;border:1px solid rgba(201,228,226,.35);border-radius:999px;padding:3px;gap:2px;margin:0 6px}
+.langsw a{font:600 12px/1 var(--c-sans);color:var(--c-mint);text-decoration:none;border-radius:999px;padding:7px 10px;transition:background .2s,color .2s}
+.langsw a:hover{color:#fff}
+.langsw a[aria-current=page]{background:var(--c-gold);color:#1B1405}
+
+/* mobile menu */
+.mmenu{position:fixed;inset:0;z-index:45;background:radial-gradient(120% 80% at 100% 0%,rgba(19,118,112,.35),transparent 60%),var(--c-deep);display:flex;flex-direction:column;padding:96px var(--c-gut) calc(28px + env(safe-area-inset-bottom,0px));clip-path:circle(0 at calc(100% - 44px) 38px);transition:clip-path .6s var(--c-ease);visibility:hidden;overflow-y:auto}
+.menu-open .mmenu{clip-path:circle(150% at calc(100% - 44px) 38px);visibility:visible}
+.mmenu nav{display:flex;flex-direction:column}
+.mmenu nav a{display:flex;align-items:center;justify-content:space-between;font-family:var(--c-display);font-weight:300;font-size:clamp(28px,8vw,40px);color:#fff;text-decoration:none;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.08);opacity:0;transform:translateY(18px);transition:opacity .4s var(--c-ease),transform .5s var(--c-ease),color .2s}
+.mmenu nav a small{font:600 13px var(--c-sans);color:var(--c-gold);letter-spacing:.04em}
+.mmenu nav a:active{color:var(--c-gold-l)}
+.menu-open .mmenu nav a{opacity:1;transform:none}
+.mmenu .mfoot{margin-top:auto;padding-top:28px;display:flex;flex-direction:column;gap:14px;opacity:0;transition:opacity .5s .35s}
+.menu-open .mmenu .mfoot{opacity:1}
+.mmenu .mfoot .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.mmenu .cbtn{width:100%}
+body.menu-open{overflow:hidden}
+
+@media (max-width:1080px){
+  .snav{display:none}
+  .hdr-cta{display:none}
+}
+@media (min-width:1081px){.mmenu{display:none}}
+/* ===== footer ===== */
+.sitefoot{background:var(--c-deep);color:var(--c-mint);padding:44px 0 calc(44px + env(safe-area-inset-bottom,0px));font-size:14px}
+.sitefoot-in{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px}
+.sitefoot .flogo{display:flex;align-items:flex-end;gap:14px}
+.sitefoot .flogo .logo .wm{font-size:24px}
+.sitefoot .flogo>span{font-size:13px;letter-spacing:.04em;color:var(--c-mint-2)}
+.sitefoot p{margin:0;max-width:640px}
+.sitefoot a{color:#fff;text-underline-offset:3px}
+
+/* to top */
+.totop{position:fixed;right:clamp(14px,3vw,28px);bottom:calc(clamp(14px,3vw,28px) + env(safe-area-inset-bottom,0px));z-index:40;width:48px;height:48px;border-radius:50%;border:1px solid rgba(216,179,106,.5);background:rgba(8,60,58,.85);backdrop-filter:blur(10px);color:var(--c-gold-l);display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transform:translateY(20px) scale(.8);pointer-events:none;transition:opacity .3s,transform .45s var(--c-spring)}
+.totop.show{opacity:1;transform:none;pointer-events:auto}
+.totop svg{width:20px;height:20px}
+@media (max-width:640px){.logo .wm{font-size:24px}}
+
+/* ===== phones and tablets: logo on the left, contact and menu on the top right (2026-10-22: moved up from the
+   bottom dock, which sat on top of Safari's address bar on iPhones and covered the last menu button) ===== */
+.dock{display:none}
+@media (max-width:1080px){
+  .hdr-in{justify-content:flex-start}
+  .hdr .langsw{display:none}
+  .dock{display:flex;align-items:center;position:fixed;top:calc(8px + env(safe-area-inset-top,0px));right:max(var(--c-gut),env(safe-area-inset-right,0px));z-index:52;gap:6px;padding:4px;border-radius:999px;background:rgba(10,79,75,.9);border:1px solid rgba(255,255,255,.12);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+  .dock button,.dock a{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:0 16px;border-radius:999px;font:700 14px/1 var(--c-sans);text-decoration:none;cursor:pointer;-webkit-appearance:none;appearance:none;border:0;white-space:nowrap}
+  .dock-cta{order:1;background:var(--c-gold-grad);color:#1B1405}
+  .dock-menu{order:2;width:40px;padding:0!important;background:transparent;color:#fff;border:1px solid rgba(201,228,226,.35)!important}
+  .dock .lbl{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .dock .bars{position:relative;width:18px;height:14px}
+  .dock .bars i{position:absolute;left:0;right:0;height:2px;border-radius:2px;background:currentColor;transition:transform .45s var(--c-spring),opacity .2s,top .3s var(--c-ease)}
+  .dock .bars i:nth-child(1){top:0}.dock .bars i:nth-child(2){top:6px}.dock .bars i:nth-child(3){top:12px}
+  .menu-open .dock .bars i:nth-child(1){top:6px;transform:rotate(45deg)}
+  .menu-open .dock .bars i:nth-child(2){opacity:0;transform:scaleX(0)}
+  .menu-open .dock .bars i:nth-child(3){top:6px;transform:rotate(-45deg)}
+  /* the sheet grows out of the menu button; it scrolls when it is taller than the screen */
+  .mmenu{clip-path:circle(0 at calc(100% - 44px) 32px);padding-bottom:calc(28px + env(safe-area-inset-bottom,0px));overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+  .menu-open .mmenu{clip-path:circle(150% at calc(100% - 44px) 32px)}
+  .mmenu .mfoot .cbtn-gold{display:none}
+}
+@media (max-width:359px){.dock-cta{padding:0 12px!important}}
+
+/* ===== navigation: products on top, the sections of this page in a bar below (2026-10) =====
+   Row 1 (global): logo · products · guide · language. It scrolls away.
+   Row 2 (this page): product name · sections with scroll marker · contact. It stays. */
+.hdr-in{height:64px}
+.gnav{display:flex;align-items:center;gap:14px}
+.products{display:inline-flex;gap:2px;padding:3px;border-radius:999px;border:1px solid rgba(201,228,226,.28);background:rgba(255,255,255,.04)}
+.pl{font:600 14px/1 var(--c-sans);color:var(--c-mint);text-decoration:none;padding:9px 16px;border-radius:999px;transition:background .2s,color .2s}
+.pl:hover{color:#fff}
+.pl[aria-current=page]{background:rgba(255,255,255,.14);color:#fff}
+.gl{font:600 14px/1 var(--c-sans);color:var(--c-mint);text-decoration:none;padding:9px 6px}
+.gl:hover{color:#fff}
+.gnav .langsw{margin:0}
+/* products pill centred in row 1 (2026-11-04); guide and language stay on the right */
+.pl-main{background:var(--c-deep);color:#fff;box-shadow:inset 0 0 0 1px var(--c-gold)}
+.pl-main:hover{background:#041F1E}
+.pl-main[aria-current=page]{background:var(--c-deep);box-shadow:inset 0 0 0 1.5px var(--c-gold-l)}
+@media (min-width:1081px){.hdr-in{position:relative}.gnav .products{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}}
+.subnav{border-top:1px solid rgba(255,255,255,.08)}
+.sub-in{display:flex;align-items:center;justify-content:space-between;gap:20px;height:52px}
+.sname{font-family:var(--c-display);font-weight:300;font-size:19px;letter-spacing:.01em;color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:10px}
+.sname::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--c-gold)}
+.subnav .snav{gap:2px}
+.hdr{transition:transform .45s var(--c-ease),background .35s var(--c-ease),box-shadow .35s var(--c-ease)}
+.hdr.compact{transform:translateY(-64px)}
+@media (max-width:1080px){
+  .gnav,.subnav{display:none}
+  .hdr.compact{transform:none}
+}
+
+/* phone menu: product switch on top, then the sections of the chosen product */
+.mseg{display:flex;gap:4px;padding:4px;border-radius:999px;border:1px solid rgba(201,228,226,.25);background:rgba(255,255,255,.04);margin:0 0 18px}
+.mseg button{flex:1;min-height:44px;border:0;border-radius:999px;background:transparent;color:var(--c-mint);font:700 15px/1 var(--c-sans);cursor:pointer;-webkit-appearance:none;appearance:none}
+.mseg button[aria-selected=true]{background:rgba(255,255,255,.14);color:#fff}
+.mpanel{display:flex;flex-direction:column}
+.mpanel[hidden]{display:none}
+.mmenu .mpanel a{display:flex;align-items:center;justify-content:space-between;font-family:var(--c-display);font-weight:300;font-size:clamp(26px,7.4vw,36px);color:#fff;text-decoration:none;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.mmenu .mpanel a small{font:600 13px var(--c-sans);color:var(--c-gold);letter-spacing:.04em}
+.mmenu .mpanel a.mgo{font:700 16px/1.3 var(--c-sans);color:var(--c-gold-l);border-bottom:0;padding-top:18px}
+.mmenu .mguide{font:600 15px/1 var(--c-sans);color:var(--c-mint);text-decoration:none}
+
+/* page styles never reach into the chrome (some pages style header, p and a by element) */
+.hdr{padding:0;background:transparent;color:#fff}
+.sitefoot p{color:inherit;font-size:14px;line-height:1.6}
+.sitefoot{margin:0}
+.mseg button{font-size:clamp(13px,3.6vw,15px);padding:0 6px;white-space:nowrap}
+.gl[aria-current=page]{color:#fff;box-shadow:inset 0 -1.5px 0 var(--c-gold)}

@@ -19,6 +19,7 @@ OUT = SRC.parent
 BASE = 'https://team.amalor.ai'
 PAGES = ['index', 'clients', 'members', 'team', 'guides', 'principles', 'investors', 'book']
 HIDDEN = set()                         # reachable by link only, noindex, not in menus or sitemap
+VER = '2'                              # bump when assets/*.css or *.js change
 
 
 def path_of(lang, page):
@@ -72,33 +73,107 @@ def clients_body(lang, p):
 
 
 
+LOGO_SVG = ('<svg viewBox="0 0 300 60" aria-hidden="true"><defs><linearGradient id="gG1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7E7B0"/>'
+            '<stop offset=".45" stop-color="#D8B36A"/><stop offset="1" stop-color="#A97B2F"/></linearGradient></defs>'
+            '<path d="M6 14 L187.04 28.93 M6 30 L187 30 M6 46 L187.04 31.07" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round"/>'
+            '<g fill="currentColor"><circle cx="40" cy="16.8" r="3.4"/><circle cx="40" cy="30" r="3.4"/><circle cx="40" cy="43.2" r="3.4"/></g>'
+            '<path d="M200 26.8 L296 30 L200 33.2 Z" fill="url(#gG1)"/><path class="needle" d="M200 2 L201.3 26.86 L205.66 24.34 L203.14 28.7 L210 30 '
+            'L203.14 31.3 L205.66 35.66 L201.3 33.14 L200 54 L198.7 33.14 L194.34 35.66 L196.86 31.3 L186 30 L196.86 28.7 L194.34 24.34 L198.7 26.86 Z" fill="currentColor"/></svg>')
+
+# the products of www.amalor.ai, so both sites share one header; "Team" is this site
+MAIN = 'https://www.amalor.ai'
+PRODUCTS = {
+    'de': [('/de/automatisierung/', 'Automatisierung'), ('/de/', 'Compass'), ('/de/m365-security/', 'Security')],
+    'en': [('/automation/', 'Automation'), ('/', 'Compass'), ('/m365-security/', 'Security')],
+    'ru': [('/ru/automation/', 'Автоматизация'), ('/ru/', 'Compass'), ('/ru/m365-security/', 'Security')],
+}
+GUIDE = {'de': ('/de/copilot-fuer-geschaeftsfuehrer/', 'Ratgeber'), 'en': ('/copilot-for-owners/', 'Guide'),
+         'ru': ('/ru/copilot-dlya-vladeltsev/', 'Статьи')}
+CHROME = {
+    'de': {'name': 'Team', 'cta': 'Aufgabe stellen', 'menu': 'Menü', 'close': 'Schließen', 'top': 'Nach oben', 'lang': 'Sprache',
+           'nav': 'Hauptnavigation', 'sub': 'Bereiche', 'langs': 'Deutsch · English · Русский'},
+    'en': {'name': 'Team', 'cta': 'Submit a task', 'menu': 'Menu', 'close': 'Close', 'top': 'Back to top', 'lang': 'Language',
+           'nav': 'Main navigation', 'sub': 'Sections', 'langs': 'English · Deutsch · Русский'},
+    'ru': {'name': 'Команда', 'cta': 'Поставить задачу', 'menu': 'Меню', 'close': 'Закрыть', 'top': 'Наверх', 'lang': 'Язык',
+           'nav': 'Главная навигация', 'sub': 'Разделы', 'langs': 'Русский · English · Deutsch'},
+}
+
+
+def cta_href(lang, L):
+    return f'{L}clients/#' + ('anfrage' if lang in CLIENT_OFFER else 'clients')
+
+
 def header(lang, page, logo_link, R, L):
+    c = CHROME[lang]
     tail = '' if page == 'index' else page + '/'
-    switch = ''.join(f'<a class="lang" href="{R}{"" if o == "ru" else o + "/"}{tail}" hreflang="{o}" lang="{o}">{LANG_NAME[o]}</a>'
-                     for o in LANGS if o != lang)
-    logo = logo_link.replace('href="https://amalor.ai"', f'href="{L}"').replace('aria-label="AMALOR"', f'aria-label="{TITLE[lang]}"')
-    menu = ''.join(f'<a href="{L}{h}"' + (' aria-current="page"' if h == page + '/' else '') + f'>{t}</a>' for h, t in NAV[lang])
-    return (f'<nav class="brandbar">{logo}<span class="navr"><small>{TITLE[lang]}</small>{switch}</span>'
-            f'<div class="menu">{menu}</div></nav>')
+    langsw = ''.join(f'<a href="{R}{"" if o == "ru" else o + "/"}{tail}" hreflang="{o}" lang="{o}" data-l="{o}"'
+                     + (' aria-current="page"' if o == lang else '') + f'>{o.upper()}</a>' for o in ['en', 'de', 'ru'])
+    products = ''.join(f'<a class="pl" href="{MAIN}{h}">{t}</a>' for h, t in PRODUCTS[lang])
+    products += f'<a class="pl pl-main" href="{L}" aria-current="page">{c["name"]}</a>'
+    g = GUIDE[lang]
+    secs = ''.join(f'<a class="nl{" active" if h == page + "/" else ""}" href="{L}{h}"'
+                   + (' aria-current="page"' if h == page + '/' else '') + f'>{t}</a>' for h, t in NAV[lang])
+    msecs = ''.join(f'<a href="{L}{h}" style="transition-delay:{.04 * (k + 1):.2f}s">{t} <small>{k + 1:02d}</small></a>'
+                    for k, (h, t) in enumerate(NAV[lang]))
+    cta = cta_href(lang, L)
+    return f'''<div class="progress" id="progress" aria-hidden="true"></div>
+<header class="hdr" id="hdr">
+  <div class="cwrap hdr-in">
+    <a class="logo" href="{L}" aria-label="{TITLE[lang]}"><div class="wm">amal<span class="gold-text shine">or</span></div>{LOGO_SVG}</a>
+    <nav class="gnav" aria-label="{c['nav']}">
+      <span class="products">{products}</span>
+      <a class="gl" href="{MAIN}{g[0]}">{g[1]}</a>
+      <span class="langsw" role="group" aria-label="{c['lang']}">{langsw}</span>
+    </nav>
+  </div>
+  <div class="subnav">
+    <div class="cwrap sub-in">
+      <a class="sname" href="{L}">{c["name"]}</a>
+      <nav class="snav" aria-label="{c['sub']}">{secs}</nav>
+      <a class="cbtn cbtn-gold cbtn-sm hdr-cta" href="{cta}">{c['cta']}</a>
+    </div>
+  </div>
+</header>
+<nav class="dock" aria-label="{c['nav']}">
+  <button type="button" class="dock-menu" id="dockMenu" aria-expanded="false" aria-controls="mmenu"><span class="bars" aria-hidden="true"><i></i><i></i><i></i></span><span class="lbl" data-close="{c['close']}">{c['menu']}</span></button>
+  <a class="dock-cta" href="{cta}">{c['cta']}</a>
+</nav>
+<div class="mmenu" id="mmenu" aria-hidden="true">
+  <nav class="mpanel" data-p="0" aria-label="{TITLE[lang]}">
+    <a href="{L}" style="transition-delay:0s">{TITLE[lang]}</a>
+    {msecs}
+  </nav>
+  <div class="mfoot">
+    <a class="mguide" href="{MAIN}{PRODUCTS[lang][1][0]}">amalor.ai →</a>
+    <div class="row">
+      <span class="langsw" role="group" aria-label="{c['lang']}" style="margin:0">{langsw}</span>
+      <span style="font-size:13px;color:var(--c-mint-2)">{c['langs']}</span>
+    </div>
+    <a class="cbtn cbtn-gold" href="{cta}">{c['cta']}</a>
+  </div>
+</div>'''
 
 
 def footer(lang, L, logo_link):
-    menu = ''.join(f'<a href="{L}{h}">{t}</a>' for h, t in NAV[lang])
-    a = '<a href="https://amalor.ai" style="color:#ECCF90">AMALOR</a>'
+    c = CHROME[lang]
+    a = f'<a href="{MAIN}{PRODUCTS[lang][1][0]}">AMALOR</a>'
     line = {'ru': f'Команда последнего поколения — инициатива {a}.', 'en': f'Last Generation Team is an initiative of {a}.',
             'de': f'Team der letzten Generation ist eine Initiative von {a}.'}[lang]
     lt = {'ru': ('Импрессум', 'Конфиденциальность'), 'en': ('Legal notice', 'Privacy'), 'de': ('Impressum', 'Datenschutz')}[lang]
-    legal = (f'<a href="https://www.amalor.ai/impressum.html" style="color:inherit">{lt[0]}</a> · '
-             f'<a href="https://www.amalor.ai/datenschutz.html" style="color:inherit">{lt[1]}</a>')
-    return (f'<footer><div class="fl"><div class="stack" style="gap:10px"><span class="logo">amal<em>or</em></span>'
-            f'<p>{line}</p><p>hello@amalor.ai</p><p class="legal">{legal}</p></div><div class="menu">{menu}</div></div></footer>')
+    legal = (f'<a href="{MAIN}/impressum.html">{lt[0]}</a> · <a href="{MAIN}/datenschutz.html">{lt[1]}</a>')
+    foot_svg = LOGO_SVG.replace(' class="needle"', '')
+    return (f'<footer class="sitefoot">\n  <div class="cwrap sitefoot-in">\n    <div class="flogo"><a class="logo" href="{L}" aria-label="{TITLE[lang]}">'
+            f'<div class="wm">amal<span style="color:var(--c-gold-l)">or</span></div>{foot_svg}</a><span>team.amalor.ai</span></div>\n'
+            f'    <p>{line} <a href="mailto:hello@amalor.ai">hello@amalor.ai</a> · {legal}</p>\n  </div>\n</footer>\n'
+            f'<button class="totop" id="totop" type="button" aria-label="{c["top"]}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" '
+            'stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></button>')
 
 
 def body_for(lang, page, p):
     return {
         'index': hero_home(lang) + CLIENT_HOME.get(lang, '') + '<section class="home-doors">' + re.search(r'(<div class="doors">.*?</div>)\s*</div>\s*</header>', p['hero'], re.S).group(1) + '</section>' + PRODUCT_HOME[lang] + HOME_MORE[lang] + p['prin'] + p['faq'],
         'clients': clients_body(lang, p),
-        'members': p['members'] + LADDER[lang] + PRODUCT_MEMBER[lang],
+        'members': p['members'] + LADDER[lang].rstrip()[:-len('</section>')] + PRODUCT_MEMBER[lang] + '</section>\n',
         'team': TEAM[lang],
         'guides': p['guides'] + p['money'],
         'principles': p['prin'] + p['sieve'] + p['money'],
@@ -141,11 +216,15 @@ def render(lang, page, css, logo_link, p):
             f'<meta property="og:url" content="{url(lang, page)}">\n<meta property="og:type" content="website">\n'
             f'<meta property="og:image" content="{BASE}/assets/book-cover-{lang}.jpg">\n'
             + ('' if page in HIDDEN else f'<script type="application/ld+json">{jsonld(lang, page, desc, p["faq"])}</script>\n')
-            + '<link rel="preconnect" href="https://fonts.googleapis.com">\n'
-            '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;800&family=Readex+Pro:wght@300;400&display=swap">\n'
+            + '<meta name="theme-color" content="#083C3A">\n'
+            '<link rel="icon" href="/favicon.ico" sizes="48x48">\n<link rel="icon" href="/favicon.svg" type="image/svg+xml">\n'
+            '<link rel="apple-touch-icon" href="/apple-touch-icon.png">\n'
+            f'<link rel="stylesheet" href="/assets/fonts.css">\n<link rel="stylesheet" href="/assets/chrome.css?v={VER}">\n'
             f'<style>{css.replace("body{background:var(--bg);", "body{margin:0;background:var(--bg);")}{content_extra.EXTRA_CSS}</style>\n'
-            '</head>\n<body>\n<div class="wrap">\n'
-            f'{header(lang, page, logo_link, R, L)}\n{body}\n{footer(lang, L, logo_link)}\n</div>\n{p["script"]}\n</body>\n</html>\n')
+            f'<link rel="stylesheet" href="/assets/team.css?v={VER}">\n'
+            '</head>\n<body>\n'
+            f'{header(lang, page, logo_link, R, L)}\n<main class="wrap page-{page}">\n{body}\n</main>\n{footer(lang, L, logo_link)}\n'
+            f'{p["script"]}\n<script src="/assets/chrome.js?v={VER}" defer></script>\n</body>\n</html>\n')
 
 
 def main():
