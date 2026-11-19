@@ -84,7 +84,7 @@ T['de'] = dict(
     lang='de', title='Manifest · Team der letzten Generation', home='← amalor · Team der letzten Generation', pdf='PDF herunterladen',
     desc='Manifest des Teams der letzten Generation: In der Mitte das Team, das die Arbeit macht; darum herum die, für die wir arbeiten, und das Netzwerk der Unterstützung. Ehre und 80 % des Einkommens für die, die die Arbeit machen.',
     h1='Team der letzten<br>Generation', kind='Manifest',
-    quote='„Ein Bündel Schilfrohr zerbricht man nicht auf einmal – einzeln aber bricht jeden Halm sogar ein Kind.“',
+    quote='„Ein Bündel Schilfrohr zerbricht niemand auf einmal. Einen einzelnen Halm bricht schon ein Kind.“',
     intro_eb='Ein Bündel Schilfrohr',
     intro_big='Wir leben in einer Zeit, in der ein Mensch mit Laptop und künstlicher Intelligenz mehr schafft als vor zwanzig Jahren eine ganze Abteilung. Und doch ist er allein verletzlich.',
     intro_c1='Allein verkauft man Stunden, allein brennt man aus, allein reicht man nicht an die große Aufgabe heran.',

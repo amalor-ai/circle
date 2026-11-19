@@ -74,54 +74,54 @@ T = {
     eyebrow='Für Auftraggeber',
     h1='Ihre eigene Software. <span class="gold">Gebaut von Menschen, denen sie mitgehört.</span>',
     lead='Ein festes Team aus 3–5 Fachleuten plus KI baut Software, Automatisierung und neue Abläufe für Ihr Unternehmen. '
-         'Bezahlt wird nur, was Sie abgenommen haben. Und hat Ihre ganze Branche dasselbe Problem, wird aus Ihrer Lösung ein Produkt – '
+         'Bezahlt wird nur, was Sie abgenommen haben. Und hat Ihre ganze Branche dieselbe Aufgabe, wird aus Ihrer Lösung ein Produkt – '
          'mit Ihnen als Mitgründer.',
     cta1='Gespräch vereinbaren', cta2='So läuft es ab',
     byline='80 % des Budgets beim Team · 0 € für nicht abgenommene Etappen · 2 Wochen Diagnose zum Festpreis',
-    w_eyebrow='Das bekannte Problem', w_h2='Warum Softwareprojekte so oft teuer werden und enttäuschen',
-    w_lead='Wer Software bei einem Entwicklungsunternehmen bestellt, bezahlt den ganzen Apparat: Vertrieb, Projektmanagement, Büros '
-           'und Marge. Die Menschen, die Ihre Software bauen, arbeiten für ihren Arbeitgeber – ihr Gehalt ist dasselbe, ob Ihre Lösung '
-           'ein Erfolg wird oder nicht.',
-    c1='Klassisch beauftragt', c1s='beim Dienstleister',
-    c1l=['Ihr Budget finanziert den Apparat des Dienstleisters.', 'Die Entwickler arbeiten für ihren Arbeitgeber, nicht für Ihr Ergebnis.',
-         'Abrechnung nach Stunden: Mehr Aufwand bringt mehr Umsatz.', 'Nach dem Projekt zieht das Team zum nächsten Kunden weiter.'],
-    c2='Mit uns', c2s='gebaut von einem Team, das bleibt',
-    c2l=['80 % Ihres Budgets gehen an die Menschen, die Ihre Lösung bauen.', 'Bezahlt wird nur, was Sie abgenommen haben.',
-         'Fällt jemand aus, stellt AMALOR Ersatz.', 'Als Partner werden Sie und das Team Mitgründer der Lösung.'],
-    rule='<b>Die stärkste Motivation ist Eigentum.</b> Wer an der Lösung beteiligt ist, will, dass sie wirklich funktioniert – nicht '
-         'nur, dass das Projekt abgerechnet wird.',
+    w_eyebrow='Die Idee', w_h2='Software, an deren Erfolg alle Beteiligten teilhaben',
+    w_lead='Gute Software entsteht dort, wo die Menschen, die sie bauen, mit dem Ergebnis verbunden sind. Darum gehen 80 % Ihres '
+           'Budgets direkt an das Team – und wer möchte, wird gemeinsam mit dem Team Miteigentümer der Lösung.',
+    c1='Sicherheit für Sie', c1s='was Sie bekommen',
+    c1l=['Ein fester Preis für jede Etappe, vorab vereinbart.', 'Bezahlt wird, was Sie abgenommen haben.',
+         'Ein Vertrag und eine feste Ansprechperson.', 'Fällt jemand aus, sorgt AMALOR für Ersatz.'],
+    c2='Ein Team, das bleibt', c2s='was das Team antreibt',
+    c2l=['80 % des Budgets für die Menschen, die Ihre Lösung bauen.', 'Ein Anteil an der Lösung, wenn daraus ein Produkt wird.',
+         'Der eigene Name am Ergebnis.', 'Dasselbe Team betreut und entwickelt Ihre Lösung weiter.'],
+    rule='<b>Gemeinsames Eigentum verbindet.</b> Wer an einer Lösung beteiligt ist, denkt über die Abnahme hinaus – an die Menschen, '
+         'die sie täglich nutzen, und an die nächste Version.',
     a_eyebrow='So arbeiten wir', a_h2='Erst verstehen, dann bauen – Etappe für Etappe',
     a_lead='Nach jedem Schritt entscheiden Sie neu: weiter, anpassen oder aufhören.',
-    steps=[('kostenlos', 'Gespräch', '30 Minuten. Wir verstehen Ihr Problem und sagen ehrlich, ob wir helfen können.'),
+    steps=[('kostenlos', 'Gespräch', '30 Minuten. Wir hören zu, verstehen Ihr Anliegen und sagen offen, ob wir helfen können.'),
            ('ca. 2 Wochen', 'Diagnose', 'Festpreis. Lösungsplan, Etappen mit Abnahmekriterien, Preis und Termin.'),
            ('Festpreis je Etappe', 'Erste Version', 'Das Team baut die erste nutzbare Lösung für Ihr Unternehmen. Jeden Freitag sichtbare Ergebnisse.'),
            ('laufend', 'Betrieb', 'Dasselbe Team betreut und entwickelt weiter – zum Monatspreis.')],
     g_eyebrow='Zwei Wege',
     v_eyebrow='Die Vision', v_h2='Zuerst die beste Software für Ihr Unternehmen. Dann für Ihre Branche.',
-    v_lead='Unternehmen einer Branche konkurrieren in ihrem Geschäft, nicht in der Software. So ist DATEV entstanden: Steuerberater haben '
-           'ihre Software gemeinsam aufgebaut und besitzen sie bis heute als Genossenschaft. Wer zuerst baut, setzt den Standard. Jeder '
-           'Schritt baut auf dem vorigen auf, keiner ist Pflicht.',
+    v_lead='Unternehmen einer Branche unterscheiden sich in ihrem Angebot, nicht in ihrer Verwaltungssoftware. Darum lohnt es sich, '
+           'solche Software gemeinsam zu bauen. So ist DATEV entstanden: Steuerberater haben ihre Software zusammen aufgebaut und '
+           'besitzen sie bis heute als Genossenschaft. Wer den ersten Schritt geht, prägt den Standard für alle. Jeder Schritt baut auf '
+           'dem vorigen auf, keiner ist Pflicht.',
     vsteps=[('Diagnose', 'zwei Wochen, Festpreis'), ('Eigene Software', 'für Ihr Unternehmen gebaut, im echten Einsatz bewährt'),
             ('Startup', 'Sie und das Team gründen gemeinsam – mit eigenem Namen'),
             ('Kunden der Branche', 'andere Unternehmen nutzen die Lösung, Daten streng getrennt'),
             ('Genossenschaft', 'die Branche wird Mitbesitzerin der Software')],
     o_h3='Wenn die Branche einsteigt',
     owners=[('Unternehmen der Branche', 'zeichnen Anteile an der Genossenschaft: Stimmrecht und günstigere Lizenzen'),
-            ('Genossenschaft', 'wird Mehrheitseigentümerin des Startups – die Software gehört der Branche, nicht einem Konzern'),
+            ('Genossenschaft', 'wird Mehrheitseigentümerin des Startups – die Software gehört denen, die sie täglich nutzen'),
             ('Sie als Gründer', 'behalten Gründeranteile, die kostenlose Nutzung und einen Sitz im Aufsichtsrat'),
             ('Das Team', 'behält seine Anteile und entwickelt die Software weiter')],
     v_rule='<b>Wer an alle denkt, bekommt das Beste.</b> Der erste Auftraggeber setzt den Standard seiner Branche – und bekommt die '
            'Lösung, die genau für ihn gebaut wurde.',
-    p_eyebrow='Passt das zu Ihnen?', p_h2='Am meisten gewinnen Unternehmen, auf die zwei dieser Punkte zutreffen',
-    p_list=['Ihre Branchensoftware passt nicht zu Ihren Abläufen, ist zu teuer oder zu starr.',
-            'Wichtige Arbeit läuft noch über Excel, E-Mail oder Papier.',
-            'Sie haben über eigene Software nachgedacht, aber das Risiko schreckt ab.',
-            'Andere Firmen Ihrer Branche kämpfen mit demselben Problem.'],
+    p_eyebrow='Passt das zu Ihnen?', p_h2='Besonders passend, wenn zwei dieser Punkte auf Sie zutreffen',
+    p_list=['Sie wünschen sich Software, die genau zu Ihren Abläufen passt.',
+            'Wichtige Arbeit läuft noch über Excel, E-Mail oder Papier – und Sie möchten Ihrem Team diese Zeit zurückgeben.',
+            'Sie denken über eigene Software nach und möchten das Risiko klein halten.',
+            'Andere Unternehmen Ihrer Branche haben dasselbe Anliegen – und Sie sind offen, gemeinsam etwas aufzubauen.'],
     p_note='Die übrigen 20 % des Budgets sind die Garantie von AMALOR: ein Vertrag, Auswahl und Ersatz der Leute, Methode, '
            'Qualitätskontrolle, Werkzeuge. <a href="{L}principles/">Das Modell im Detail →</a>',
     k_eyebrow='Kontakt', k_h2='Ein Gespräch genügt, um zu sehen, ob es passt',
-    k_lead='Erzählen Sie, was Sie heute Zeit oder Geld kostet. 30 Minuten, kostenlos und unverbindlich. Antwort innerhalb eines Werktags – '
-           'auf Deutsch, Englisch oder Russisch.',
+    k_lead='Erzählen Sie, was Sie bewegt und was Ihnen heute Zeit kostet. 30 Minuten, kostenlos und unverbindlich. Antwort innerhalb '
+           'eines Werktags – auf Deutsch, Englisch oder Russisch.',
     k_btn=['Termin buchen', 'WhatsApp', 'Anrufen', 'LinkedIn'], k_form='Oder beschreiben Sie Ihre Aufgabe direkt hier:'),
 'en': dict(
     eyebrow='For clients',

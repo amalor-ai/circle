@@ -21,7 +21,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/assets/fonts.css">
-<link rel="stylesheet" href="/assets/chrome.css?v=5">
+<link rel="stylesheet" href="/assets/chrome.css?v=6">
 <style>
 /* Layout: one reading column on warm ivory; the book cover's deep green and AMALOR gold appear as accents, never as the ground. Single light look. */
 :root{
@@ -327,7 +327,7 @@ section.home-doors{padding-block:40px 20px;border-top:0}
 .cards3 h3{margin:0 0 8px;font-size:18px}.cards3 p{margin:0;color:#4A6563;font-size:15px}
 @media (max-width:760px){.cards3{grid-template-columns:1fr}}
 </style>
-<link rel="stylesheet" href="/assets/team.css?v=5">
+<link rel="stylesheet" href="/assets/team.css?v=6">
 </head>
 <body>
 <div class="progress" id="progress" aria-hidden="true"></div>
@@ -372,7 +372,7 @@ section.home-doors{padding-block:40px 20px;border-top:0}
   <div class="head">
     <span class="who">Für Mitglieder</span>
     <h2>Im Team arbeiten, nicht allein</h2>
-    <p class="lead">Sinnvolle Aufgaben neben Menschen, auf die du dich verlassen kannst. Vollzeit oder ein paar Stunden pro Woche – deine Rolle passen wir an deine Zeit an. Aufträge kommen zum Team, du musst sie nicht allein suchen.</p>
+    <p class="lead">Sinnvolle Aufgaben mit Menschen, auf die du dich verlassen kannst. Vollzeit oder ein paar Stunden pro Woche – deine Rolle passen wir an deine Zeit an. Aufträge kommen zum Team, du musst sie nicht allein suchen.</p>
   </div>
   <div class="cols">
     <ul class="ticks">
@@ -380,14 +380,14 @@ section.home-doors{padding-block:40px 20px;border-top:0}
       <li><b>Einkommen zu gleichen Teilen</b> unter den Teammitgliedern, nicht nach Titel.</li>
       <li><b>Dein Ruf wächst</b> von Projekt zu Projekt.</li>
       <li><b>Deine Leute um dich.</b> Sie stützen dich, wenn es schwer ist, und freuen sich mit dir, wenn es gelingt.</li>
-      <li><b>Weg des Wachstums:</b> Mitglied → Team Lead → Mentor → Kern. Es wächst nicht die Macht, sondern die Verantwortung für andere.</li>
+      <li><b>Weg des Wachstums:</b> Mitglied → Teammitglied → Kern → Mentor. Mit jedem Schritt wächst die Verantwortung für andere.</li>
       <li><b>Vom Projekt zum Startup.</b> Brauchen viele Auftraggeber die Lösung, kann das Team daraus ein eigenes Produkt machen und Miteigentümer werden – mit Anteilen nach Beitrag.</li>
     </ul>
     <ol class="steps">
       <li><span class="num">1</span><div><h3>Anmeldung</h3><p class="when">2 Minuten</p></div></li>
       <li><span class="num">2</span><div><h3>Suchrunde</h3><p class="when">2 Stunden online, bis zu 10 Personen</p></div></li>
       <li><span class="num">3</span><div><h3>Prüfwoche</h3><p class="when">zu zweit, etwa 5 Gespräche mit Kunden</p></div></li>
-      <li><span class="num">4</span><div><h3>Team und Projekt</h3><p class="when">ihr wählt einen Team Lead – jemanden, der den Rhythmus hält und dem Team dient, statt es zu kommandieren</p></div></li>
+      <li><span class="num">4</span><div><h3>Team und Projekt</h3><p class="when">ihr wählt eine Teamleitung – jemanden, der den Rhythmus hält und dem Team dient</p></div></li>
     </ol>
   </div>
 
@@ -398,7 +398,7 @@ section.home-doors{padding-block:40px 20px;border-top:0}
       <input type="hidden" name="lgt_role" value="member">
       <div class="row">
         <div><label for="m-name">Name</label><input id="m-name" name="firstname" type="text" autocomplete="given-name" required></div>
-        <div><label for="m-email">Email</label><input id="m-email" name="email" type="email" autocomplete="email" required></div>
+        <div><label for="m-email">E-Mail</label><input id="m-email" name="email" type="email" autocomplete="email" required></div>
       </div>
       <div class="row">
         <div><label for="m-tg">Telegram <span class="hint">optional</span></label><input id="m-tg" name="lgt_telegram" type="text" placeholder="@username"></div>
@@ -435,10 +435,10 @@ section.home-doors{padding-block:40px 20px;border-top:0}
           <select id="m-lang" name="lgt_lang_primary" required><option value="">Bitte wählen</option><option value="ru">Русский</option><option value="en">English</option><option value="ar">العربية</option><option value="de">Deutsch</option><option value="uk">Українська</option><option value="he">עברית</option><option value="fr">Français</option><option value="other">Andere</option></select></div>
       </div>
       <fieldset>
-        <span class="lg">Weitere Sprachen <span class="hint">in denen du auch gut arbeitest, mehrere möglich</span></span>
+        <span class="lg">Weitere Sprachen, <span class="hint">in denen du auch gut arbeitest, mehrere möglich</span></span>
         <div class="chips" data-multi="lgt_lang_other"><label class="chip"><input type="checkbox" id="m-lo1" value="ru"><span>Русский</span></label><label class="chip"><input type="checkbox" id="m-lo2" value="en"><span>English</span></label><label class="chip"><input type="checkbox" id="m-lo3" value="ar"><span>العربية</span></label><label class="chip"><input type="checkbox" id="m-lo4" value="de"><span>Deutsch</span></label><label class="chip"><input type="checkbox" id="m-lo5" value="uk"><span>Українська</span></label><label class="chip"><input type="checkbox" id="m-lo6" value="he"><span>עברית</span></label><label class="chip"><input type="checkbox" id="m-lo7" value="fr"><span>Français</span></label><label class="chip"><input type="checkbox" id="m-lo8" value="other"><span>Andere</span></label></div>
       </fieldset>
-      <label class="consent"><input type="checkbox" id="m-consent" data-consent><span>Ich bin einverstanden, dass meine Daten für Einladungen zu den Runden gespeichert werden. Auf Wunsch sofort gelöscht.</span></label>
+      <label class="consent"><input type="checkbox" id="m-consent" data-consent><span>Ich bin einverstanden, dass meine Daten für Einladungen zu den Runden gespeichert werden. Auf Wunsch sofort gelöscht. <a href="https://www.amalor.ai/datenschutz.html">Datenschutz</a></span></label>
       <p class="err" role="alert"></p>
       <div><button class="btn" type="submit">Anmelden</button></div>
     </form>
@@ -448,7 +448,7 @@ section.home-doors{padding-block:40px 20px;border-top:0}
 </section><section>
 <div class="wrap in">
   <div class="head">
-    <h2>Man kommt wegen des Geldes. Man bleibt wegen des Teams</h2>
+    <h2>Man kommt wegen der Aufgabe. Man bleibt wegen der Menschen</h2>
     <p class="lead">Die Motivation wächst mit dem Menschen: vom Verdienst und der Erfahrung hin zu Anerkennung und dem Wunsch, etwas zurückzugeben.</p>
   </div>
   <ol class="ladder">
@@ -457,7 +457,7 @@ section.home-doors{padding-block:40px 20px;border-top:0}
     <li><span class="num">3</span><div><h3>Kern</h3><p class="when">Motiv: Anerkennung für den Beitrag zum Ganzen</p></div></li>
     <li><span class="num">4</span><div><h3>Mentor</h3><p class="when">Motiv: zurückgeben und andere wachsen lassen</p></div></li>
   </ol>
-  <p class="rule"><b>Die Basis auf jeder Stufe:</b> faire Bezahlung: Das Einkommen des Teams wird zu gleichen Teilen geteilt.</p>
+  <p class="rule"><b>Die Basis auf jeder Stufe ist faire Bezahlung:</b> Das Einkommen des Teams wird zu gleichen Teilen geteilt.</p>
 <p class="more"><a href="../../de/#product">Wie ein Projekt zu einem Produkt mit Miteigentümern wird →</a></p></div>
 </section>
 
@@ -511,6 +511,6 @@ document.querySelectorAll('form[data-form]').forEach(form => {
   function fail(msg, el) { err.textContent = msg; if (el) el.focus(); }
 });
 </script>
-<script src="/assets/chrome.js?v=5" defer></script>
+<script src="/assets/chrome.js?v=6" defer></script>
 </body>
 </html>

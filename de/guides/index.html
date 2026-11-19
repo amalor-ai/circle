@@ -21,7 +21,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/assets/fonts.css">
-<link rel="stylesheet" href="/assets/chrome.css?v=5">
+<link rel="stylesheet" href="/assets/chrome.css?v=6">
 <style>
 /* Layout: one reading column on warm ivory; the book cover's deep green and AMALOR gold appear as accents, never as the ground. Single light look. */
 :root{
@@ -327,7 +327,7 @@ section.home-doors{padding-block:40px 20px;border-top:0}
 .cards3 h3{margin:0 0 8px;font-size:18px}.cards3 p{margin:0;color:#4A6563;font-size:15px}
 @media (max-width:760px){.cards3{grid-template-columns:1fr}}
 </style>
-<link rel="stylesheet" href="/assets/team.css?v=5">
+<link rel="stylesheet" href="/assets/team.css?v=6">
 </head>
 <body>
 <div class="progress" id="progress" aria-hidden="true"></div>
@@ -399,10 +399,10 @@ section.home-doors{padding-block:40px 20px;border-top:0}
         <div><label for="g-client">Unternehmen des Auftraggebers</label><input id="g-client" name="lgt_ref_company" type="text" required></div>
         <div><label for="g-contact">Wie wir ihn erreichen</label><input id="g-contact" name="lgt_ref_contact" type="text" placeholder="Name, Rolle, Telefon oder E-Mail" required></div>
       </div>
-      <div><label for="g-pain">Worin besteht sein Problem?</label>
+      <div><label for="g-pain">Wobei braucht er Unterstützung?</label>
         <textarea id="g-pain" name="lgt_ref_pain" placeholder="Was Sie gesehen haben oder was er erzählt hat" required></textarea></div>
       <label class="consent"><input type="checkbox" id="g-ok" data-bool="lgt_ref_consent" data-consent data-msg="Bitte bestätigen Sie, dass der Auftraggeber einverstanden ist – sonst dürfen wir ihn nicht kontaktieren."><span>Der Auftraggeber ist einverstanden, dass ich seinen Kontakt weitergebe.</span></label>
-      <label class="consent"><input type="checkbox" id="g-consent" data-consent><span>Ich bin einverstanden, dass meine Daten zur Berechnung der Prämie gespeichert werden. Auf Wunsch sofort gelöscht.</span></label>
+      <label class="consent"><input type="checkbox" id="g-consent" data-consent><span>Ich bin einverstanden, dass meine Daten zur Berechnung der Prämie gespeichert werden. Auf Wunsch sofort gelöscht. <a href="https://www.amalor.ai/datenschutz.html">Datenschutz</a></span></label>
       <p class="err" role="alert"></p>
       <div><button class="btn" type="submit">Auftraggeber vorstellen</button></div>
     </form>
@@ -413,11 +413,11 @@ section.home-doors{padding-block:40px 20px;border-top:0}
 <div class="wrap in">
   <div class="head">
     <h2>Wie das Geld geteilt wird</h2>
-    <p class="lead">Beispiel: ein Projekt über 100.000 $.</p>
+    <p class="lead">Beispiel: ein Projekt über 100.000 €.</p>
   </div>
   <div class="split">
     <div class="bar" role="img" aria-label="Team 80 Prozent, Organisation 20 Prozent">
-      <div class="b-team" style="flex:80">Team · 80.000 $</div><div class="b-fund" style="flex:20">20.000 $</div>
+      <div class="b-team" style="flex:80">Team · 80.000 €</div><div class="b-fund" style="flex:20">20.000 €</div>
     </div>
     <div class="legend">
       <div><i style="background:var(--brand)"></i><b>80 %</b><span>an das Team, zu gleichen Teilen unter den Mitgliedern – immer</span></div>
@@ -477,6 +477,6 @@ document.querySelectorAll('form[data-form]').forEach(form => {
   function fail(msg, el) { err.textContent = msg; if (el) el.focus(); }
 });
 </script>
-<script src="/assets/chrome.js?v=5" defer></script>
+<script src="/assets/chrome.js?v=6" defer></script>
 </body>
 </html>
