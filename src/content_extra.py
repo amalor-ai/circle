@@ -606,7 +606,7 @@ def hero_home(lang):
     <p class="hb-sub">{h['sub']}</p>
     <p class="hb-tag">{h['tag']}</p>
     <p class="hb-lead">{h['lead']}</p>
-    <div class="hb-cta"><a class="btn" href="{{L}}{h['b1'][1]}">{h['b1'][0]}</a><a class="btn ghost" href="{{L}}{h['b2'][1]}">{h['b2'][0]}</a><a class="btn manifest" href="{{R}}manifest/"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M5 4h10a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z M8 20a3 3 0 0 1-3-3 M9 9h6 M9 13h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>{t['man']}</a></div>
+    <div class="hb-cta"><a class="btn" href="{{L}}{h['b1'][1]}">{h['b1'][0]}</a><a class="btn ghost" href="{{L}}{h['b2'][1]}">{h['b2'][0]}</a><a class="btn manifest" href="{{L}}manifest/"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M5 4h10a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z M8 20a3 3 0 0 1-3-3 M9 9h6 M9 13h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>{t['man']}</a></div>
   </div>
   <figure class="hb-art">{circles_svg(lang)}<figcaption><b>{t['motto']}</b><span>{t['motto_src']}</span></figcaption></figure>
   <div class="hb-path"><ol>{steps}</ol><p>{t['path_note']}</p></div>

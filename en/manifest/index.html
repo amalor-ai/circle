@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Manifesto · Last Generation Team</title>
+<meta name="description" content="Manifesto of the Last Generation Team: at the centre, the team that does the work; around it, the people the work is for and the network of support. Honour and 80% of the income go to those who do the work.">
+<link rel="canonical" href="https://team.amalor.ai/en/manifest/"><link rel="alternate" hreflang="ru" href="https://team.amalor.ai/manifest/"><link rel="alternate" hreflang="en" href="https://team.amalor.ai/en/manifest/"><link rel="alternate" hreflang="de" href="https://team.amalor.ai/de/manifest/">
+<link rel="icon" href="../../assets/favicon.svg">
+<style>
+@font-face{font-family:"Manrope";src:url("../../assets/fonts/Manrope.ttf") format("truetype");font-weight:200 800;font-display:swap}
+:root{--bg:#FBF7EE;--paper:#FFFDF8;--ink:#0B2F2D;--soft:#4A6563;--line:#E4DAC4;--deep:#083C3A;--brand:#0E6B64;--gold:#C99A45;--gold2:#ECCF90;
+--gg:linear-gradient(135deg,#F7E7B0,#E2BF74,#C99A45,#EDCD82)}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:"Manrope",system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+a{color:var(--brand)}
+h1,h2,h3,h4{margin:0;line-height:1.15;text-wrap:balance}
+p{margin:0}
+.sheet{position:relative;max-width:900px;margin:0 auto;padding:72px 64px}
+.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:14px}
+h2{font-size:40px;font-weight:800;letter-spacing:-.02em;margin-bottom:18px}
+.lead{font-size:20px;color:var(--soft);max-width:60ch}
+/* topbar (web only) */
+.topbar{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 24px;background:rgba(8,60,58,.94);backdrop-filter:blur(6px)}
+.topbar a{color:#C9E4E2;text-decoration:none;font-weight:600;font-size:15px}
+.topbar .dl{background:var(--gg);color:#1B1405;padding:8px 16px;border-radius:999px}
+/* cover */
+.cover{background:radial-gradient(ellipse 60% 50% at 50% 42%,rgba(27,156,147,.45),rgba(27,156,147,0) 70%),var(--deep);color:#fff;min-height:100vh;display:flex;flex-direction:column;justify-content:space-between;padding:56px 64px}
+.cover .brand{font-size:15px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold2);font-weight:600}
+.cover .sphere{display:block;width:min(340px,70%);aspect-ratio:1/1;margin:0 auto -70px;position:relative;z-index:1}.cover .tent{display:block;width:min(560px,96%);height:auto;margin:0 auto}
+.cover h1{font-size:64px;font-weight:800;letter-spacing:-.03em;line-height:1}
+.cover .kind{font-size:22px;color:var(--gold2);font-weight:600;margin-top:12px;letter-spacing:.04em}
+.cover .q{font-style:italic;color:#9DC3BF;font-size:16px;margin-top:22px;max-width:46ch}
+/* intro */
+.intro .big{font-size:28px;line-height:1.35;font-weight:600;letter-spacing:-.01em}
+.intro .cols{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:28px;color:var(--soft)}
+.intro .center{margin-top:34px;padding:26px 30px;border-radius:18px;background:var(--deep);color:#fff;font-size:20px;line-height:1.45}
+.intro .center b{color:var(--gold2)}
+/* beliefs */
+.beliefs ol{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.beliefs li{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:22px 22px 22px 70px;break-inside:avoid}
+.beliefs li:last-child{grid-column:1/-1}
+.beliefs .n{position:absolute;left:20px;top:20px;width:36px;height:36px;border-radius:50%;background:var(--gg);display:grid;place-items:center;font-weight:800;color:#1B1405}
+.beliefs h3{font-size:19px;margin-bottom:6px}
+.beliefs p{font-size:15px;color:var(--soft)}
+/* circles */
+.rings{width:100%;height:auto;margin:22px 0 8px}
+.rings .rl{font-size:14px;letter-spacing:.2em;font-weight:700;fill:#8C7440;text-anchor:middle}
+.rings .core{font-size:26px;font-weight:800;fill:#F7E7B0;text-anchor:middle}
+.rings .core-s{font-size:14px;fill:#C9E4E2;text-anchor:middle}
+.rings .core-g{font-size:14px;font-weight:700;fill:#ECCF90;text-anchor:middle}
+.rings .it text{font-size:15px;fill:#0B2F2D;text-anchor:middle;font-weight:500}
+table{width:100%;border-collapse:collapse;font-size:14.5px;margin-top:18px}
+th,td{text-align:left;vertical-align:top;padding:11px 12px;border-bottom:1px solid var(--line)}
+thead th{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);border-bottom:2px solid var(--gold2)}
+tbody th{font-weight:700;width:30%}
+tr{break-inside:avoid}
+.note{font-size:13px;color:var(--soft);margin-top:12px}
+/* honor */
+.honor{background:var(--deep);color:#fff}
+.honor h2{color:#fff} .honor .lead{color:#C9E4E2}
+.split{margin-top:30px;display:flex;flex-direction:column;gap:22px}
+.split .case b{display:block;font-size:15px;color:#C9E4E2;margin-bottom:8px;font-weight:600}
+.bar{display:flex;gap:4px;height:58px;border-radius:12px;overflow:hidden;font-weight:700}
+.bar div{display:flex;align-items:center;justify-content:center;background:rgba(201,228,226,.14);color:#C9E4E2;font-size:15px;white-space:nowrap}
+.bar .team{background:var(--gg);color:#0B2F2D;justify-content:flex-start;padding-left:22px;font-size:20px}
+.big4{margin-top:36px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.big4 div{border-top:1px solid rgba(201,228,226,.25);padding-top:14px}
+.big4 h4{color:var(--gold2);font-size:19px;margin-bottom:6px}
+.big4 p{font-size:14px;color:#A9CBC7}
+/* rhythm */
+.rhythm ol{list-style:none;margin:26px 0 0;padding:0;position:relative}
+.rhythm ol::before{content:"";position:absolute;left:83px;top:10px;bottom:10px;width:2px;background:var(--line)}
+.rhythm li{display:grid;grid-template-columns:100px 1fr;gap:26px;padding:12px 0;break-inside:avoid;position:relative}
+.rhythm li::before{content:"";position:absolute;left:77px;top:22px;width:14px;height:14px;border-radius:50%;background:var(--gg);box-shadow:0 0 0 4px var(--bg)}
+.rhythm .when{text-align:right;padding-right:28px}
+.rhythm .when b{display:block;font-size:17px} .rhythm .when span{font-size:13px;color:var(--soft)}
+.rhythm h4{font-size:18px;margin-bottom:2px} .rhythm p{color:var(--soft);font-size:15.5px}
+.pact{margin-top:22px;padding:20px 24px;border-left:4px solid var(--gold);background:var(--paper);border-radius:0 14px 14px 0;font-size:15.5px}
+/* product path */
+.path{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:28px;counter-reset:s}
+.path div{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px}
+.path div:last-child{background:var(--gg);border-color:transparent}
+.path i{font-style:normal;font-size:12px;letter-spacing:.16em;color:var(--gold);font-weight:800}
+.path div:last-child i{color:#5B4314}
+.path h4{font-size:19px;margin:6px 0 4px} .path p{font-size:14px;color:var(--soft)} .path div:last-child p{color:#3A2C0C}
+.owners{margin-top:22px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.owners div{font-size:14.5px;color:var(--soft)} .owners b{display:block;color:var(--ink);font-size:16px}
+/* invitation */
+.invite{background:radial-gradient(ellipse 60% 60% at 80% 20%,rgba(27,156,147,.4),rgba(27,156,147,0) 70%),var(--deep);color:#fff}
+.invite h2{color:#fff}
+.inv{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
+.inv div{border:1px solid rgba(236,207,144,.3);border-radius:16px;padding:20px;break-inside:avoid}
+.inv h4{color:var(--gold2);font-size:18px;margin-bottom:8px} .inv p{color:#C9E4E2;font-size:15px}
+.closing{margin-top:44px;text-align:center}
+.closing p{font-size:30px;font-weight:800;line-height:1.25;letter-spacing:-.01em}
+.closing span{display:block;margin-top:14px;color:var(--gold2);font-weight:600}
+/* sources */
+.src p{color:var(--soft)}
+.src ul{list-style:none;padding:0;margin:20px 0 0;columns:2;column-gap:28px}
+.src li{break-inside:avoid;padding:8px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.src li span{display:block;font-size:12px;color:var(--soft)}
+footer.end{text-align:center;font-size:13px;color:var(--soft);padding:26px}
+@media (max-width:720px){.sheet,.cover{padding:44px 20px}.cover h1{font-size:42px}h2{font-size:30px}
+ .intro .cols,.beliefs ol,.inv{grid-template-columns:1fr}.big4,.path,.owners{grid-template-columns:1fr 1fr}.src ul{columns:1}
+ .intro .big{font-size:22px}.rings .it text{font-size:17px}.bar .team{font-size:15px;padding-left:12px}
+ table,thead,tbody,tr,th,td{display:block}thead{display:none}tbody th{width:auto;border:0;padding-bottom:0}td{border:0;padding-top:2px}tr{border-bottom:1px solid var(--line);padding:6px 0}}
+/* blue thread */
+.bar{box-shadow:0 0 0 1.5px #6FB7E6}.topbar .dl{box-shadow:0 0 0 1.5px #6FB7E6}
+.big4 div{border:1px solid rgba(111,183,230,.55);border-radius:14px;padding:14px}
+.beliefs .n{box-shadow:0 0 0 1.5px #6FB7E6}.path div:last-child{box-shadow:0 0 0 1.5px #6FB7E6}
+.intro .center{box-shadow:inset 0 0 0 1.5px #6FB7E6}
+@page{size:A4;margin:0}
+@media print{.topbar{display:none}.cover,.page{height:297mm;overflow:hidden}.page{break-before:page}.sheet{max-width:none;padding:22mm 20mm}
+ footer.end{display:none}.beliefs ol{gap:10px;margin-top:18px}.beliefs li{padding:14px 16px 14px 60px}.beliefs .n{left:16px;top:14px;width:32px;height:32px}
+ .beliefs h3{font-size:16.5px}.beliefs p{font-size:13.5px;line-height:1.5}.intro .big{font-size:32px}.intro .cols{font-size:18px}
+ .path{margin-top:36px}.path{gap:8px}.path div{padding:12px;min-height:170px}.path h4{font-size:14.5px;hyphens:auto}.path p{font-size:12px}.owners{margin-top:34px}.product .lead{font-size:21px}}
+</style></head><body>
+<nav class="topbar"><a href="../" class="home">← amalor · Last Generation Team</a><a class="dl" href="../../assets/manifest-en.pdf" download>Download PDF</a></nav>
+<section class="cover">
+  <div class="brand">amalor</div>
+  <canvas id="sphere" class="sphere" aria-hidden="true"></canvas><svg class="tent" viewBox="0 0 600 340" role="img" aria-label="Над открытым шатром висит сеть связей; под ним команда за круглым столом">
+<defs>
+ <linearGradient id="tg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7E7B0"/><stop offset=".4" stop-color="#E2BF74"/><stop offset=".75" stop-color="#C99A45"/><stop offset="1" stop-color="#EDCD82"/></linearGradient>
+ <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF4D2" stop-opacity=".5"/><stop offset=".35" stop-color="#FFF4D2" stop-opacity=".7"/><stop offset="1" stop-color="#FFF4D2" stop-opacity=".9"/></linearGradient>
+ <radialGradient id="tl" cx="50%" cy="78%" r="42%"><stop offset="0" stop-color="#FFE9B0" stop-opacity=".6"/><stop offset=".55" stop-color="#ECCF90" stop-opacity=".14"/><stop offset="1" stop-color="#ECCF90" stop-opacity="0"/></radialGradient>
+ <linearGradient id="tab" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7E7B0"/><stop offset="1" stop-color="#C99A45"/></linearGradient>
+</defs>
+<rect x="80" y="60" width="440" height="270" fill="url(#tl)"/>
+<path d="M300 0 L300 250" stroke="url(#beam)" stroke-width="2.2"/><path d="M300 0 L300 250" stroke="#6FB7E6" stroke-width=".9" opacity=".8"/><circle cx="300" cy="248" r="22" fill="#FFF4D2" opacity=".18"/>
+<ellipse cx="300" cy="312" rx="230" ry="16" fill="#000" opacity=".2"/>
+<g fill="none" stroke="url(#tg)" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M168 132 L168 300 M432 132 L432 300" stroke-width="1.6" opacity=".45"/>
+ <path d="M70 160 C150 150 230 120 300 64 C370 120 450 150 530 160" stroke-width="3"/>
+ <path d="M70 160 C88 172 104 172 118 164 C134 174 150 174 164 166 C180 176 196 176 210 168 C226 177 242 177 256 170 C270 178 286 178 300 171 C314 178 330 178 344 170 C358 177 374 177 390 168 C404 176 420 176 436 166 C450 174 466 174 482 164 C496 172 512 172 530 160" stroke-width="1.8" opacity=".9"/>
+ <path d="M300 64 C268 108 236 134 210 150 M300 64 C332 108 364 134 390 150 M300 64 C285 110 270 140 256 160 M300 64 C315 110 330 140 344 160" stroke-width="1" opacity=".5"/>
+ <path d="M86 166 L86 304 M514 166 L514 304" stroke-width="2.6"/>
+ <path d="M70 160 L34 306 M530 160 L566 306" stroke-width="1" opacity=".5" stroke-dasharray="3 5"/>
+</g>
+<circle cx="300" cy="62" r="4" fill="url(#tg)"/>
+<g fill="url(#tg)">
+ <path transform="translate(244 262)" opacity=".85" d="M-18 0 C-21 -28 -15 -50 -5 -60 C0 -67 10 -68 13 -60 C15 -54 11 -50 12 -43 C19 -32 22 -14 20 0 Z"/>
+ <path transform="translate(356 262)" opacity=".85" d="M18 0 C21 -28 15 -50 5 -60 C0 -67 -10 -68 -13 -60 C-15 -54 -11 -50 -12 -43 C-19 -32 -22 -14 -20 0 Z"/>
+ <path transform="translate(300 252)" opacity=".75" d="M-17 0 C-20 -30 -13 -54 0 -63 C13 -54 20 -30 17 0 Z"/>
+</g>
+<ellipse cx="300" cy="266" rx="92" ry="20" fill="url(#tab)" opacity=".95"/>
+<ellipse cx="300" cy="264" rx="84" ry="15" fill="#FFF4D2" opacity=".35"/>
+<path d="M208 268 C210 282 250 290 300 290 C350 290 390 282 392 268" fill="none" stroke="#B98A34" stroke-width="5" opacity=".85"/>
+<g fill="url(#tg)">
+ <path transform="translate(206 296)" d="M-18 0 C-21 -28 -15 -50 -5 -60 C0 -67 10 -68 13 -60 C15 -54 11 -50 12 -43 C19 -32 22 -14 20 0 Z"/>
+ <path transform="translate(394 296)" d="M18 0 C21 -28 15 -50 5 -60 C0 -67 -10 -68 -13 -60 C-15 -54 -11 -50 -12 -43 C-19 -32 -22 -14 -20 0 Z"/>
+</g>
+<path d="M120 306 L480 306" stroke="url(#tg)" stroke-width="1.2" opacity=".55"/>
+</svg>
+  <div><h1>Last Generation<br>Team</h1><div class="kind">Manifesto</div>
+  <p class="q">“A bundle of reeds cannot be broken at once, yet a child can break the reeds one by one.”</p></div>
+</section>
+
+<section class="sheet intro page">
+  <div class="eyebrow">A bundle of reeds</div>
+  <p class="big">We live at a time when one person with a laptop and artificial intelligence can do more than a whole department could twenty years ago. And yet, alone, that person is vulnerable.</p>
+  <div class="cols"><p>Alone you sell hours, alone you burn out, alone you cannot reach the big task.</p>
+  <p>We bind such people together. Three, four, five specialists – with their AI agents beside them. They take on a task that people need and carry it to a result, stage by stage, answering for one another.</p></div>
+  <div class="center"><b>This is the Last Generation Team.</b> It is at the centre of everything we do. Everyone else – clients, investors, partners, the organiser – stands around it. And honour and fair pay belong to those who do the work.</div>
+</section>
+
+<section class="sheet beliefs page">
+  <div class="eyebrow">What we believe</div>
+  <h2>Seven convictions</h2>
+  <p class="lead">We test each of them in practice, and each is independently confirmed by those who study people and teams.</p>
+  <ol><li><span class="n">1</span><h3>Together we are stronger than apart</h3><p>Within a group, selfishness beats altruism, but altruistic groups beat selfish groups – as the biologists Wilson and Wilson put it. We choose to be such a group.</p></li><li><span class="n">2</span><h3>We answer for one another</h3><p>If one of us is stuck, it is everyone’s task. It is safe to say “I am struggling”. Google studied 180 of its own teams and found exactly this in first place.</p></li><li><span class="n">3</span><h3>We are equals at one table</h3><p>Every voice weighs the same. A group’s intelligence depends not on its smartest member but on how evenly everyone speaks and listens to one another.</p></li><li><span class="n">4</span><h3>A small team of different people</h3><p>The core is three to five people, and one person’s strength covers another’s weakness. Specialists from the network join for a task, and a team that has grown splits rather than sprawls.</p></li><li><span class="n">5</span><h3>Contribution is visible to all</h3><p>Recognition is for what you gave, not for a title. Givers win where what they give is seen and protected.</p></li><li><span class="n">6</span><h3>We govern what we share ourselves</h3><p>The team agrees its rules, watches over them and improves them itself. That is how communities last.</p></li><li><span class="n">7</span><h3>Benefit to people is the measure of a task</h3><p>We take on only what is truly needed, harms no one and someone is willing to pay for. Every task passes through a sieve of seven questions.</p></li></ol>
+</section>
+
+<section class="sheet circles page">
+  <div class="eyebrow">Around the team</div>
+  <h2>The team at the centre. Everything around it serves it</h2>
+  <p class="lead">Around the team stand the people the work is for and the network of support: everyone who helps it form, work and grow.</p>
+  <svg viewBox="0 0 760 600" class="rings" role="img" aria-label="The team at the centre, around it the people the work is for and the network of support">
+<ellipse cx="380" cy="300" rx="350" ry="270" fill="#EFE7D3" stroke="#C9B48A" stroke-dasharray="3 6"/>
+<ellipse cx="380" cy="300" rx="225" ry="178" fill="#F7F1E3" stroke="#C9B48A"/>
+<ellipse cx="380" cy="300" rx="112" ry="88" fill="#0B3F3C" stroke="#C99A45" stroke-width="3"/>
+<text x="380" y="62" class="rl">NETWORK OF SUPPORT</text>
+<text x="380" y="150" class="rl">WHO THE WORK IS FOR</text>
+<text x="380" y="292" class="core">Team</text>
+<text x="380" y="316" class="core-s">3–5 people + AI</text>
+<text x="380" y="338" class="core-g">honour · 80% of income</text>
+<g class="it"><text x="210" y="305">Clients</text><text x="548" y="305">Users</text><text x="380" y="438">Society</text><text x="128" y="196">Organiser</text><text x="632" y="196">Referrers</text><text x="88" y="296">Investors</text><text x="88" y="316">and funds</text><text x="672" y="305">Government</text><text x="128" y="414">Non-profit</text><text x="128" y="434">organisations</text><text x="632" y="414">Technology</text><text x="632" y="434">companies</text><text x="380" y="530">Communities and universities</text></g>
+</svg>
+</section>
+
+<section class="sheet circles page">
+  <div class="eyebrow">Network of support</div>
+  <h2>Who helps and what they get</h2>
+  <p class="lead">Everyone in the network of support brings something and receives what matters to them – not always money.</p>
+  <table><thead><tr><th>Network of support</th><th>Brings</th><th>Receives</th></tr></thead><tbody><tr><th>Organiser (AMALOR)</th><td>sales, contracts, the guarantee, the method</td><td>20% of the project – as much as each member of a team of four; a share for building the product</td></tr><tr><th>Referrers</th><td>an introduction to someone who has a task</td><td>5% of the first project</td></tr><tr><th>Investors and funds</th><td>money, experience, mentoring</td><td>teams with a first client, shares in products, measurable social impact</td></tr><tr><th>Government and its programmes</th><td>grants, co-funding, contracts</td><td>employment for specialists, new companies, integration of newcomers</td></tr><tr><th>Technology companies and AI vendors</th><td>credits, licences and cloud for the pilot, experts</td><td>new products on their platform, trained specialists, customers</td></tr><tr><th>Non-profit organisations</th><td>grants, their people, channels</td><td>a working employment model with a balance of work and life</td></tr><tr><th>Communities, diasporas, universities</th><td>people, trust, methods</td><td>work for their own people, data on how small teams work in practice</td></tr></tbody></table>
+</section>
+
+<section class="sheet honor page">
+  <div class="eyebrow">Honour and fair pay</div>
+  <h2>80 cents of every dollar go to the team. Always</h2>
+  <p class="lead">This is not generosity but structure: everything around exists to serve the centre, not to live off it. Example: a $100,000 project.</p>
+  <div class="split">
+    <div class="case"><div class="bar"><div class="team" style="flex:80">Team · $80,000</div><div style="flex:20">$20,000</div></div></div>
+    <p class="note" style="color:#A9CBC7">The second share is the AMALOR guarantee: sales, contracts, contact with the client, legal, selecting and replacing people. Its 20% is as much as each member of a team of four receives: $20,000 per project. The referrer receives 5% of the first project. The team’s income is split equally. The team assembles itself and confirms its own members.</p>
+  </div>
+  <div class="big4"><div><h4>Recognition</h4><p>Every week everyone says out loud something valuable another person did.</p></div><div><h4>Voice</h4><p>The team decides how it works and confirms its own leads.</p></div><div><h4>A share in the future</h4><p>If the solution grows into a product, those who built it are its co-owners.</p></div><div><h4>Name</h4><p>The result carries the names of those who made it.</p></div></div>
+</section>
+
+<section class="sheet rhythm page">
+  <div class="eyebrow">How the team lives</div>
+  <h2>Three hours of meetings a week</h2>
+  <p class="lead">That is enough to be a team, and it fits alongside a main job.</p>
+  <ol><li><div class="when"><b>Mon</b><span>30 min</span></div><div><h4>Check-in</h4><p>The goal in one sentence. In turn, everyone names their main task and where they need help.</p></div></li><li><div class="when"><b>Tue–Thu</b><span>no meetings</span></div><div><h4>Work</h4><p>A short note in the chat: what is done, where you are stuck. Whoever is stuck gets help.</p></div></li><li><div class="when"><b>Fri</b><span>45 min</span></div><div><h4>Demo and recognition round</h4><p>What we did and learned. Everyone names something valuable another person did.</p></div></li><li><div class="when"><b>6 weeks</b><span>90 min</span></div><div><h4>Big retro and pause</h4><p>Continue, change course or part ways – we decide together.</p></div></li><li><div class="when"><b>Quarter</b><span></span></div><div><h4>Big gathering</h4><p>The team confirms roles and lead by what was done, not by sympathy.</p></div></li></ol>
+  <p class="pact"><b>The team agreement.</b> The team signs it on day one: we answer for the result together, speak of colleagues with appreciation, decide by consent and, in a dispute, first restate the other side’s view. We reread it at every big retro.</p>
+</section>
+
+<section class="sheet product page">
+  <div class="eyebrow">From a task to a product</div>
+  <h2>From contractor to co-owner</h2>
+  <p class="lead">Sometimes one company’s task turns out to be a whole industry’s task. Then the solution becomes a product – and the product can become the shared cause of the industry.</p>
+  <div class="path"><div><i>01</i><h4>Diagnostic</h4><p>Two weeks at a fixed price: plan, stages, price.</p></div><div><i>02</i><h4>Your own software</h4><p>Built for one client in stages, with acceptance.</p></div><div><i>03</i><h4>Startup</h4><p>Client and team found it together – under its own name.</p></div><div><i>04</i><h4>Industry customers</h4><p>Other companies use the solution, data kept separate.</p></div><div><i>05</i><h4>Cooperative</h4><p>The companies of the industry become co-owners.</p></div></div>
+  <div class="owners"><div><b>Team</b>a share for the work – most for those who did the main work</div><div><b>Founding client</b>a founder share and a free licence</div><div><b>Industry cooperative</b>majority owner once the solution has become the standard</div><div><b>Investor</b>a share for growth capital; exit through the cooperative</div></div>
+  <p class="note">We will set the size of the shares and the rights to the solution with a lawyer before the first such product.</p>
+</section>
+
+<section class="sheet invite page">
+  <div class="eyebrow">Invitation</div>
+  <h2>A word for everyone</h2>
+  <div class="inv"><div><h4>If you are a specialist</h4><p>and tired of selling your hours alone – come to the centre. Here you will be caught when it is hard, paid fairly and named for what you did.</p></div><div><h4>If you have a task</h4><p>bring it. A close-knit team will take it through the stages, and you pay only for what you accept. If the whole industry needs it, you can become a co-owner of the product.</p></div><div><h4>If you know someone with a task</h4><p>introduce us. One introduction can give a whole team work – and you 5% of the first project.</p></div><div><h4>If you are an investor, a fund, a company or a government</h4><p>become part of the network of support. You invest not in an idea but in people who have already shown that they can work together and that their work is needed.</p></div></div>
+  <div class="closing"><p>One reed at a time, we break.<br>Together, we do not.</p><span>hello@amalor.ai · team.amalor.ai</span></div>
+</section>
+
+<section class="sheet src page">
+  <div class="eyebrow">Origin and sources</div>
+  <h2>Where these ideas come from</h2>
+  <p>The idea of the team grew out of the writings of Baal HaSulam (“The Arvut”, “The Peace”), Rabash (articles on the group, among them “The Purpose of Society”) and Michael Laitman on the connection between people. Today’s researchers have independently reached the same conclusions:</p>
+  <ul><li><b>Wilson and Wilson</b>, <a href="https://www.sciencedaily.com/releases/2007/11/071128151814.htm">Quarterly Review of Biology, 2007</a><span>principle 1</span></li><li><b>Google</b>, <a href="https://rework.withgoogle.com/intl/en/guides/understand-team-effectiveness">Project Aristotle</a><span>principle 2, 7</span></li><li><b>Amy Edmondson</b>, <a href="https://doi.org/10.2307/2666999">Psychological safety, 1999</a><span>principle 2</span></li><li><b>Anita Woolley et al.</b>, <a href="https://pubmed.ncbi.nlm.nih.gov/20929725/">Collective intelligence, Science, 2010</a><span>principle 3</span></li><li><b>Richard Hackman</b>, <a href="https://money.cnn.com/magazines/fortune/fortune_archive/2006/06/12/8379238/index.htm">Team size</a><span>principle 4</span></li><li><b>Ichak Adizes</b>, <a href="https://adizes-institute.gitbook.io/adizes/library/books-by-dr.-ichak-adizes/the-ideal-executive/5.--working-together/a-complementary-team">The complementary team</a><span>principle 4</span></li><li><b>Adam Grant</b>, <a href="https://fs.blog/adam-grant-give-and-take/">“Give and Take”</a><span>principle 5</span></li><li><b>Elinor Ostrom</b>, <a href="https://www.nobelprize.org/prizes/economic-sciences/2009/ostrom/facts/">Nobel Prize, 2009</a><span>principle 6</span></li></ul>
+</section>
+<footer class="end">Last Generation Team · AMALOR · 2026</footer>
+<script>
+(function(){
+var c=document.getElementById('sphere');if(!c||!c.getContext)return;var x=c.getContext('2d');
+var still=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function fib(n,R){var p=[],g=Math.PI*(3-Math.sqrt(5));for(var i=0;i<n;i++){var y=1-(i+.5)/n*2,r=Math.sqrt(1-y*y),t=g*i;p.push([Math.cos(t)*r*R,y*R,Math.sin(t)*r*R]);}return p;}
+var S=[{n:10,R:.30,col:[247,231,176],size:5.2,line:.75},{n:26,R:.62,col:[236,207,144],size:3.2,line:.38},{n:64,R:.95,col:[157,195,191],size:2.2,line:.22},{col:[111,183,230],line:.7}];
+var P=[],E=[];S.forEach(function(s,k){fib(s.n,s.R).forEach(function(q){P.push({p:q,k:k});});});
+function d2(a,b){var dx=a.p[0]-b.p[0],dy=a.p[1]-b.p[1],dz=a.p[2]-b.p[2];return dx*dx+dy*dy+dz*dz;}
+function near(i,k,m){return P.map(function(q,j){return [j,q]}).filter(function(e){return e[1].k===k&&e[0]!==i}).sort(function(a,b){return d2(P[i],a[1])-d2(P[i],b[1])}).slice(0,m).map(function(e){return e[0]});}
+var seen={};function add(i,j,k){var key=i<j?i+'-'+j:j+'-'+i;if(seen[key])return;seen[key]=1;E.push([i,j,k]);}
+P.forEach(function(q,i){if(q.k===0){P.forEach(function(r,j){if(r.k===0&&j>i)add(i,j,0);});}
+ else{near(i,q.k,3).forEach(function(j){add(i,j,q.k);});near(i,q.k-1,1).forEach(function(j){add(i,j,3);});}});
+var a=0.6,tilt=-.38,W=0,H=0,dpr=1;
+function size(){var r=c.getBoundingClientRect();dpr=Math.min(window.devicePixelRatio||1,2);W=r.width;H=r.width;c.width=W*dpr;c.height=H*dpr;c.style.height=H+'px';x.setTransform(dpr,0,0,dpr,0,0);}
+function proj(q){var ca=Math.cos(a),sa=Math.sin(a),ct=Math.cos(tilt),st=Math.sin(tilt);var X=q[0]*ca+q[2]*sa,Z=-q[0]*sa+q[2]*ca,Y=q[1]*ct-Z*st;Z=q[1]*st+Z*ct;var f=3/(3+Z),s=W*.46;return [W/2+X*s*f,H/2+Y*s*f,Z,f];}
+function frame(){x.clearRect(0,0,W,H);
+ var g=x.createRadialGradient(W/2,H/2,0,W/2,H/2,W*.32);g.addColorStop(0,'rgba(255,244,210,.55)');g.addColorStop(.5,'rgba(236,207,144,.16)');g.addColorStop(1,'rgba(236,207,144,0)');x.fillStyle=g;x.fillRect(0,0,W,H);
+ var Q=P.map(function(q){return proj(q.p)});
+ E.forEach(function(e){var A=Q[e[0]],B=Q[e[1]],s=S[e[2]],dep=(2-(A[2]+B[2])/2)/2;x.strokeStyle='rgba('+s.col.join(',')+','+(s.line*(.35+.65*dep)).toFixed(3)+')';x.lineWidth=e[2]===0?1.3:.8;x.beginPath();x.moveTo(A[0],A[1]);x.lineTo(B[0],B[1]);x.stroke();});
+ P.map(function(q,i){return [i,Q[i][2]]}).sort(function(m,n){return n[1]-m[1]}).forEach(function(o){var i=o[0],s=S[P[i].k],q=Q[i],dep=(1-q[2])/2;x.fillStyle='rgba('+s.col.join(',')+','+(.35+.65*dep).toFixed(3)+')';x.beginPath();x.arc(q[0],q[1],s.size*q[3]*(W/520),0,6.2832);x.fill();});
+ x.fillStyle='rgba(255,248,225,.95)';x.beginPath();x.arc(W/2,H/2,4*(W/520),0,6.2832);x.fill();}
+function loop(){a+=.0016;frame();if(!document.hidden)requestAnimationFrame(loop);else setTimeout(loop,500);}
+size();frame();window.addEventListener('resize',function(){size();frame();});if(!still)requestAnimationFrame(loop);
+})();
+</script>
+</body></html>

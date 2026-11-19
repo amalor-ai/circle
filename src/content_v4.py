@@ -346,3 +346,7 @@ def fix_text(lang, page_html):
     for a, b in TEXT_FIX[lang]:
         page_html = page_html.replace(a, b)
     return page_html
+
+# ---------- the manifesto exists in every language now (2026-11-19) ----------
+for _l, _m in {'ru': 'Манифест', 'en': 'Manifesto', 'de': 'Manifest'}.items():
+    CIRCLES_TXT[_l]['man'] = _m
