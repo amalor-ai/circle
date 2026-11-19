@@ -16,28 +16,34 @@
 }
 html{scroll-padding-top:150px}
 body{margin:0;background:var(--night);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-main.wrap{display:block;max-width:1200px;margin:0 auto;padding-left:clamp(16px,4vw,32px);padding-right:clamp(16px,4vw,32px);background:none}
+main{display:block}
+.wrap.in{max-width:1200px;margin:0 auto;padding-left:clamp(16px,4vw,32px);padding-right:clamp(16px,4vw,32px)}
 
-/* ===== bands: every block is full width; light bands alternate white and paper, the first block and the principles are deep teal ===== */
-main>section,main>header{position:relative;border-top:0!important;margin:0;padding-block:clamp(64px,9vw,112px);
-  background:var(--band,#fff);box-shadow:0 0 0 100vmax var(--band,#fff);clip-path:inset(0 -100vmax)}
+/* ===== bands, as on amalor.ai: full width, white and paper alternate, deep teal with the same glow ===== */
+main>section,main>header{position:relative;border-top:0!important;margin:0;padding-block:clamp(72px,10vw,120px);
+  border-radius:0;box-shadow:none;clip-path:none;background:var(--band,#fff);overflow:hidden}
 main>section:nth-child(even){--band:var(--paper)}
 main>section:nth-child(odd){--band:#fff}
-main>section+section{border-top:0}
 
-/* dark scope: same variables, dark values */
-main>:first-child,main>section.green,.dark{
-  --band:var(--night);--ink:#fff;--muted:#C9E4E2;--soft:#C9E4E2;--line:rgba(201,228,226,.18);--surface:rgba(4,31,30,.5);
+/* dark scope: same variables, dark values; background = .dark / .hero on amalor.ai */
+main>:first-child,main>section.green,main>section.dark{
+  --ink:#fff;--muted:#C9E4E2;--soft:#C9E4E2;--line:rgba(201,228,226,.18);--surface:rgba(4,31,30,.5);
   --brand:var(--gold-l);--gold:var(--gold-l);--gold-light:var(--gold-l);--gold-soft:rgba(216,179,106,.12);--teal-soft:rgba(201,228,226,.08);
   --card-line:rgba(216,179,106,.22);
-  color:#fff;background:radial-gradient(ellipse 60% 70% at 50% 0,rgba(27,156,147,.38),rgba(27,156,147,0) 70%),var(--night);
-  box-shadow:0 0 0 100vmax var(--night)}
-main>:first-child{padding-top:clamp(150px,16vw,190px)}
-main>section.green{border-radius:0;margin-block:0;padding-left:0;padding-right:0;padding-block:clamp(64px,9vw,112px)}
+  color:#fff;background:radial-gradient(ellipse 75% 65% at 50% 38%,rgba(27,156,147,.55),rgba(27,156,147,.18) 55%,rgba(27,156,147,0) 80%),var(--night)}
+main>:first-child{padding-top:calc(116px + clamp(36px,6vw,80px));padding-bottom:clamp(64px,8vw,104px)}
+main>section.green{margin-block:0;padding-left:0;padding-right:0}
 main>section.green .prin li{background:rgba(4,31,30,.5);border-color:rgba(216,179,106,.22)}
 .dark .card,.dark .formbox,main>:first-child .formbox{color:var(--ink)}
 /* a form stays on paper, also inside a dark band */
 .formbox{--ink:#15231F;--muted:#55625D;--line:#DCE7E4;--brand:#0E625D;--gold:#8A6420;--bg:#fff;color:#15231F}
+/* the glows and the compass rose of the amalor.ai hero, behind the first block of every page */
+main>:first-child::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(closest-side,rgba(27,156,147,.45),transparent) 50% 0/min(900px,60vw) min(900px,60vw) no-repeat,
+             radial-gradient(closest-side,rgba(216,179,106,.16),transparent) 106% 60%/30vw 30vw no-repeat}
+main>:first-child::after{content:"";position:absolute;left:50%;top:6%;width:min(1100px,150vw);aspect-ratio:1;transform:translateX(-50%);opacity:.09;pointer-events:none;z-index:0;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1000' fill='none' stroke='%23C9E4E2'%3E%3Ccircle cx='500' cy='500' r='480'/%3E%3Ccircle cx='500' cy='500' r='380' stroke-dasharray='2 10'/%3E%3Ccircle cx='500' cy='500' r='260'/%3E%3Cpath d='M500 20 L520 480 L980 500 L520 520 L500 980 L480 520 L20 500 L480 480 Z' stroke-width='1.2'/%3E%3Cpath d='M160 160 L510 490 L840 160 L510 510 L840 840 L490 510 L160 840 L490 490 Z' stroke-width='.8'/%3E%3C/svg%3E") center/contain no-repeat}
+main>:first-child>.in{position:relative;z-index:1}
 
 /* ===== type ===== */
 h1,h2,h3{font-family:var(--display);font-weight:300;text-wrap:balance}
@@ -102,7 +108,7 @@ input[type=text],input[type=email],input[type=tel],select,textarea{border-radius
 .chip input:checked+span{background:var(--teal);border-color:var(--teal);color:#fff}
 
 /* ===== home hero: deep teal like the amalor.ai hero, the blue thread net on the right ===== */
-.hero-band{box-shadow:0 0 0 100vmax var(--night);clip-path:inset(0 -100vmax);
+.hero-band{display:block;box-shadow:none;clip-path:none;
   padding-bottom:clamp(56px,7vw,88px)}
 .hero-band h1{font-family:var(--display);font-weight:300;font-size:clamp(44px,6.2vw,80px);letter-spacing:-.02em;line-height:1.04}
 .hb-sub{font-family:var(--display);font-weight:300;font-size:clamp(24px,3vw,34px);
@@ -134,7 +140,6 @@ section.book img{border-radius:10px;box-shadow:0 0 0 1.5px var(--thread),0 40px 
 main>section.home-doors{padding-block:clamp(40px,5vw,64px)}
 .card.us{--muted:#C9E4E2;--ink:#fff;--gold:var(--gold-l)}
 .card.us .ticks li{color:#C9E4E2}.card.us .ticks b{color:#fff}
-main>header.hero-band{background:radial-gradient(ellipse 45% 60% at 72% 42%,rgba(27,156,147,.45),rgba(27,156,147,0) 70%),radial-gradient(ellipse 60% 70% at 50% 0,rgba(27,156,147,.3),rgba(27,156,147,0) 70%),var(--night)}
 main>section.green:first-child{padding-top:clamp(150px,16vw,190px)}
 @media (max-width:1080px){main>section.green:first-child{padding-top:112px}}
 
@@ -169,3 +174,18 @@ h1 .gold,h2 .gold{background:linear-gradient(135deg,#F7E7B0 0%,#E2BF74 32%,#B98A
 main>header.hero.small:first-child{padding-top:clamp(150px,16vw,190px);padding-bottom:clamp(56px,7vw,88px)}
 @media (max-width:1080px){main>header.hero.small:first-child{padding-top:112px}}
 @media (max-width:560px){.owners{grid-template-columns:1fr}.flow{grid-template-columns:1fr 1fr}}
+
+/* grids that sat on the band now sit on its inner wrap */
+.hero-band>.in{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:24px 40px;align-items:center}
+@media (max-width:760px){.hero-band>.in{grid-template-columns:minmax(0,1fr)}}
+section.book{display:block}
+section.book>.in{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:clamp(28px,5vw,64px);align-items:center}
+@media (max-width:640px){section.book>.in{grid-template-columns:1fr}}
+main>header.hero.small:first-child,main>section.green:first-child{padding-top:calc(116px + clamp(36px,6vw,80px))}
+@media (max-width:1080px){main>:first-child,main>header.hero.small:first-child,main>section.green:first-child{padding-top:calc(64px + 36px)}}
+/* page heroes centred, as the sub-pages on amalor.ai */
+main>header.hero.small .stack{align-items:center;text-align:center;max-width:920px;margin:0 auto}
+main>header.hero.small .who,main>header.hero.small .eyebrow{align-self:center}
+main>header.hero.small h1{max-width:none}
+main>header.hero.small .hb-cta{justify-content:center}
+main>header.hero.small .lead{margin-inline:auto}

@@ -21,7 +21,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/assets/fonts.css">
-<link rel="stylesheet" href="/assets/chrome.css?v=3">
+<link rel="stylesheet" href="/assets/chrome.css?v=4">
 <style>
 /* Layout: one reading column on warm ivory; the book cover's deep green and AMALOR gold appear as accents, never as the ground. Single light look. */
 :root{
@@ -327,7 +327,7 @@ section.home-doors{padding-block:40px 20px;border-top:0}
 .cards3 h3{margin:0 0 8px;font-size:18px}.cards3 p{margin:0;color:#4A6563;font-size:15px}
 @media (max-width:760px){.cards3{grid-template-columns:1fr}}
 </style>
-<link rel="stylesheet" href="/assets/team.css?v=3">
+<link rel="stylesheet" href="/assets/team.css?v=4">
 </head>
 <body>
 <div class="progress" id="progress" aria-hidden="true"></div>
@@ -366,8 +366,9 @@ section.home-doors{padding-block:40px 20px;border-top:0}
     <a class="cbtn cbtn-gold" href="../../en/clients/#anfrage">Submit a task</a>
   </div>
 </div>
-<main class="wrap page-members">
+<main class="page-members">
 <section id="members">
+<div class="wrap in">
   <div class="head">
     <span class="who">For members</span>
     <h2>Work in a team, not alone</h2>
@@ -443,7 +444,9 @@ section.home-doors{padding-block:40px 20px;border-top:0}
     </form>
     <div class="done" hidden><h3>You are on the list</h3><p>We will email you the date of the next session.</p><p class="pv" hidden>This is a preview: nothing has been sent.</p></div>
   </div>
+</div>
 </section><section>
+<div class="wrap in">
   <div class="head">
     <h2>People come for the money. They stay for the team</h2>
     <p class="lead">Motivation grows with the person: from income and experience to recognition and the wish to give back.</p>
@@ -455,7 +458,8 @@ section.home-doors{padding-block:40px 20px;border-top:0}
     <li><span class="num">4</span><div><h3>Mentor</h3><p class="when">motive: giving back and helping others grow</p></div></li>
   </ol>
   <p class="rule"><b>The base at every level:</b> fair pay: team income is shared equally.</p>
-<p class="more"><a href="../../en/#product">How a project grows into a product with co-owners →</a></p></section>
+<p class="more"><a href="../../en/#product">How a project grows into a product with co-owners →</a></p></div>
+</section>
 
 </main>
 <footer class="sitefoot">
@@ -507,6 +511,6 @@ document.querySelectorAll('form[data-form]').forEach(form => {
   function fail(msg, el) { err.textContent = msg; if (el) el.focus(); }
 });
 </script>
-<script src="/assets/chrome.js?v=3" defer></script>
+<script src="/assets/chrome.js?v=4" defer></script>
 </body>
 </html>

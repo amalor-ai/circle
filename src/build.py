@@ -20,7 +20,7 @@ OUT = SRC.parent
 BASE = 'https://team.amalor.ai'
 PAGES = ['index', 'clients', 'members', 'team', 'guides', 'principles', 'investors', 'book']
 HIDDEN = set()                         # reachable by link only, noindex, not in menus or sitemap
-VER = '3'                              # bump when assets/*.css or *.js change
+VER = '4'                              # bump when assets/*.css or *.js change
 
 
 def path_of(lang, page):
@@ -194,13 +194,30 @@ def jsonld(lang, page, desc, faq_html):
     return json.dumps({'@context': 'https://schema.org', '@graph': graph}, ensure_ascii=False)
 
 
+def wrap_blocks(body):
+    """Full-width bands like www.amalor.ai: each top-level <section>/<header> keeps its background,
+    its content goes into an inner .wrap (1200 px)."""
+    out, i, depth, start = [], 0, 0, None
+    for m in re.finditer(r'<(/?)(section|header)\b[^>]*>', body):
+        if not m.group(1):
+            if depth == 0:
+                out.append(body[i:m.end()] + '\n<div class="wrap in">'); i = m.end()
+            depth += 1
+        else:
+            depth -= 1
+            if depth == 0:
+                out.append(body[i:m.start()] + '</div>\n'); i = m.start()
+    out.append(body[i:])
+    return ''.join(out)
+
+
 def render(lang, page, css, logo_link, p):
     depth = path_of(lang, page).count('/')
     R = '../' * depth or './'
     L = R + ('' if lang == 'ru' else lang + '/')
     title = PAGE_TITLES[lang][page]
     desc = p['desc'] if page == 'index' else DESC[lang][page]
-    body = body_for(lang, page, p).replace('{R}', R).replace('{L}', L)
+    body = wrap_blocks(body_for(lang, page, p).replace('{R}', R).replace('{L}', L))
     robots = '<meta name="robots" content="noindex, nofollow">\n' if page in HIDDEN else ''
     alts = '' if page in HIDDEN else (''.join(f'<link rel="alternate" hreflang="{l}" href="{url(l, page)}">\n' for l in LANGS)
                                        + f'<link rel="alternate" hreflang="x-default" href="{url("en", page)}">\n')
@@ -219,7 +236,7 @@ def render(lang, page, css, logo_link, p):
             f'<style>{css.replace("body{background:var(--bg);", "body{margin:0;background:var(--bg);")}{content_extra.EXTRA_CSS}</style>\n'
             f'<link rel="stylesheet" href="/assets/team.css?v={VER}">\n'
             '</head>\n<body>\n'
-            f'{header(lang, page, logo_link, R, L)}\n<main class="wrap page-{page}">\n{body}\n</main>\n{footer(lang, L, logo_link)}\n'
+            f'{header(lang, page, logo_link, R, L)}\n<main class="page-{page}">\n{body}\n</main>\n{footer(lang, L, logo_link)}\n'
             f'{p["script"]}\n<script src="/assets/chrome.js?v={VER}" defer></script>\n</body>\n</html>\n')
 
 
