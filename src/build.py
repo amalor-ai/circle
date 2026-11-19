@@ -242,7 +242,7 @@ def render(lang, page, css, logo_link, p):
 
 
 def main():
-    de_pages = []
+    de_pages = {}
     for lang in LANGS:
         css, logo_link, p = load(lang)
         for page in PAGES:
@@ -250,8 +250,8 @@ def main():
             out.parent.mkdir(parents=True, exist_ok=True)
             html_ = content_v4.fix_text(lang, render(lang, page, css, logo_link, p))
             if lang == 'de':
-                de_pages.append(html_)
-                html_ = polish_de.apply(html_)
+                de_pages[page] = html_
+                html_ = polish_de.apply(html_, page)
             out.write_text(html_, encoding='utf-8')
     polish_de.check(de_pages)
     pub = [pg for pg in PAGES if pg not in HIDDEN]

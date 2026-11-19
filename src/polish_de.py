@@ -83,13 +83,35 @@ PAIRS = [
     ('Zwei übernehmen die Aufgaben.', 'Zwei andere übernehmen so lange die Aufgaben.'),
     ('Anerkennung für Hilfe an andere ist der wichtigste Grund für Ehre', 'Hilfe für andere ist der wichtigste Grund für Anerkennung'),
     ('Worin besteht sein Problem?', 'Wobei braucht er Unterstützung?'),
+    # ---------- decisions 2026-11-19: income by agreed effort, referral cap, roots in the manifesto ----------
+    ('für jedes Mitglied eines Viererteams – zu gleichen Teilen', 'für jedes Mitglied eines Viererteams bei gleichem Einsatz'),
+    ('Anteil für die Entwicklung, intern zu gleichen Teilen', 'Anteil für die Entwicklung, intern nach Einsatz geteilt'),
+    ('<li><b>Einkommen zu gleichen Teilen</b> unter den Teammitgliedern, nicht nach Titel.',
+     '<li><b>Einkommen nach vereinbartem Einsatz,</b> nicht nach Titel. Gleicher Einsatz, gleicher Anteil.'),
+    ('Das Einkommen des Teams wird zu gleichen Teilen geteilt.', 'Das Einkommen wird nach vereinbartem Einsatz geteilt, nicht nach Titel. Gleicher Einsatz, gleicher Anteil.'),
+    ('teilen das Einkommen zu gleichen Teilen und entscheiden, wer dazukommt.',
+     'teilen das Einkommen nach vereinbartem Einsatz – Vollzeit, Teilzeit oder nebenbei – und entscheiden, wer dazukommt.'),
+    ('an das Team, zu gleichen Teilen unter den Mitgliedern – immer', 'an das Team, geteilt nach vereinbartem Einsatz – immer'),
+    ('Einkommen zu gleichen Teilen, Teamvereinbarung', 'Einkommen nach Einsatz, Teamvereinbarung'),
+    ('<li><b>5 % des ersten Projekts</b> des vorgestellten Auftraggebers.</li>', '<li><b>5 % des ersten Projekts</b> des vorgestellten Auftraggebers, bis 2.000 €.</li>'),
+    ('<span>an den Vermittler für das erste Projekt</span>', '<span>an den Vermittler für das erste Projekt, bis 2.000 €</span>'),
+    ('Dann erhalten Sie die Vermittlungsprämie und einen Anteil für Ihre Arbeit.</p>',
+     'Dann erhalten Sie die Vermittlungsprämie und einen Anteil für Ihre Arbeit.</p>\n      <p class="when">Mitarbeitende des Auftraggebers und Berater, die für ihn auswählen, erhalten keine Prämie.</p>'),
+    ('<span>– nach Baal HaSulam, „Die Bürgschaft“</span>', ''),
 ]
+
+# only on one page: {page: [(old, new)]}
+PAGE_PAIRS = {
+    'principles': [('<h2>Was das Team zusammenhält</h2>\n  </div>',
+                    '<h2>Was das Team zusammenhält</h2>\n    <p class="lead">Die Idee hat ihre Wurzeln in alten Texten über die Verbindung '
+                    'zwischen Menschen und wird von heutiger Forschung bestätigt. <a href="../manifest/">Mehr im Manifest →</a></p>\n  </div>')],
+}
 
 _MONEY = re.compile(r'(\d[\d.]*) \$')
 
 
-def apply(page_html):
-    for a, b in PAIRS:
+def apply(page_html, page=''):
+    for a, b in PAIRS + PAGE_PAIRS.get(page, []):
         page_html = page_html.replace(a, b)
     # euros on the German pages, outside scripts
     parts = re.split(r'(<script.*?</script>)', page_html, flags=re.S)
@@ -97,7 +119,8 @@ def apply(page_html):
 
 
 def check(pages):
-    """pages: the rendered German pages before apply(). Every pair must be used."""
-    unused = [a for a, _ in PAIRS if not any(a in p for p in pages)]
+    """pages: {page: rendered German page before apply()}. Every pair must be used."""
+    unused = [a for a, _ in PAIRS if not any(a in p for p in pages.values())]
+    unused += [a for pg, pairs in PAGE_PAIRS.items() for a, _ in pairs if a not in pages.get(pg, '')]
     if unused:
         raise SystemExit('polish_de: phrases not found (text changed?):\n- ' + '\n- '.join(unused))
