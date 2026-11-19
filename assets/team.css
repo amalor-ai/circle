@@ -37,12 +37,10 @@ main>section.green .prin li{background:rgba(4,31,30,.5);border-color:rgba(216,17
 .dark .card,.dark .formbox,main>:first-child .formbox{color:var(--ink)}
 /* a form stays on paper, also inside a dark band */
 .formbox{--ink:#15231F;--muted:#55625D;--line:#DCE7E4;--brand:#0E625D;--gold:#8A6420;--bg:#fff;color:#15231F}
-/* the glows and the compass rose of the amalor.ai hero, behind the first block of every page */
+/* the glows of the amalor.ai hero behind the first block of every page (no compass rose: the team has its sphere) */
 main>:first-child::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
   background:radial-gradient(closest-side,rgba(27,156,147,.45),transparent) 50% 0/min(900px,60vw) min(900px,60vw) no-repeat,
              radial-gradient(closest-side,rgba(216,179,106,.16),transparent) 106% 60%/30vw 30vw no-repeat}
-main>:first-child::after{content:"";position:absolute;left:50%;top:6%;width:min(1100px,150vw);aspect-ratio:1;transform:translateX(-50%);opacity:.09;pointer-events:none;z-index:0;
-  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1000' fill='none' stroke='%23C9E4E2'%3E%3Ccircle cx='500' cy='500' r='480'/%3E%3Ccircle cx='500' cy='500' r='380' stroke-dasharray='2 10'/%3E%3Ccircle cx='500' cy='500' r='260'/%3E%3Cpath d='M500 20 L520 480 L980 500 L520 520 L500 980 L480 520 L20 500 L480 480 Z' stroke-width='1.2'/%3E%3Cpath d='M160 160 L510 490 L840 160 L510 510 L840 840 L490 510 L160 840 L490 490 Z' stroke-width='.8'/%3E%3C/svg%3E") center/contain no-repeat}
 main>:first-child>.in{position:relative;z-index:1}
 
 /* ===== type ===== */
@@ -189,3 +187,23 @@ main>header.hero.small .who,main>header.hero.small .eyebrow{align-self:center}
 main>header.hero.small h1{max-width:none}
 main>header.hero.small .hb-cta{justify-content:center}
 main>header.hero.small .lead{margin-inline:auto}
+
+/* ===== centred, like the amalor.ai hero (2026-11-19) ===== */
+main>:first-child h1{font-size:clamp(40px,5.4vw,77px)}
+.head{align-items:center;text-align:center;margin-inline:auto;max-width:900px}
+.head h2,.head .lead{margin-inline:auto}
+.head .who{align-self:center}
+p.more{text-align:center}
+.hero-band>.in{display:flex;flex-direction:column;align-items:center;text-align:center}
+.hb-text{align-items:center;max-width:920px}
+.hb-quote,.hb-tag,.hb-lead{margin-inline:auto}
+.hb-cta{justify-content:center}
+.hb-art{order:1;position:static;margin-top:36px}
+.hb-art .sphere{position:absolute;left:50%;top:-150px;transform:translateX(-50%);width:min(860px,110vw);max-width:none;opacity:.3;z-index:-1;pointer-events:none}
+.hb-path{width:100%;align-items:center;margin-top:12px}
+.hb-path ol{justify-content:center}
+.hb-path p{margin-inline:auto;text-align:center}
+.hb-money{width:100%;text-align:center}
+.hb-money .hb-ex,.hb-legend{text-align:center}
+.hb-facts li{text-align:left}
+@media (max-width:760px){.hb-art{order:1}.hb-art .sphere{top:-20px;width:150vw;opacity:.35}}
