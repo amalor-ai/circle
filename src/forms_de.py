@@ -48,7 +48,7 @@ MEMBER_FORM = f'''<form data-form="member" novalidate>
         {_sel('m-time', 'lgt_commitment', 'Wie viel Zeit kannst du einbringen?', [('side', 'Nebenbei, 5–10 h pro Woche'), ('part', 'Teilzeit, 15–20 h pro Woche'), ('full', 'Vollzeit, 30–40 h pro Woche')], True)}
       </div>
       <div class="row">
-        {_sel('m-role', 'lgt_team_role', 'Welche Rolle passt zu dir?', [('process', 'Abläufe einer Branche verstehen und verbessern'), ('build', 'Software bauen'), ('clients', 'Kunden gewinnen und begleiten'), ('open', 'Noch offen')], True)}
+        {_sel('m-role', 'lgt_team_role', 'Welche Rolle passt zu dir?', [('process', 'Abläufe einer Branche verstehen und verbessern'), ('build', 'Software bauen'), ('clients', 'Kunden gewinnen und begleiten'), ('product', 'Produkt verantworten'), ('rhythm', 'Team und Rhythmus halten'), ('open', 'Noch offen')], True)}
         {_sel('m-side', 'lgt_side_work', 'Falls angestellt: Darfst du nebenbei arbeiten?', [('yes', 'Ja, angezeigt oder erlaubt'), ('unsure', 'Muss ich klären'), ('no', 'Nein'), ('na', 'Trifft nicht zu')])}
       </div>
       <div class="row">
@@ -130,14 +130,15 @@ PAIRS = [
     ('Für Mitglieder', 'Für Fachleute', ['members']),
     ('ein Weg vom Mitglied zum Mentor', 'ein Weg vom Kreis bis zum Mentor', ['members']),
     ('Melde dich als Mitglied an', 'Trag dich als Fachkraft ein', ['book']),
-    ('Mitglied → Teammitglied → Kern → Mentor', 'Kreis → Team → Kern → Mentor', ['members']),
+    ('Mitglied → Teammitglied → Kern → Mentor', 'Kreis → Team → Brückenbauer → Mentor', ['members']),
+    ('<li><b>Weg des Wachstums:</b>', '<li><b>Feste Fünf.</b> Du arbeitest mit etwa fünf Menschen fest zusammen. Die Rollen wechseln je nach Etappe, und das Netzwerk hilft, wenn ihr hängt.</li>\n      <li><b>Weg des Wachstums:</b>', ['members']),
     ('<h3>Mitglied</h3>', '<h3>Im Kreis</h3>', ['members']),
     ('<h3>Anmeldung als Mitglied</h3>', '<h3>Im Team mitarbeiten</h3>', ['members']),
     ('<h3>Prüfwoche</h3>', '<h3>Gespräch und Probeaufgabe</h3>', ['members']),
     ('zu zweit, etwa 5 Gespräche mit Kunden', '30 Minuten über Werte, dann eine bezahlte Probeaufgabe', ['members']),
     ('<h3>Team und Projekt</h3>', '<h3>Probeetappe und Team</h3>', ['members']),
     ('ihr wählt eine Teamleitung – jemanden, der den Rhythmus hält und dem Team dient',
-     '2–3 bezahlte Wochen im gemischten Team; danach bestätigt das Team, wer in den Kern kommt', ['members']),
+     '2–3 bezahlte Wochen im gemischten Team; danach bestätigt das Team, wer fest dazugehört', ['members']),
 ]
 
 

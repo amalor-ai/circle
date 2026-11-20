@@ -29,7 +29,7 @@ PROPS = {
     'lgt_commitment': (E, 'select', 'Zeitliches Commitment', [
         ('side', 'Nebenbei, 5–10 h'), ('part', 'Teilzeit, 15–20 h'), ('full', 'Vollzeit, 30–40 h')]),
     'lgt_team_role': (E, 'select', 'Rolle im Team', [
-        ('process', 'Prozesskenner'), ('build', 'Umsetzer'), ('clients', 'Kunden gewinnen und begleiten'), ('open', 'Noch offen')]),
+        ('process', 'Prozesskenner'), ('build', 'Umsetzer'), ('clients', 'Kunden gewinnen und begleiten'), ('product', 'Produkt verantworten'), ('rhythm', 'Team und Rhythmus halten'), ('open', 'Noch offen')]),
     'lgt_side_work': (E, 'select', None, [('na', 'Trifft nicht zu')]),
     'lgt_industry': (E, 'select', None, [
         ('amb_care', 'Ambulante Pflege'), ('stat_care', 'Stationäre Pflege'), ('craft', 'Handwerk, SHK'),

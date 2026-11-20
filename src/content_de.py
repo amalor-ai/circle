@@ -34,11 +34,12 @@ LADDER['de'] = '''<section>
     <p class="lead">Die Motivation wächst mit dem Menschen: vom Verdienst und der Erfahrung hin zu Anerkennung und dem Wunsch, etwas zurückzugeben.</p>
   </div>
   <ol class="ladder">
-    <li><span class="num">1</span><div><h3>Mitglied</h3><p class="when">Motiv: Geld und Erfahrung</p></div></li>
-    <li><span class="num">2</span><div><h3>Teammitglied</h3><p class="when">Motiv: Anteil am Projekt und Dank des Auftraggebers</p></div></li>
-    <li><span class="num">3</span><div><h3>Kern</h3><p class="when">Motiv: Anerkennung für den Beitrag zum Ganzen</p></div></li>
-    <li><span class="num">4</span><div><h3>Mentor</h3><p class="when">Motiv: zurückgeben und andere wachsen lassen</p></div></li>
+    <li><span class="num">1</span><div><h3>Mitglied</h3><p>Bezahlte Probeeinsätze, Erfahrung sammeln</p><p class="when">Motiv: Geld und Erfahrung</p></div></li>
+    <li><span class="num">2</span><div><h3>Teammitglied</h3><p>Fest in einem Team von etwa fünf Menschen, Anteil nach Beitrag, Stimme im Team</p><p class="when">Motiv: Anteil am Projekt und Dank des Auftraggebers</p></div></li>
+    <li><span class="num">3</span><div><h3>Brückenbauer</h3><p>Hilft anderen Teams, verbindet sie und leitet Austauschrunden – von den anderen bestätigt, ohne Macht über Teams</p><p class="when">Motiv: Anerkennung für den Beitrag zum Ganzen</p></div></li>
+    <li><span class="num">4</span><div><h3>Mentor</h3><p>Begleitet neue Teams und gibt Erfahrung weiter</p><p class="when">Motiv: zurückgeben und andere wachsen lassen</p></div></li>
   </ol>
+  <p class="rule"><b>Und das Team wächst mit:</b> Projektteam → feste Fünf → Gründerteam. Ein Team, das über mehrere Etappen gut zusammenarbeitet, bleibt zusammen – und kann das Startup tragen, das aus seiner Lösung entsteht, mit Anteilen nach Beitrag.</p>
   <p class="rule"><b>Die Basis auf jeder Stufe:</b> faire Bezahlung: Das Einkommen des Teams wird zu gleichen Teilen geteilt.</p>
 </section>'''
 
