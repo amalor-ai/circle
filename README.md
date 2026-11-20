@@ -12,6 +12,7 @@
 - Страницы: главная, Заказчикам, Участникам, Как работает команда, Проводникам, Принципы, Книга, Инвесторам (в меню). Всё на русском, английском (`/en/`) и немецком (`/de/`).
 - Исходники: `src/krug.html` (дизайн и общие блоки, русский), `src/tr_en.py` → `src/krug_en.html` (английский), `src/tr_de.py` → `src/krug_de.html` (немецкий, из английского), `src/content_extra.py` + `src/content_de.py` (новые страницы).
 - Сборка: `python3 src/tr_en.py && python3 src/tr_de.py && python3 src/build.py` — пишет все `index.html`, `robots.txt`, `sitemap.xml`, `llms.txt`.
+- Немецкие формы и тексты страницы «Für Fachleute» — `src/forms_de.py` (применяется после `polish_de`). Новые поля должны быть свойствами контакта и полями формы в HubSpot: `python3 infra/hubspot_forms.py` или в Windows `.\infra\hubspot_forms.ps1` (dry run), затем `--apply` / `-Apply`; нужен токен в `HUBSPOT_TOKEN`.
 - Адрес сайта — `BASE` в `src/build.py`; сменить на `https://team.amalor.ai` после настройки DNS.
 
 ## Манифест

@@ -12,6 +12,7 @@ from content_extra import hero_home
 import content_de  # noqa: F401  (adds the German entries)
 from content_de import CLIENT_HOME, CLIENT_OFFER, FAQ_EXTRA
 import polish_de
+import forms_de
 import content_v4  # noqa: E402  (2026-11-19: one client page, the cooperative, no circle, no location)
 LANGS = ['ru', 'en', 'de']
 LANG_NAME = {'ru': 'Русский', 'en': 'English', 'de': 'Deutsch'}
@@ -252,6 +253,7 @@ def main():
             if lang == 'de':
                 de_pages[page] = html_
                 html_ = polish_de.apply(html_, page)
+                html_ = forms_de.apply(html_, page)
             out.write_text(html_, encoding='utf-8')
     polish_de.check(de_pages)
     pub = [pg for pg in PAGES if pg not in HIDDEN]

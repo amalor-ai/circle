@@ -343,7 +343,7 @@ section.home-doors{padding-block:40px 20px;border-top:0}
   <div class="subnav">
     <div class="cwrap sub-in">
       <a class="sname" href="../../de/">Team</a>
-      <nav class="snav" aria-label="Bereiche"><a class="nl" href="../../de/clients/">Auftraggeber</a><a class="nl" href="../../de/members/">Mitglieder</a><a class="nl" href="../../de/team/">So arbeitet ein Team</a><a class="nl active" href="../../de/guides/" aria-current="page">Vermittler</a><a class="nl" href="../../de/investors/">Investoren</a><a class="nl" href="../../de/principles/">Prinzipien</a><a class="nl" href="../../de/book/">Buch</a></nav>
+      <nav class="snav" aria-label="Bereiche"><a class="nl" href="../../de/clients/">Auftraggeber</a><a class="nl" href="../../de/members/">Für Fachleute</a><a class="nl" href="../../de/team/">So arbeitet ein Team</a><a class="nl active" href="../../de/guides/" aria-current="page">Vermittler</a><a class="nl" href="../../de/investors/">Investoren</a><a class="nl" href="../../de/principles/">Prinzipien</a><a class="nl" href="../../de/book/">Buch</a></nav>
       <a class="cbtn cbtn-gold cbtn-sm hdr-cta" href="../../de/clients/#anfrage">Aufgabe stellen</a>
     </div>
   </div>
@@ -400,6 +400,8 @@ section.home-doors{padding-block:40px 20px;border-top:0}
         <div><label for="g-client">Unternehmen des Auftraggebers</label><input id="g-client" name="lgt_ref_company" type="text" required></div>
         <div><label for="g-contact">Wie wir ihn erreichen</label><input id="g-contact" name="lgt_ref_contact" type="text" placeholder="Name, Rolle, Telefon oder E-Mail" required></div>
       </div>
+      <div><label for="g-rel">Ihre Beziehung zum Auftraggeber <span class="hint">Angestellte und Berater, die für ihn auswählen, erhalten keine Prämie</span></label>
+          <select id="g-rel" name="lgt_ref_relation" required><option value="">Bitte wählen</option><option value="contact">Bekannte, Kollegen, Netzwerk</option><option value="own_client">Er ist mein Kunde, ich arbeite nicht für ihn</option><option value="employee">Ich bin dort angestellt</option><option value="advisor">Ich berate ihn bei der Auswahl von Dienstleistern</option><option value="other">Andere</option></select></div>
       <div><label for="g-pain">Wobei braucht er Unterstützung?</label>
         <textarea id="g-pain" name="lgt_ref_pain" placeholder="Was Sie gesehen haben oder was er erzählt hat" required></textarea></div>
       <label class="consent"><input type="checkbox" id="g-ok" data-bool="lgt_ref_consent" data-consent data-msg="Bitte bestätigen Sie, dass der Auftraggeber einverstanden ist – sonst dürfen wir ihn nicht kontaktieren."><span>Der Auftraggeber ist einverstanden, dass ich seinen Kontakt weitergebe.</span></label>
