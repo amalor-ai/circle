@@ -659,7 +659,7 @@ P.forEach(function(q,i){if(q.k===0){P.forEach(function(r,j){if(r.k===0&&j>i)add(
  else{near(i,q.k,3).forEach(function(j){add(i,j,q.k);});near(i,q.k-1,1).forEach(function(j){add(i,j,3);});}});
 var a=0.6,tilt=-.38,W=0,H=0,dpr=1;
 function size(){var r=c.getBoundingClientRect();dpr=Math.min(window.devicePixelRatio||1,2);W=r.width;H=r.width;c.width=W*dpr;c.height=H*dpr;c.style.height=H+'px';x.setTransform(dpr,0,0,dpr,0,0);}
-function proj(q){var ca=Math.cos(a),sa=Math.sin(a),ct=Math.cos(tilt),st=Math.sin(tilt);var X=q[0]*ca+q[2]*sa,Z=-q[0]*sa+q[2]*ca,Y=q[1]*ct-Z*st;Z=q[1]*st+Z*ct;var f=3/(3+Z),s=W*.46;return [W/2+X*s*f,H/2+Y*s*f,Z,f];}
+function proj(q){var ca=Math.cos(a),sa=Math.sin(a),ct=Math.cos(tilt),st=Math.sin(tilt);var X=q[0]*ca+q[2]*sa,Z=-q[0]*sa+q[2]*ca,Y=q[1]*ct-Z*st;Z=q[1]*st+Z*ct;var f=4/(4+Z),s=W*.355;return [W/2+X*s*f,H/2+Y*s*f,Z,f];}
 function frame(){x.clearRect(0,0,W,H);
  var g=x.createRadialGradient(W/2,H/2,0,W/2,H/2,W*.32);g.addColorStop(0,'rgba(255,244,210,.55)');g.addColorStop(.5,'rgba(236,207,144,.16)');g.addColorStop(1,'rgba(236,207,144,0)');x.fillStyle=g;x.fillRect(0,0,W,H);
  var Q=P.map(function(q){return proj(q.p)});

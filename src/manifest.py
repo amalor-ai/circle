@@ -32,7 +32,7 @@ h2{font-size:40px;font-weight:800;letter-spacing:-.02em;margin-bottom:18px}
 /* cover */
 .cover{background:radial-gradient(ellipse 60% 50% at 50% 42%,rgba(27,156,147,.45),rgba(27,156,147,0) 70%),var(--deep);color:#fff;min-height:100vh;display:flex;flex-direction:column;justify-content:space-between;padding:56px 64px}
 .cover .brand{font-size:15px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold2);font-weight:600}
-.cover .sphere{display:block;width:min(340px,70%);aspect-ratio:1/1;margin:0 auto -70px;position:relative;z-index:1}.cover .tent{display:block;width:min(560px,96%);height:auto;margin:0 auto}
+.cover .sphere{display:block;width:min(400px,80%);aspect-ratio:1/1;margin:0 auto -80px;position:relative;z-index:1}.cover .tent{display:block;width:min(560px,96%);height:auto;margin:0 auto}
 .cover h1{font-size:64px;font-weight:800;letter-spacing:-.03em;line-height:1}
 .cover .kind{font-size:22px;color:var(--gold2);font-weight:600;margin-top:12px;letter-spacing:.04em}
 .cover .q{font-style:italic;color:#9DC3BF;font-size:16px;margin-top:22px;max-width:46ch}
