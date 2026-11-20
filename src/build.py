@@ -22,7 +22,7 @@ OUT = SRC.parent
 BASE = 'https://team.amalor.ai'
 PAGES = ['index', 'clients', 'members', 'team', 'guides', 'principles', 'investors', 'book']
 HIDDEN = set()                         # reachable by link only, noindex, not in menus or sitemap
-VER = '6'                              # bump when assets/*.css or *.js change
+VER = '7'                              # bump when assets/*.css or *.js change
 
 
 def path_of(lang, page):

@@ -179,6 +179,12 @@ main>header.hero.small:first-child{padding-top:clamp(150px,16vw,190px);padding-b
 section.book{display:block}
 section.book>.in{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:clamp(28px,5vw,64px);align-items:center}
 @media (max-width:640px){section.book>.in{grid-template-columns:1fr}}
+/* short pages: the footer stays at the bottom of the window; the book hero fills the space */
+body{min-height:100vh;min-height:100svh;display:flex;flex-direction:column}
+body>main{flex:1 0 auto}
+main.page-book{display:flex;flex-direction:column}
+main.page-book>section.book{flex:1 0 auto;display:flex;align-items:center}
+main.page-book>section.book>.in{width:100%}
 main>header.hero.small:first-child,main>section.green:first-child{padding-top:calc(116px + clamp(36px,6vw,80px))}
 @media (max-width:1080px){main>:first-child,main>header.hero.small:first-child,main>section.green:first-child{padding-top:calc(64px + 36px)}}
 /* page heroes centred, as the sub-pages on amalor.ai */

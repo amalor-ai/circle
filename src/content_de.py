@@ -141,7 +141,7 @@ INVESTORS['de'] = '''<header class="hero small">
 </section>'''
 
 BOOK['de'] = '''<section class="book">
-  <img src="{R}assets/book-cover-de.jpg" width="659" height="988" alt="Cover des Buches „Das Team der letzten Generation. Wie ein Bündel Schilfrohr“">
+  <img src="{R}assets/book-cover-de.jpg" width="659" height="993" alt="Cover des Buches „Team der letzten Generation. Wie ein Bündel Schilfrohr“">
   <div class="stack">
     <p class="eyebrow">Buch · bald</p>
     <h1>Team der letzten Generation</h1>
