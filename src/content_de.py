@@ -147,7 +147,7 @@ BOOK['de'] = '''<section class="book">
     <h1>Team der letzten Generation</h1>
     <p class="sub">Wie ein Bündel Schilfrohr</p>
     <p class="lead">Wie man gemeinsam mehr erreicht als allein – und tut, was die Welt braucht. Ein Buch darüber, wie ein kleines Team seine Aufgaben wählt, sich selbst organisiert und wächst – vom ersten Auftrag bis zu einem Netzwerk von Teams.</p>
-    <p class="when">Das Buch ist in Vorbereitung, zuerst auf Russisch. Melde dich als Mitglied an, und wir sagen Bescheid, wenn es erscheint.</p>
+    <p class="when">Melde dich als Mitglied an, und wir sagen Bescheid, wenn es erscheint.</p>
     <div><a class="btn" href="{L}members/#join">Anmelden</a></div>
   </div>
 </section>'''
