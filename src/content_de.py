@@ -216,8 +216,8 @@ HERO_HOME['de'] = dict(quote='„Ein Bündel Schilfrohr zerbricht man nicht auf 
     tag='Wie man gemeinsam mehr erreicht als allein – und tut, was die Welt braucht',
     lead='Kleine Teams von Fachleuten lösen Aufgaben, die Menschen brauchen und für die sie zahlen. Wir arbeiten in Etappen, stehen füreinander ein und machen aus den besten Lösungen Produkte – gemeinsam mit unseren Auftraggebern.',
     b1=('Ich habe eine Aufgabe', 'clients/'), b2=('Ins Team', 'members/'),
-    ex='Beispiel: ein Projekt über 100.000 $', bar=[('Team 80 %',80),('Garantie 20 %',20)], legend='80 % an das Team · 20 % Garantie von AMALOR · Vermittler: 5 % des ersten Projekts',
-    facts=[('80.000 $', 'erhält das Team, das die Arbeit gemacht hat'), ('20.000 $', 'für jedes Mitglied eines Viererteams – zu gleichen Teilen'), ('20.000 $', 'Garantie von AMALOR – so viel wie jedes Mitglied: Vertrag, Auswahl und Ersatz der Leute, Methode, Qualität'), ('0 $', 'zahlt der Auftraggeber für eine nicht abgenommene Etappe')])
+    ex='Beispiel: Etappe „Erste Version“ – 8 Wochen, 48.000 €', bar=[('Team 80 %',80),('Garantie 20 %',20)], legend='80 % an das Team · 20 % Garantie von AMALOR · Vermittler: 5 % des ersten Projekts',
+    facts=[('38.400 €', 'für das Team aus drei Fachleuten in Teilzeit'), ('12.800 €', 'für jedes Mitglied – rund 140 Stunden, etwa 91 € pro Stunde, dazu Anteile, wenn ein Produkt entsteht'), ('9.600 €', 'Garantie von AMALOR – weniger als jedes Mitglied: Vertrag, Auswahl und Ersatz der Leute, Methode, Qualität'), ('0 €', 'zahlt der Auftraggeber für eine nicht abgenommene Etappe')])
 
 from content_extra import CIRCLES_TXT
 CIRCLES_TXT['de'] = dict(core='Bund', team='das Team · macht die Arbeit', purpose='für wen wir arbeiten', support='Kreis der Unterstützung',

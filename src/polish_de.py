@@ -17,7 +17,6 @@ PAIRS = [
      'Kleine, eingespielte Teams aus Fachleuten und KI entwickeln Software für Unternehmen – Etappe für Etappe, mit klarer Abnahme. Die besten Lösungen wachsen zu Produkten, die einer ganzen Branche dienen und allen gehören, die sie aufgebaut haben.'),
     ('80 % an das Team · 20 % Garantie von AMALOR · Vermittler: 5 % des ersten Projekts',
      '80 % für das Team · 20 % Garantie von AMALOR · 5 % des ersten Projekts für den Vermittler'),
-    ('<span>erhält das Team, das die Arbeit gemacht hat</span>', '<span>für das Team, das die Lösung baut</span>'),
     # ---------- home: shared ownership ----------
     ('<h2>Wer mitbesitzt, liefert das beste Ergebnis</h2>', '<h2>Gemeinsam Eigentümer, gemeinsam am Erfolg beteiligt</h2>'),
     ('Bei einem klassischen Softwaredienstleister bezahlen Sie den ganzen Apparat, und die Entwickler arbeiten für ihren Arbeitgeber, nicht für Ihr Ergebnis. Bei uns gehen 80 % Ihres Budgets an die Menschen, die Ihre Lösung bauen, und als Partner-Auftraggeber werden Sie und das Team gemeinsam Miteigentümer.',
@@ -84,7 +83,6 @@ PAIRS = [
     ('Anerkennung für Hilfe an andere ist der wichtigste Grund für Ehre', 'Hilfe für andere ist der wichtigste Grund für Anerkennung'),
     ('Worin besteht sein Problem?', 'Wobei braucht er Unterstützung?'),
     # ---------- decisions 2026-11-19: income by agreed effort, referral cap, roots in the manifesto ----------
-    ('für jedes Mitglied eines Viererteams – zu gleichen Teilen', 'für jedes Mitglied eines Viererteams bei gleichem Einsatz'),
     ('Anteil für die Entwicklung, intern zu gleichen Teilen', 'Anteil für die Entwicklung, intern nach Einsatz geteilt'),
     ('<li><b>Einkommen zu gleichen Teilen</b> unter den Teammitgliedern, nicht nach Titel.',
      '<li><b>Einkommen nach vereinbartem Einsatz,</b> nicht nach Titel. Gleicher Einsatz, gleicher Anteil.'),
